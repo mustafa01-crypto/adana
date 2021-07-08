@@ -24,7 +24,7 @@ class _KaraisaliMesireListState extends State<KaraisaliMesireList> {
                     Get.to(() => Karapinar());
                   },
                   child: sehirler("KARAPINAR PARKI")),
-              sehirler("DOKUZOLUK"),
+              sehirler("DOKUZOLUK  "),
               sehirler("ALMAN KÖPRÜSÜ"),
               sehirler("KANYON"),
             ],

@@ -1,37 +1,37 @@
 import 'package:adana/constants/constants.dart';
+import 'package:adana/map.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:image_slider/image_slider.dart';
 
-class Karaisali extends StatefulWidget {
-  const Karaisali({Key? key}) : super(key: key);
+class Karapinar extends StatefulWidget {
+  const Karapinar({Key? key}) : super(key: key);
 
   @override
   _KaraisaliState createState() => _KaraisaliState();
 }
 
-class _KaraisaliState extends State<Karaisali> with SingleTickerProviderStateMixin {
-
+class _KaraisaliState extends State<Karapinar>
+    with SingleTickerProviderStateMixin {
   void initState() {
     super.initState();
-    tabController = TabController(length: 7, vsync: this);
+    tabController = TabController(length: 6, vsync: this);
   }
 
   TabController? tabController;
 
   static List<String> links = [
-    "assets/images/adana.jpg",
-    "assets/images/adana1.jpg",
-    "assets/images/adana2.jpg",
-    "assets/images/adana3.jpeg",
-    "assets/images/adana4.jpeg",
-    "assets/images/adana5.jpeg",
-    "assets/images/adana6.jpeg",
+    "assets/karaisali/park/k.jpg",
+    "assets/karaisali/park/k1.jpg",
+    "assets/karaisali/park/k2.jpg",
+    "assets/karaisali/park/k3.jpg",
+    "assets/karaisali/park/k4.jpg",
+    "assets/karaisali/park/k5.jpg",
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: scaffold,
       body: SingleChildScrollView(
         child: SafeArea(
           child: Column(
@@ -76,32 +76,33 @@ class _KaraisaliState extends State<Karaisali> with SingleTickerProviderStateMix
                 /// Children in slideView to slide
                 children: links.map((String link) {
                   return new ClipRRect(
-
                       child: Image.asset(
-                        link,
-                        width: MediaQuery.of(context).size.width,
-                        height: 220,
-                        fit: BoxFit.fill,
-                      ));
+                    link,
+                    width: MediaQuery.of(context).size.width,
+                    height: 220,
+                    fit: BoxFit.fill,
+                  ));
                 }).toList(),
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 12),
                 child: Text(
-                  "ADANA",
+                  "KARAPINAR PARKI",
                   style: TextStyle(
                       color: Colors.grey.shade800,
                       fontSize: 25,
                       fontWeight: FontWeight.bold),
                 ),
               ),
-              SizedBox(height: 10,),
+              SizedBox(
+                height: 10,
+              ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Container(
                   decoration: BoxDecoration(
-                      color: deniz,
-                      border: Border.all(color: sinir,width: 2),
+                      color: Colors.grey.shade500,
+                      border: Border.all(color: sinir, width: 2),
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(14),
                           topRight: Radius.circular(14),
@@ -109,22 +110,53 @@ class _KaraisaliState extends State<Karaisali> with SingleTickerProviderStateMix
                           bottomRight: Radius.circular(14)),
                       boxShadow: [
                         BoxShadow(color: Colors.blue.shade300, spreadRadius: 1)
-                      ]
-                  ),
+                      ]),
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      "Adana’ya ait en eski yazılı kayıtlara ilk defa, Anadolu "
-                          "yarımadasının en köklü uygarlıklarından biri olan Hititlerin"
-                          " kaya kitabelerinde rastlanmaktadır. Boğazköy metinleri olarak "
-                          "bilinen M.Ö. 1650 yıllara tarihlenen bir Hitit tabletinde, Adana"
-                          " havalisinden URU ADANIA yani ADANA BÖLGESI olarak bahsedilmektedir."
-                          " Bu konuda sadece bu tablet dikkate alınacak"
-                          " olsa bile ADANA ismi en az 3640 yıllık bir geçmişe sahiptir.Eski ",
-
-
+                      "Türkiye’nin Akdeniz Bölgesinde bulunan"
+                      " Karaisalı, Roma Döneminden önemli izler taşıyan"
+                      " ilçe konumuna sahip olan bir bölgedir. Bu ilçe,"
+                      " soyunun Ramazanoğulları ve Menemencioğullarından geldiği"
+                      " günümüzdeki adını"
+                      " da Ramazanoğullarından Kara İsa Bey’den aldığı bilinen bir husustur.",
                       style: cityIcerik,
                     ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 15,),
+              TextButton(
+                onPressed: ()
+                {
+                  Get.to(() => Map());
+                },
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: 80,
+                  child: Center(
+                    child: Text(
+                      "HARİTADA GÖSTER",
+                      style: cityName,
+
+                    ),
+                  ),
+                  decoration: BoxDecoration(
+                    color: Colors.blueAccent.shade100,
+                    border: Border.all(color: Colors.blueAccent, width: 2),
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(15),
+                        topRight: Radius.circular(15),
+                        bottomLeft: Radius.circular(15),
+                        bottomRight: Radius.circular(15)),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.white,
+                        spreadRadius: 5,
+                        blurRadius: 7,
+                        offset: Offset(0, 3), // changes position of shadow
+                      ),
+                    ],
                   ),
                 ),
               )

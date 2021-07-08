@@ -1,17 +1,16 @@
 import 'package:adana/constants/constants.dart';
-import 'package:adana/mesire/karaisaliMesire.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:adana/ilceler/karaisali.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
+class KaraisaliMesireList extends StatefulWidget {
+  const KaraisaliMesireList({Key? key}) : super(key: key);
 
   @override
-  _HomeState createState() => _HomeState();
+  _KaraisaliMesireListState createState() => _KaraisaliMesireListState();
 }
 
-class _HomeState extends State<Home> {
+class _KaraisaliMesireListState extends State<KaraisaliMesireList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,18 +21,12 @@ class _HomeState extends State<Home> {
             children: [
               InkWell(
                   onTap: () {
-                    Get.to(() => KaraisaliMesireList());
+                    Get.to(() => Karapinar());
                   },
-                  child: sehirler("KARAİSALI")),
-              sehirler("SEYHAN"),
-              sehirler("CEYHAN"),
-              sehirler("POZANTI"),
-              sehirler("KOZAN"),
-              sehirler("FEKE"),
-              sehirler("SAİMBEYLİ"),
-              sehirler("TUFANBEYLİ"),
-              sehirler("YUMURTALIK"),
-              sehirler("KARATAŞ"),
+                  child: sehirler("KARAPINAR PARKI")),
+              sehirler("DOKUZOLUK"),
+              sehirler("ALMAN KÖPRÜSÜ"),
+              sehirler("KANYON"),
             ],
           ),
         ),

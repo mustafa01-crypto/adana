@@ -134,7 +134,7 @@ class _KaraisaliState extends State<Karapinar>
               TextButton(
                 onPressed: ()
                 {
-                  Get.to(() => Map(x: x,y: y,title: title,));
+                  Get.to(() => Maps(x: x,y: y,title: title,));
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width,

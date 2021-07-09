@@ -146,7 +146,7 @@ class _DokuzolukState extends State<Dokuzoluk>
               ),
               TextButton(
                 onPressed: () {
-                  Get.to(() => Map(
+                  Get.to(() => Maps(
                         x: x,
                         y: y,
                         title: title,

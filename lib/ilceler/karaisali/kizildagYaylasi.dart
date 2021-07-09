@@ -4,18 +4,19 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_slider/image_slider.dart';
 
-class AlmanKoprusu extends StatefulWidget {
-  const AlmanKoprusu({Key? key}) : super(key: key);
+class Kizildag extends StatefulWidget {
+  const Kizildag({Key? key}) : super(key: key);
 
   @override
-  _AlmanKoprusuState createState() => _AlmanKoprusuState();
+  _KizildagState createState() => _KizildagState();
 }
 
-class _AlmanKoprusuState extends State<AlmanKoprusu>
-    with SingleTickerProviderStateMixin {
-  double x = 37.242919;
-  double y = 34.976780;
-  String title = "Alman (Varda) Köprüsü";
+class _KizildagState extends State<Kizildag> with SingleTickerProviderStateMixin {
+
+
+  double x = 37.412784;
+  double y = 35.041947;
+  String title = "Kızıldağ Yaylası";
 
   void initState() {
     super.initState();
@@ -25,13 +26,14 @@ class _AlmanKoprusuState extends State<AlmanKoprusu>
   TabController? tabController;
 
   static List<String> links = [
-    "assets/karaisali/varda/v1.jpg",
-    "assets/karaisali/varda/v2.jpg",
-    "assets/karaisali/varda/v3.jpg",
-    "assets/karaisali/varda/v4.jpg",
-    "assets/karaisali/varda/v5.jpg",
-    "assets/karaisali/varda/v6.jpg",
+    "assets/karaisali/park/k.jpg",
+    "assets/karaisali/park/k1.jpg",
+    "assets/karaisali/park/k2.jpg",
+    "assets/karaisali/park/k3.jpg",
+    "assets/karaisali/park/k4.jpg",
+    "assets/karaisali/park/k5.jpg",
   ];
+
 
   @override
   Widget build(BuildContext context) {
@@ -81,17 +83,17 @@ class _AlmanKoprusuState extends State<AlmanKoprusu>
                 children: links.map((String link) {
                   return new ClipRRect(
                       child: Image.asset(
-                    link,
-                    width: MediaQuery.of(context).size.width,
-                    height: 220,
-                    fit: BoxFit.fill,
-                  ));
+                        link,
+                        width: MediaQuery.of(context).size.width,
+                        height: 220,
+                        fit: BoxFit.fill,
+                      ));
                 }).toList(),
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 12),
                 child: Text(
-                  "VARDA KÖPRÜSÜ",
+                  "KIZILDAĞ YAYLASI",
                   style: TextStyle(
                       color: Colors.grey.shade800,
                       fontSize: 25,
@@ -118,27 +120,23 @@ class _AlmanKoprusuState extends State<AlmanKoprusu>
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      "Varda Köprüsü, Adana ili Karaisalı ilçesi Hacıkırı "
-                          "(Kıralan) mahallesi'nde bulunan, yöre halkı tarafından Koca "
-                          "Köprü diye anılan köprü. Hacıkırı Demiryolu"
-                    " Köprüsü olarak ya da 1912 yılında Almanlar"
-                      " tarafından inşa edildiği için Alman köprüsü olarak bilinmektedir."
-                          " Adana'ya uzaklığı karayolu ile Karaisalı üzerinden 64 km'dir."
-                          " Demir yolu ile Adana İstasyonu'na mesafesi 63 km'dir."
-                    "Bu köprü Almanlar tarafından, çelik kafes taş örme "
-                          "tekniği ile yapılmıştır. 6. Bölge sınırları içinde "
-                          "bulunmaktadır. 1912 yılında hizmete açılmıştır. Köprünün"
-                          " yapılış amacı İstanbul-Bağdat-Hicaz Demiryolu hattını tamamlamaktır.",
+                    "Adını Kızıldağ’dan alan yayla Karaisalı İlçesi’ne "
+                        "27 kilometre mesafededir. Karaisalı İlçesi halkının"
+                        " yoğun olarak rağbet ettiği Kızıldağ Yaylası'nda "
+                        "kır kahveleri, kır lokantaları, bakkallar, fırınlar"
+                        " ve kasaplar hizmet vermektedir. Elma, "
+                        "armut, kiraz, vişne ve ceviz ağaçları ile iç içe olan yaylada kamp "
+                        "kurarak Kızıldağ’da yürüyüş yapılabilir, yaban "
+                        "hayatı incelenerek fotoğraf çekilebilir.",
                       style: cityIcerik,
                     ),
                   ),
                 ),
               ),
-              SizedBox(
-                height: 15,
-              ),
+              SizedBox(height: 15,),
               TextButton(
-                onPressed: () {
+                onPressed: ()
+                {
                   Get.to(() => Maps(x: x, y: y, title: title));
                 },
                 child: Container(
@@ -148,6 +146,7 @@ class _AlmanKoprusuState extends State<AlmanKoprusu>
                     child: Text(
                       "HARİTADA GÖSTER",
                       style: cityName,
+
                     ),
                   ),
                   decoration: BoxDecoration(

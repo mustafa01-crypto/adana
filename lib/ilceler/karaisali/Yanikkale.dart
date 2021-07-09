@@ -1,21 +1,22 @@
 import 'package:adana/constants/constants.dart';
-import 'package:adana/map.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_slider/image_slider.dart';
 
-class AlmanKoprusu extends StatefulWidget {
-  const AlmanKoprusu({Key? key}) : super(key: key);
+import '../../map.dart';
+
+class YanikKale extends StatefulWidget {
+  const YanikKale({Key? key}) : super(key: key);
 
   @override
-  _AlmanKoprusuState createState() => _AlmanKoprusuState();
+  _YanikKaleState createState() => _YanikKaleState();
 }
 
-class _AlmanKoprusuState extends State<AlmanKoprusu>
-    with SingleTickerProviderStateMixin {
+class _YanikKaleState extends State<YanikKale> with SingleTickerProviderStateMixin {
+
   double x = 37.242919;
   double y = 34.976780;
-  String title = "Alman (Varda) Köprüsü";
+  String title = "Yanıkkale";
 
   void initState() {
     super.initState();
@@ -81,17 +82,17 @@ class _AlmanKoprusuState extends State<AlmanKoprusu>
                 children: links.map((String link) {
                   return new ClipRRect(
                       child: Image.asset(
-                    link,
-                    width: MediaQuery.of(context).size.width,
-                    height: 220,
-                    fit: BoxFit.fill,
-                  ));
+                        link,
+                        width: MediaQuery.of(context).size.width,
+                        height: 220,
+                        fit: BoxFit.fill,
+                      ));
                 }).toList(),
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 12),
                 child: Text(
-                  "VARDA KÖPRÜSÜ",
+                  "YANIKKALE",
                   style: TextStyle(
                       color: Colors.grey.shade800,
                       fontSize: 25,
@@ -118,17 +119,15 @@ class _AlmanKoprusuState extends State<AlmanKoprusu>
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      "Varda Köprüsü, Adana ili Karaisalı ilçesi Hacıkırı "
-                          "(Kıralan) mahallesi'nde bulunan, yöre halkı tarafından Koca "
-                          "Köprü diye anılan köprü. Hacıkırı Demiryolu"
-                    " Köprüsü olarak ya da 1912 yılında Almanlar"
-                      " tarafından inşa edildiği için Alman köprüsü olarak bilinmektedir."
-                          " Adana'ya uzaklığı karayolu ile Karaisalı üzerinden 64 km'dir."
-                          " Demir yolu ile Adana İstasyonu'na mesafesi 63 km'dir."
-                    "Bu köprü Almanlar tarafından, çelik kafes taş örme "
-                          "tekniği ile yapılmıştır. 6. Bölge sınırları içinde "
-                          "bulunmaktadır. 1912 yılında hizmete açılmıştır. Köprünün"
-                          " yapılış amacı İstanbul-Bağdat-Hicaz Demiryolu hattını tamamlamaktır.",
+                      "Fındıklı mevkisinden başlayan yürüyüş Eğlence "
+                          "Irmağı'ndan yapılan su geçişleriyle sürdü."
+                          " Doğaseverler vadi dibinde inşa edilmiş "
+                          "Yanıkkale’de anı fotoğrafları çektirdi. Yanıkkale"
+                          " doğa yürüyüşü, Kuruca Pınar’da verilen "
+                          "molanın ardından sona erdi. Etkinlik lideri"
+                          " Murat Arıkan, Yanıkkale, Barakdağı ile Keçi"
+                          " Kalesi arasında kalan vadi içerisinde Roma"
+                          " döneminde kalan bir gözetleme kalesi.",
                       style: cityIcerik,
                     ),
                   ),

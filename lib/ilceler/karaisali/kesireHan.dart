@@ -1,21 +1,23 @@
 import 'package:adana/constants/constants.dart';
-import 'package:adana/map.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_slider/image_slider.dart';
 
-class AlmanKoprusu extends StatefulWidget {
-  const AlmanKoprusu({Key? key}) : super(key: key);
+import '../../map.dart';
+
+class KesireHan extends StatefulWidget {
+  const KesireHan({Key? key}) : super(key: key);
 
   @override
-  _AlmanKoprusuState createState() => _AlmanKoprusuState();
+  _KesireHanState createState() => _KesireHanState();
 }
 
-class _AlmanKoprusuState extends State<AlmanKoprusu>
-    with SingleTickerProviderStateMixin {
-  double x = 37.242919;
-  double y = 34.976780;
-  String title = "Alman (Varda) Köprüsü";
+class _KesireHanState extends State<KesireHan> with SingleTickerProviderStateMixin {
+
+
+  double x = 37.233194;
+  double y = 35.162650;
+  String title = "KESİRİ HAN";
 
   void initState() {
     super.initState();
@@ -81,17 +83,17 @@ class _AlmanKoprusuState extends State<AlmanKoprusu>
                 children: links.map((String link) {
                   return new ClipRRect(
                       child: Image.asset(
-                    link,
-                    width: MediaQuery.of(context).size.width,
-                    height: 220,
-                    fit: BoxFit.fill,
-                  ));
+                        link,
+                        width: MediaQuery.of(context).size.width,
+                        height: 220,
+                        fit: BoxFit.fill,
+                      ));
                 }).toList(),
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 12),
                 child: Text(
-                  "VARDA KÖPRÜSÜ",
+                  "KESİRİ HAN",
                   style: TextStyle(
                       color: Colors.grey.shade800,
                       fontSize: 25,
@@ -118,17 +120,24 @@ class _AlmanKoprusuState extends State<AlmanKoprusu>
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      "Varda Köprüsü, Adana ili Karaisalı ilçesi Hacıkırı "
-                          "(Kıralan) mahallesi'nde bulunan, yöre halkı tarafından Koca "
-                          "Köprü diye anılan köprü. Hacıkırı Demiryolu"
-                    " Köprüsü olarak ya da 1912 yılında Almanlar"
-                      " tarafından inşa edildiği için Alman köprüsü olarak bilinmektedir."
-                          " Adana'ya uzaklığı karayolu ile Karaisalı üzerinden 64 km'dir."
-                          " Demir yolu ile Adana İstasyonu'na mesafesi 63 km'dir."
-                    "Bu köprü Almanlar tarafından, çelik kafes taş örme "
-                          "tekniği ile yapılmıştır. 6. Bölge sınırları içinde "
-                          "bulunmaktadır. 1912 yılında hizmete açılmıştır. Köprünün"
-                          " yapılış amacı İstanbul-Bağdat-Hicaz Demiryolu hattını tamamlamaktır.",
+                      "İçinde yaşadığımız coğrafya insanlık tarihinin en "
+                          "önemli değişimlerine tanıklık etmiş binlerce"
+                          " kültür mirasına sahip bir coğrafyadır. Ancak "
+                          "şu da bir gerçektir ki bu tarihi mirası olması "
+                          "gerektiği biçimde koruma, kollama ve yaşatma "
+                          "görevlerini bu toplum yönetenler ve bu toplumun"
+                          " bireyleri yerine getirememiştir. Kentlerimiz "
+                          "günlük çıkarlara feda edilmiş, pek çok eser yok "
+                          "edilmiş, yakılmış, yurt dışına kaçırılmış,"
+                          " müzelerimizde sergilenmeden depolarda terk "
+                          "edilmiş, alınmış, satılmış, mekânlar harabe "
+                          "ve mezbele durumlara düşürülmüş bazen yenileme "
+                          "adı altında aslı ile ilgisi olmayan formlara "
+                          "dönüştürülmüştür. Korunmaya değer görülenler "
+                          "ise dönemlerinin ekonomik, sosyal ve siyasal "
+                          "koşullarınca belirlenmiştir. Oyda bugün insanlık "
+                          "tarihi hakkında bildiklerimizin pek çoğu yıllara"
+                          " meydan okuyan bu eserler sayesinde olmuştur.",
                       style: cityIcerik,
                     ),
                   ),

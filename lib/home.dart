@@ -25,7 +25,7 @@ class _HomeState extends State<Home> {
                     Get.to(() => KaraisaliMesireList());
                   },
                   child: sehirler("KARAİSALI")),
-              sehirler("SEYHAN"),
+             /* sehirler("SEYHAN"),
               sehirler("CEYHAN"),
               sehirler("POZANTI"),
               sehirler("KOZAN"),
@@ -33,7 +33,7 @@ class _HomeState extends State<Home> {
               sehirler("SAİMBEYLİ"),
               sehirler("TUFANBEYLİ"),
               sehirler("YUMURTALIK"),
-              sehirler("KARATAŞ"),
+              sehirler("KARATAŞ"), */
             ],
           ),
         ),
@@ -61,7 +61,7 @@ class _HomeState extends State<Home> {
         ),
         decoration: BoxDecoration(
           color: scaffold,
-          border: Border.all(color: Colors.blueAccent.shade100, width: 4),
+          border: Border.all(color: sinir, width: 4),
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(15),
               topRight: Radius.circular(15),

@@ -1,8 +1,12 @@
 import 'package:adana/constants/constants.dart';
+import 'package:adana/ilceler/karaisali/Yanikkale.dart';
 import 'package:adana/ilceler/karaisali/almankoprusu.dart';
 import 'package:adana/ilceler/karaisali/dokuzoluk.dart';
 import 'package:adana/ilceler/karaisali/kanyon.dart';
 import 'package:adana/ilceler/karaisali/karapinar.dart';
+import 'package:adana/ilceler/karaisali/keciKalesi.dart';
+import 'package:adana/ilceler/karaisali/kesireHan.dart';
+import 'package:adana/ilceler/karaisali/kizildagYaylasi.dart';
 import 'package:adana/ilceler/karaisali/yerkopru.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -54,6 +58,30 @@ class _KaraisaliMesireListState extends State<KaraisaliMesireList> {
                     Get.to( () => Kanyon());
                   },
                   child: sehirler("KAPIKAYA KANYONU")),
+              InkWell(
+                  onTap: ()
+                  {
+                    Get.to( () => Kizildag());
+                  },
+                  child: sehirler("KIZILDAĞ YAYLASI")),
+              InkWell(
+                  onTap: ()
+                  {
+                    Get.to( () => KesireHan());
+                  },
+                  child: sehirler("KESİRİ HAN")),
+              InkWell(
+                  onTap: ()
+                  {
+                    Get.to(() => KeciKalesi());
+                  },
+                  child: sehirler("KEÇİ KALESİ")),
+              InkWell(
+                  onTap: ()
+                  {
+                    Get.to( () => YanikKale());
+                  },
+                  child: sehirler("YANIKKALE")),
 
             ],
           ),

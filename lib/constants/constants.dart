@@ -9,5 +9,5 @@ TextStyle cityIcerik = TextStyle(
 );
 Color deniz =Color(0xffB3CDE0);
 
-Color sinir =Color(0xff7da9ca);
-Color scaffold =Color(0xffbbb2e9);
+Color sinir =Color(0xFFFF6701);
+Color scaffold = Color(0xFFFC7925);

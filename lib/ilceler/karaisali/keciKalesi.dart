@@ -1,21 +1,23 @@
 import 'package:adana/constants/constants.dart';
-import 'package:adana/map.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_slider/image_slider.dart';
 
-class AlmanKoprusu extends StatefulWidget {
-  const AlmanKoprusu({Key? key}) : super(key: key);
+import '../../map.dart';
+
+class KeciKalesi extends StatefulWidget {
+  const KeciKalesi({Key? key}) : super(key: key);
 
   @override
-  _AlmanKoprusuState createState() => _AlmanKoprusuState();
+  _KeciKalesiState createState() => _KeciKalesiState();
 }
 
-class _AlmanKoprusuState extends State<AlmanKoprusu>
-    with SingleTickerProviderStateMixin {
-  double x = 37.242919;
-  double y = 34.976780;
-  String title = "Alman (Varda) Köprüsü";
+class _KeciKalesiState extends State<KeciKalesi> with SingleTickerProviderStateMixin {
+
+
+  double x = 37.456380;
+  double y = 35.235234;
+  String title = "Keçi Kalesi";
 
   void initState() {
     super.initState();
@@ -81,17 +83,17 @@ class _AlmanKoprusuState extends State<AlmanKoprusu>
                 children: links.map((String link) {
                   return new ClipRRect(
                       child: Image.asset(
-                    link,
-                    width: MediaQuery.of(context).size.width,
-                    height: 220,
-                    fit: BoxFit.fill,
-                  ));
+                        link,
+                        width: MediaQuery.of(context).size.width,
+                        height: 220,
+                        fit: BoxFit.fill,
+                      ));
                 }).toList(),
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 12),
                 child: Text(
-                  "VARDA KÖPRÜSÜ",
+                  "KEÇİ KALESİ",
                   style: TextStyle(
                       color: Colors.grey.shade800,
                       fontSize: 25,
@@ -118,17 +120,16 @@ class _AlmanKoprusuState extends State<AlmanKoprusu>
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      "Varda Köprüsü, Adana ili Karaisalı ilçesi Hacıkırı "
-                          "(Kıralan) mahallesi'nde bulunan, yöre halkı tarafından Koca "
-                          "Köprü diye anılan köprü. Hacıkırı Demiryolu"
-                    " Köprüsü olarak ya da 1912 yılında Almanlar"
-                      " tarafından inşa edildiği için Alman köprüsü olarak bilinmektedir."
-                          " Adana'ya uzaklığı karayolu ile Karaisalı üzerinden 64 km'dir."
-                          " Demir yolu ile Adana İstasyonu'na mesafesi 63 km'dir."
-                    "Bu köprü Almanlar tarafından, çelik kafes taş örme "
-                          "tekniği ile yapılmıştır. 6. Bölge sınırları içinde "
-                          "bulunmaktadır. 1912 yılında hizmete açılmıştır. Köprünün"
-                          " yapılış amacı İstanbul-Bağdat-Hicaz Demiryolu hattını tamamlamaktır.",
+                      "Keçi Kalesi’nin turizme kazandırılması gerektiğini vurgulayan "
+                          "Kulüp Başkanı Mehmet Yakut, ''Doğaseverler çok güzel bir"
+                          " gün geçirdi. Yaylada köy muhtarı ve yayla halkının yürüyüş"
+                          " öncesi ve sonrası gösterdikleri misafirperverlik bizleri "
+                          "oldukça mutlu etti. Keçi Kalesi’nin turizme kazandırılması"
+                          " gerekiyor. Oldukça sarp ve ilginç bir yapıya sahip kale"
+                          " manzarası ve dört bir yana hakim olması çok ilgi çekebilir"
+                      "dedi.5 saat süren karda doğa yürüyüşüne katılan kulüp üyeleri, evlerde"
+                          " üretilen andız pekmezinden satın alarak yöre halkına "
+                          "ekonomik katkı sağladı.",
                       style: cityIcerik,
                     ),
                   ),

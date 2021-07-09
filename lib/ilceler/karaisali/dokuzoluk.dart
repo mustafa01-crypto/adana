@@ -4,15 +4,19 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_slider/image_slider.dart';
 
-class Karapinar extends StatefulWidget {
-  const Karapinar({Key? key}) : super(key: key);
+class Dokuzoluk extends StatefulWidget {
+  const Dokuzoluk({Key? key}) : super(key: key);
 
   @override
-  _KaraisaliState createState() => _KaraisaliState();
+  _DokuzolukState createState() => _DokuzolukState();
 }
 
-class _KaraisaliState extends State<Karapinar>
+class _DokuzolukState extends State<Dokuzoluk>
     with SingleTickerProviderStateMixin {
+  double x = 37.387938;
+  double y = 35.209563;
+  String title = "Dokuzoluk";
+
   void initState() {
     super.initState();
     tabController = TabController(length: 6, vsync: this);
@@ -21,12 +25,12 @@ class _KaraisaliState extends State<Karapinar>
   TabController? tabController;
 
   static List<String> links = [
-    "assets/karaisali/park/k.jpg",
-    "assets/karaisali/park/k1.jpg",
-    "assets/karaisali/park/k2.jpg",
-    "assets/karaisali/park/k3.jpg",
-    "assets/karaisali/park/k4.jpg",
-    "assets/karaisali/park/k5.jpg",
+    "assets/karaisali/dokuzoluk/d1.jpg",
+    "assets/karaisali/dokuzoluk/d2.jpg",
+    "assets/karaisali/dokuzoluk/d3.jpg",
+    "assets/karaisali/dokuzoluk/d4.jpg",
+    "assets/karaisali/dokuzoluk/d5.jpg",
+    "assets/karaisali/dokuzoluk/d6.jpg",
   ];
 
   @override
@@ -87,7 +91,7 @@ class _KaraisaliState extends State<Karapinar>
               Padding(
                 padding: const EdgeInsets.only(top: 12),
                 child: Text(
-                  "KARAPINAR PARKI",
+                  "DOKUZOLUK",
                   style: TextStyle(
                       color: Colors.grey.shade800,
                       fontSize: 25,
@@ -101,7 +105,7 @@ class _KaraisaliState extends State<Karapinar>
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Container(
                   decoration: BoxDecoration(
-                      color: Colors.grey.shade500,
+                      color: scaffold,
                       border: Border.all(color: sinir, width: 2),
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(14),
@@ -114,22 +118,39 @@ class _KaraisaliState extends State<Karapinar>
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      "Türkiye’nin Akdeniz Bölgesinde bulunan"
-                      " Karaisalı, Roma Döneminden önemli izler taşıyan"
-                      " ilçe konumuna sahip olan bir bölgedir. Bu ilçe,"
-                      " soyunun Ramazanoğulları ve Menemencioğullarından geldiği"
-                      " günümüzdeki adını"
-                      " da Ramazanoğullarından Kara İsa Bey’den aldığı bilinen bir husustur.",
+                      "Huzurumuzdu, huzursuzluğumuz oldu."
+                      "Bizim Köprübaşı'mız vardı... Her mevsim bizim olan, köylülerimizin'"
+                      ' olan, artık yok. Gölgesinde oturduğumuz çınarlarımız, suyunda'
+                      "' serinlediğimiz özümüz vardı. Adil Hocanın hatırası "
+                      "eski değirmenimiz, suyunu içtiğimiz pınarımız vardı, artık yok."
+                      "Köprübaşında insanlar haya ile otururdu; edep vardı, haya vardı, artık yok."
+                      "Yapımı sırasında olmasın dediğimizden dolayı soruşturma geçirdiğim Köprübaşı"
+                      " artık tanımadığımız kişilerin oldu."
+                      "Huzur bulduğumuz yer huzursuzluğumuz oldu. Çünkü içenler, sıç..lar,"
+                      " hırlısı, hırsızı gelmeye başladı. Utanmadan"
+                      " arabanın sesini açıp; atletle, şortla geçen insanlar(!) gelmeye başladı."
+                      "Hangi köylüme sorsam Yıllar oldu gitmeyeli, görmeyeli diyorlar. "
+                      "Sadece yoldan geçiyoruz, bir su içmeye, elimizi yüzümüzü"
+                      " yıkayıp serinlemek için bile durmaya utanıyoruz"
+                      "diyorlar."
+                      "Evimize bir fıçı su doldurduğumuz, pınarından su "
+                      "içtiğimiz, elimizi yüzümüzü yıkadığımız, "
+                      "abdest alıp namaz kıldığımız Köprübaşı'mız yok artık!",
                       style: cityIcerik,
                     ),
                   ),
                 ),
               ),
-              SizedBox(height: 15,),
+              SizedBox(
+                height: 15,
+              ),
               TextButton(
-                onPressed: ()
-                {
-                  Get.to(() => Map());
+                onPressed: () {
+                  Get.to(() => Map(
+                        x: x,
+                        y: y,
+                        title: title,
+                      ));
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width,
@@ -138,11 +159,10 @@ class _KaraisaliState extends State<Karapinar>
                     child: Text(
                       "HARİTADA GÖSTER",
                       style: cityName,
-
                     ),
                   ),
                   decoration: BoxDecoration(
-                    color: Colors.blueAccent.shade100,
+                    color: scaffold,
                     border: Border.all(color: Colors.blueAccent, width: 2),
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(15),

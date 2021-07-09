@@ -43,7 +43,7 @@ class _HomeState extends State<Home> {
 
   Widget sehirler(String text) {
     return Padding(
-      padding: const EdgeInsets.all(15.0),
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
       child: Container(
         width: MediaQuery.of(context).size.width,
         height: 100,
@@ -60,8 +60,8 @@ class _HomeState extends State<Home> {
           ],
         ),
         decoration: BoxDecoration(
-          color: Colors.blueAccent.shade100,
-          border: Border.all(color: Colors.blueAccent, width: 2),
+          color: scaffold,
+          border: Border.all(color: Colors.blueAccent.shade100, width: 4),
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(15),
               topRight: Radius.circular(15),

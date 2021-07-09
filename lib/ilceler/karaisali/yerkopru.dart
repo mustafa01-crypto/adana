@@ -26,12 +26,12 @@ class _YerKopruState extends State<YerKopru> with SingleTickerProviderStateMixin
   TabController? tabController;
 
   static List<String> links = [
-    "assets/karaisali/park/k.jpg",
-    "assets/karaisali/park/k1.jpg",
-    "assets/karaisali/park/k2.jpg",
-    "assets/karaisali/park/k3.jpg",
-    "assets/karaisali/park/k4.jpg",
-    "assets/karaisali/park/k5.jpg",
+    "assets/karaisali/yerkopru/y1.jpg",
+    "assets/karaisali/yerkopru/y2.jpg",
+    "assets/karaisali/yerkopru/y3.jpg",
+    "assets/karaisali/yerkopru/y4.jpg",
+    "assets/karaisali/yerkopru/y5.jpg",
+    "assets/karaisali/yerkopru/yer1.jpg",
   ];
 
   @override

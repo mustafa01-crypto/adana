@@ -25,12 +25,12 @@ class _AlmanKoprusuState extends State<AlmanKoprusu>
   TabController? tabController;
 
   static List<String> links = [
-    "assets/karaisali/dokuzoluk/d1.jpg",
-    "assets/karaisali/dokuzoluk/d2.jpg",
-    "assets/karaisali/dokuzoluk/d3.jpg",
-    "assets/karaisali/dokuzoluk/d4.jpg",
-    "assets/karaisali/dokuzoluk/d5.jpg",
-    "assets/karaisali/dokuzoluk/d6.jpg",
+    "assets/karaisali/varda/v1.jpg",
+    "assets/karaisali/varda/v2.jpg",
+    "assets/karaisali/varda/v3.jpg",
+    "assets/karaisali/varda/v4.jpg",
+    "assets/karaisali/varda/v5.jpg",
+    "assets/karaisali/varda/v6.jpg",
   ];
 
   @override

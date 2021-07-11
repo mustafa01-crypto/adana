@@ -34,6 +34,20 @@ class _YanikKaleState extends State<YanikKale> with SingleTickerProviderStateMix
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: sinir,
+        title: Center(child: Text(title)),
+        actions: [
+          IconButton(
+            onPressed: ()
+            {
+              Get.to(() => Maps(x: x, y: y, title: title));
+            },
+            icon: Icon(Icons.map_sharp,color: Colors.white,),
+
+          )
+        ],
+      ),
       body: SingleChildScrollView(
         child: SafeArea(
           child: Column(
@@ -135,7 +149,7 @@ class _YanikKaleState extends State<YanikKale> with SingleTickerProviderStateMix
               ),
               TextButton(
                 onPressed: () {
-                  Get.to(() => Maps(x: x, y: y, title: title));
+
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width,

@@ -1,9 +1,10 @@
 import 'package:adana/constants/constants.dart';
+import 'package:adana/map/mapUtils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_slider/image_slider.dart';
 
-import '../../map.dart';
+import '../../map/map.dart';
 
 class KeciKalesi extends StatefulWidget {
   const KeciKalesi({Key? key}) : super(key: key);
@@ -42,7 +43,7 @@ class _KeciKalesiState extends State<KeciKalesi> with SingleTickerProviderStateM
           IconButton(
             onPressed: ()
             {
-              Get.to(() => Maps(x: x, y: y, title: title));
+              MapUtils.openMap(x, y);
             },
             icon: Icon(Icons.map_sharp,color: Colors.white,),
 
@@ -101,16 +102,7 @@ class _KeciKalesiState extends State<KeciKalesi> with SingleTickerProviderStateM
                       ));
                 }).toList(),
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 12),
-                child: Text(
-                  "KEÇİ KALESİ",
-                  style: TextStyle(
-                      color: Colors.grey.shade800,
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold),
-                ),
-              ),
+
               SizedBox(
                 height: 10,
               ),

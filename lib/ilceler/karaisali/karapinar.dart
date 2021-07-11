@@ -1,5 +1,6 @@
 import 'package:adana/constants/constants.dart';
-import 'package:adana/map.dart';
+import 'package:adana/map/map.dart';
+import 'package:adana/map/mapUtils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_slider/image_slider.dart';
@@ -44,7 +45,7 @@ class _KaraisaliState extends State<Karapinar>
           IconButton(
             onPressed: ()
             {
-              Get.to(() => Maps(x: x, y: y, title: title));
+              MapUtils.openMap(x, y);
             },
             icon: Icon(Icons.map_sharp,color: Colors.white,),
 
@@ -102,16 +103,6 @@ class _KaraisaliState extends State<Karapinar>
                     fit: BoxFit.fill,
                   ));
                 }).toList(),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 12),
-                child: Text(
-                  "KARAPINAR PARKI",
-                  style: TextStyle(
-                      color: Colors.grey.shade800,
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold),
-                ),
               ),
               SizedBox(
                 height: 10,

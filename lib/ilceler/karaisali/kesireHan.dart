@@ -1,9 +1,10 @@
 import 'package:adana/constants/constants.dart';
+import 'package:adana/map/mapUtils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_slider/image_slider.dart';
 
-import '../../map.dart';
+import '../../map/map.dart';
 
 class KesireHan extends StatefulWidget {
   const KesireHan({Key? key}) : super(key: key);
@@ -45,7 +46,7 @@ class _KesireHanState extends State<KesireHan> with SingleTickerProviderStateMix
           IconButton(
             onPressed: ()
             {
-              Get.to(() => Maps(x: x, y: y, title: title));
+              MapUtils.openMap(x, y);
             },
             icon: Icon(Icons.map_sharp,color: Colors.white,),
 
@@ -104,16 +105,7 @@ class _KesireHanState extends State<KesireHan> with SingleTickerProviderStateMix
                       ));
                 }).toList(),
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 12),
-                child: Text(
-                  "KESİRİ HAN",
-                  style: TextStyle(
-                      color: Colors.grey.shade800,
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold),
-                ),
-              ),
+
               SizedBox(
                 height: 10,
               ),

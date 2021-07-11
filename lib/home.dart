@@ -60,8 +60,8 @@ class _HomeState extends State<Home> {
           ],
         ),
         decoration: BoxDecoration(
-          color: scaffold,
-          border: Border.all(color: sinir, width: 4),
+          color: Colors.white,
+          border: Border.all(color: scaffold, width: 4),
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(15),
               topRight: Radius.circular(15),

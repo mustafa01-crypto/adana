@@ -25,12 +25,12 @@ class _KanyonState extends State<Kanyon> with SingleTickerProviderStateMixin {
   TabController? tabController;
 
   static List<String> links = [
-    "assets/karaisali/park/k.jpg",
-    "assets/karaisali/park/k1.jpg",
-    "assets/karaisali/park/k2.jpg",
-    "assets/karaisali/park/k3.jpg",
-    "assets/karaisali/park/k4.jpg",
-    "assets/karaisali/park/k5.jpg",
+    "assets/karaisali/kanyon/k1.jpg",
+    "assets/karaisali/kanyon/k2.jpg",
+    "assets/karaisali/kanyon/k4.jpg",
+    "assets/karaisali/kanyon/k5.jpg",
+    "assets/karaisali/kanyon/k6.jpg",
+    "assets/karaisali/kanyon/k7.jpg",
   ];
 
 
@@ -159,8 +159,8 @@ class _KanyonState extends State<Kanyon> with SingleTickerProviderStateMixin {
                     ),
                   ),
                   decoration: BoxDecoration(
-                    color: scaffold,
-                    border: Border.all(color: Colors.blueAccent.shade100, width: 4),
+                    color: Colors.white,
+                    border: Border.all(color: scaffold, width: 4),
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(15),
                         topRight: Radius.circular(15),

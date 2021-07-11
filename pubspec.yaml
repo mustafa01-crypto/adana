@@ -63,6 +63,11 @@ flutter:
     - assets/karaisali/yerkopru/
     - assets/karaisali/dokuzoluk/
     - assets/karaisali/varda/
+    - assets/karaisali/kanyon/
+    - assets/karaisali/keci/
+    - assets/karaisali/kesire/
+    - assets/karaisali/kizildag/
+    - assets/karaisali/yanik/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -92,7 +97,7 @@ flutter:
   # see https://flutter.dev/custom-fonts/#from-packages
 flutter_native_splash:
   color: "FF6701"
-  image: assets/sifir.png
+  image: assets/adana.png
   web: false
-  fill: true
+  android_gravity: center
   android12: true

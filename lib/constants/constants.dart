@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 TextStyle cityName = TextStyle(
-  color: Colors.white,fontSize: 22,fontWeight: FontWeight.bold
+  color:sinir,fontSize: 22,fontWeight: FontWeight.bold
 );
 
 TextStyle cityIcerik = TextStyle(

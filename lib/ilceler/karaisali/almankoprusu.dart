@@ -151,8 +151,8 @@ class _AlmanKoprusuState extends State<AlmanKoprusu>
                     ),
                   ),
                   decoration: BoxDecoration(
-                    color: scaffold,
-                    border: Border.all(color: Colors.blueAccent.shade100, width: 4),
+                    color: Colors.white,
+                    border: Border.all(color: scaffold, width: 4),
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(15),
                         topRight: Radius.circular(15),

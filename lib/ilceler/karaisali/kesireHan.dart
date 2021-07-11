@@ -27,12 +27,12 @@ class _KesireHanState extends State<KesireHan> with SingleTickerProviderStateMix
   TabController? tabController;
 
   static List<String> links = [
-    "assets/karaisali/varda/v1.jpg",
-    "assets/karaisali/varda/v2.jpg",
-    "assets/karaisali/varda/v3.jpg",
-    "assets/karaisali/varda/v4.jpg",
-    "assets/karaisali/varda/v5.jpg",
-    "assets/karaisali/varda/v6.jpg",
+    "assets/karaisali/kesire/k1.jpg",
+    "assets/karaisali/kesire/k2.jpg",
+    "assets/karaisali/kesire/k3.jpg",
+    "assets/karaisali/kesire/k4.jpg",
+    "assets/karaisali/kesire/k5.jpg",
+    "assets/karaisali/kesire/k6.jpg",
   ];
 
   @override
@@ -160,8 +160,8 @@ class _KesireHanState extends State<KesireHan> with SingleTickerProviderStateMix
                     ),
                   ),
                   decoration: BoxDecoration(
-                    color: scaffold,
-                    border: Border.all(color: Colors.blueAccent.shade100, width: 4),
+                    color: Colors.white,
+                    border: Border.all(color: scaffold, width: 4),
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(15),
                         topRight: Radius.circular(15),

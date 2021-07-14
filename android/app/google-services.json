@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "338235382483",
+    "project_id": "adana-319111",
+    "storage_bucket": "adana-319111.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:338235382483:android:ed83ba28b3e18e6b829226",
+        "android_client_info": {
+          "package_name": "com.adana.rum.adana"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "338235382483-vo7h0g8j949mgdp1c2uqgnihcu2icghv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOo303fwU1hkhXSBLOiIqTCL8oNPRS3w4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "338235382483-vo7h0g8j949mgdp1c2uqgnihcu2icghv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -124,24 +124,18 @@ class _DokuzolukState extends State<Dokuzoluk>
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      "Huzurumuzdu, huzursuzluğumuz oldu."
-                      "Bizim Köprübaşı'mız vardı... Her mevsim bizim olan, köylülerimizin'"
-                      ' olan, artık yok. Gölgesinde oturduğumuz çınarlarımız, suyunda'
-                      "' serinlediğimiz özümüz vardı. Adil Hocanın hatırası "
-                      "eski değirmenimiz, suyunu içtiğimiz pınarımız vardı, artık yok."
-                      "Köprübaşında insanlar haya ile otururdu; edep vardı, haya vardı, artık yok."
-                      "Yapımı sırasında olmasın dediğimizden dolayı soruşturma geçirdiğim Köprübaşı"
-                      " artık tanımadığımız kişilerin oldu."
-                      "Huzur bulduğumuz yer huzursuzluğumuz oldu. Çünkü içenler, sıç..lar,"
-                      " hırlısı, hırsızı gelmeye başladı. Utanmadan"
-                      " arabanın sesini açıp; atletle, şortla geçen insanlar(!) gelmeye başladı."
-                      "Hangi köylüme sorsam Yıllar oldu gitmeyeli, görmeyeli diyorlar. "
-                      "Sadece yoldan geçiyoruz, bir su içmeye, elimizi yüzümüzü"
-                      " yıkayıp serinlemek için bile durmaya utanıyoruz"
-                      "diyorlar."
-                      "Evimize bir fıçı su doldurduğumuz, pınarından su "
-                      "içtiğimiz, elimizi yüzümüzü yıkadığımız, "
-                      "abdest alıp namaz kıldığımız Köprübaşı'mız yok artık!",
+                      "Dokuzoluk piknik alanı bir kanyonun hemen kenarında çeşitli "
+                          "noktalardan fışkıran pınarlar, yemyeşil bitki örtüsü ve"
+                          " ziyaretçilerin buz gibi suyunda serinledikleri göletlerden"
+                          " oluşmaktadır. Piknik yapmak, yüzmek, balık tutmak,"
+                          " yürüyüş yapmak, fotoğraf çekmek burada gerçekleştirilebilecek"
+                          " aktiviteler arasındadır. Köprünün üzerinden kanyon manzarasının "
+                          "fotoğrafının çekilmesi tavsiye edilir."
+                      "Dokuzoluk’ta ziyaretçilerin piknik için kullanabilecekleri "
+                          "masalar, kamelyalar, mangal alanları, mescit, çeşme ve tuvaletler"
+                          " bulunmaktadır. Giriş ücreti 10 TL’dir. Özellikle Adana’nın "
+                          "sıcağından uzaklaşmak, farklı ve dinlendirici bir doğa harikasında"
+                          " gününü geçirmek isteyenler tarafından tercih edilmektedir.",
                       style: cityIcerik,
                     ),
                   ),

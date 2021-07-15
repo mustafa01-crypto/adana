@@ -324,6 +324,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.7.22"
+  rive_loading:
+    dependency: transitive
+    description:
+      name: rive_loading
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.0"
+  rive_splash_screen:
+    dependency: "direct main"
+    description:
+      name: rive_splash_screen
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.0"
   sky_engine:
     dependency: transitive
     description: flutter

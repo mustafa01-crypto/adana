@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'package:adana/auth/register.dart';
 import 'package:adana/components/riv.dart';
-import 'package:adana/components/textform.dart';
 import 'package:adana/constants/constants.dart';
 import 'package:adana/home.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -92,7 +91,14 @@ class _LoginState extends State<Login> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              SizedBox(height: height*1/10,),
+                              SizedBox(height: height*1/120,),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text("GİRİŞ",style: baslik2,)
+                                ],
+                              ),
+                              SizedBox(height: height*1/60,),
                               Padding(
                                 padding: const EdgeInsets.only(left: 10),
                                 child: Text("Email",style: cityName,),
@@ -140,7 +146,7 @@ class _LoginState extends State<Login> {
                                       child: showPassword == false
                                           ? IconButton(
                                         icon: Icon(Icons.remove_red_eye),
-                                        color: Colors.yellow.shade800,
+                                        color: sinir ,
                                         onPressed: () {
                                           setState(() {
                                             showPassword = true;
@@ -149,7 +155,7 @@ class _LoginState extends State<Login> {
                                       )
                                           : IconButton(
                                         icon: Icon(Icons.remove_red_eye),
-                                        color: sinir,
+                                        color: Colors.grey,
                                         onPressed: () {
                                           setState(() {
                                             showPassword = false;

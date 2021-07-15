@@ -44,6 +44,7 @@ class _HomeState extends State<Home> {
           appBar: AppBar(
             backgroundColor: sinir,
             centerTitle: true,
+
             title: Text(
               "DİYAR DİYAR ADANA",
             ),
@@ -60,39 +61,75 @@ class _HomeState extends State<Home> {
           ),
           drawer: Drawer(
 
-            child: ListView(
-              // Important: Remove any padding from the ListView.
-              padding: EdgeInsets.zero,
-              children: <Widget>[
-                DrawerHeader(
-                  decoration: BoxDecoration(
-                    color: Colors.blue,
+            child: Container(
+
+              decoration: BoxDecoration(
+                gradient: gradient,
+              ),
+              child: ListView(
+                // Important: Remove any padding from the ListView.
+                padding: EdgeInsets.zero,
+                children: <Widget>[
+                  DrawerHeader(
+                    decoration: BoxDecoration(
+                      color: Colors.blue,
+                    ),
+                    child: Center(
+                        child: CircleAvatar(
+                          radius: 100,
+                        )),
                   ),
-                  child: Text('Drawer Header'),
-                ),
-                ListTile(
-                  title: Text('Item 1'),
-                  onTap: () {
-                   Get.to(()=> KaraisaliMesireList());
-                  },
-                ),
-                ListTile(
-                  title: Text('Item 2'),
-                  onTap: () {
-                    // Update the state of the app
-                    // ...
-                    // Then close the drawer
-                    Navigator.pop(context);
-                  },
-                ),
-              ],
+                  ListTile(
+                    title: Text('KARAİSALI',style: baslik2),
+                    onTap: () {
+                     Get.to(()=> KaraisaliMesireList());
+                    },
+                  ),
+                  ListTile(
+                    title: Text('SEYHAN',style: baslik2),
+                    onTap: () {
+
+                    },
+                  ),
+                  ListTile(
+                    title: Text('CEYHAN',style: baslik2),
+                    onTap: () {
+
+                    },
+                  ),
+                  ListTile(
+                    title: Text('KOZAN',style: baslik2,),
+                    onTap: () {
+
+                    },
+                  ),
+                  ListTile(
+                    title: Text('POZANTI',style: baslik2,),
+                    onTap: () {
+
+                    },
+                  ),
+                  ListTile(
+                    title: Text('YUMURTALIK',style: baslik2),
+                    onTap: () {
+
+                    },
+                  ),
+                  ListTile(
+                    title: Text('KARATAŞ',style: baslik2),
+                    onTap: () {
+
+                    },
+                  ),
+                ],
+              ),
             ),
           ),
           body: Stack(
             children: [
               SizedBox.expand(
                 child: FittedBox(
-                  fit: BoxFit.fill,
+                  fit: BoxFit.cover,
                   child: SizedBox(
                     width: _controller!.value.size.width,
                     height: _controller!.value.size.height,

@@ -1,11 +1,11 @@
-import 'package:adana/auth/login.dart';
+import 'package:adana/components/riv.dart';
 import 'package:adana/constants/constants.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../home.dart';
+import 'login.dart';
 
 class Register extends StatefulWidget {
   const Register({Key? key}) : super(key: key);
@@ -23,6 +23,7 @@ class _RegisterState extends State<Register> {
 
   static final _auth = FirebaseAuth.instance;
   static final _firestore = FirebaseFirestore.instance;
+  bool showPassword = false;
 
   TextStyle hint = TextStyle(
     color: Colors.white,
@@ -55,138 +56,208 @@ class _RegisterState extends State<Register> {
     final height = MediaQuery.of(context).size.height;
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.white,
         body: SingleChildScrollView(
-          child: Container(
-            child: Form(
-              key: _formKey,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    margin:
-                        EdgeInsets.only(left: 0, top: 0, right: 0, bottom: 50),
-                    width: width,
-                    decoration: BoxDecoration(
-                      color: Colors.blue,
-                    ),
-                    child: Column(
-                      children: [
-                        SizedBox(
-                          height: 150,
-                        ),
-                        formElement(
-                            textEditingController: t1,
-                            text: "Ad Soyad",
-                            textInputType: TextInputType.text,
-                            icon: Icon(
-                              Icons.ac_unit,
-                              size: 30,
-                              color: sinir,
-                            )),
-                        Padding(
-                          padding: const EdgeInsets.only(
-                              left: 8, top: 5, right: 8, bottom: 5),
-                          child: TextFormField(
-                            validator: (val) {
-                              return RegExp(
-                                          r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-                                      .hasMatch(val!)
-                                  ? null
-                                  : "Lütfen geçerli bir mail adresi giriniz";
-                            },
-                            keyboardType: TextInputType.emailAddress,
-                            style: TextStyle(color: Colors.white),
-                            controller: t2,
-                            decoration: InputDecoration(
-                              hintText: "Email",
-                              hintStyle: hint,
-                              suffixIcon: Icon(
-                                Icons.ac_unit,
-                                size: 30,
-                                color: sinir,
+          child: Form(
+            key: _formKey,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  margin:
+                      EdgeInsets.only(left: 0, top: 0, right: 0, bottom: 50),
+                  width: width,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                  ),
+                  child: Stack(
+                    children: [
+                      Rives(),
+                      Padding(
+                        padding: EdgeInsets.only(top: height * 1 / 3),
+                        child: Container(
+                          width: double.infinity,
+                          height: height * 2 / 3,
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(15),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black.withOpacity(0.3),
+                                  spreadRadius: 5,
+                                  blurRadius: 7,
+                                ),
+                              ]),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              SizedBox(height: height*1/120,),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text("KAYIT",style: baslik2,)
+                                ],
+                              ),
+                              SizedBox(height: height*1/60,),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 10),
+                                child: Text(
+                                  "Ad Soyad",
+                                  style: cityName,
+                                ),
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 15),
+                                child: TextFormField(
+                                  controller: t1,
+                                  keyboardType: TextInputType.name,
+                                  style: citytext,
+                                  decoration: InputDecoration(
+                                      hintText: "Ad Soyad",
+                                      hintStyle: TextStyle(color: sinir)
+                                      // icon is 48px widget.
+                                      ),
+                                ),
+                              ),
+                              SizedBox(
+                                height: height * 1 / 60,
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 10),
+                                child: Text(
+                                  "Email",
+                                  style: cityName,
+                                ),
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 15),
+                                child: TextFormField(
+                                  validator: (val) {
+                                    return RegExp(
+                                                r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                                            .hasMatch(val!)
+                                        ? null
+                                        : "Lütfen geçerli bir mail adresi giriniz";
+                                  },
+                                  controller: t2,
+                                  keyboardType: TextInputType.emailAddress,
+                                  style: citytext,
+                                  decoration: InputDecoration(
+                                      hintText: "E mail",
+                                      hintStyle: TextStyle(color: sinir)
+                                      // icon is 48px widget.
+                                      ),
+                                ),
+                              ),
+                              SizedBox(
+                                height: height * 1 / 60,
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 10),
+                                child: Text(
+                                  "Parola",
+                                  style: cityName,
+                                ),
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 15),
+                                child: TextFormField(
+                                  controller: t3,
+                                  style: TextStyle(color: sinir),
+                                  obscureText: showPassword,
+                                  decoration: InputDecoration(
+                                    hintText: "Şifre",
+                                    hintStyle: TextStyle(color: sinir),
+                                    suffixIcon: Padding(
+                                      padding: EdgeInsets.all(0.0),
+                                      child: showPassword == false
+                                          ? IconButton(
+                                              icon: Icon(Icons.remove_red_eye),
+                                              color: sinir,
+                                              onPressed: () {
+                                                setState(() {
+                                                  showPassword = true;
+                                                });
+                                              },
+                                            )
+                                          : IconButton(
+                                              icon: Icon(Icons.remove_red_eye),
+                                              color: Colors.grey,
+                                              onPressed: () {
+                                                setState(() {
+                                                  showPassword = false;
+                                                });
+                                              },
+                                            ),
+                                    ),
+                                    // icon is 48px widget.
+                                  ),
+                                  validator: (deger) {
+                                    if (deger!.isEmpty || deger.length < 6) {
+                                      return "Lütfen 6 karakterden uzun bir şifre giriniz";
+                                    }
+                                    return null;
+                                  },
+                                ),
+                              ),
+                              SizedBox(
+                                height: height * 1 / 30,
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  TextButton(
+                                    onPressed: () {
+                                      Get.to(() => Login());
+                                    },
+                                    child: Text(
+                                      "Hesabım var(Giriş Yap)",
+                                      style: baslik,
+
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Padding(
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: width * 1 / 20),
+                                child: Container(
+                                  width: width * 9 / 10,
+                                  height: height * 1 / 15,
+                                  child: ElevatedButton(
+                                    onPressed: () {
+                                      if (_formKey.currentState!.validate()) {
+                                        signUp(t1.text, t2.text, t3.text);
+
+                                        Get.to(() => Home());
+                                      }
+                                    },
+                                    child: Text('KAYIT OL'),
+                                    style: ElevatedButton.styleFrom(
+                                      primary: sinir,
+                                      shape: BeveledRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(12)),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                height: height * 1 / 20,
                               ),
 
-                              // icon is 48px widget.
-                            ),
+                            ],
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(
-                              left: 8, top: 5, right: 8, bottom: 5),
-                          child: TextFormField(
-                            validator: (deger) {
-                              if (deger!.isEmpty || deger.length < 6) {
-                                return "Lütfen 6 karakterden uzun bir şifre giriniz";
-                              }
-                              return null;
-                            },
-                            keyboardType: TextInputType.text,
-                            style: TextStyle(color: Colors.white),
-                            controller: t3,
-                            obscureText: true,
-                            decoration: InputDecoration(
-                              hintText: "Parola",
-                              hintStyle: hint,
-                              suffixIcon: Icon(
-                                Icons.ac_unit,
-                                size: 30,
-                                color: sinir,
-                              ),
-
-                              // icon is 48px widget.
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          height: height * 1 / 20,
-                        ),
-                        SizedBox(
-                          height: height * 1 / 30,
-                        ),
-                        TextButton(
-                          onPressed: () {
-                            Get.to(() => Login());
-                          },
-                          child: Text(
-                            "Hesabım var(Giriş Yap)",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 18,
-                                decoration: TextDecoration.underline),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Container(
-                            width: width * 1 / 2,
-                            height: height * 1 / 15,
-                            child: ElevatedButton(
-                              onPressed: () {
-                                if (_formKey.currentState!.validate()) {
-                                  signUp(t1.text, t2.text, t3.text);
-
-                                  Get.to(() => Home());
-                                }
-                              },
-                              child: Text(
-                                'DEVAM ET',
-                                style: TextStyle(fontSize: 22),
-                              ),
-                              style: ElevatedButton.styleFrom(
-                                primary: sinir,
-                                shape: BeveledRectangleBorder(
-                                    borderRadius: BorderRadius.circular(12)),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  )
-                ],
-              ),
+                      ),
+                    ],
+                  ),
+                )
+              ],
             ),
           ),
         ),

@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:adana/auth/login.dart';
 import 'package:adana/constants/constants.dart';
 import 'package:adana/mesire/karaisaliMesire.dart';
@@ -9,8 +8,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
-
 import 'package:video_player/video_player.dart';
+
 
 late User loggedInuser;
 
@@ -43,8 +42,8 @@ class _HomeState extends State<Home> {
     getCurrentUser();
     baglantiAl();
     // Pointing the video controller to our local asset.
-    _controller = VideoPlayerController.network(
-        "https://firebasestorage.googleapis.com/v0/b/adana-319111.appspot.com/o/karaisal%C4%B1%20video%2FAdana%20Tan%C4%B1t%C4%B1m%20Filmi.mp4?alt=media&token=4743104e-7578-4edd-968a-81ad8c773f17")
+    _controller = VideoPlayerController.asset(
+        "assets/video/as.mp4")
       ..initialize().then((_) {
         // Once the video has been loaded we play the video and set looping to true.
         _controller!.play();
@@ -96,10 +95,15 @@ class _HomeState extends State<Home> {
     return SafeArea(
       child: Scaffold(
           appBar: AppBar(
-            backgroundColor: sinir,
+
             centerTitle: true,
             title: Text(
               "DİYAR DİYAR ADANA",
+            ),
+            flexibleSpace: Container(
+              decoration: BoxDecoration(
+                gradient: gradient2,
+              ),
             ),
 
           ),
@@ -157,7 +161,10 @@ class _HomeState extends State<Home> {
                   ),
                   ListTile(
                     title: Text('SEYHAN', style: baslik2),
-                    onTap: () {},
+                    onTap: () {
+
+
+                    },
                   ),
                   ListTile(
                     title: Text('CEYHAN', style: baslik2),

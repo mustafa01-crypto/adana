@@ -22,6 +22,11 @@ TextStyle citytext = TextStyle(
 TextStyle cityIcerik = TextStyle(
     color: Colors.white,fontSize: 20,fontWeight: FontWeight.w300
 );
+
+TextStyle butonBaslik = TextStyle(
+    color: Colors.white,fontSize: 25,fontWeight: FontWeight.w700
+);
+
 Color deniz =Color(0xffB3CDE0);
 
 Color sinir =Color(0xFFFF6701);
@@ -35,6 +40,16 @@ Gradient gradient = LinearGradient(
     scaffold,
     Colors.white,
 
+  ],
+
+);
+
+Gradient gradient2 = LinearGradient(
+  begin: Alignment.topRight,
+  end: Alignment.bottomLeft,
+  colors: [
+    Colors.white,
+    scaffold,
   ],
 
 );

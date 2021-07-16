@@ -242,7 +242,7 @@ class _RegisterState extends State<Register> {
                                         Get.to(() => Home());
                                       }
                                     },
-                                    child: Text('KAYIT OL'),
+                                    child: Text('KAYIT OL',style: butonBaslik,),
                                     style: ElevatedButton.styleFrom(
                                         primary: sinir,
                                         shape: StadiumBorder(

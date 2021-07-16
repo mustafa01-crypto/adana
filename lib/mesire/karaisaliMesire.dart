@@ -26,56 +26,58 @@ class _KaraisaliMesireListState extends State<KaraisaliMesireList> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.grey.shade100,
-        body: Column(
-          children: [
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
 
-            InkWell(
-                onTap: () {
-                  Get.to(() => Karapinar());
-                },
-                child: sehirler("KARAPINAR PARKI")),
-            InkWell(
+              InkWell(
+                  onTap: () {
+                    Get.to(() => Karapinar());
+                  },
+                  child: sehirler("KARAPINAR PARKI")),
+              InkWell(
+                  onTap: ()
+                  {
+                    Get.to(() => Dokuzoluk());
+                  },
+                  child: sehirler("DOKUZOLUK")),
+              InkWell(
+
                 onTap: ()
-                {
-                  Get.to(() => Dokuzoluk());
-                },
-                child: sehirler("DOKUZOLUK")),
-            InkWell(
+                  {
+                    Get.to( () => YerKopru());
+                  },
 
-              onTap: ()
-                {
-                  Get.to( () => YerKopru());
-                },
-
-                child: sehirler("YERKÖPRÜ")),
-            InkWell(
-                onTap: ()
-                {
-                  Get.to( () => AlmanKoprusu());
-                },
-                child: sehirler("ALMAN KÖPRÜSÜ")),
-            InkWell(
-                onTap: ()
-                {
-                  Get.to( () => Kanyon());
-                },
-                child: sehirler("KAPIKAYA KANYONU")),
-            InkWell(
-                onTap: ()
-                {
-                  Get.to( () => Kizildag());
-                },
-                child: sehirler("KIZILDAĞ YAYLASI")),
-            InkWell(
-                onTap: ()
-                {
-                  Get.to( () => KesireHan());
-                },
-                child: sehirler("KESİRİ HAN")),
+                  child: sehirler("YERKÖPRÜ")),
+              InkWell(
+                  onTap: ()
+                  {
+                    Get.to( () => AlmanKoprusu());
+                  },
+                  child: sehirler("ALMAN KÖPRÜSÜ")),
+              InkWell(
+                  onTap: ()
+                  {
+                    Get.to( () => Kanyon());
+                  },
+                  child: sehirler("KAPIKAYA KANYONU")),
+              InkWell(
+                  onTap: ()
+                  {
+                    Get.to( () => Kizildag());
+                  },
+                  child: sehirler("KIZILDAĞ YAYLASI")),
+              InkWell(
+                  onTap: ()
+                  {
+                    Get.to( () => KesireHan());
+                  },
+                  child: sehirler("KESİRİ HAN")),
 
 
 
-          ],
+            ],
+          ),
         ),
       ),
     );

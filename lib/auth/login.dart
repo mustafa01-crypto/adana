@@ -214,7 +214,7 @@ class _LoginState extends State<Login> {
                                         girisYap();
                                       }
                                     },
-                                    child: Text('GİRİŞ YAP'),
+                                    child: Text('GİRİŞ YAP',style: butonBaslik,),
                                     style: ElevatedButton.styleFrom(
                                       primary: sinir,
                                       shape:
@@ -236,7 +236,7 @@ class _LoginState extends State<Login> {
                                     onPressed: () {
                                       Get.to(() => Register());
                                     },
-                                    child: Text('KAYIT OL'),
+                                    child: Text('KAYIT OL',style: butonBaslik,),
                                     style: ElevatedButton.styleFrom(
                                         primary: sinir,
                                         shape: StadiumBorder(

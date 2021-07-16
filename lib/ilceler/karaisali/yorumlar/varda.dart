@@ -4,14 +4,14 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 
-class ParkYorum extends StatefulWidget {
-  const ParkYorum({Key? key}) : super(key: key);
+class VardaYorum extends StatefulWidget {
+  const VardaYorum({Key? key}) : super(key: key);
 
   @override
-  _ParkYorumState createState() => _ParkYorumState();
+  _VardaYorumState createState() => _VardaYorumState();
 }
 
-class _ParkYorumState extends State<ParkYorum> {
+class _VardaYorumState extends State<VardaYorum> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -48,7 +48,7 @@ class Yorumlar extends StatelessWidget {
 
 
     Query karapinarYorumlar = FirebaseFirestore.instance
-        .collection('karaipinarYorum');
+        .collection('vardaYorum');
 
 
     return StreamBuilder<QuerySnapshot>(
@@ -68,7 +68,7 @@ class Yorumlar extends StatelessWidget {
             return Padding(
               padding: const EdgeInsets.symmetric(
                   vertical: 10,
-                horizontal: 20
+                  horizontal: 20
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -85,7 +85,7 @@ class Yorumlar extends StatelessWidget {
                           topRight: Radius.circular(15),
                           bottomLeft: Radius.circular(15),
                           bottomRight: Radius.circular(15)),
-                        color: Colors.white,
+                      color: Colors.white,
 
                     ),
                     child: IntrinsicHeight(
@@ -118,6 +118,6 @@ class Yorumlar extends StatelessWidget {
 
         child: new Text(document.data()[doc],
           style: cityName,
-           ));
+        ));
   }
 }

@@ -23,6 +23,7 @@ environment:
 dependencies:
   image_picker: ^0.8.2
   rive: ^0.7.22
+  rating_dialog: ^2.0.1
   rive_splash_screen: ^0.1.0
   cloud_firestore: ^2.3.0
   firebase_storage: ^9.0.0

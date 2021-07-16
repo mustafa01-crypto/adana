@@ -1,9 +1,15 @@
 import 'package:adana/constants/constants.dart';
+import 'package:adana/ilceler/karaisali/yorumlar/varda.dart';
 import 'package:adana/map/map.dart';
 import 'package:adana/map/mapUtils.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_slider/image_slider.dart';
+import 'package:rating_dialog/rating_dialog.dart';
+
+late User loggedInuser;
 
 class AlmanKoprusu extends StatefulWidget {
   const AlmanKoprusu({Key? key}) : super(key: key);
@@ -17,10 +23,23 @@ class _AlmanKoprusuState extends State<AlmanKoprusu>
   double x = 37.242919;
   double y = 34.976780;
   String title = "Alman (Varda) Köprüsü";
+  FirebaseAuth auth = FirebaseAuth.instance;
 
   void initState() {
     super.initState();
+    getCurrentUser();
     tabController = TabController(length: 6, vsync: this);
+  }
+
+  void getCurrentUser() {
+    try {
+      final user = auth.currentUser;
+      if (user != null) {
+        loggedInuser = user;
+      }
+    } catch (e) {
+      print(e);
+    }
   }
 
   TabController? tabController;
@@ -33,6 +52,36 @@ class _AlmanKoprusuState extends State<AlmanKoprusu>
     "assets/karaisali/varda/v5.jpg",
     "assets/karaisali/varda/v6.jpg",
   ];
+
+  void _showRatingAppDialog() {
+    final _ratingDialog = RatingDialog(
+      ratingColor: Colors.amber,
+      title: title,
+      commentHint: "...",
+      message: 'Varda Köprüsü hakkında ne düşünüyorsunuz',
+      image: Image.asset(
+        "assets/karaisali/varda/v4.jpg",
+        height: 100,
+      ),
+      submitButton: 'Gönder',
+      onCancelled: () {},
+      onSubmitted: (response) {
+        FirebaseFirestore.instance
+            .collection("vardaYorum")
+            .doc(loggedInuser.email)
+            .set({
+          'icerik': response.comment.toString(),
+          'puan': response.rating.toString()
+        });
+      },
+    );
+
+    showDialog(
+      context: context,
+      barrierDismissible: true,
+      builder: (context) => _ratingDialog,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +97,16 @@ class _AlmanKoprusuState extends State<AlmanKoprusu>
             },
             icon: Icon(Icons.map_sharp,color: Colors.white,),
 
-          )
+          ),
+          IconButton(
+            onPressed: () {
+              _showRatingAppDialog();
+            },
+            icon: Icon(
+              Icons.comment_rounded,
+              color: Colors.white,
+            ),
+          ),
         ],
       ),
       body: SingleChildScrollView(
@@ -174,7 +232,42 @@ class _AlmanKoprusuState extends State<AlmanKoprusu>
                     ],
                   ),
                 ),
-              )
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              TextButton(
+                onPressed: () {
+                  Get.to(() => VardaYorum());
+                },
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: 80,
+                  child: Center(
+                    child: Text(
+                      "YORUMLARI GÖSTER",
+                      style: cityName2,
+                    ),
+                  ),
+                  decoration: BoxDecoration(
+                    color: sinir,
+                    border: Border.all(color: scaffold, width: 4),
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(15),
+                        topRight: Radius.circular(15),
+                        bottomLeft: Radius.circular(15),
+                        bottomRight: Radius.circular(15)),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.white,
+                        spreadRadius: 5,
+                        blurRadius: 7,
+                        offset: Offset(0, 3), // changes position of shadow
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             ],
           ),
         ),

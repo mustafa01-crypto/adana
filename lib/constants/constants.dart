@@ -4,6 +4,10 @@ TextStyle cityName = TextStyle(
   color:sinir,fontSize: 18,fontWeight: FontWeight.w500
 );
 
+TextStyle cityName2 = TextStyle(
+    color:Colors.white,fontSize: 18,fontWeight: FontWeight.w500
+);
+
 TextStyle baslik = TextStyle(
 
     color:sinir,fontSize: 24,fontWeight: FontWeight.w600,

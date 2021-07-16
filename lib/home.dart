@@ -1,12 +1,18 @@
+import 'dart:io';
+
 import 'package:adana/auth/login.dart';
 import 'package:adana/constants/constants.dart';
 import 'package:adana/mesire/karaisaliMesire.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 
 import 'package:video_player/video_player.dart';
+
+late User loggedInuser;
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -17,11 +23,28 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   VideoPlayerController? _controller;
+  File? yuklenecekDosya;
+  FirebaseAuth auth = FirebaseAuth.instance;
+  String? indirmeBaglantisi;
+
+  void getCurrentUser() {
+    try {
+      final user = auth.currentUser;
+      if (user != null) {
+        loggedInuser = user;
+      }
+    } catch (e) {
+      print(e);
+    }
+  }
 
   void initState() {
     super.initState();
+    getCurrentUser();
+    baglantiAl();
     // Pointing the video controller to our local asset.
-    _controller = VideoPlayerController.asset("assets/video/dd.mp4")
+    _controller = VideoPlayerController.network(
+        "https://firebasestorage.googleapis.com/v0/b/adana-319111.appspot.com/o/karaisal%C4%B1%20video%2FAdana%20Tan%C4%B1t%C4%B1m%20Filmi.mp4?alt=media&token=4743104e-7578-4edd-968a-81ad8c773f17")
       ..initialize().then((_) {
         // Once the video has been loaded we play the video and set looping to true.
         _controller!.play();
@@ -31,20 +54,50 @@ class _HomeState extends State<Home> {
       });
   }
 
-  @override
-  void dispose() {
-    super.dispose();
-    _controller!.dispose();
+  baglantiAl() async {
+    String baglanti = await FirebaseStorage.instance
+        .ref()
+        .child("profilresimleri")
+        .child(loggedInuser.email!)
+        .child("profilResmi.png")
+        .getDownloadURL();
+
+    setState(() {
+      indirmeBaglantisi = baglanti;
+    });
+  }
+
+  kameradanYukle() async {
+    var alinanDosya = await ImagePicker().pickImage(source: ImageSource.camera);
+    setState(() {
+      yuklenecekDosya = File(alinanDosya!.path);
+    });
+
+    Reference referansYol = FirebaseStorage.instance
+        .ref()
+        .child("profilresimleri")
+        .child(loggedInuser.email!)
+        .child("profilResmi.png");
+
+    UploadTask yuklemeGorevi = referansYol.putFile(yuklenecekDosya!);
+    String url = await (await yuklemeGorevi.whenComplete(() => null))
+        .ref
+        .getDownloadURL();
+    setState(() {
+      indirmeBaglantisi = url;
+    });
   }
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
+
     return SafeArea(
       child: Scaffold(
           appBar: AppBar(
             backgroundColor: sinir,
             centerTitle: true,
-
             title: Text(
               "DİYAR DİYAR ADANA",
             ),
@@ -60,9 +113,7 @@ class _HomeState extends State<Home> {
             ],
           ),
           drawer: Drawer(
-
             child: Container(
-
               decoration: BoxDecoration(
                 gradient: gradient,
               ),
@@ -71,55 +122,72 @@ class _HomeState extends State<Home> {
                 padding: EdgeInsets.zero,
                 children: <Widget>[
                   DrawerHeader(
-                    decoration: BoxDecoration(
-                      color: Colors.blue,
+                    child: Container(
+                      width: width * 3 / 10,
+                      height: width * 2 / 5,
+                      decoration: BoxDecoration(boxShadow: [
+                        BoxShadow(color: Colors.white.withOpacity(0.4))
+                      ], gradient: gradient, shape: BoxShape.circle),
+                      child: InkWell(
+                        onTap: () {
+                          kameradanYukle();
+                        },
+                        child: Center(
+                          child: ClipOval(
+                              child: indirmeBaglantisi == null
+                                  ? Image.asset(
+                                      "assets/profile.png",
+                                      width: width * 3 / 10,
+                                      height: width * 2 / 5,
+                                    )
+                                  : Image.network(
+                                      indirmeBaglantisi!,
+                                      width: width * 3 / 10,
+                                      height: width * 2 / 5,
+                                      fit: BoxFit.fill,
+                                    )),
+                        ),
+                      ),
                     ),
-                    child: Center(
-                        child: CircleAvatar(
-                          radius: 100,
-                        )),
+                  ),
+                  SizedBox(
+                    height: height * 1 / 20,
                   ),
                   ListTile(
-                    title: Text('KARAİSALI',style: baslik2),
+                    title: Text('KARAİSALI', style: baslik2),
                     onTap: () {
-                     Get.to(()=> KaraisaliMesireList());
+                      Get.to(() => KaraisaliMesireList());
                     },
                   ),
                   ListTile(
-                    title: Text('SEYHAN',style: baslik2),
-                    onTap: () {
-
-                    },
+                    title: Text('SEYHAN', style: baslik2),
+                    onTap: () {},
                   ),
                   ListTile(
-                    title: Text('CEYHAN',style: baslik2),
-                    onTap: () {
-
-                    },
+                    title: Text('CEYHAN', style: baslik2),
+                    onTap: () {},
                   ),
                   ListTile(
-                    title: Text('KOZAN',style: baslik2,),
-                    onTap: () {
-
-                    },
+                    title: Text(
+                      'KOZAN',
+                      style: baslik2,
+                    ),
+                    onTap: () {},
                   ),
                   ListTile(
-                    title: Text('POZANTI',style: baslik2,),
-                    onTap: () {
-
-                    },
+                    title: Text(
+                      'POZANTI',
+                      style: baslik2,
+                    ),
+                    onTap: () {},
                   ),
                   ListTile(
-                    title: Text('YUMURTALIK',style: baslik2),
-                    onTap: () {
-
-                    },
+                    title: Text('YUMURTALIK', style: baslik2),
+                    onTap: () {},
                   ),
                   ListTile(
-                    title: Text('KARATAŞ',style: baslik2),
-                    onTap: () {
-
-                    },
+                    title: Text('KARATAŞ', style: baslik2),
+                    onTap: () {},
                   ),
                 ],
               ),

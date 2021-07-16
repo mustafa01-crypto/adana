@@ -81,7 +81,7 @@ class _RegisterState extends State<Register> {
                           height: height * 2 / 3,
                           decoration: BoxDecoration(
                               color: Colors.white,
-                              borderRadius: BorderRadius.circular(15),
+
                               boxShadow: [
                                 BoxShadow(
                                   color: Colors.black.withOpacity(0.3),
@@ -92,14 +92,21 @@ class _RegisterState extends State<Register> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              SizedBox(height: height*1/120,),
+                              SizedBox(
+                                height: height * 1 / 120,
+                              ),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Text("KAYIT",style: baslik2,)
+                                  Text(
+                                    "KAYIT",
+                                    style: baslik2,
+                                  )
                                 ],
                               ),
-                              SizedBox(height: height*1/60,),
+                              SizedBox(
+                                height: height * 1 / 60,
+                              ),
                               Padding(
                                 padding: const EdgeInsets.only(left: 10),
                                 child: Text(
@@ -217,7 +224,6 @@ class _RegisterState extends State<Register> {
                                     child: Text(
                                       "Hesabım var(Giriş Yap)",
                                       style: baslik,
-
                                     ),
                                   ),
                                 ],
@@ -238,18 +244,15 @@ class _RegisterState extends State<Register> {
                                     },
                                     child: Text('KAYIT OL'),
                                     style: ElevatedButton.styleFrom(
-                                      primary: sinir,
-                                      shape: BeveledRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(12)),
-                                    ),
+                                        primary: sinir,
+                                        shape: StadiumBorder(
+                                            side: BorderSide.none)),
                                   ),
                                 ),
                               ),
                               SizedBox(
                                 height: height * 1 / 20,
                               ),
-
                             ],
                           ),
                         ),

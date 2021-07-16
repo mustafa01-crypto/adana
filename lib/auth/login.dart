@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:adana/auth/register.dart';
 import 'package:adana/components/riv.dart';
+import 'package:adana/components/showDialog.dart';
 import 'package:adana/constants/constants.dart';
 import 'package:adana/home.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -39,11 +40,23 @@ class _LoginState extends State<Login> {
   Future<void> girisYap() async {
     try {
       await _auth.signInWithEmailAndPassword(email: t1.text, password: t2.text);
+
+      Get.to(() => Home());
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
         print('No user found for that email.');
+
+        showMaterialDialog(
+            title: "Kullanıcı Bulunamadı",
+            content: "Lütfen bilgilerinizi kontrol ediniz",
+            context: context);
       } else if (e.code == 'wrong-password') {
         print('Wrong password provided for that user.');
+
+        showMaterialDialog(
+            title: "Hatalı kullanıcı adı ya da şifre",
+            content: "Lütfen bilgilerinizi kontrol ediniz",
+            context: context);
       }
     }
   }
@@ -74,13 +87,13 @@ class _LoginState extends State<Login> {
                     children: [
                       Rives(),
                       Padding(
-                        padding: EdgeInsets.only(top: height*1/3),
+                        padding: EdgeInsets.only(top: height * 1 / 3),
                         child: Container(
                           width: double.infinity,
-                          height: height*2/3,
+                          height: height * 2 / 3,
                           decoration: BoxDecoration(
                               color: Colors.white,
-                              borderRadius: BorderRadius.circular(15),
+
                               boxShadow: [
                                 BoxShadow(
                                   color: Colors.black.withOpacity(0.3),
@@ -91,25 +104,36 @@ class _LoginState extends State<Login> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              SizedBox(height: height*1/120,),
+                              SizedBox(
+                                height: height * 1 / 120,
+                              ),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Text("GİRİŞ",style: baslik2,)
+                                  Text(
+                                    "GİRİŞ",
+                                    style: baslik2,
+                                  )
                                 ],
                               ),
-                              SizedBox(height: height*1/60,),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 10),
-                                child: Text("Email",style: cityName,),
+                              SizedBox(
+                                height: height * 1 / 60,
                               ),
                               Padding(
-                                padding: const EdgeInsets.symmetric(horizontal:15),
+                                padding: const EdgeInsets.only(left: 10),
+                                child: Text(
+                                  "Email",
+                                  style: cityName,
+                                ),
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 15),
                                 child: TextFormField(
                                   validator: (val) {
                                     return RegExp(
-                                        r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-                                        .hasMatch(val!)
+                                                r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                                            .hasMatch(val!)
                                         ? null
                                         : "Lütfen geçerli bir mail adresi giriniz";
                                   },
@@ -119,8 +143,8 @@ class _LoginState extends State<Login> {
                                   decoration: InputDecoration(
                                       hintText: "E mail",
                                       hintStyle: TextStyle(color: sinir)
-                                    // icon is 48px widget.
-                                  ),
+                                      // icon is 48px widget.
+                                      ),
                                 ),
                               ),
                               SizedBox(
@@ -128,58 +152,59 @@ class _LoginState extends State<Login> {
                               ),
                               Padding(
                                 padding: const EdgeInsets.only(left: 10),
-                                child: Text("Parola",style: cityName,),
+                                child: Text(
+                                  "Parola",
+                                  style: cityName,
+                                ),
                               ),
                               Padding(
-                                padding: const EdgeInsets.symmetric(horizontal: 15),
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 15),
                                 child: TextFormField(
-
                                   controller: t2,
                                   style: TextStyle(color: sinir),
                                   obscureText: showPassword,
                                   decoration: InputDecoration(
-
                                     hintText: "Şifre",
                                     hintStyle: TextStyle(color: sinir),
                                     suffixIcon: Padding(
                                       padding: EdgeInsets.all(0.0),
                                       child: showPassword == false
                                           ? IconButton(
-                                        icon: Icon(Icons.remove_red_eye),
-                                        color: sinir ,
-                                        onPressed: () {
-                                          setState(() {
-                                            showPassword = true;
-                                          });
-                                        },
-                                      )
+                                              icon: Icon(Icons.remove_red_eye),
+                                              color: sinir,
+                                              onPressed: () {
+                                                setState(() {
+                                                  showPassword = true;
+                                                });
+                                              },
+                                            )
                                           : IconButton(
-                                        icon: Icon(Icons.remove_red_eye),
-                                        color: Colors.grey,
-                                        onPressed: () {
-                                          setState(() {
-                                            showPassword = false;
-                                          });
-                                        },
-                                      ),
-
+                                              icon: Icon(Icons.remove_red_eye),
+                                              color: Colors.grey,
+                                              onPressed: () {
+                                                setState(() {
+                                                  showPassword = false;
+                                                });
+                                              },
+                                            ),
                                     ),
                                     // icon is 48px widget.
-
                                   ),
-                                   validator: (deger) {
-                                    if(deger!.isEmpty || deger.length <6)
-                                      {
-                                        return "Lütfen 6 karakterden uzun bir şifre giriniz";
-                                      }
+                                  validator: (deger) {
+                                    if (deger!.isEmpty || deger.length < 6) {
+                                      return "Lütfen 6 karakterden uzun bir şifre giriniz";
+                                    }
                                     return null;
-                                   },
+                                  },
                                 ),
-
                               ),
-                              SizedBox(height: height*1/30,),
+                              SizedBox(
+                                height: height * 1 / 30,
+                              ),
                               Padding(
-                                padding:  EdgeInsets.symmetric(horizontal: width*1/20),
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: width * 1 / 20),
                                 child: Container(
                                   width: width * 9 / 10,
                                   height: height * 1 / 15,
@@ -187,22 +212,23 @@ class _LoginState extends State<Login> {
                                     onPressed: () {
                                       if (_formKey.currentState!.validate()) {
                                         girisYap();
-
-                                        Get.to(() => Home());
                                       }
                                     },
                                     child: Text('GİRİŞ YAP'),
                                     style: ElevatedButton.styleFrom(
                                       primary: sinir,
-                                      shape: BeveledRectangleBorder(
-                                          borderRadius: BorderRadius.circular(12)),
+                                      shape:
+                                          StadiumBorder(side: BorderSide.none),
                                     ),
                                   ),
                                 ),
                               ),
-                              SizedBox(height: height*1/20,),
+                              SizedBox(
+                                height: height * 1 / 20,
+                              ),
                               Padding(
-                                padding:  EdgeInsets.symmetric(horizontal: width*1/20),
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: width * 1 / 20),
                                 child: Container(
                                   width: width * 9 / 10,
                                   height: height * 1 / 15,
@@ -212,10 +238,9 @@ class _LoginState extends State<Login> {
                                     },
                                     child: Text('KAYIT OL'),
                                     style: ElevatedButton.styleFrom(
-                                      primary: sinir,
-                                      shape: BeveledRectangleBorder(
-                                          borderRadius: BorderRadius.circular(12)),
-                                    ),
+                                        primary: sinir,
+                                        shape: StadiumBorder(
+                                            side: BorderSide.none)),
                                   ),
                                 ),
                               )
@@ -223,8 +248,6 @@ class _LoginState extends State<Login> {
                           ),
                         ),
                       ),
-
-
                     ],
                   ),
                 )

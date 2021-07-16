@@ -91,7 +91,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
-    final height = MediaQuery.of(context).size.height;
+    //final height = MediaQuery.of(context).size.height;
 
     return SafeArea(
       child: Scaffold(
@@ -101,16 +101,7 @@ class _HomeState extends State<Home> {
             title: Text(
               "DİYAR DİYAR ADANA",
             ),
-            actions: [
-              IconButton(
-                onPressed: () {
-                  FirebaseAuth.instance.signOut().then((deger) {
-                    Get.to(() => Login());
-                  });
-                },
-                icon: Icon(Icons.exit_to_app),
-              )
-            ],
+
           ),
           drawer: Drawer(
             child: Container(
@@ -122,37 +113,42 @@ class _HomeState extends State<Home> {
                 padding: EdgeInsets.zero,
                 children: <Widget>[
                   DrawerHeader(
-                    child: Container(
-                      width: width * 3 / 10,
-                      height: width * 2 / 5,
-                      decoration: BoxDecoration(boxShadow: [
-                        BoxShadow(color: Colors.white.withOpacity(0.4))
-                      ], gradient: gradient, shape: BoxShape.circle),
-                      child: InkWell(
-                        onTap: () {
-                          kameradanYukle();
-                        },
-                        child: Center(
-                          child: ClipOval(
-                              child: indirmeBaglantisi == null
-                                  ? Image.asset(
-                                      "assets/profile.png",
-                                      width: width * 3 / 10,
-                                      height: width * 2 / 5,
-                                    )
-                                  : Image.network(
-                                      indirmeBaglantisi!,
-                                      width: width * 3 / 10,
-                                      height: width * 2 / 5,
-                                      fit: BoxFit.fill,
-                                    )),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        InkWell(
+                          onTap: () {
+                            kameradanYukle();
+                          },
+                          child: Center(
+                            child: ClipOval(
+                                child: indirmeBaglantisi == null
+                                    ? Image.asset(
+                                  "assets/profile.png",
+                                  width: width * 3 / 10,
+                                  height: width * 2 / 7,
+                                  fit: BoxFit.cover,
+                                )
+                                    : Image.network(
+                                  indirmeBaglantisi!,
+                                  width: width * 3 / 10,
+                                  height: width * 2 / 7,
+                                  fit: BoxFit.cover,
+                                )),
+                          ),
                         ),
-                      ),
-                    ),
+
+                      ],
+                    )
                   ),
-                  SizedBox(
-                    height: height * 1 / 20,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(loggedInuser.email.toString(),style: cityName,),
+                    ],
                   ),
+                  Divider(color: Colors.white,thickness: 2,),
+
                   ListTile(
                     title: Text('KARAİSALI', style: baslik2),
                     onTap: () {
@@ -188,6 +184,19 @@ class _HomeState extends State<Home> {
                   ListTile(
                     title: Text('KARATAŞ', style: baslik2),
                     onTap: () {},
+                  ),
+
+                  ListTile(
+                    leading: Icon(
+
+                      Icons.exit_to_app,color: sinir,size: 30,
+                    ) ,
+                    title: Text('ÇIKIŞ YAP', style: baslik2),
+                    onTap: () {
+                      FirebaseAuth.instance.signOut().then((deger) {
+                        Get.to(() => Login());
+                      });
+                    },
                   ),
                 ],
               ),

@@ -32,13 +32,10 @@ class _KaraisaliState extends State<Karapinar>
   }
 
   void getCurrentUser() {
-    try {
-      final user = auth.currentUser;
-      if (user != null) {
-        loggedInuser = user;
-      }
-    } catch (e) {
-      print(e);
+
+    final user = auth.currentUser;
+    if (user != null) {
+      loggedInuser = user;
     }
   }
 
@@ -70,6 +67,7 @@ class _KaraisaliState extends State<Karapinar>
             .collection("karaipinarYorum")
             .doc(loggedInuser.email)
             .set({
+          'email': loggedInuser.email.toString(),
           'icerik': response.comment.toString(),
           'puan': response.rating.toString()
         });

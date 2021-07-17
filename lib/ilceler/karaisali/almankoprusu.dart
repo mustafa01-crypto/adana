@@ -32,13 +32,10 @@ class _AlmanKoprusuState extends State<AlmanKoprusu>
   }
 
   void getCurrentUser() {
-    try {
-      final user = auth.currentUser;
-      if (user != null) {
-        loggedInuser = user;
-      }
-    } catch (e) {
-      print(e);
+
+    final user = auth.currentUser;
+    if (user != null) {
+      loggedInuser = user;
     }
   }
 
@@ -70,6 +67,7 @@ class _AlmanKoprusuState extends State<AlmanKoprusu>
             .collection("vardaYorum")
             .doc(loggedInuser.email)
             .set({
+          'email': loggedInuser.email.toString(),
           'icerik': response.comment.toString(),
           'puan': response.rating.toString()
         });

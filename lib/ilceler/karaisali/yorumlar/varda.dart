@@ -89,18 +89,23 @@ class Yorumlar extends StatelessWidget {
 
                     ),
                     child: IntrinsicHeight(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-
+                      child: Column(
                         children: [
-                          kisaExpanded2(document, "icerik"),
-                          VerticalDivider(
-                            thickness: 2,
-                            color: Colors.white,
+                          kisaExpanded2(document, "email"),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+
+                            children: [
+                              kisaExpanded2(document, "icerik"),
+                              VerticalDivider(
+                                thickness: 2,
+                                color: Colors.white,
+                              ),
+                              kisaExpanded2(document, "puan"),
+                            ],
                           ),
-                          kisaExpanded2(document, "puan"),
                         ],
-                      ),
+                      )
                     ),
                   ),
                 ],

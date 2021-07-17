@@ -31,13 +31,10 @@ class _DokuzolukState extends State<Dokuzoluk>
     tabController = TabController(length: 6, vsync: this);
   }
   void getCurrentUser() {
-    try {
-      final user = auth.currentUser;
-      if (user != null) {
-        loggedInuser = user;
-      }
-    } catch (e) {
-      print(e);
+
+    final user = auth.currentUser;
+    if (user != null) {
+      loggedInuser = user;
     }
   }
 
@@ -68,6 +65,7 @@ class _DokuzolukState extends State<Dokuzoluk>
             .collection("dokuzolukYorum")
             .doc(loggedInuser.email)
             .set({
+          'email': loggedInuser.email.toString(),
           'icerik': response.comment.toString(),
           'puan': response.rating.toString()
         });

@@ -27,14 +27,11 @@ class _HomeState extends State<Home> {
   String? indirmeBaglantisi;
 
   void getCurrentUser() {
-    try {
       final user = auth.currentUser;
       if (user != null) {
         loggedInuser = user;
       }
-    } catch (e) {
-      print(e);
-    }
+
   }
 
   void initState() {

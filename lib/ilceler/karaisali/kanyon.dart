@@ -42,13 +42,10 @@ class _KanyonState extends State<Kanyon> with SingleTickerProviderStateMixin {
     "assets/karaisali/kanyon/k7.jpg",
   ];
   void getCurrentUser() {
-    try {
-      final user = auth.currentUser;
-      if (user != null) {
-        loggedInuser = user;
-      }
-    } catch (e) {
-      print(e);
+
+    final user = auth.currentUser;
+    if (user != null) {
+      loggedInuser = user;
     }
   }
   void _showRatingAppDialog() {
@@ -68,6 +65,7 @@ class _KanyonState extends State<Kanyon> with SingleTickerProviderStateMixin {
             .collection("kanyonYorum")
             .doc(loggedInuser.email)
             .set({
+          'email': loggedInuser.email.toString(),
           'icerik': response.comment.toString(),
           'puan': response.rating.toString()
         });

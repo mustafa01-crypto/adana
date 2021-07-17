@@ -43,14 +43,11 @@ class _YerKopruState extends State<YerKopru> with SingleTickerProviderStateMixin
     "assets/karaisali/yerkopru/yer1.jpg",
   ];
   void getCurrentUser() {
-    try {
+
       final user = auth.currentUser;
       if (user != null) {
         loggedInuser = user;
       }
-    } catch (e) {
-      print(e);
-    }
   }
   void _showRatingAppDialog() {
     final _ratingDialog = RatingDialog(
@@ -69,6 +66,7 @@ class _YerKopruState extends State<YerKopru> with SingleTickerProviderStateMixin
             .collection("yerkopruYorum")
             .doc(loggedInuser.email)
             .set({
+          'email': loggedInuser.email.toString(),
           'icerik': response.comment.toString(),
           'puan': response.rating.toString()
         });

@@ -18,9 +18,8 @@ class Kizildag extends StatefulWidget {
   _KizildagState createState() => _KizildagState();
 }
 
-class _KizildagState extends State<Kizildag> with SingleTickerProviderStateMixin {
-
-
+class _KizildagState extends State<Kizildag>
+    with SingleTickerProviderStateMixin {
   double x = 37.412784;
   double y = 35.041947;
   String title = "Kızıldağ Yaylası";
@@ -44,15 +43,12 @@ class _KizildagState extends State<Kizildag> with SingleTickerProviderStateMixin
   ];
 
   void getCurrentUser() {
-    try {
-      final user = auth.currentUser;
-      if (user != null) {
-        loggedInuser = user;
-      }
-    } catch (e) {
-      print(e);
+    final user = auth.currentUser;
+    if (user != null) {
+      loggedInuser = user;
     }
   }
+
   void _showRatingAppDialog() {
     final _ratingDialog = RatingDialog(
       ratingColor: Colors.amber,
@@ -70,6 +66,7 @@ class _KizildagState extends State<Kizildag> with SingleTickerProviderStateMixin
             .collection("kizildagYorum")
             .doc(loggedInuser.email)
             .set({
+          'email': loggedInuser.email.toString(),
           'icerik': response.comment.toString(),
           'puan': response.rating.toString()
         });
@@ -83,7 +80,6 @@ class _KizildagState extends State<Kizildag> with SingleTickerProviderStateMixin
     );
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -92,12 +88,13 @@ class _KizildagState extends State<Kizildag> with SingleTickerProviderStateMixin
         title: Center(child: Text(title)),
         actions: [
           IconButton(
-            onPressed: ()
-            {
+            onPressed: () {
               MapUtils.openMap(x, y);
             },
-            icon: Icon(Icons.map_sharp,color: Colors.white,),
-
+            icon: Icon(
+              Icons.map_sharp,
+              color: Colors.white,
+            ),
           ),
           IconButton(
             onPressed: () {
@@ -155,14 +152,13 @@ class _KizildagState extends State<Kizildag> with SingleTickerProviderStateMixin
                 children: links.map((String link) {
                   return new ClipRRect(
                       child: Image.asset(
-                        link,
-                        width: MediaQuery.of(context).size.width,
-                        height: 220,
-                        fit: BoxFit.fill,
-                      ));
+                    link,
+                    width: MediaQuery.of(context).size.width,
+                    height: 220,
+                    fit: BoxFit.fill,
+                  ));
                 }).toList(),
               ),
-
               SizedBox(
                 height: 10,
               ),
@@ -183,23 +179,24 @@ class _KizildagState extends State<Kizildag> with SingleTickerProviderStateMixin
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                    "Adını Kızıldağ’dan alan yayla Karaisalı İlçesi’ne "
-                        "27 kilometre mesafededir. Karaisalı İlçesi halkının"
-                        " yoğun olarak rağbet ettiği Kızıldağ Yaylası'nda "
-                        "kır kahveleri, kır lokantaları, bakkallar, fırınlar"
-                        " ve kasaplar hizmet vermektedir. Elma, "
-                        "armut, kiraz, vişne ve ceviz ağaçları ile iç içe olan yaylada kamp "
-                        "kurarak Kızıldağ’da yürüyüş yapılabilir, yaban "
-                        "hayatı incelenerek fotoğraf çekilebilir.",
+                      "Adını Kızıldağ’dan alan yayla Karaisalı İlçesi’ne "
+                      "27 kilometre mesafededir. Karaisalı İlçesi halkının"
+                      " yoğun olarak rağbet ettiği Kızıldağ Yaylası'nda "
+                      "kır kahveleri, kır lokantaları, bakkallar, fırınlar"
+                      " ve kasaplar hizmet vermektedir. Elma, "
+                      "armut, kiraz, vişne ve ceviz ağaçları ile iç içe olan yaylada kamp "
+                      "kurarak Kızıldağ’da yürüyüş yapılabilir, yaban "
+                      "hayatı incelenerek fotoğraf çekilebilir.",
                       style: cityIcerik,
                     ),
                   ),
                 ),
               ),
-              SizedBox(height: 15,),
+              SizedBox(
+                height: 15,
+              ),
               TextButton(
-                onPressed: ()
-                {
+                onPressed: () {
                   Get.to(() => Maps(x: x, y: y, title: title));
                 },
                 child: Container(
@@ -209,7 +206,6 @@ class _KizildagState extends State<Kizildag> with SingleTickerProviderStateMixin
                     child: Text(
                       "HARİTADA GÖSTER",
                       style: cityName,
-
                     ),
                   ),
                   decoration: BoxDecoration(

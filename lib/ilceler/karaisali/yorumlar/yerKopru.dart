@@ -90,6 +90,7 @@ class Yorumlar extends StatelessWidget {
                     ),
                     child: IntrinsicHeight(
                       child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           kisaExpanded2(document, "email"),
                           Row(

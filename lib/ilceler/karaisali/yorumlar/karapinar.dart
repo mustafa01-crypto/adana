@@ -159,7 +159,7 @@ class _YorumlarState extends State<Yorumlar> {
     );
   }
 
-  Widget kisaExpanded2(dynamic document, String doc) {
+  Widget kisaExpanded2(dynamic document, var doc) {
     return Expanded(
 
         child: new Text(document.data()[doc],

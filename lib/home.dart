@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:adana/auth/login.dart';
 import 'package:adana/constants/constants.dart';
 import 'package:adana/mesire/karaisaliMesire.dart';
+import 'package:adana/mesire/seyhanList.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/cupertino.dart';
@@ -160,7 +161,7 @@ class _HomeState extends State<Home> {
                     title: Text('SEYHAN', style: baslik2),
                     onTap: () {
 
-
+                      Get.to(() => SeyhanList());
                     },
                   ),
                   ListTile(
@@ -189,6 +190,7 @@ class _HomeState extends State<Home> {
                     title: Text('KARATAŞ', style: baslik2),
                     onTap: () {},
                   ),
+                  Divider(color: Colors.white,thickness: 2,),
 
                   ListTile(
                     leading: Icon(

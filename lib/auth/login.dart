@@ -85,7 +85,7 @@ class _LoginState extends State<Login> {
                   ),
                   child: Stack(
                     children: [
-                      Rives(),
+                      rives(context,"assets/riv/new_file.riv"),
                       Padding(
                         padding: EdgeInsets.only(top: height * 1 / 3),
                         child: Container(

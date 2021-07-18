@@ -73,7 +73,7 @@ class _RegisterState extends State<Register> {
                   ),
                   child: Stack(
                     children: [
-                      Rives(),
+                      rives(context,"assets/riv/hourglass.riv"),
                       Padding(
                         padding: EdgeInsets.only(top: height * 1 / 3),
                         child: Container(
@@ -214,20 +214,7 @@ class _RegisterState extends State<Register> {
                               SizedBox(
                                 height: height * 1 / 30,
                               ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  TextButton(
-                                    onPressed: () {
-                                      Get.to(() => Login());
-                                    },
-                                    child: Text(
-                                      "Hesabım var(Giriş Yap)",
-                                      style: baslik,
-                                    ),
-                                  ),
-                                ],
-                              ),
+
                               Padding(
                                 padding: EdgeInsets.symmetric(
                                     horizontal: width * 1 / 20),
@@ -253,6 +240,28 @@ class _RegisterState extends State<Register> {
                               SizedBox(
                                 height: height * 1 / 20,
                               ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 5),
+                                    child: Text("Hesabım var?",style: baslik3,),
+                                  ),
+                                  TextButton(
+                                    onPressed: () {
+                                      Get.to(() => Login());
+                                    },
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(right: 5),
+                                      child: Text(
+                                        "Giriş Yap",
+                                        style: baslik,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+
                             ],
                           ),
                         ),

@@ -35,12 +35,12 @@ class _YerKopruState extends State<YerKopru> with SingleTickerProviderStateMixin
   TabController? tabController;
 
   static List<String> links = [
-    "assets/karaisali/yerkopru/y1.jpg",
-    "assets/karaisali/yerkopru/y2.jpg",
-    "assets/karaisali/yerkopru/y3.jpg",
-    "assets/karaisali/yerkopru/y4.jpg",
-    "assets/karaisali/yerkopru/y5.jpg",
-    "assets/karaisali/yerkopru/yer1.jpg",
+    "https://media-cdn.tripadvisor.com/media/photo-s/13/eb/64/d4/yerkopru-restaurant.jpg",
+    "https://www.kulturportali.gov.tr/repoKulturPortali/large/SehirRehberi//GezilecekYer/20190529135836737_Yerkopru%20Karaisali%20Ilcesi%20(9).JPG?format=jpg&quality=50",
+    "https://gezily.com/wp-content/uploads/2021/04/Yerkopru-Mesire-Alani.jpg",
+    "https://mapio.net/images-p/122804579.jpg",
+    "https://i.ytimg.com/vi/SxK0nZejjlU/maxresdefault.jpg",
+    "https://mapio.net/images-p/120123662.jpg",
   ];
   void getCurrentUser() {
 
@@ -150,7 +150,7 @@ class _YerKopruState extends State<YerKopru> with SingleTickerProviderStateMixin
                 /// Children in slideView to slide
                 children: links.map((String link) {
                   return new ClipRRect(
-                      child: Image.asset(
+                      child: Image.network(
                         link,
                         width: MediaQuery.of(context).size.width,
                         height: 220,

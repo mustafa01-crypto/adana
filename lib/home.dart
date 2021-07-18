@@ -30,7 +30,10 @@ class _HomeState extends State<Home> {
   void getCurrentUser() {
       final user = auth.currentUser;
       if (user != null) {
-        loggedInuser = user;
+        setState(() {
+          loggedInuser = user;
+        });
+
       }
 
   }

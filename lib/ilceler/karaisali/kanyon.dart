@@ -34,12 +34,12 @@ class _KanyonState extends State<Kanyon> with SingleTickerProviderStateMixin {
   TabController? tabController;
 
   static List<String> links = [
-    "assets/karaisali/kanyon/k1.jpg",
-    "assets/karaisali/kanyon/k2.jpg",
-    "assets/karaisali/kanyon/k4.jpg",
-    "assets/karaisali/kanyon/k5.jpg",
-    "assets/karaisali/kanyon/k6.jpg",
-    "assets/karaisali/kanyon/k7.jpg",
+    "https://i2.milimaj.com/i/milliyet/75/0x410/5f6e6d1dadcdeb162c8cca69.jpg",
+    "https://media.istockphoto.com/photos/suspension-bridge-in-turkey-with-wood-walkwayadanakaraisali-picture-id978360234?k=6&m=978360234&s=170667a&w=0&h=WsdbgTOCxi8dsEQsVCkv8oSCakP5t4EX5EmcKMvDjvo=",
+    "https://i.pinimg.com/originals/a3/c4/6e/a3c46ebdebc51da8f00ba39d54560808.jpg",
+    "https://www.gezivetatilrehberi.com/resimler/sehir/adana/gezi/adana-kapikaya-kanyonu-16121163801.jpg",
+    "https://www.gezenbilir.com/attachments/dsc_4832-jpg.307310/",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlO-5wY9xI7DOSIXjmArxTj0zYB8o1kOuYAw&usqp=CAU",
   ];
   void getCurrentUser() {
 
@@ -150,7 +150,7 @@ class _KanyonState extends State<Kanyon> with SingleTickerProviderStateMixin {
                 /// Children in slideView to slide
                 children: links.map((String link) {
                   return new ClipRRect(
-                      child: Image.asset(
+                      child: Image.network(
                         link,
                         width: MediaQuery.of(context).size.width,
                         height: 220,

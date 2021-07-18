@@ -42,12 +42,12 @@ class _KaraisaliState extends State<Karapinar>
   TabController? tabController;
 
   static List<String> links = [
-    "assets/karaisali/park/k.jpg",
-    "assets/karaisali/park/k1.jpg",
-    "assets/karaisali/park/k2.jpg",
-    "assets/karaisali/park/k3.jpg",
-    "assets/karaisali/park/k4.jpg",
-    "assets/karaisali/park/k5.jpg",
+    "https://media-cdn.tripadvisor.com/media/photo-s/17/df/78/b8/photo8jpg.jpg",
+    "https://www.sehirlersavasi.com/ilce-resimleri/resimler/10425316KARAPINAR_PARKI.jpg",
+    "https://lh3.googleusercontent.com/p/AF1QipN_rs1erCu3hHuXD_N0oxhuRKb41OiM0Npoyr1u=s1600-w400",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2lLwqNyty_GdqPiuko5kZBcMynG-7eB8KzA&usqp=CAU",
+    "https://www.karaisalim.com/wp-content/uploads/2014/02/karaisali-karapinar-resimleri-48.jpg",
+    "https://www.karaisalim.com/wp-content/uploads/2014/02/karaisali-karapinar-resimleri-9.jpg",
   ];
 
   void _showRatingAppDialog() {
@@ -57,7 +57,7 @@ class _KaraisaliState extends State<Karapinar>
       commentHint: "...",
       message: 'Karapınar Parkı hakkında ne düşünüyorsunuz',
       image: Image.asset(
-        "assets/karaisali/park/k1.jpg",
+        "assets/karaisali/park/k.jpg",
         height: 100,
       ),
       submitButton: 'Gönder',
@@ -152,7 +152,7 @@ class _KaraisaliState extends State<Karapinar>
                 /// Children in slideView to slide
                 children: links.map((String link) {
                   return new ClipRRect(
-                      child: Image.asset(
+                      child: Image.network(
                     link,
                     width: MediaQuery.of(context).size.width,
                     height: 220,

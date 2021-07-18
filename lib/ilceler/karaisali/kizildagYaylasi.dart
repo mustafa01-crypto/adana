@@ -34,12 +34,12 @@ class _KizildagState extends State<Kizildag>
   TabController? tabController;
 
   static List<String> links = [
-    "assets/karaisali/kizildag/k6.jpg",
-    "assets/karaisali/kizildag/k1.jpg",
-    "assets/karaisali/kizildag/k2.jpg",
-    "assets/karaisali/kizildag/k3.jpg",
-    "assets/karaisali/kizildag/k4.jpg",
-    "assets/karaisali/kizildag/k5.jpg",
+    "https://im.haberturk.com/yerel_haber/2019/02/20/ver1550650922/66985381_620x410.jpg",
+    "https://mapio.net/images-p/20739718.jpg",
+    "http://2.bp.blogspot.com/-wc7x9hcUpl0/VGPwBcZxYZI/AAAAAAAAKG8/Nu8sZIL4ufI/s1600/kizildag-yaylasinin-karli-gorunumu.jpg",
+    "https://www.tatilcity.net/wp-content/uploads/2019/10/kizildag-yaylasi.jpg",
+    "https://www.kulturportali.gov.tr/repoKulturPortali/large/04042013/22b98a39-0b76-46c7-b117-46b7c1ba186b.jpg?format=jpg&quality=50",
+    "https://i.pinimg.com/originals/b1/06/07/b10607e7da144d1f0fd8e86aef4c44c9.jpg",
   ];
 
   void getCurrentUser() {
@@ -151,7 +151,7 @@ class _KizildagState extends State<Kizildag>
                 /// Children in slideView to slide
                 children: links.map((String link) {
                   return new ClipRRect(
-                      child: Image.asset(
+                      child: Image.network(
                     link,
                     width: MediaQuery.of(context).size.width,
                     height: 220,

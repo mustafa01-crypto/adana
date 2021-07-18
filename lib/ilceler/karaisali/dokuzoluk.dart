@@ -41,12 +41,12 @@ class _DokuzolukState extends State<Dokuzoluk>
   TabController? tabController;
 
   static List<String> links = [
-    "assets/karaisali/dokuzoluk/d1.jpg",
-    "assets/karaisali/dokuzoluk/d2.jpg",
-    "assets/karaisali/dokuzoluk/d3.jpg",
-    "assets/karaisali/dokuzoluk/d4.jpg",
-    "assets/karaisali/dokuzoluk/d5.jpg",
-    "assets/karaisali/dokuzoluk/d6.jpg",
+    "https://media-cdn.tripadvisor.com/media/photo-s/0c/f9/48/fc/muhtesem-manzara.jpg",
+    "https://seyyahdefteri.com/wp-content/uploads/2019/05/dokuzoluk-piknik-alani-4.jpg",
+    "https://seyyahdefteri.com/wp-content/uploads/2019/05/Dokuzoluk-Piknik-Alani.png",
+    "https://www.serpmekahvalti.com/wp-content/uploads/2020/10/143024851_zrISGdG19Jvo7DCZjabGE1XEC3JfkyPmRrJTVCGGi64.jpg",
+    "https://www.kampusulasi.com/wp-content/uploads/2021/03/Dokuzoluk-1-1080x738.jpg",
+    "https://foto.haberler.com/haber/2013/08/01/doga-harikasi-dokuzoluk-2-4895535_o.jpg",
   ];
   void _showRatingAppDialog() {
     final _ratingDialog = RatingDialog(
@@ -149,7 +149,7 @@ class _DokuzolukState extends State<Dokuzoluk>
                 /// Children in slideView to slide
                 children: links.map((String link) {
                   return new ClipRRect(
-                      child: Image.asset(
+                      child: Image.network(
                     link,
                     width: MediaQuery.of(context).size.width,
                     height: 220,

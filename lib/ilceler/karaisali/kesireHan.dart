@@ -29,18 +29,16 @@ class _KesireHanState extends State<KesireHan> with SingleTickerProviderStateMix
   void initState() {
     super.initState();
     getCurrentUser();
-    tabController = TabController(length: 6, vsync: this);
+    tabController = TabController(length: 4, vsync: this);
   }
 
   TabController? tabController;
 
   static List<String> links = [
-    "assets/karaisali/kesire/k1.jpg",
-    "assets/karaisali/kesire/k2.jpg",
-    "assets/karaisali/kesire/k3.jpg",
-    "assets/karaisali/kesire/k4.jpg",
-    "assets/karaisali/kesire/k5.jpg",
-    "assets/karaisali/kesire/k6.jpg",
+    "https://lh3.googleusercontent.com/proxy/mL_EYbsSqSWz9h74826__0YeUAkhoS0YsA2ugqafo0bzJ6lpLyzjUk7pr_rFcBNmWm8HqAmEldt4STt7wzV7bhq01ToZvB4K_jncpBxL4ar-JhYw-vQh1gEBja25GwkK",
+    "http://3.bp.blogspot.com/-RWc2RD1Ny08/VD-KEPdXEFI/AAAAAAAABmc/XI8Ut0-i9CQ/s1600/musttafa_yerkopru_21032010_481_2.jpg",
+    "https://www.gidilmeli.com/sayfa/resim/6141fe25aa5dae5df8061e9dc237aa5c.jpg",
+    "http://1.bp.blogspot.com/-TjTp_WvTbN4/VGhmMsq6xlI/AAAAAAAABvM/tB6joSbnOj0/s1600/Kesrikhan%2Byak%C4%B1ndan%2Bg%C3%B6r%C3%BCn%C3%BC%C5%9F.jpg",
   ];
 
   void getCurrentUser() {
@@ -151,7 +149,7 @@ class _KesireHanState extends State<KesireHan> with SingleTickerProviderStateMix
                 /// Children in slideView to slide
                 children: links.map((String link) {
                   return new ClipRRect(
-                      child: Image.asset(
+                      child: Image.network(
                         link,
                         width: MediaQuery.of(context).size.width,
                         height: 220,

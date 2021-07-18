@@ -42,12 +42,12 @@ class _AlmanKoprusuState extends State<AlmanKoprusu>
   TabController? tabController;
 
   static List<String> links = [
-    "assets/karaisali/varda/v1.jpg",
-    "assets/karaisali/varda/v2.jpg",
-    "assets/karaisali/varda/v3.jpg",
-    "assets/karaisali/varda/v4.jpg",
-    "assets/karaisali/varda/v5.jpg",
-    "assets/karaisali/varda/v6.jpg",
+    "https://www.kulturportali.gov.tr/repoKulturPortali/large/SehirRehberi//GezilecekYer/20190711105722848_Varda%20Koprusu%201.jpg?format=jpg&quality=50",
+    "https://seyyahdefteri.com/wp-content/uploads/2018/12/Varda-K%C3%B6pr%C3%BCs%C3%BC-Nerede-Nas%C4%B1l-Gidilir-Neler-Yap%C4%B1l%C4%B1r-3.jpg",
+    "https://www.karaisali.bel.tr/wp-content/uploads/2020/03/Varda-Koprusu%E2%80%99nde-Isiklandirma-Calismalari-Tamamlandi.jpg",
+    "https://i.sozcu.com.tr/wp-content/uploads/2021/02/14/iecrop/varda-koprusu-iha.jpg1__16_9_1613290099.jpg",
+    "https://gezilmesigerekenyerler.com/wp-content/uploads/2017/05/Varda-Koprusu.jpg",
+    "https://pbs.twimg.com/media/EfKi-EdWAAIxPpI.jpg",
   ];
 
   void _showRatingAppDialog() {
@@ -151,7 +151,7 @@ class _AlmanKoprusuState extends State<AlmanKoprusu>
                 /// Children in slideView to slide
                 children: links.map((String link) {
                   return new ClipRRect(
-                      child: Image.asset(
+                      child: Image.network(
                     link,
                     width: MediaQuery.of(context).size.width,
                     height: 220,

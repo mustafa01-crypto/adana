@@ -67,7 +67,7 @@ class _KesireHanState extends State<KesireHan> with SingleTickerProviderStateMix
             .set({
           'email': loggedInuser.email.toString(),
           'icerik': response.comment.toString(),
-          'puan': response.rating.toString()
+          'puan': response.rating.toDouble()
         });
       },
     );

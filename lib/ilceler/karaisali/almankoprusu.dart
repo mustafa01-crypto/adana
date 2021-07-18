@@ -69,7 +69,7 @@ class _AlmanKoprusuState extends State<AlmanKoprusu>
             .set({
           'email': loggedInuser.email.toString(),
           'icerik': response.comment.toString(),
-          'puan': response.rating.toString()
+          'puan': response.rating.toDouble()
         });
       },
     );

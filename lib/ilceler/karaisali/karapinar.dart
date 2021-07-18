@@ -69,7 +69,7 @@ class _KaraisaliState extends State<Karapinar>
             .set({
           'email': loggedInuser.email.toString(),
           'icerik': response.comment.toString(),
-          'puan': response.rating.toString()
+          'puan': response.rating.toDouble()
         });
       },
     );

@@ -167,7 +167,7 @@ class _HomeState extends State<Home> {
                       Get.to(() => SeyhanList());
                     },
                   ),
-                  ListTile(
+               /*   ListTile(
                     title: Text('CEYHAN', style: baslik2),
                     onTap: () {},
                   ),
@@ -192,7 +192,7 @@ class _HomeState extends State<Home> {
                   ListTile(
                     title: Text('KARATAŞ', style: baslik2),
                     onTap: () {},
-                  ),
+                  ), */
                   Divider(color: Colors.white,thickness: 2,),
 
                   ListTile(

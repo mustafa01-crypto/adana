@@ -1,4 +1,5 @@
 import 'package:adana/constants/constants.dart';
+import 'package:adana/ilceler/seyhan/seyhanYorumlar/taskopruYorum.dart';
 import 'package:adana/map/map.dart';
 import 'package:adana/map/mapUtils.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -226,7 +227,7 @@ class _TasKopruState extends State<TasKopru> with SingleTickerProviderStateMixin
               ),
               TextButton(
                 onPressed: () {
-                  //  Get.to(() => TasKopruYorum());
+                    Get.to(() => TasKopruYorum());
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width,

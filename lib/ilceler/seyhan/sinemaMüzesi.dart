@@ -1,4 +1,5 @@
 import 'package:adana/constants/constants.dart';
+import 'package:adana/ilceler/seyhan/seyhanYorumlar/sinemaMuzesiYorum.dart';
 import 'package:adana/map/map.dart';
 import 'package:adana/map/mapUtils.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -233,7 +234,7 @@ class _SinemaMuzesiState extends State<SinemaMuzesi> with SingleTickerProviderSt
               ),
               TextButton(
                 onPressed: () {
-                //  Get.to(() => SinemaMuzesiYorum());
+                  Get.to(() => SinemaMuzesiYorum());
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width,

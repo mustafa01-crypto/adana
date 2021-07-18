@@ -1,4 +1,5 @@
 import 'package:adana/constants/constants.dart';
+import 'package:adana/ilceler/seyhan/seyhanYorumlar/cobanDedeYorum.dart';
 import 'package:adana/map/map.dart';
 import 'package:adana/map/mapUtils.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -231,7 +232,7 @@ class _CobanDedeState extends State<CobanDede> with SingleTickerProviderStateMix
               ),
               TextButton(
                 onPressed: () {
-                //  Get.to(() => CobanDedeYorum());
+                  Get.to(() => CobanDedeYorum());
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width,

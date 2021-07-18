@@ -1,4 +1,5 @@
 import 'package:adana/constants/constants.dart';
+import 'package:adana/ilceler/seyhan/seyhanYorumlar/merkezCamiYorum.dart';
 import 'package:adana/map/map.dart';
 import 'package:adana/map/mapUtils.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -62,7 +63,7 @@ class _SabanciMerkezCamiiState extends State<SabanciMerkezCamii> with SingleTick
       onCancelled: () {},
       onSubmitted: (response) {
         FirebaseFirestore.instance
-            .collection("SabanciMerkezCamiiYorum")
+            .collection("MerkezCamiYorum")
             .doc(loggedInuser.email)
             .set({
           'email': loggedInuser.email.toString(),
@@ -226,7 +227,7 @@ class _SabanciMerkezCamiiState extends State<SabanciMerkezCamii> with SingleTick
               ),
               TextButton(
                 onPressed: () {
-                  //  Get.to(() => SabanciMerkezCamiiYorum());
+                   Get.to(() => MerkezCamiYorum());
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width,

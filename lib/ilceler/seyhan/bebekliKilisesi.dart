@@ -1,4 +1,5 @@
 import 'package:adana/constants/constants.dart';
+import 'package:adana/ilceler/seyhan/seyhanYorumlar/bebekliKiliseYorum.dart';
 import 'package:adana/map/map.dart';
 import 'package:adana/map/mapUtils.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -62,7 +63,7 @@ class _BebekliKilisesiState extends State<BebekliKilisesi> with SingleTickerProv
       onCancelled: () {},
       onSubmitted: (response) {
         FirebaseFirestore.instance
-            .collection("BebekliKilisesiYorum")
+            .collection("bebekliKiliseYorum")
             .doc(loggedInuser.email)
             .set({
           'email': loggedInuser.email.toString(),
@@ -233,7 +234,7 @@ class _BebekliKilisesiState extends State<BebekliKilisesi> with SingleTickerProv
               ),
               TextButton(
                 onPressed: () {
-               //   Get.to(() => BebekliKilisesiYorum());
+                  Get.to(() => BebekliKiliseYorum());
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width,

@@ -1,4 +1,5 @@
 import 'package:adana/constants/constants.dart';
+import 'package:adana/ilceler/seyhan/seyhanYorumlar/UluCamiYorum.dart';
 import 'package:adana/map/map.dart';
 import 'package:adana/map/mapUtils.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -62,7 +63,7 @@ class _UluCamiiState extends State<UluCamii> with SingleTickerProviderStateMixin
       onCancelled: () {},
       onSubmitted: (response) {
         FirebaseFirestore.instance
-            .collection("UluCamiiYorum")
+            .collection("UluCamiYorum")
             .doc(loggedInuser.email)
             .set({
           'email': loggedInuser.email.toString(),
@@ -224,7 +225,7 @@ class _UluCamiiState extends State<UluCamii> with SingleTickerProviderStateMixin
               ),
               TextButton(
                 onPressed: () {
-               //   Get.to(() => UluCamiiYorum());
+                  Get.to(() => UluCamiYorum());
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width,

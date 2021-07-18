@@ -178,13 +178,18 @@ class _SinemaMuzesiState extends State<SinemaMuzesi> with SingleTickerProviderSt
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      "Yerköprü Mesire Alanı Adana şehir merkezine 53 km "
-                          "Karaisalı ilçemize 13 km mesafede yer almaktadır. "
-                          "Yerköprü mesire alanı, bahar aylarında yeşilin her"
-                          " tonunun görülebileceği insanları şehrin gürültüsünden"
-                          " ve stresinden uzaklaştıracak günübirlik piknik ve dinlenme alanıdır.",
+                      "Adana Sinema Müzesi, Türkiye'nin Adana kentinde bulunan "
+                          "bir sinema müzesidir. Müze, 23 Eylül 2011 tarihinde eski "
+                          "bir Adana evinde kurulmuş olup Seyhan ilçesine bağlı Kayalıbağ Mahallesi'nde Seyhan Nehri'nin batısında yer almaktadır. Özellikle şehre özgü yönetmenler, oyuncular ve yapımcılar ile ilgili eserler tanıtılmaktadır."
+
+                       " Müzenin zemin katı film afişleri için ayrılmıştır. Posterdeki "
+                          "en az bir isim (yönetmen, oyuncu, senarist vb.) "
+                          "Adana sakinine aittir. Birinci katta, Yılmaz Güney'in "
+                          "fotoğraflarını, film afişlerini ve eşyalarını gösteren "
+                          "bir oda bulunmaktadır. Ayrıca Yılmaz Güney, ressam Abidin "
+                          "Dino ve yazar Orhan Kemal'in heykelleri vardır. Adana'dan sinema ile ilgili diğer tanınmış kişilerin sergilendiği fotoğraflar ve eserler ise yazar Yaşar Kemal, oyuncu Şener Şen ve babası oyuncu Ali Şen, Muzaffer İzgü, Ali Özgentürk, Orhan Duru, Aytaç Arman, Bilal İnci, Merve Mahmut Hekimoğludur. Müzede bir de kütüphane bulunmaktadır.",
                       style: cityIcerik,
-                    ),
+                  ),
                   ),
                 ),
               ),

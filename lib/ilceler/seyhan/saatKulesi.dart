@@ -178,11 +178,17 @@ class _SaatKulesiState extends State<SaatKulesi> with SingleTickerProviderStateM
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      "Yerköprü Mesire Alanı Adana şehir merkezine 53 km "
-                          "Karaisalı ilçemize 13 km mesafede yer almaktadır. "
-                          "Yerköprü mesire alanı, bahar aylarında yeşilin her"
-                          " tonunun görülebileceği insanları şehrin gürültüsünden"
-                          " ve stresinden uzaklaştıracak günübirlik piknik ve dinlenme alanıdır.",
+                      "Kule kesme taştan yapılmıştır. Uzunluğu 32 metre olan kule "
+                          "kare prizma şeklindedir ve kulenin duvarları tuğla ile"
+                          " inşa edilmiştir. Temel derinliğinin 35 metre olduğu "
+                          "söylenir. Saat kulesi dikdörtgen şeklinde taş tuğlalardan "
+                          "yapılmıştır. Kulenin inşası sırasında Osmanlı'da değişik "
+                          "illerde saat kuleleri vardı. Bu saat kuleleri arasında en "
+                          "uzunu Büyük Saat'tir. İkincisi ise Dolmabahçe Saat Kulesi’dir."
+                          " Örme işlemi oldukça zor olan küçük taş tuğlalardan imal edilmiş "
+                          "ve yapımından uzun bir süre sonra Almanya’dan özel olarak saat "
+                          "makinesi getirilmiştir. O kadar sağlam yapılmıştır ki 1998’deki "
+                          "Adana depreminden sonra bile ayakta kalmayı başarabilmiştir.",
                       style: cityIcerik,
                     ),
                   ),

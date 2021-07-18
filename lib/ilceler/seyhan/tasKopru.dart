@@ -178,11 +178,9 @@ class _TasKopruState extends State<TasKopru> with SingleTickerProviderStateMixin
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      "Yerköprü Mesire Alanı Adana şehir merkezine 53 km "
-                          "Karaisalı ilçemize 13 km mesafede yer almaktadır. "
-                          "Yerköprü mesire alanı, bahar aylarında yeşilin her"
-                          " tonunun görülebileceği insanları şehrin gürültüsünden"
-                          " ve stresinden uzaklaştıracak günübirlik piknik ve dinlenme alanıdır.",
+                      "Adana Taş Köprü Seyhan Nehri üzerindedir. IV. (385) yüzyılda Roma İmparatoru Hadrianus tarafından yaptırılmıştır. Yüzyıllarca Avrupa ile Asya arasında önemli bir köprü olmuştur. Harun Reşit (766-809) köprüyü bazı eklerle Adana Kalesi'ne birleştirmiştir. IX. yüzyıl başında Harun Reşit’in oğlu olan 7'inci Abbasi Halifesi Memun (786-833) tarafından onartılmıştır. III. Ahmet (1713), Kel Hasan Paşa (1847) ve Adana Valisi Ziya Paşa (1789) tarafından da değişik zamanlarda tamirat görmüştür. Bu üç onarımının yazıtları mevcuttur. Son onarım 1949 yılında yapılmıştır."
+
+                      "Taş Köprü 319 metre uzunluğunda ve 13 metre yüksekliğindedir. 21 kemerinden 14’ü ayaktadır. Ortadaki büyük kemerde iki aslan kabartması görülmektedir. Dünyanın halen kullanılan en eski köprülerden biri olarak bilinmektedir.",
                       style: cityIcerik,
                     ),
                   ),

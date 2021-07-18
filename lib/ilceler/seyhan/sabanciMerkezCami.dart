@@ -178,11 +178,9 @@ class _SabanciMerkezCamiiState extends State<SabanciMerkezCamii> with SingleTick
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      "Yerköprü Mesire Alanı Adana şehir merkezine 53 km "
-                          "Karaisalı ilçemize 13 km mesafede yer almaktadır. "
-                          "Yerköprü mesire alanı, bahar aylarında yeşilin her"
-                          " tonunun görülebileceği insanları şehrin gürültüsünden"
-                          " ve stresinden uzaklaştıracak günübirlik piknik ve dinlenme alanıdır.",
+                      "Adana'nın Reşatbey Semti'nde, Merkez Park'ın güneyinde ve Seyhan Nehri'nin batı kıyısında yer alan cami, 1998 yılında hizmete açılmıştır. 32 metre çaplı ana kubbesi vardır. Caminin proje mimarı Necip Dinç’tir. 20 bin kişilik cami (açık alanın düzenlenmesiyle 28 bin kişi) son cemaat mahaliyle birlikte 6 bin 600 metrekareye yayılmıştır."
+
+                     " Klasik Osmanlı mimarisi tarzında yapılmıştır ve dokuz fil ayağı üzerine oturur. Genel görünüm olarak Sultan Ahmet Camii’ne, plan ve iç mekân olarak Selimiye Camii’ne benzer. Dört yarım-kubbe, beş kubbe, altı minaresi vardır; bunlar dört halife ve dört mezhebe, İslam’ın beş şartına, imanın altı şartına karşılık gelmektedir. 32 metre çaplı ana kubbe 32 farza, avludaki 28 kubbe Kuran-ı Kerim'de adı geçen 28 peygambere, ana kubbedeki 40 pencere Hz.Muhammed (s.a.v.)’in peygamber olduğu yaşa ve 40 rekat namaza, 99 metrelik 6 minare Allah’ın 99 güzel ismine karşılık gelir.",
                       style: cityIcerik,
                     ),
                   ),

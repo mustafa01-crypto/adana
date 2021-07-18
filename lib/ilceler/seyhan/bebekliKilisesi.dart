@@ -178,11 +178,16 @@ class _BebekliKilisesiState extends State<BebekliKilisesi> with SingleTickerProv
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      "Yerköprü Mesire Alanı Adana şehir merkezine 53 km "
-                          "Karaisalı ilçemize 13 km mesafede yer almaktadır. "
-                          "Yerköprü mesire alanı, bahar aylarında yeşilin her"
-                          " tonunun görülebileceği insanları şehrin gürültüsünden"
-                          " ve stresinden uzaklaştıracak günübirlik piknik ve dinlenme alanıdır.",
+                      "Adana Bebekli Kilise veya Aziz Pavlus Kilisesi, "
+                          "üzerinde Meryem'in tunçtan heykelinin bulunduğu, tahminen 1880-90"
+                          " yılları arasında yapılan Adana'nın merkezindeki İtalyan katolik"
+                          " kilisesidir. Ermeni Apostolik Kilisesi olarak inşa edilmiştir."
+                          " 1915 Ermeni Kırımı'ndan sonra Adana'da Ermeni cemaat kalmamıştır "
+                          "ve Bebekli kilise Katolik Cemaate verilmiştir. Kilisenin tepesindeki "
+                          "Meryem Ana’nın 2.5 metrelik tunç heykeli bebeğe benzetildiği için "
+                          "halk arasında Kilisenin ismi Bebekli Kiliseolarak geçer. Kilise Pavlus"
+                          " adına yaptırılmıştır."
+                      " Kilise hem katolik cemaati, hem de Protestan Cemaati tarafından kullanılmaktadır.",
                       style: cityIcerik,
                     ),
                   ),

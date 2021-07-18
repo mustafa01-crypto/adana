@@ -178,11 +178,16 @@ class _AtaturkEviState extends State<AtaturkEvi> with SingleTickerProviderStateM
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      "Yerköprü Mesire Alanı Adana şehir merkezine 53 km "
-                          "Karaisalı ilçemize 13 km mesafede yer almaktadır. "
-                          "Yerköprü mesire alanı, bahar aylarında yeşilin her"
-                          " tonunun görülebileceği insanları şehrin gürültüsünden"
-                          " ve stresinden uzaklaştıracak günübirlik piknik ve dinlenme alanıdır.",
+                      "Adana Atatürk Evi Müzesi, Adana Seyhan Caddesi üzerinde bulunan müze."
+                          " 15 Mart 1923 tarihinde Mustafa Kemal Atatürk ve eşi Adana'yı ziyaret "
+                          "ettiğinde bu binada konaklamıştır. Bina daha önceleri Ramazanoğulları"
+                          " ailesine mensup Suphi Paşa'ya aitti. Bina sonraları Atatürk Bilim "
+                          "ve Kültür Müzesi Koruma ve Yaşatma Derneği'nce kamulaştırılmış ve "
+                          "restore edilmiştir. 1981 yılında, Atatürk'ün 100. doğum yılı dolayısıyla, "
+                          "Müze Müdürlüğü'ne bağlı bir müze olarak açılmıştır. Her 15 Mart'ta "
+                          "Mustafa Kemal Atatürk'ün Adana'ya gelişi resmi töreni bu müzede "
+                          "tertiplenir.Müzede Atatürk'ün Adana seyahati ile ilgili fotoğrafları, "
+                          "bilgiler ve belgelerle birlikte, etnografik eserler de sergilenmektedir.",
                       style: cityIcerik,
                     ),
                   ),

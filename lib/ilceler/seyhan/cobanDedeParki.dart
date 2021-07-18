@@ -178,11 +178,14 @@ class _CobanDedeState extends State<CobanDede> with SingleTickerProviderStateMix
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      "Yerköprü Mesire Alanı Adana şehir merkezine 53 km "
-                          "Karaisalı ilçemize 13 km mesafede yer almaktadır. "
-                          "Yerköprü mesire alanı, bahar aylarında yeşilin her"
-                          " tonunun görülebileceği insanları şehrin gürültüsünden"
-                          " ve stresinden uzaklaştıracak günübirlik piknik ve dinlenme alanıdır.",
+                      "Çoban Dede Türbesinin ve Parkın bulunduğu alanın bir "
+                          "kısmı 2015 yılında kuş cenneti ve mini hayvanat bahçesine "
+                          "dönüştürüldü. Hayvanat bahçesinde memeliler, su kuşları,"
+                          " yırtıcı kuşlar, süs tavukları gibi hayvanlar yer almaktadır. "
+                          "Küçük bir göletin etrafında yer alan hayvanların dışında "
+                          "hayvanların için veterinerler ve poliklinikte bulunmaktadır. "
+                          "Doğal yaşamda bir şekilde yaralanmış ve hasta olmuş hayvanlar "
+                          "burada iyileştirilerek rehabilite edilmekte ve gelen misafirlerle tanıştırılmaktadır.",
                       style: cityIcerik,
                     ),
                   ),

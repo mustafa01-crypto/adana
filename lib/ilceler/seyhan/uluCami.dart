@@ -178,11 +178,7 @@ class _UluCamiiState extends State<UluCamii> with SingleTickerProviderStateMixin
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      "Yerköprü Mesire Alanı Adana şehir merkezine 53 km "
-                          "Karaisalı ilçemize 13 km mesafede yer almaktadır. "
-                          "Yerköprü mesire alanı, bahar aylarında yeşilin her"
-                          " tonunun görülebileceği insanları şehrin gürültüsünden"
-                          " ve stresinden uzaklaştıracak günübirlik piknik ve dinlenme alanıdır.",
+                      "Ulu Cami büyüklüğü ve tarihî açısından Adana'nın önemli eserleri arasında gösterilmektedir. Selçuklu, Memlûklu ve Osmanlılar Dönem'lerine ait mimarî karakterleri üzerinde toplayan bu eserin üç ayrı kitabesinden, ilk defa 1513 yıllarında Ramazan oğlu Halil Bey tarafından inşasına başlandığı, 1541 yılında Halil Beyin oğlu Piri Mehmet Paşa tarafından bitirilerek ibadete açıldığı anlaşılmaktadır.",
                       style: cityIcerik,
                     ),
                   ),

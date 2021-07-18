@@ -68,7 +68,7 @@ class _BebekliKilisesiState extends State<BebekliKilisesi> with SingleTickerProv
             .set({
           'email': loggedInuser.email.toString(),
           'icerik': response.comment.toString(),
-          'puan': response.rating.toString()
+          'puan': response.rating.toDouble()
         });
       },
     );

@@ -68,7 +68,7 @@ class _SinemaMuzesiState extends State<SinemaMuzesi> with SingleTickerProviderSt
             .set({
           'email': loggedInuser.email.toString(),
           'icerik': response.comment.toString(),
-          'puan': response.rating.toString()
+          'puan': response.rating.toDouble()
         });
       },
     );

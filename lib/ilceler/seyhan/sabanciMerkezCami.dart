@@ -68,7 +68,7 @@ class _SabanciMerkezCamiiState extends State<SabanciMerkezCamii> with SingleTick
             .set({
           'email': loggedInuser.email.toString(),
           'icerik': response.comment.toString(),
-          'puan': response.rating.toString()
+          'puan': response.rating.toDouble()
         });
       },
     );

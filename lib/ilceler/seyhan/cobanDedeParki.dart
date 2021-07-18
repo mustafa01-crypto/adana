@@ -68,7 +68,7 @@ class _CobanDedeState extends State<CobanDede> with SingleTickerProviderStateMix
             .set({
           'email': loggedInuser.email.toString(),
           'icerik': response.comment.toString(),
-          'puan': response.rating.toString()
+          'puan': response.rating.toDouble()
         });
       },
     );

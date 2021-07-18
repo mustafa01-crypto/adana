@@ -2,6 +2,7 @@ import 'package:adana/constants/constants.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_stars/flutter_rating_stars.dart';
 
 
 class SinemaMuzesiYorum extends StatefulWidget {
@@ -40,13 +41,19 @@ class _SinemaMuzesiYorumState extends State<SinemaMuzesiYorum> {
 }
 
 
-class Yorumlar extends StatelessWidget {
+class Yorumlar extends StatefulWidget {
   const Yorumlar({Key? key}) : super(key: key);
 
+  @override
+  State<Yorumlar> createState() => _YorumlarState();
+}
+
+class _YorumlarState extends State<Yorumlar> {
   @override
   Widget build(BuildContext context) {
 
 
+    double value = 1.0;
     Query karapinarYorumlar = FirebaseFirestore.instance
         .collection('SinemaMuzesiYorum');
 
@@ -65,6 +72,7 @@ class Yorumlar extends StatelessWidget {
 
         return new ListView(
           children: snapshot.data!.docs.map((DocumentSnapshot document) {
+            Map<String, dynamic> data = document.data() as Map<String, dynamic>;
             return Padding(
               padding: const EdgeInsets.symmetric(
                   vertical: 10,
@@ -94,19 +102,52 @@ class Yorumlar extends StatelessWidget {
                             kisaExpanded2(document, "email"),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
-
                               children: [
                                 kisaExpanded2(document, "icerik"),
-                                VerticalDivider(
+                                Divider(
                                   thickness: 2,
                                   color: Colors.white,
                                 ),
-                                kisaExpanded2(document, "puan"),
+                                Row(
+                                  children: [
+                                    new RatingStars(
+                                      value: data["puan"],
+                                      onValueChanged: (v) {
+                                        setState(() {
+                                          value = v;
+                                        });
+                                      },
+                                      starBuilder: (index, color) => Icon(
+                                        Icons.star,
+                                        color: color,
+                                      ),
+                                      starCount: 5,
+                                      starSize: 20,
+                                      valueLabelTextStyle: const TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.w400,
+                                          fontStyle: FontStyle.normal,
+                                          fontSize: 12.0),
+                                      valueLabelRadius: 10,
+                                      maxValue: 5,
+                                      starSpacing: 2,
+                                      maxValueVisibility: true,
+                                      valueLabelVisibility: true,
+                                      animationDuration:
+                                      Duration(milliseconds: 1000),
+                                      valueLabelPadding: const EdgeInsets.symmetric(
+                                          vertical: 1, horizontal: 8),
+                                      valueLabelMargin:
+                                      const EdgeInsets.only(right: 8),
+                                      starOffColor: const Color(0xffe7e8ea),
+                                      starColor: Colors.yellow,
+                                    ),
+                                  ],
+                                ),
                               ],
                             ),
                           ],
-                        )
-                    ),
+                        )),
                   ),
                 ],
               ),
@@ -118,7 +159,7 @@ class Yorumlar extends StatelessWidget {
     );
   }
 
-  Widget kisaExpanded2(dynamic document, String doc) {
+  Widget kisaExpanded2(dynamic document,var doc) {
     return Expanded(
 
         child: new Text(document.data()[doc],

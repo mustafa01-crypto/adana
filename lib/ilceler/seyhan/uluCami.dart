@@ -34,12 +34,12 @@ class _UluCamiiState extends State<UluCamii> with SingleTickerProviderStateMixin
   TabController? tabController;
 
   static List<String> links = [
-    "assets/karaisali/UluCamii/y1.jpg",
-    "assets/karaisali/UluCamii/y2.jpg",
-    "assets/karaisali/UluCamii/y3.jpg",
-    "assets/karaisali/UluCamii/y4.jpg",
-    "assets/karaisali/UluCamii/y5.jpg",
-    "assets/karaisali/UluCamii/yer1.jpg",
+    "https://okuryazarim.com/wp-content/uploads/2016/12/Adana-Ulu-Cami-Genel.jpg",
+    "https://www.gezipedia.net/uploads/posts/2020-03/1585517792_adana-ulu-cami.jpg",
+    "https://tarihiyapi.net/wp-content/uploads/2020/05/Adana-Ulu-Cami-Tarihi.jpg",
+    "https://lh3.googleusercontent.com/proxy/x5XFIj7oWjzhT9hGHf23-RHUEUIHHCViqUhfLLU7hTAfFaClyVxfzjzYZ0DI-aXlQfnDuoezxU1vrOHbyUAR1TVWN_Qab2yYG0gRiymhlJhQShvJoYzy7khUAKPt",
+    "https://www.otelcenneti.com/uploads/resimler/adana-ulu-camii-2.jpg",
+    "https://lh3.googleusercontent.com/proxy/tn9BaN_qZrWzYX3kwc72weCeiJinHmMjVDfVwcLMjmqy5ArW_Je9SJJqcOdTaQEeW-up0LvMNjVdDBvTdNlz-ja75_ltquCV_aQzshV7JQGXIKtwm_09SQ",
   ];
   void getCurrentUser() {
 
@@ -149,7 +149,7 @@ class _UluCamiiState extends State<UluCamii> with SingleTickerProviderStateMixin
                 /// Children in slideView to slide
                 children: links.map((String link) {
                   return new ClipRRect(
-                      child: Image.asset(
+                      child: Image.network(
                         link,
                         width: MediaQuery.of(context).size.width,
                         height: 220,

@@ -34,12 +34,12 @@ class _AtaturkEviState extends State<AtaturkEvi> with SingleTickerProviderStateM
   TabController? tabController;
 
   static List<String> links = [
-    "assets/karaisali/AtaturkEvi/y1.jpg",
-    "assets/karaisali/AtaturkEvi/y2.jpg",
-    "assets/karaisali/AtaturkEvi/y3.jpg",
-    "assets/karaisali/AtaturkEvi/y4.jpg",
-    "assets/karaisali/AtaturkEvi/y5.jpg",
-    "assets/karaisali/AtaturkEvi/yer1.jpg",
+    "https://www.kulturportali.gov.tr/repoKulturPortali/large/SehirRehberi//GezilecekYer/20190726160159325_Ataturk%20Evi%20Muzesi%202.png?format=jpg&quality=50",
+    "https://www.kulturportali.gov.tr/repoKulturPortali/large/SehirRehberi//GezilecekYer/20190726160215123_Ataturk%20Evi%20Muzesi%203.png?format=jpg&quality=50",
+    "https://www.kulturportali.gov.tr/repoKulturPortali/large/SehirRehberi//GezilecekYer/20190726160046948_Ataturk%20Evi%20Muzesi.png?format=jpg&quality=50",
+    "https://gezginsitesi.com/wp-content/uploads/2019/11/Adana-Atat%C3%BCrk-Evi-odalar%C4%B1.jpg",
+    "https://gezginsitesi.com/wp-content/uploads/2019/11/Adana-Atat%C3%BCrk-Evi-silahlar.jpg",
+    "https://gezginsitesi.com/wp-content/uploads/2019/11/adana-%C3%A7ukurova-kurtulu%C5%9F-sava%C5%9F%C4%B1-kahramanlar%C4%B1.jpg",
   ];
   void getCurrentUser() {
 
@@ -149,7 +149,7 @@ class _AtaturkEviState extends State<AtaturkEvi> with SingleTickerProviderStateM
                 /// Children in slideView to slide
                 children: links.map((String link) {
                   return new ClipRRect(
-                      child: Image.asset(
+                      child: Image.network(
                         link,
                         width: MediaQuery.of(context).size.width,
                         height: 220,

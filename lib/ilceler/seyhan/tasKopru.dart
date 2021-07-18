@@ -34,12 +34,12 @@ class _TasKopruState extends State<TasKopru> with SingleTickerProviderStateMixin
   TabController? tabController;
 
   static List<String> links = [
-    "assets/karaisali/TasKopru/y1.jpg",
-    "assets/karaisali/TasKopru/y2.jpg",
-    "assets/karaisali/TasKopru/y3.jpg",
-    "assets/karaisali/TasKopru/y4.jpg",
-    "assets/karaisali/TasKopru/y5.jpg",
-    "assets/karaisali/TasKopru/yer1.jpg",
+    "https://seyyahdefteri.com/wp-content/uploads/2018/12/Adana-Ta%C5%9F-K%C3%B6pr%C3%BC-2.jpg",
+    "https://www.altinrota.org/assets/images/uploads/articles/global/2019-03-20-151341-taskopru-ve-hilton.JPG",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR26F6xcS1JrHM8ycynEzCA6oQASoYTpaEY3Q&usqp=CAU",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsIPoSYU_kGkVmie6W4CqGeY8L0xMuBTK3Rg&usqp=CAU",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNOUio5hmUUY8J81yGL-dvyKfWguc_Kub0WA&usqp=CAU",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsX5JkZN6SH88tk2DusnOEFLP6xZr_P6NKxA&usqp=CAU",
   ];
   void getCurrentUser() {
 
@@ -149,7 +149,7 @@ class _TasKopruState extends State<TasKopru> with SingleTickerProviderStateMixin
                 /// Children in slideView to slide
                 children: links.map((String link) {
                   return new ClipRRect(
-                      child: Image.asset(
+                      child: Image.network(
                         link,
                         width: MediaQuery.of(context).size.width,
                         height: 220,

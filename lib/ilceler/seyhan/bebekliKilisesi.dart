@@ -34,12 +34,12 @@ class _BebekliKilisesiState extends State<BebekliKilisesi> with SingleTickerProv
   TabController? tabController;
 
   static List<String> links = [
-    "assets/karaisali/BebekliKilisesi/y1.jpg",
-    "assets/karaisali/BebekliKilisesi/y2.jpg",
-    "assets/karaisali/BebekliKilisesi/y3.jpg",
-    "assets/karaisali/BebekliKilisesi/y4.jpg",
-    "assets/karaisali/BebekliKilisesi/y5.jpg",
-    "assets/karaisali/BebekliKilisesi/yer1.jpg",
+    "https://www.kulturportali.gov.tr/repoKulturPortali/large/27032013/e2dcb4fa-d90b-4f55-8e08-fe1c4071eac8.jpg?format=jpg&quality=50",
+    "https://www.kulturportali.gov.tr/repoKulturPortali/Dokumanlar/ADANABEBEKLIKILISEATILLAANDIRIN_20160411152215803.jpg?format=jpg&quality=50",
+    "https://gezimanya.com/sites/default/files/inline-images/bebekli-kilise.jpg",
+    "https://media-cdn.tripadvisor.com/media/photo-s/0e/97/97/2b/bebekli-kilise.jpg",
+    "https://n8b8m5z7.stackpathcdn.com/wp-content/uploads/2019/07/bebekli-kilise.jpg",
+    "https://mekan360.com/placephotos/1932/bebekli-kilisesi-adana_5.jpg",
   ];
   void getCurrentUser() {
 
@@ -149,7 +149,7 @@ class _BebekliKilisesiState extends State<BebekliKilisesi> with SingleTickerProv
                 /// Children in slideView to slide
                 children: links.map((String link) {
                   return new ClipRRect(
-                      child: Image.asset(
+                      child: Image.network(
                         link,
                         width: MediaQuery.of(context).size.width,
                         height: 220,

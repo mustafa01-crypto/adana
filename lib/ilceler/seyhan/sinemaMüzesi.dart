@@ -34,12 +34,12 @@ class _SinemaMuzesiState extends State<SinemaMuzesi> with SingleTickerProviderSt
   TabController? tabController;
 
   static List<String> links = [
-    "assets/karaisali/SinemaMuzesi/y1.jpg",
-    "assets/karaisali/SinemaMuzesi/y2.jpg",
-    "assets/karaisali/SinemaMuzesi/y3.jpg",
-    "assets/karaisali/SinemaMuzesi/y4.jpg",
-    "assets/karaisali/SinemaMuzesi/y5.jpg",
-    "assets/karaisali/SinemaMuzesi/yer1.jpg",
+    "https://www.gezilesiyer.com/wp-content/uploads/2019/04/adana-sinema-muzesi.jpg",
+    "https://media-cdn.tripadvisor.com/media/photo-s/16/b5/58/86/20190301-164803-largejpg.jpg",
+    "https://i1.wp.com/gezginimgezgin.com/wp-content/uploads/2020/04/3-15.jpg",
+    "https://www.gezilesiyer.com/wp-content/uploads/2019/04/adana-sinema-muzesi-02.jpg",
+    "https://i.pinimg.com/736x/31/01/80/3101800326daec771ecd6e65ed48efb9.jpg",
+    "https://i.sozcu.com.tr/wp-content/uploads/2019/06/10/iecrop/y8_16_9_1560175560.jpg",
   ];
   void getCurrentUser() {
 
@@ -149,7 +149,7 @@ class _SinemaMuzesiState extends State<SinemaMuzesi> with SingleTickerProviderSt
                 /// Children in slideView to slide
                 children: links.map((String link) {
                   return new ClipRRect(
-                      child: Image.asset(
+                      child: Image.network(
                         link,
                         width: MediaQuery.of(context).size.width,
                         height: 220,

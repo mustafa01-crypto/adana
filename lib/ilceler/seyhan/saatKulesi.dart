@@ -34,12 +34,12 @@ class _SaatKulesiState extends State<SaatKulesi> with SingleTickerProviderStateM
   TabController? tabController;
 
   static List<String> links = [
-    "assets/karaisali/SaatKulesi/y1.jpg",
-    "assets/karaisali/SaatKulesi/y2.jpg",
-    "assets/karaisali/SaatKulesi/y3.jpg",
-    "assets/karaisali/SaatKulesi/y4.jpg",
-    "assets/karaisali/SaatKulesi/y5.jpg",
-    "assets/karaisali/SaatKulesi/yer1.jpg",
+    "https://www.kulturportali.gov.tr/contents/images/20171016141538056_ADANA%20SAAT%20KULESI%20GULCAN%20ACAR%20(11).jpg",
+    "https://cdn1.neredekal.com/hotel/2/reB/520x293/2NsP.jpg",
+    "https://i.arkeolojikhaber.com/images/2018/29/14770.jpg",
+    "https://www.nisandaadanada.com/assets/img/gorulmesi-gereken-yerler/buyuk-saat-kulesi.jpg",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQE9TGtFkCzNFur7b9UigZuInqGVjRcC3CWQ&usqp=CAU",
+    "https://adabul.com/wp-content/uploads/2018/01/merdiven.jpg",
   ];
   void getCurrentUser() {
 
@@ -149,7 +149,7 @@ class _SaatKulesiState extends State<SaatKulesi> with SingleTickerProviderStateM
                 /// Children in slideView to slide
                 children: links.map((String link) {
                   return new ClipRRect(
-                      child: Image.asset(
+                      child: Image.network(
                         link,
                         width: MediaQuery.of(context).size.width,
                         height: 220,

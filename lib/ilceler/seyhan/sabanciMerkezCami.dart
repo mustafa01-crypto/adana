@@ -34,12 +34,12 @@ class _SabanciMerkezCamiiState extends State<SabanciMerkezCamii> with SingleTick
   TabController? tabController;
 
   static List<String> links = [
-    "assets/karaisali/SabanciMerkezCamii/y1.jpg",
-    "assets/karaisali/SabanciMerkezCamii/y2.jpg",
-    "assets/karaisali/SabanciMerkezCamii/y3.jpg",
-    "assets/karaisali/SabanciMerkezCamii/y4.jpg",
-    "assets/karaisali/SabanciMerkezCamii/y5.jpg",
-    "assets/karaisali/SabanciMerkezCamii/yer1.jpg",
+    "https://www.kulturportali.gov.tr/contents/images/27032013_98c02bba-053a-4301-9d97-2670551dda99.jpg",
+    "https://mapio.net/images-p/63237478.jpg",
+    "https://www.camilerveturbeler.com/wp-content/uploads/2014/04/sabanci5.jpg",
+    "https://www.kulturportali.gov.tr/repoKulturPortali/DokumanlarGorseller/ADANASABANCIMERKEZCAMIIATILLAANDIRIN315_20160418141038768_20170224155120527.jpg?format=jpg&quality=50",
+    "https://i.pinimg.com/originals/ff/77/88/ff77883c48254f049c6d83c55c22bdec.jpg",
+    "https://2.bp.blogspot.com/-52p9TfyICpI/WEq-iokllaI/AAAAAAAABHU/SkMrxfukIw0XPXE6djcyuwDpGcSQ87eaACLcB/s1600/adana.jpg",
   ];
   void getCurrentUser() {
 
@@ -149,7 +149,7 @@ class _SabanciMerkezCamiiState extends State<SabanciMerkezCamii> with SingleTick
                 /// Children in slideView to slide
                 children: links.map((String link) {
                   return new ClipRRect(
-                      child: Image.asset(
+                      child: Image.network(
                         link,
                         width: MediaQuery.of(context).size.width,
                         height: 220,

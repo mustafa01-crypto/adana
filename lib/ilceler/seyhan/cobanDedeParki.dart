@@ -34,12 +34,12 @@ class _CobanDedeState extends State<CobanDede> with SingleTickerProviderStateMix
   TabController? tabController;
 
   static List<String> links = [
-    "assets/karaisali/CobanDede/y1.jpg",
-    "assets/karaisali/CobanDede/y2.jpg",
-    "assets/karaisali/CobanDede/y3.jpg",
-    "assets/karaisali/CobanDede/y4.jpg",
-    "assets/karaisali/CobanDede/y5.jpg",
-    "assets/karaisali/CobanDede/yer1.jpg",
+    "https://www.nenerede.com.tr/wp-content/uploads/2017/03/%C3%87oban-Dede-Park%C4%B13.jpg",
+    "https://www.tatilana.com/wp-content/uploads/2015/08/AdanaC387obanDedeTC3BCrbesi.jpg",
+    "https://pclove.tripod.com/wallpaper3.jpg",
+    "https://media-cdn.tripadvisor.com/media/photo-s/19/38/11/c1/coban-dede-park-i.jpg",
+    "https://seyyahdefteri.com/wp-content/uploads/2019/05/%C3%87oban-Dede-T%C3%BCrbesi-ve-Park%C4%B1-2.jpg",
+    "https://www.adanadacocukolmak.com/wp-content/uploads/2016/10/%C3%A7oban-dede-3-500x300.jpg",
   ];
   void getCurrentUser() {
 
@@ -149,7 +149,7 @@ class _CobanDedeState extends State<CobanDede> with SingleTickerProviderStateMix
                 /// Children in slideView to slide
                 children: links.map((String link) {
                   return new ClipRRect(
-                      child: Image.asset(
+                      child: Image.network(
                         link,
                         width: MediaQuery.of(context).size.width,
                         height: 220,

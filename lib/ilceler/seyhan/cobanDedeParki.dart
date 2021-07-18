@@ -56,7 +56,7 @@ class _CobanDedeState extends State<CobanDede> with SingleTickerProviderStateMix
       commentHint: "...",
       message: 'Çoban Dede hakkında ne düşünüyorsunuz',
       image: Image.asset(
-        "assets/karaisali/CobanDede/y3.jpg",
+        "assets/dede.jpg",
         height: 100,
       ),
       submitButton: 'Gönder',

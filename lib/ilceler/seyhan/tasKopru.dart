@@ -56,7 +56,7 @@ class _TasKopruState extends State<TasKopru> with SingleTickerProviderStateMixin
       commentHint: "...",
       message: 'Yerköprü hakkında ne düşünüyorsunuz',
       image: Image.asset(
-        "assets/karaisali/TasKopru/y3.jpg",
+        "assets/taskopru.jpg",
         height: 100,
       ),
       submitButton: 'Gönder',

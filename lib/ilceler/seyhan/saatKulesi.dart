@@ -56,7 +56,7 @@ class _SaatKulesiState extends State<SaatKulesi> with SingleTickerProviderStateM
       commentHint: "...",
       message: 'Büyük Saat Kulesi hakkında ne düşünüyorsunuz',
       image: Image.asset(
-        "assets/karaisali/SaatKulesi/y3.jpg",
+        "assets/saat.jpg",
         height: 100,
       ),
       submitButton: 'Gönder',

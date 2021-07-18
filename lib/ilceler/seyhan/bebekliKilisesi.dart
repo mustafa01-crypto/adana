@@ -56,7 +56,7 @@ class _BebekliKilisesiState extends State<BebekliKilisesi> with SingleTickerProv
       commentHint: "...",
       message: 'Bebekli Kilisesi hakkında ne düşünüyorsunuz',
       image: Image.asset(
-        "assets/karaisali/BebekliKilisesi/y3.jpg",
+        "assets/kilise.jpg",
         height: 100,
       ),
       submitButton: 'Gönder',

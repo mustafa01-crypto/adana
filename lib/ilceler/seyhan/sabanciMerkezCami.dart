@@ -56,7 +56,7 @@ class _SabanciMerkezCamiiState extends State<SabanciMerkezCamii> with SingleTick
       commentHint: "...",
       message: 'Sabancı Merkez Camii hakkında ne düşünüyorsunuz',
       image: Image.asset(
-        "assets/karaisali/SabanciMerkezCamii/y3.jpg",
+        "assets/merkezcami.jpg",
         height: 100,
       ),
       submitButton: 'Gönder',

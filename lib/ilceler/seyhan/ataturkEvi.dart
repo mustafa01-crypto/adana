@@ -56,7 +56,7 @@ class _AtaturkEviState extends State<AtaturkEvi> with SingleTickerProviderStateM
       commentHint: "...",
       message: 'Atatürk Evi hakkında ne düşünüyorsunuz',
       image: Image.asset(
-        "assets/karaisali/AtaturkEvi/y3.jpg",
+        "assets/ata.jpg",
         height: 100,
       ),
       submitButton: 'Gönder',

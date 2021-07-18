@@ -56,7 +56,7 @@ class _SinemaMuzesiState extends State<SinemaMuzesi> with SingleTickerProviderSt
       commentHint: "...",
       message: 'Adana Sinema Müzesi hakkında ne düşünüyorsunuz',
       image: Image.asset(
-        "assets/karaisali/SinemaMuzesi/y3.jpg",
+        "assets/sinema.jpg",
         height: 100,
       ),
       submitButton: 'Gönder',

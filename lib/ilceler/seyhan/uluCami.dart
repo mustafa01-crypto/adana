@@ -56,7 +56,7 @@ class _UluCamiiState extends State<UluCamii> with SingleTickerProviderStateMixin
       commentHint: "...",
       message: 'Yerköprü hakkında ne düşünüyorsunuz',
       image: Image.asset(
-        "assets/karaisali/UluCamii/y3.jpg",
+        "assets/alu.jpg",
         height: 100,
       ),
       submitButton: 'Gönder',

@@ -81,7 +81,6 @@ flutter:
     - assets/karaisali/kizildag/
     - assets/karaisali/yanik/
     - assets/riv/hourglass.riv
-    - assets/loading.riv
     - assets/video/
 
   #   - images/a_dot_ham.jpeg

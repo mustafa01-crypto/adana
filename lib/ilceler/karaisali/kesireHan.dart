@@ -35,7 +35,7 @@ class _KesireHanState extends State<KesireHan> with SingleTickerProviderStateMix
   TabController? tabController;
 
   static List<String> links = [
-    "https://lh3.googleusercontent.com/proxy/mL_EYbsSqSWz9h74826__0YeUAkhoS0YsA2ugqafo0bzJ6lpLyzjUk7pr_rFcBNmWm8HqAmEldt4STt7wzV7bhq01ToZvB4K_jncpBxL4ar-JhYw-vQh1gEBja25GwkK",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHBO8UH8SYflsCp0O9mzXX39lw9VjBXeCo50TKJIL7qpO3JV5PbeHzHWJqRs5iOjYIjqk&usqp=CAU",
     "http://3.bp.blogspot.com/-RWc2RD1Ny08/VD-KEPdXEFI/AAAAAAAABmc/XI8Ut0-i9CQ/s1600/musttafa_yerkopru_21032010_481_2.jpg",
     "https://www.gidilmeli.com/sayfa/resim/6141fe25aa5dae5df8061e9dc237aa5c.jpg",
     "http://1.bp.blogspot.com/-TjTp_WvTbN4/VGhmMsq6xlI/AAAAAAAABvM/tB6joSbnOj0/s1600/Kesrikhan%2Byak%C4%B1ndan%2Bg%C3%B6r%C3%BCn%C3%BC%C5%9F.jpg",

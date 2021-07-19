@@ -64,13 +64,13 @@ class _YorumlarState extends State<Yorumlar> {
           children: snapshot.data!.docs.map((DocumentSnapshot document) {
             Map<String, dynamic> data = document.data() as Map<String, dynamic>;
             return Padding(
-              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
                     height: MediaQuery.of(context).size.height * 1 / 8,
-                    margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                    margin: EdgeInsets.symmetric(horizontal: 5, vertical: 10),
                     width: double.infinity,
                     padding: EdgeInsets.symmetric(
                         horizontal: MediaQuery.of(context).size.width * 1 / 50),

@@ -78,14 +78,14 @@ class _YorumlarState extends State<Yorumlar> {
             return Padding(
               padding: const EdgeInsets.symmetric(
                   vertical: 10,
-                  horizontal: 5
+                  horizontal: 10
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
                     height: MediaQuery.of(context).size.height * 1/8,
-                    margin: EdgeInsets.symmetric(horizontal: 3,vertical: 10),
+                    margin: EdgeInsets.symmetric(horizontal: 5,vertical: 10),
                     width: double.infinity,
                     padding: EdgeInsets.symmetric(horizontal: width*1/50),
                     decoration: BoxDecoration(

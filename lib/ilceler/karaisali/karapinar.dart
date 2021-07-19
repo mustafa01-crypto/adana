@@ -187,7 +187,7 @@ class _KaraisaliState extends State<Karapinar>
                       " soyunun Ramazanoğulları ve Menemencioğullarından geldiği"
                       " günümüzdeki adını"
                       " da Ramazanoğullarından Kara İsa Bey’den aldığı bilinen bir husustur.",
-                      style: cityIcerik,
+                      style: icerik2,
                     ),
                   ),
                 ),

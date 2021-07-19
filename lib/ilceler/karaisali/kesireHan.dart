@@ -9,6 +9,7 @@ import 'package:image_slider/image_slider.dart';
 import 'package:rating_dialog/rating_dialog.dart';
 
 import '../../map/map.dart';
+
 late User loggedInuser;
 
 class KesireHan extends StatefulWidget {
@@ -18,9 +19,8 @@ class KesireHan extends StatefulWidget {
   _KesireHanState createState() => _KesireHanState();
 }
 
-class _KesireHanState extends State<KesireHan> with SingleTickerProviderStateMixin {
-
-
+class _KesireHanState extends State<KesireHan>
+    with SingleTickerProviderStateMixin {
   double x = 37.233194;
   double y = 35.162650;
   String title = "KESİRİ HAN";
@@ -42,12 +42,12 @@ class _KesireHanState extends State<KesireHan> with SingleTickerProviderStateMix
   ];
 
   void getCurrentUser() {
-
     final user = auth.currentUser;
     if (user != null) {
       loggedInuser = user;
     }
   }
+
   void _showRatingAppDialog() {
     final _ratingDialog = RatingDialog(
       ratingColor: Colors.amber,
@@ -87,12 +87,13 @@ class _KesireHanState extends State<KesireHan> with SingleTickerProviderStateMix
         title: Center(child: Text(title)),
         actions: [
           IconButton(
-            onPressed: ()
-            {
+            onPressed: () {
               MapUtils.openMap(x, y);
             },
-            icon: Icon(Icons.map_sharp,color: Colors.white,),
-
+            icon: Icon(
+              Icons.map_sharp,
+              color: Colors.white,
+            ),
           ),
           IconButton(
             onPressed: () {
@@ -150,14 +151,13 @@ class _KesireHanState extends State<KesireHan> with SingleTickerProviderStateMix
                 children: links.map((String link) {
                   return new ClipRRect(
                       child: Image.network(
-                        link,
-                        width: MediaQuery.of(context).size.width,
-                        height: 220,
-                        fit: BoxFit.fill,
-                      ));
+                    link,
+                    width: MediaQuery.of(context).size.width,
+                    height: 220,
+                    fit: BoxFit.fill,
+                  ));
                 }).toList(),
               ),
-
               SizedBox(
                 height: 10,
               ),
@@ -179,24 +179,24 @@ class _KesireHanState extends State<KesireHan> with SingleTickerProviderStateMix
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
                       "İçinde yaşadığımız coğrafya insanlık tarihinin en "
-                          "önemli değişimlerine tanıklık etmiş binlerce"
-                          " kültür mirasına sahip bir coğrafyadır. Ancak "
-                          "şu da bir gerçektir ki bu tarihi mirası olması "
-                          "gerektiği biçimde koruma, kollama ve yaşatma "
-                          "görevlerini bu toplum yönetenler ve bu toplumun"
-                          " bireyleri yerine getirememiştir. Kentlerimiz "
-                          "günlük çıkarlara feda edilmiş, pek çok eser yok "
-                          "edilmiş, yakılmış, yurt dışına kaçırılmış,"
-                          " müzelerimizde sergilenmeden depolarda terk "
-                          "edilmiş, alınmış, satılmış, mekânlar harabe "
-                          "ve mezbele durumlara düşürülmüş bazen yenileme "
-                          "adı altında aslı ile ilgisi olmayan formlara "
-                          "dönüştürülmüştür. Korunmaya değer görülenler "
-                          "ise dönemlerinin ekonomik, sosyal ve siyasal "
-                          "koşullarınca belirlenmiştir. Oyda bugün insanlık "
-                          "tarihi hakkında bildiklerimizin pek çoğu yıllara"
-                          " meydan okuyan bu eserler sayesinde olmuştur.",
-                      style: cityIcerik,
+                      "önemli değişimlerine tanıklık etmiş binlerce"
+                      " kültür mirasına sahip bir coğrafyadır. Ancak "
+                      "şu da bir gerçektir ki bu tarihi mirası olması "
+                      "gerektiği biçimde koruma, kollama ve yaşatma "
+                      "görevlerini bu toplum yönetenler ve bu toplumun"
+                      " bireyleri yerine getirememiştir. Kentlerimiz "
+                      "günlük çıkarlara feda edilmiş, pek çok eser yok "
+                      "edilmiş, yakılmış, yurt dışına kaçırılmış,"
+                      " müzelerimizde sergilenmeden depolarda terk "
+                      "edilmiş, alınmış, satılmış, mekânlar harabe "
+                      "ve mezbele durumlara düşürülmüş bazen yenileme "
+                      "adı altında aslı ile ilgisi olmayan formlara "
+                      "dönüştürülmüştür. Korunmaya değer görülenler "
+                      "ise dönemlerinin ekonomik, sosyal ve siyasal "
+                      "koşullarınca belirlenmiştir. Oyda bugün insanlık "
+                      "tarihi hakkında bildiklerimizin pek çoğu yıllara"
+                      " meydan okuyan bu eserler sayesinde olmuştur.",
+                      style: icerik2,
                     ),
                   ),
                 ),

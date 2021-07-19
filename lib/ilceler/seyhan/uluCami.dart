@@ -18,9 +18,8 @@ class UluCamii extends StatefulWidget {
   _UluCamiiState createState() => _UluCamiiState();
 }
 
-class _UluCamiiState extends State<UluCamii> with SingleTickerProviderStateMixin {
-
-
+class _UluCamiiState extends State<UluCamii>
+    with SingleTickerProviderStateMixin {
   double x = 36.985050;
   double y = 35.330837;
   String title = "ULU CAMİİ";
@@ -42,13 +41,14 @@ class _UluCamiiState extends State<UluCamii> with SingleTickerProviderStateMixin
     "https://www.otelcenneti.com/uploads/resimler/adana-ulu-camii-2.jpg",
     "https://lh3.googleusercontent.com/proxy/tn9BaN_qZrWzYX3kwc72weCeiJinHmMjVDfVwcLMjmqy5ArW_Je9SJJqcOdTaQEeW-up0LvMNjVdDBvTdNlz-ja75_ltquCV_aQzshV7JQGXIKtwm_09SQ",
   ];
-  void getCurrentUser() {
 
+  void getCurrentUser() {
     final user = auth.currentUser;
     if (user != null) {
       loggedInuser = user;
     }
   }
+
   void _showRatingAppDialog() {
     final _ratingDialog = RatingDialog(
       ratingColor: Colors.amber,
@@ -88,12 +88,13 @@ class _UluCamiiState extends State<UluCamii> with SingleTickerProviderStateMixin
         title: Center(child: Text(title)),
         actions: [
           IconButton(
-            onPressed: ()
-            {
+            onPressed: () {
               MapUtils.openMap(x, y);
             },
-            icon: Icon(Icons.map_sharp,color: Colors.white,),
-
+            icon: Icon(
+              Icons.map_sharp,
+              color: Colors.white,
+            ),
           ),
           IconButton(
             onPressed: () {
@@ -151,14 +152,13 @@ class _UluCamiiState extends State<UluCamii> with SingleTickerProviderStateMixin
                 children: links.map((String link) {
                   return new ClipRRect(
                       child: Image.network(
-                        link,
-                        width: MediaQuery.of(context).size.width,
-                        height: 220,
-                        fit: BoxFit.fill,
-                      ));
+                    link,
+                    width: MediaQuery.of(context).size.width,
+                    height: 220,
+                    fit: BoxFit.fill,
+                  ));
                 }).toList(),
               ),
-
               SizedBox(
                 height: 10,
               ),
@@ -179,16 +179,24 @@ class _UluCamiiState extends State<UluCamii> with SingleTickerProviderStateMixin
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      "Ulu Cami büyüklüğü ve tarihî açısından Adana'nın önemli eserleri arasında gösterilmektedir. Selçuklu, Memlûklu ve Osmanlılar Dönem'lerine ait mimarî karakterleri üzerinde toplayan bu eserin üç ayrı kitabesinden, ilk defa 1513 yıllarında Ramazan oğlu Halil Bey tarafından inşasına başlandığı, 1541 yılında Halil Beyin oğlu Piri Mehmet Paşa tarafından bitirilerek ibadete açıldığı anlaşılmaktadır.",
-                      style: cityIcerik,
+                      "Ulu Cami büyüklüğü ve tarihî açısından Adana'nın önemli "
+                          "eserleri arasında gösterilmektedir. Selçuklu, Memlûklu"
+                          " ve Osmanlılar Dönem'lerine ait mimarî karakterleri"
+                          " üzerinde toplayan bu eserin üç ayrı kitabesinden,"
+                          " ilk defa 1513 yıllarında Ramazan oğlu Halil Bey"
+                          " tarafından inşasına başlandığı, 1541 yılında Halil"
+                          " Beyin oğlu Piri Mehmet Paşa tarafından bitirilerek "
+                          "ibadete açıldığı anlaşılmaktadır.",
+                      style: icerik2,
                     ),
                   ),
                 ),
               ),
-              SizedBox(height: 15,),
+              SizedBox(
+                height: 15,
+              ),
               TextButton(
-                onPressed: ()
-                {
+                onPressed: () {
                   Get.to(() => Maps(x: x, y: y, title: title));
                 },
                 child: Container(
@@ -198,7 +206,6 @@ class _UluCamiiState extends State<UluCamii> with SingleTickerProviderStateMixin
                     child: Text(
                       "HARİTADA GÖSTER",
                       style: cityName,
-
                     ),
                   ),
                   decoration: BoxDecoration(

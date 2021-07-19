@@ -18,9 +18,8 @@ class SabanciMerkezCamii extends StatefulWidget {
   _SabanciMerkezCamiiState createState() => _SabanciMerkezCamiiState();
 }
 
-class _SabanciMerkezCamiiState extends State<SabanciMerkezCamii> with SingleTickerProviderStateMixin {
-
-
+class _SabanciMerkezCamiiState extends State<SabanciMerkezCamii>
+    with SingleTickerProviderStateMixin {
   double x = 36.991574;
   double y = 35.334198;
   String title = "SABANCI MERKEZ CAMİİ";
@@ -42,13 +41,14 @@ class _SabanciMerkezCamiiState extends State<SabanciMerkezCamii> with SingleTick
     "https://i.pinimg.com/originals/ff/77/88/ff77883c48254f049c6d83c55c22bdec.jpg",
     "https://2.bp.blogspot.com/-52p9TfyICpI/WEq-iokllaI/AAAAAAAABHU/SkMrxfukIw0XPXE6djcyuwDpGcSQ87eaACLcB/s1600/adana.jpg",
   ];
-  void getCurrentUser() {
 
+  void getCurrentUser() {
     final user = auth.currentUser;
     if (user != null) {
       loggedInuser = user;
     }
   }
+
   void _showRatingAppDialog() {
     final _ratingDialog = RatingDialog(
       ratingColor: Colors.amber,
@@ -88,12 +88,13 @@ class _SabanciMerkezCamiiState extends State<SabanciMerkezCamii> with SingleTick
         title: Center(child: Text(title)),
         actions: [
           IconButton(
-            onPressed: ()
-            {
+            onPressed: () {
               MapUtils.openMap(x, y);
             },
-            icon: Icon(Icons.map_sharp,color: Colors.white,),
-
+            icon: Icon(
+              Icons.map_sharp,
+              color: Colors.white,
+            ),
           ),
           IconButton(
             onPressed: () {
@@ -151,14 +152,13 @@ class _SabanciMerkezCamiiState extends State<SabanciMerkezCamii> with SingleTick
                 children: links.map((String link) {
                   return new ClipRRect(
                       child: Image.network(
-                        link,
-                        width: MediaQuery.of(context).size.width,
-                        height: 220,
-                        fit: BoxFit.fill,
-                      ));
+                    link,
+                    width: MediaQuery.of(context).size.width,
+                    height: 220,
+                    fit: BoxFit.fill,
+                  ));
                 }).toList(),
               ),
-
               SizedBox(
                 height: 10,
               ),
@@ -180,17 +180,17 @@ class _SabanciMerkezCamiiState extends State<SabanciMerkezCamii> with SingleTick
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
                       "Adana'nın Reşatbey Semti'nde, Merkez Park'ın güneyinde ve Seyhan Nehri'nin batı kıyısında yer alan cami, 1998 yılında hizmete açılmıştır. 32 metre çaplı ana kubbesi vardır. Caminin proje mimarı Necip Dinç’tir. 20 bin kişilik cami (açık alanın düzenlenmesiyle 28 bin kişi) son cemaat mahaliyle birlikte 6 bin 600 metrekareye yayılmıştır."
-
-                     " Klasik Osmanlı mimarisi tarzında yapılmıştır ve dokuz fil ayağı üzerine oturur. Genel görünüm olarak Sultan Ahmet Camii’ne, plan ve iç mekân olarak Selimiye Camii’ne benzer. Dört yarım-kubbe, beş kubbe, altı minaresi vardır; bunlar dört halife ve dört mezhebe, İslam’ın beş şartına, imanın altı şartına karşılık gelmektedir. 32 metre çaplı ana kubbe 32 farza, avludaki 28 kubbe Kuran-ı Kerim'de adı geçen 28 peygambere, ana kubbedeki 40 pencere Hz.Muhammed (s.a.v.)’in peygamber olduğu yaşa ve 40 rekat namaza, 99 metrelik 6 minare Allah’ın 99 güzel ismine karşılık gelir.",
-                      style: cityIcerik,
+                      " Klasik Osmanlı mimarisi tarzında yapılmıştır ve dokuz fil ayağı üzerine oturur. Genel görünüm olarak Sultan Ahmet Camii’ne, plan ve iç mekân olarak Selimiye Camii’ne benzer. Dört yarım-kubbe, beş kubbe, altı minaresi vardır; bunlar dört halife ve dört mezhebe, İslam’ın beş şartına, imanın altı şartına karşılık gelmektedir. 32 metre çaplı ana kubbe 32 farza, avludaki 28 kubbe Kuran-ı Kerim'de adı geçen 28 peygambere, ana kubbedeki 40 pencere Hz.Muhammed (s.a.v.)’in peygamber olduğu yaşa ve 40 rekat namaza, 99 metrelik 6 minare Allah’ın 99 güzel ismine karşılık gelir.",
+                      style: icerik2,
                     ),
                   ),
                 ),
               ),
-              SizedBox(height: 15,),
+              SizedBox(
+                height: 15,
+              ),
               TextButton(
-                onPressed: ()
-                {
+                onPressed: () {
                   Get.to(() => Maps(x: x, y: y, title: title));
                 },
                 child: Container(
@@ -200,7 +200,6 @@ class _SabanciMerkezCamiiState extends State<SabanciMerkezCamii> with SingleTick
                     child: Text(
                       "HARİTADA GÖSTER",
                       style: cityName,
-
                     ),
                   ),
                   decoration: BoxDecoration(
@@ -227,7 +226,7 @@ class _SabanciMerkezCamiiState extends State<SabanciMerkezCamii> with SingleTick
               ),
               TextButton(
                 onPressed: () {
-                   Get.to(() => MerkezCamiYorum());
+                  Get.to(() => MerkezCamiYorum());
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width,

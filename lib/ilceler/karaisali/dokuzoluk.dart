@@ -190,7 +190,7 @@ class _DokuzolukState extends State<Dokuzoluk>
                           " bulunmaktadır. Giriş ücreti 10 TL’dir. Özellikle Adana’nın "
                           "sıcağından uzaklaşmak, farklı ve dinlendirici bir doğa harikasında"
                           " gününü geçirmek isteyenler tarafından tercih edilmektedir.",
-                      style: cityIcerik,
+                      style: icerik2,
                     ),
                   ),
                 ),

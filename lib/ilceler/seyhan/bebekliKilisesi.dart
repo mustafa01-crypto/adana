@@ -18,9 +18,8 @@ class BebekliKilisesi extends StatefulWidget {
   _BebekliKilisesiState createState() => _BebekliKilisesiState();
 }
 
-class _BebekliKilisesiState extends State<BebekliKilisesi> with SingleTickerProviderStateMixin {
-
-
+class _BebekliKilisesiState extends State<BebekliKilisesi>
+    with SingleTickerProviderStateMixin {
   double x = 36.9873869;
   double y = 35.3256733;
   String title = "BEBEKLİ KİLİSESİ";
@@ -42,13 +41,14 @@ class _BebekliKilisesiState extends State<BebekliKilisesi> with SingleTickerProv
     "https://n8b8m5z7.stackpathcdn.com/wp-content/uploads/2019/07/bebekli-kilise.jpg",
     "https://mekan360.com/placephotos/1932/bebekli-kilisesi-adana_5.jpg",
   ];
-  void getCurrentUser() {
 
+  void getCurrentUser() {
     final user = auth.currentUser;
     if (user != null) {
       loggedInuser = user;
     }
   }
+
   void _showRatingAppDialog() {
     final _ratingDialog = RatingDialog(
       ratingColor: Colors.amber,
@@ -88,12 +88,13 @@ class _BebekliKilisesiState extends State<BebekliKilisesi> with SingleTickerProv
         title: Center(child: Text(title)),
         actions: [
           IconButton(
-            onPressed: ()
-            {
+            onPressed: () {
               MapUtils.openMap(x, y);
             },
-            icon: Icon(Icons.map_sharp,color: Colors.white,),
-
+            icon: Icon(
+              Icons.map_sharp,
+              color: Colors.white,
+            ),
           ),
           IconButton(
             onPressed: () {
@@ -151,14 +152,13 @@ class _BebekliKilisesiState extends State<BebekliKilisesi> with SingleTickerProv
                 children: links.map((String link) {
                   return new ClipRRect(
                       child: Image.network(
-                        link,
-                        width: MediaQuery.of(context).size.width,
-                        height: 220,
-                        fit: BoxFit.fill,
-                      ));
+                    link,
+                    width: MediaQuery.of(context).size.width,
+                    height: 220,
+                    fit: BoxFit.fill,
+                  ));
                 }).toList(),
               ),
-
               SizedBox(
                 height: 10,
               ),
@@ -180,24 +180,25 @@ class _BebekliKilisesiState extends State<BebekliKilisesi> with SingleTickerProv
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
                       "Adana Bebekli Kilise veya Aziz Pavlus Kilisesi, "
-                          "üzerinde Meryem'in tunçtan heykelinin bulunduğu, tahminen 1880-90"
-                          " yılları arasında yapılan Adana'nın merkezindeki İtalyan katolik"
-                          " kilisesidir. Ermeni Apostolik Kilisesi olarak inşa edilmiştir."
-                          " 1915 Ermeni Kırımı'ndan sonra Adana'da Ermeni cemaat kalmamıştır "
-                          "ve Bebekli kilise Katolik Cemaate verilmiştir. Kilisenin tepesindeki "
-                          "Meryem Ana’nın 2.5 metrelik tunç heykeli bebeğe benzetildiği için "
-                          "halk arasında Kilisenin ismi Bebekli Kiliseolarak geçer. Kilise Pavlus"
-                          " adına yaptırılmıştır."
+                      "üzerinde Meryem'in tunçtan heykelinin bulunduğu, tahminen 1880-90"
+                      " yılları arasında yapılan Adana'nın merkezindeki İtalyan katolik"
+                      " kilisesidir. Ermeni Apostolik Kilisesi olarak inşa edilmiştir."
+                      " 1915 Ermeni Kırımı'ndan sonra Adana'da Ermeni cemaat kalmamıştır "
+                      "ve Bebekli kilise Katolik Cemaate verilmiştir. Kilisenin tepesindeki "
+                      "Meryem Ana’nın 2.5 metrelik tunç heykeli bebeğe benzetildiği için "
+                      "halk arasında Kilisenin ismi Bebekli Kiliseolarak geçer. Kilise Pavlus"
+                      " adına yaptırılmıştır."
                       " Kilise hem katolik cemaati, hem de Protestan Cemaati tarafından kullanılmaktadır.",
-                      style: cityIcerik,
+                      style: icerik2,
                     ),
                   ),
                 ),
               ),
-              SizedBox(height: 15,),
+              SizedBox(
+                height: 15,
+              ),
               TextButton(
-                onPressed: ()
-                {
+                onPressed: () {
                   Get.to(() => Maps(x: x, y: y, title: title));
                 },
                 child: Container(
@@ -207,7 +208,6 @@ class _BebekliKilisesiState extends State<BebekliKilisesi> with SingleTickerProv
                     child: Text(
                       "HARİTADA GÖSTER",
                       style: cityName,
-
                     ),
                   ),
                   decoration: BoxDecoration(

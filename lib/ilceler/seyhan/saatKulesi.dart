@@ -18,9 +18,8 @@ class SaatKulesi extends StatefulWidget {
   _SaatKulesiState createState() => _SaatKulesiState();
 }
 
-class _SaatKulesiState extends State<SaatKulesi> with SingleTickerProviderStateMixin {
-
-
+class _SaatKulesiState extends State<SaatKulesi>
+    with SingleTickerProviderStateMixin {
   double x = 36.983835;
   double y = 35.330260;
   String title = "BÜYÜK SAAT KULESİ";
@@ -42,13 +41,14 @@ class _SaatKulesiState extends State<SaatKulesi> with SingleTickerProviderStateM
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQE9TGtFkCzNFur7b9UigZuInqGVjRcC3CWQ&usqp=CAU",
     "https://adabul.com/wp-content/uploads/2018/01/merdiven.jpg",
   ];
-  void getCurrentUser() {
 
+  void getCurrentUser() {
     final user = auth.currentUser;
     if (user != null) {
       loggedInuser = user;
     }
   }
+
   void _showRatingAppDialog() {
     final _ratingDialog = RatingDialog(
       ratingColor: Colors.amber,
@@ -88,12 +88,13 @@ class _SaatKulesiState extends State<SaatKulesi> with SingleTickerProviderStateM
         title: Center(child: Text(title)),
         actions: [
           IconButton(
-            onPressed: ()
-            {
+            onPressed: () {
               MapUtils.openMap(x, y);
             },
-            icon: Icon(Icons.map_sharp,color: Colors.white,),
-
+            icon: Icon(
+              Icons.map_sharp,
+              color: Colors.white,
+            ),
           ),
           IconButton(
             onPressed: () {
@@ -151,14 +152,13 @@ class _SaatKulesiState extends State<SaatKulesi> with SingleTickerProviderStateM
                 children: links.map((String link) {
                   return new ClipRRect(
                       child: Image.network(
-                        link,
-                        width: MediaQuery.of(context).size.width,
-                        height: 220,
-                        fit: BoxFit.fill,
-                      ));
+                    link,
+                    width: MediaQuery.of(context).size.width,
+                    height: 220,
+                    fit: BoxFit.fill,
+                  ));
                 }).toList(),
               ),
-
               SizedBox(
                 height: 10,
               ),
@@ -180,25 +180,26 @@ class _SaatKulesiState extends State<SaatKulesi> with SingleTickerProviderStateM
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
                       "Kule kesme taştan yapılmıştır. Uzunluğu 32 metre olan kule "
-                          "kare prizma şeklindedir ve kulenin duvarları tuğla ile"
-                          " inşa edilmiştir. Temel derinliğinin 35 metre olduğu "
-                          "söylenir. Saat kulesi dikdörtgen şeklinde taş tuğlalardan "
-                          "yapılmıştır. Kulenin inşası sırasında Osmanlı'da değişik "
-                          "illerde saat kuleleri vardı. Bu saat kuleleri arasında en "
-                          "uzunu Büyük Saat'tir. İkincisi ise Dolmabahçe Saat Kulesi’dir."
-                          " Örme işlemi oldukça zor olan küçük taş tuğlalardan imal edilmiş "
-                          "ve yapımından uzun bir süre sonra Almanya’dan özel olarak saat "
-                          "makinesi getirilmiştir. O kadar sağlam yapılmıştır ki 1998’deki "
-                          "Adana depreminden sonra bile ayakta kalmayı başarabilmiştir.",
-                      style: cityIcerik,
+                      "kare prizma şeklindedir ve kulenin duvarları tuğla ile"
+                      " inşa edilmiştir. Temel derinliğinin 35 metre olduğu "
+                      "söylenir. Saat kulesi dikdörtgen şeklinde taş tuğlalardan "
+                      "yapılmıştır. Kulenin inşası sırasında Osmanlı'da değişik "
+                      "illerde saat kuleleri vardı. Bu saat kuleleri arasında en "
+                      "uzunu Büyük Saat'tir. İkincisi ise Dolmabahçe Saat Kulesi’dir."
+                      " Örme işlemi oldukça zor olan küçük taş tuğlalardan imal edilmiş "
+                      "ve yapımından uzun bir süre sonra Almanya’dan özel olarak saat "
+                      "makinesi getirilmiştir. O kadar sağlam yapılmıştır ki 1998’deki "
+                      "Adana depreminden sonra bile ayakta kalmayı başarabilmiştir.",
+                      style: icerik2,
                     ),
                   ),
                 ),
               ),
-              SizedBox(height: 15,),
+              SizedBox(
+                height: 15,
+              ),
               TextButton(
-                onPressed: ()
-                {
+                onPressed: () {
                   Get.to(() => Maps(x: x, y: y, title: title));
                 },
                 child: Container(
@@ -208,7 +209,6 @@ class _SaatKulesiState extends State<SaatKulesi> with SingleTickerProviderStateM
                     child: Text(
                       "HARİTADA GÖSTER",
                       style: cityName,
-
                     ),
                   ),
                   decoration: BoxDecoration(

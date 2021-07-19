@@ -18,9 +18,8 @@ class YerKopru extends StatefulWidget {
   _YerKopruState createState() => _YerKopruState();
 }
 
-class _YerKopruState extends State<YerKopru> with SingleTickerProviderStateMixin {
-
-
+class _YerKopruState extends State<YerKopru>
+    with SingleTickerProviderStateMixin {
   double x = 37.279220;
   double y = 34.998238;
   String title = "YERKÖPRÜ";
@@ -42,13 +41,14 @@ class _YerKopruState extends State<YerKopru> with SingleTickerProviderStateMixin
     "https://i.ytimg.com/vi/SxK0nZejjlU/maxresdefault.jpg",
     "https://mapio.net/images-p/120123662.jpg",
   ];
-  void getCurrentUser() {
 
-      final user = auth.currentUser;
-      if (user != null) {
-        loggedInuser = user;
-      }
+  void getCurrentUser() {
+    final user = auth.currentUser;
+    if (user != null) {
+      loggedInuser = user;
+    }
   }
+
   void _showRatingAppDialog() {
     final _ratingDialog = RatingDialog(
       ratingColor: Colors.amber,
@@ -88,12 +88,13 @@ class _YerKopruState extends State<YerKopru> with SingleTickerProviderStateMixin
         title: Center(child: Text(title)),
         actions: [
           IconButton(
-            onPressed: ()
-            {
+            onPressed: () {
               MapUtils.openMap(x, y);
             },
-            icon: Icon(Icons.map_sharp,color: Colors.white,),
-
+            icon: Icon(
+              Icons.map_sharp,
+              color: Colors.white,
+            ),
           ),
           IconButton(
             onPressed: () {
@@ -151,14 +152,13 @@ class _YerKopruState extends State<YerKopru> with SingleTickerProviderStateMixin
                 children: links.map((String link) {
                   return new ClipRRect(
                       child: Image.network(
-                        link,
-                        width: MediaQuery.of(context).size.width,
-                        height: 220,
-                        fit: BoxFit.fill,
-                      ));
+                    link,
+                    width: MediaQuery.of(context).size.width,
+                    height: 220,
+                    fit: BoxFit.fill,
+                  ));
                 }).toList(),
               ),
-
               SizedBox(
                 height: 10,
               ),
@@ -180,19 +180,20 @@ class _YerKopruState extends State<YerKopru> with SingleTickerProviderStateMixin
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
                       "Yerköprü Mesire Alanı Adana şehir merkezine 53 km "
-                          "Karaisalı ilçemize 13 km mesafede yer almaktadır. "
-                          "Yerköprü mesire alanı, bahar aylarında yeşilin her"
-                          " tonunun görülebileceği insanları şehrin gürültüsünden"
-                          " ve stresinden uzaklaştıracak günübirlik piknik ve dinlenme alanıdır.",
-                      style: cityIcerik,
+                      "Karaisalı ilçemize 13 km mesafede yer almaktadır. "
+                      "Yerköprü mesire alanı, bahar aylarında yeşilin her"
+                      " tonunun görülebileceği insanları şehrin gürültüsünden"
+                      " ve stresinden uzaklaştıracak günübirlik piknik ve dinlenme alanıdır.",
+                      style: icerik2,
                     ),
                   ),
                 ),
               ),
-              SizedBox(height: 15,),
+              SizedBox(
+                height: 15,
+              ),
               TextButton(
-                onPressed: ()
-                {
+                onPressed: () {
                   Get.to(() => Maps(x: x, y: y, title: title));
                 },
                 child: Container(
@@ -202,7 +203,6 @@ class _YerKopruState extends State<YerKopru> with SingleTickerProviderStateMixin
                     child: Text(
                       "HARİTADA GÖSTER",
                       style: cityName,
-
                     ),
                   ),
                   decoration: BoxDecoration(

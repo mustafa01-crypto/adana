@@ -18,9 +18,8 @@ class AtaturkEvi extends StatefulWidget {
   _AtaturkEviState createState() => _AtaturkEviState();
 }
 
-class _AtaturkEviState extends State<AtaturkEvi> with SingleTickerProviderStateMixin {
-
-
+class _AtaturkEviState extends State<AtaturkEvi>
+    with SingleTickerProviderStateMixin {
   double x = 36.988621;
   double y = 35.331884;
   String title = "ATATÜRK EVİ";
@@ -42,13 +41,14 @@ class _AtaturkEviState extends State<AtaturkEvi> with SingleTickerProviderStateM
     "https://gezginsitesi.com/wp-content/uploads/2019/11/Adana-Atat%C3%BCrk-Evi-silahlar.jpg",
     "https://gezginsitesi.com/wp-content/uploads/2019/11/adana-%C3%A7ukurova-kurtulu%C5%9F-sava%C5%9F%C4%B1-kahramanlar%C4%B1.jpg",
   ];
-  void getCurrentUser() {
 
+  void getCurrentUser() {
     final user = auth.currentUser;
     if (user != null) {
       loggedInuser = user;
     }
   }
+
   void _showRatingAppDialog() {
     final _ratingDialog = RatingDialog(
       ratingColor: Colors.amber,
@@ -88,12 +88,13 @@ class _AtaturkEviState extends State<AtaturkEvi> with SingleTickerProviderStateM
         title: Center(child: Text(title)),
         actions: [
           IconButton(
-            onPressed: ()
-            {
+            onPressed: () {
               MapUtils.openMap(x, y);
             },
-            icon: Icon(Icons.map_sharp,color: Colors.white,),
-
+            icon: Icon(
+              Icons.map_sharp,
+              color: Colors.white,
+            ),
           ),
           IconButton(
             onPressed: () {
@@ -151,14 +152,13 @@ class _AtaturkEviState extends State<AtaturkEvi> with SingleTickerProviderStateM
                 children: links.map((String link) {
                   return new ClipRRect(
                       child: Image.network(
-                        link,
-                        width: MediaQuery.of(context).size.width,
-                        height: 220,
-                        fit: BoxFit.fill,
-                      ));
+                    link,
+                    width: MediaQuery.of(context).size.width,
+                    height: 220,
+                    fit: BoxFit.fill,
+                  ));
                 }).toList(),
               ),
-
               SizedBox(
                 height: 10,
               ),
@@ -180,24 +180,25 @@ class _AtaturkEviState extends State<AtaturkEvi> with SingleTickerProviderStateM
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
                       "Adana Atatürk Evi Müzesi, Adana Seyhan Caddesi üzerinde bulunan müze."
-                          " 15 Mart 1923 tarihinde Mustafa Kemal Atatürk ve eşi Adana'yı ziyaret "
-                          "ettiğinde bu binada konaklamıştır. Bina daha önceleri Ramazanoğulları"
-                          " ailesine mensup Suphi Paşa'ya aitti. Bina sonraları Atatürk Bilim "
-                          "ve Kültür Müzesi Koruma ve Yaşatma Derneği'nce kamulaştırılmış ve "
-                          "restore edilmiştir. 1981 yılında, Atatürk'ün 100. doğum yılı dolayısıyla, "
-                          "Müze Müdürlüğü'ne bağlı bir müze olarak açılmıştır. Her 15 Mart'ta "
-                          "Mustafa Kemal Atatürk'ün Adana'ya gelişi resmi töreni bu müzede "
-                          "tertiplenir.Müzede Atatürk'ün Adana seyahati ile ilgili fotoğrafları, "
-                          "bilgiler ve belgelerle birlikte, etnografik eserler de sergilenmektedir.",
-                      style: cityIcerik,
+                      " 15 Mart 1923 tarihinde Mustafa Kemal Atatürk ve eşi Adana'yı ziyaret "
+                      "ettiğinde bu binada konaklamıştır. Bina daha önceleri Ramazanoğulları"
+                      " ailesine mensup Suphi Paşa'ya aitti. Bina sonraları Atatürk Bilim "
+                      "ve Kültür Müzesi Koruma ve Yaşatma Derneği'nce kamulaştırılmış ve "
+                      "restore edilmiştir. 1981 yılında, Atatürk'ün 100. doğum yılı dolayısıyla, "
+                      "Müze Müdürlüğü'ne bağlı bir müze olarak açılmıştır. Her 15 Mart'ta "
+                      "Mustafa Kemal Atatürk'ün Adana'ya gelişi resmi töreni bu müzede "
+                      "tertiplenir.Müzede Atatürk'ün Adana seyahati ile ilgili fotoğrafları, "
+                      "bilgiler ve belgelerle birlikte, etnografik eserler de sergilenmektedir.",
+                      style: icerik2,
                     ),
                   ),
                 ),
               ),
-              SizedBox(height: 15,),
+              SizedBox(
+                height: 15,
+              ),
               TextButton(
-                onPressed: ()
-                {
+                onPressed: () {
                   Get.to(() => Maps(x: x, y: y, title: title));
                 },
                 child: Container(
@@ -207,7 +208,6 @@ class _AtaturkEviState extends State<AtaturkEvi> with SingleTickerProviderStateM
                     child: Text(
                       "HARİTADA GÖSTER",
                       style: cityName,
-
                     ),
                   ),
                   decoration: BoxDecoration(

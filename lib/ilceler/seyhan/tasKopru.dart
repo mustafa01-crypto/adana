@@ -18,9 +18,8 @@ class TasKopru extends StatefulWidget {
   _TasKopruState createState() => _TasKopruState();
 }
 
-class _TasKopruState extends State<TasKopru> with SingleTickerProviderStateMixin {
-
-
+class _TasKopruState extends State<TasKopru>
+    with SingleTickerProviderStateMixin {
   double x = 36.986300;
   double y = 35.334989;
   String title = "TAŞ KÖPRÜ";
@@ -42,13 +41,14 @@ class _TasKopruState extends State<TasKopru> with SingleTickerProviderStateMixin
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNOUio5hmUUY8J81yGL-dvyKfWguc_Kub0WA&usqp=CAU",
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsX5JkZN6SH88tk2DusnOEFLP6xZr_P6NKxA&usqp=CAU",
   ];
-  void getCurrentUser() {
 
+  void getCurrentUser() {
     final user = auth.currentUser;
     if (user != null) {
       loggedInuser = user;
     }
   }
+
   void _showRatingAppDialog() {
     final _ratingDialog = RatingDialog(
       ratingColor: Colors.amber,
@@ -88,12 +88,13 @@ class _TasKopruState extends State<TasKopru> with SingleTickerProviderStateMixin
         title: Center(child: Text(title)),
         actions: [
           IconButton(
-            onPressed: ()
-            {
+            onPressed: () {
               MapUtils.openMap(x, y);
             },
-            icon: Icon(Icons.map_sharp,color: Colors.white,),
-
+            icon: Icon(
+              Icons.map_sharp,
+              color: Colors.white,
+            ),
           ),
           IconButton(
             onPressed: () {
@@ -151,14 +152,13 @@ class _TasKopruState extends State<TasKopru> with SingleTickerProviderStateMixin
                 children: links.map((String link) {
                   return new ClipRRect(
                       child: Image.network(
-                        link,
-                        width: MediaQuery.of(context).size.width,
-                        height: 220,
-                        fit: BoxFit.fill,
-                      ));
+                    link,
+                    width: MediaQuery.of(context).size.width,
+                    height: 220,
+                    fit: BoxFit.fill,
+                  ));
                 }).toList(),
               ),
-
               SizedBox(
                 height: 10,
               ),
@@ -179,18 +179,32 @@ class _TasKopruState extends State<TasKopru> with SingleTickerProviderStateMixin
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      "Adana Taş Köprü Seyhan Nehri üzerindedir. IV. (385) yüzyılda Roma İmparatoru Hadrianus tarafından yaptırılmıştır. Yüzyıllarca Avrupa ile Asya arasında önemli bir köprü olmuştur. Harun Reşit (766-809) köprüyü bazı eklerle Adana Kalesi'ne birleştirmiştir. IX. yüzyıl başında Harun Reşit’in oğlu olan 7'inci Abbasi Halifesi Memun (786-833) tarafından onartılmıştır. III. Ahmet (1713), Kel Hasan Paşa (1847) ve Adana Valisi Ziya Paşa (1789) tarafından da değişik zamanlarda tamirat görmüştür. Bu üç onarımının yazıtları mevcuttur. Son onarım 1949 yılında yapılmıştır."
-
-                      "Taş Köprü 319 metre uzunluğunda ve 13 metre yüksekliğindedir. 21 kemerinden 14’ü ayaktadır. Ortadaki büyük kemerde iki aslan kabartması görülmektedir. Dünyanın halen kullanılan en eski köprülerden biri olarak bilinmektedir.",
-                      style: cityIcerik,
+                      "Adana Taş Köprü Seyhan Nehri üzerindedir. IV. (385) yüzyılda "
+                          "Roma İmparatoru Hadrianus tarafından yaptırılmıştır."
+                          " Yüzyıllarca Avrupa ile Asya arasında önemli bir köprü "
+                          "olmuştur. Harun Reşit (766-809) köprüyü bazı eklerle"
+                          " Adana Kalesi'ne birleştirmiştir. IX. yüzyıl başında"
+                          "Harun Reşit’in oğlu olan 7'inci Abbasi Halifesi Memun "
+                          "(786-833) tarafından onartılmıştır. III. Ahmet (1713),"
+                          " Kel Hasan Paşa (1847) ve Adana Valisi Ziya Paşa (1789) "
+                          "tarafından da değişik zamanlarda tamirat görmüştür."
+                          " Bu üç onarımının yazıtları mevcuttur. Son onarım"
+                          " 1949 yılında yapılmıştır."
+                      "Taş Köprü 319 metre uzunluğunda ve 13 metre "
+                          "yüksekliğindedir. 21 kemerinden 14’ü ayaktadır."
+                          " Ortadaki büyük kemerde iki aslan kabartması "
+                          "görülmektedir. Dünyanın halen kullanılan en "
+                          "eski köprülerden biri olarak bilinmektedir.",
+                      style: icerik2,
                     ),
                   ),
                 ),
               ),
-              SizedBox(height: 15,),
+              SizedBox(
+                height: 15,
+              ),
               TextButton(
-                onPressed: ()
-                {
+                onPressed: () {
                   Get.to(() => Maps(x: x, y: y, title: title));
                 },
                 child: Container(
@@ -200,7 +214,6 @@ class _TasKopruState extends State<TasKopru> with SingleTickerProviderStateMixin
                     child: Text(
                       "HARİTADA GÖSTER",
                       style: cityName,
-
                     ),
                   ),
                   decoration: BoxDecoration(
@@ -227,7 +240,7 @@ class _TasKopruState extends State<TasKopru> with SingleTickerProviderStateMixin
               ),
               TextButton(
                 onPressed: () {
-                    Get.to(() => TasKopruYorum());
+                  Get.to(() => TasKopruYorum());
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width,

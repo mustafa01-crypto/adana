@@ -60,6 +60,9 @@ TextStyle email = GoogleFonts.sourceSansPro(
 TextStyle icerik = GoogleFonts.sourceSansPro(
     color: Colors.grey.shade800,fontWeight: FontWeight.w500,fontSize: 16
 );
+TextStyle icerik2 = GoogleFonts.sourceSansPro(
+    color: Colors.white,fontWeight: FontWeight.w500,fontSize: 18
+);
 
 Gradient gradient2 = LinearGradient(
   begin: Alignment.topRight,

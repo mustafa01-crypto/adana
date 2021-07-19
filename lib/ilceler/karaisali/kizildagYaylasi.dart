@@ -187,7 +187,7 @@ class _KizildagState extends State<Kizildag>
                       "armut, kiraz, vişne ve ceviz ağaçları ile iç içe olan yaylada kamp "
                       "kurarak Kızıldağ’da yürüyüş yapılabilir, yaban "
                       "hayatı incelenerek fotoğraf çekilebilir.",
-                      style: cityIcerik,
+                      style: icerik2,
                     ),
                   ),
                 ),

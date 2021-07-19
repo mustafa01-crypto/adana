@@ -18,9 +18,8 @@ class SinemaMuzesi extends StatefulWidget {
   _SinemaMuzesiState createState() => _SinemaMuzesiState();
 }
 
-class _SinemaMuzesiState extends State<SinemaMuzesi> with SingleTickerProviderStateMixin {
-
-
+class _SinemaMuzesiState extends State<SinemaMuzesi>
+    with SingleTickerProviderStateMixin {
   double x = 36.988459;
   double y = 35.331943;
   String title = "ADANA SİNEMA MÜZESİ";
@@ -42,13 +41,14 @@ class _SinemaMuzesiState extends State<SinemaMuzesi> with SingleTickerProviderSt
     "https://i.pinimg.com/736x/31/01/80/3101800326daec771ecd6e65ed48efb9.jpg",
     "https://i.sozcu.com.tr/wp-content/uploads/2019/06/10/iecrop/y8_16_9_1560175560.jpg",
   ];
-  void getCurrentUser() {
 
+  void getCurrentUser() {
     final user = auth.currentUser;
     if (user != null) {
       loggedInuser = user;
     }
   }
+
   void _showRatingAppDialog() {
     final _ratingDialog = RatingDialog(
       ratingColor: Colors.amber,
@@ -88,12 +88,13 @@ class _SinemaMuzesiState extends State<SinemaMuzesi> with SingleTickerProviderSt
         title: Center(child: Text(title)),
         actions: [
           IconButton(
-            onPressed: ()
-            {
+            onPressed: () {
               MapUtils.openMap(x, y);
             },
-            icon: Icon(Icons.map_sharp,color: Colors.white,),
-
+            icon: Icon(
+              Icons.map_sharp,
+              color: Colors.white,
+            ),
           ),
           IconButton(
             onPressed: () {
@@ -151,14 +152,13 @@ class _SinemaMuzesiState extends State<SinemaMuzesi> with SingleTickerProviderSt
                 children: links.map((String link) {
                   return new ClipRRect(
                       child: Image.network(
-                        link,
-                        width: MediaQuery.of(context).size.width,
-                        height: 220,
-                        fit: BoxFit.fill,
-                      ));
+                    link,
+                    width: MediaQuery.of(context).size.width,
+                    height: 220,
+                    fit: BoxFit.fill,
+                  ));
                 }).toList(),
               ),
-
               SizedBox(
                 height: 10,
               ),
@@ -180,24 +180,24 @@ class _SinemaMuzesiState extends State<SinemaMuzesi> with SingleTickerProviderSt
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
                       "Adana Sinema Müzesi, Türkiye'nin Adana kentinde bulunan "
-                          "bir sinema müzesidir. Müze, 23 Eylül 2011 tarihinde eski "
-                          "bir Adana evinde kurulmuş olup Seyhan ilçesine bağlı Kayalıbağ Mahallesi'nde Seyhan Nehri'nin batısında yer almaktadır. Özellikle şehre özgü yönetmenler, oyuncular ve yapımcılar ile ilgili eserler tanıtılmaktadır."
-
-                       " Müzenin zemin katı film afişleri için ayrılmıştır. Posterdeki "
-                          "en az bir isim (yönetmen, oyuncu, senarist vb.) "
-                          "Adana sakinine aittir. Birinci katta, Yılmaz Güney'in "
-                          "fotoğraflarını, film afişlerini ve eşyalarını gösteren "
-                          "bir oda bulunmaktadır. Ayrıca Yılmaz Güney, ressam Abidin "
-                          "Dino ve yazar Orhan Kemal'in heykelleri vardır. Adana'dan sinema ile ilgili diğer tanınmış kişilerin sergilendiği fotoğraflar ve eserler ise yazar Yaşar Kemal, oyuncu Şener Şen ve babası oyuncu Ali Şen, Muzaffer İzgü, Ali Özgentürk, Orhan Duru, Aytaç Arman, Bilal İnci, Merve Mahmut Hekimoğludur. Müzede bir de kütüphane bulunmaktadır.",
-                      style: cityIcerik,
-                  ),
+                      "bir sinema müzesidir. Müze, 23 Eylül 2011 tarihinde eski "
+                      "bir Adana evinde kurulmuş olup Seyhan ilçesine bağlı Kayalıbağ Mahallesi'nde Seyhan Nehri'nin batısında yer almaktadır. Özellikle şehre özgü yönetmenler, oyuncular ve yapımcılar ile ilgili eserler tanıtılmaktadır."
+                      " Müzenin zemin katı film afişleri için ayrılmıştır. Posterdeki "
+                      "en az bir isim (yönetmen, oyuncu, senarist vb.) "
+                      "Adana sakinine aittir. Birinci katta, Yılmaz Güney'in "
+                      "fotoğraflarını, film afişlerini ve eşyalarını gösteren "
+                      "bir oda bulunmaktadır. Ayrıca Yılmaz Güney, ressam Abidin "
+                      "Dino ve yazar Orhan Kemal'in heykelleri vardır. Adana'dan sinema ile ilgili diğer tanınmış kişilerin sergilendiği fotoğraflar ve eserler ise yazar Yaşar Kemal, oyuncu Şener Şen ve babası oyuncu Ali Şen, Muzaffer İzgü, Ali Özgentürk, Orhan Duru, Aytaç Arman, Bilal İnci, Merve Mahmut Hekimoğludur. Müzede bir de kütüphane bulunmaktadır.",
+                      style: icerik2,
+                    ),
                   ),
                 ),
               ),
-              SizedBox(height: 15,),
+              SizedBox(
+                height: 15,
+              ),
               TextButton(
-                onPressed: ()
-                {
+                onPressed: () {
                   Get.to(() => Maps(x: x, y: y, title: title));
                 },
                 child: Container(
@@ -207,7 +207,6 @@ class _SinemaMuzesiState extends State<SinemaMuzesi> with SingleTickerProviderSt
                     child: Text(
                       "HARİTADA GÖSTER",
                       style: cityName,
-
                     ),
                   ),
                   decoration: BoxDecoration(

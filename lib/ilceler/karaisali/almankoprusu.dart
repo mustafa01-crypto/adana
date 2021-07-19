@@ -191,7 +191,7 @@ class _AlmanKoprusuState extends State<AlmanKoprusu>
                           "tekniği ile yapılmıştır. 6. Bölge sınırları içinde "
                           "bulunmaktadır. 1912 yılında hizmete açılmıştır. Köprünün"
                           " yapılış amacı İstanbul-Bağdat-Hicaz Demiryolu hattını tamamlamaktır.",
-                      style: cityIcerik,
+                      style: icerik2,
                     ),
                   ),
                 ),

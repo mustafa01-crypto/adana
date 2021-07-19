@@ -197,7 +197,7 @@ class _KanyonState extends State<Kanyon> with SingleTickerProviderStateMixin {
                           "düzenlenmiş, şelaleyi görecek bir alana ahşap seyir terası"
                           "yapılmıştır. Sarp olan 400 metrelik kısma korkuluk yapılıp,"
                           "dar alanlarda yol genişletilmiştir.",
-                      style: cityIcerik,
+                      style: icerik2,
                     ),
                   ),
                 ),

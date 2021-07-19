@@ -187,7 +187,7 @@ class _CobanDedeState extends State<CobanDede> with SingleTickerProviderStateMix
                           "hayvanların için veterinerler ve poliklinikte bulunmaktadır. "
                           "Doğal yaşamda bir şekilde yaralanmış ve hasta olmuş hayvanlar "
                           "burada iyileştirilerek rehabilite edilmekte ve gelen misafirlerle tanıştırılmaktadır.",
-                      style: cityIcerik,
+                      style: icerik2,
                     ),
                   ),
                 ),

@@ -81,8 +81,8 @@ class _YorumlarState extends State<Yorumlar> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
-                    height: MediaQuery.of(context).size.height * 1/8,
-                    margin: EdgeInsets.symmetric(horizontal: 5,vertical: 10),
+                    //height: MediaQuery.of(context).size.height * 1/8,
+                    margin: EdgeInsets.symmetric(horizontal: 15,vertical: 15),
                     width: double.infinity,
                     padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width*1/50),
                     decoration: BoxDecoration(

@@ -7,9 +7,14 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_slider/image_slider.dart';
+import 'package:intl/intl.dart';
 import 'package:rating_dialog/rating_dialog.dart';
 
 late User loggedInuser;
+var now = new DateTime.now();
+var formatter = new DateFormat('dd-MM-yyyy');
+String formattedDate = formatter.format(now);
+
 
 class AtaturkEvi extends StatefulWidget {
   const AtaturkEvi({Key? key}) : super(key: key);
@@ -66,6 +71,7 @@ class _AtaturkEviState extends State<AtaturkEvi>
             .collection("AtaturkEviYorum")
             .doc(loggedInuser.email)
             .set({
+          "zaman": formattedDate.toString(),
           'email': loggedInuser.email.toString(),
           'icerik': response.comment.toString(),
           'puan': response.rating.toDouble()

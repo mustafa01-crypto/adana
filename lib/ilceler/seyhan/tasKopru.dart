@@ -7,9 +7,14 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_slider/image_slider.dart';
+import 'package:intl/intl.dart';
 import 'package:rating_dialog/rating_dialog.dart';
 
 late User loggedInuser;
+
+var now = new DateTime.now();
+var formatter = new DateFormat('dd-MM-yyyy');
+String formattedDate = formatter.format(now);
 
 class TasKopru extends StatefulWidget {
   const TasKopru({Key? key}) : super(key: key);
@@ -24,6 +29,7 @@ class _TasKopruState extends State<TasKopru>
   double y = 35.334989;
   String title = "TAŞ KÖPRÜ";
   FirebaseAuth auth = FirebaseAuth.instance;
+
 
   void initState() {
     super.initState();
@@ -66,6 +72,7 @@ class _TasKopruState extends State<TasKopru>
             .collection("TasKopruYorum")
             .doc(loggedInuser.email)
             .set({
+          "zaman":formattedDate.toString(),
           'email': loggedInuser.email.toString(),
           'icerik': response.comment.toString(),
           'puan': response.rating.toDouble()
@@ -80,8 +87,13 @@ class _TasKopruState extends State<TasKopru>
     );
   }
 
+
+
   @override
   Widget build(BuildContext context) {
+
+
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: sinir,

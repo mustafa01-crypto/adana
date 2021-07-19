@@ -102,7 +102,10 @@ class _YorumlarState extends State<Yorumlar> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text(data["email"],style: email,),
+                            Text(
+                              data["email"],
+                              style: email,
+                            ),
                             new RatingStars(
                               value: data["puan"],
                               onValueChanged: (v) {
@@ -126,20 +129,31 @@ class _YorumlarState extends State<Yorumlar> {
                               starSpacing: 2,
                               maxValueVisibility: true,
                               valueLabelVisibility: true,
-                              animationDuration:
-                              Duration(milliseconds: 1000),
+                              animationDuration: Duration(milliseconds: 1000),
                               valueLabelPadding: const EdgeInsets.symmetric(
                                   vertical: 1, horizontal: 8),
-                              valueLabelMargin:
-                              const EdgeInsets.only(right: 8),
+                              valueLabelMargin: const EdgeInsets.only(right: 8),
                               starOffColor: const Color(0xffe7e8ea),
                               starColor: Colors.yellow,
                             ),
                           ],
                         ),
-                        SizedBox(height: 6,),
-                        Text(data["icerik"],style: icerik,),
+                        SizedBox(
+                          height: 6,
+                        ),
+                        Text(
+                          data["icerik"],
+                          style: icerik,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
 
+                            Text(data["zaman"],style: email,
+
+                            ),
+                          ],
+                        )
                       ],
                     ),
                   ),

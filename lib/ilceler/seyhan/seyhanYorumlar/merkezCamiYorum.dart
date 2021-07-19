@@ -131,6 +131,15 @@ class _YorumlarState extends State<Yorumlar> {
                           data["icerik"],
                           style: icerik,
                         ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+
+                            Text(data["zaman"],style: email,
+
+                            ),
+                          ],
+                        )
                       ],
                     ),
                   ),

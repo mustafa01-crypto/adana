@@ -11,6 +11,8 @@ import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:video_player/video_player.dart';
 
+import 'mesire/cukurovaList.dart';
+
 
 late User loggedInuser;
 
@@ -167,10 +169,13 @@ class _HomeState extends State<Home> {
                       Get.to(() => SeyhanList());
                     },
                   ),
-               /*   ListTile(
-                    title: Text('CEYHAN', style: baslik2),
-                    onTap: () {},
+                 ListTile(
+                    title: Text('ÇUKUROVA', style: baslik2),
+                    onTap: () {
+                      Get.to(() => CukurovaList());
+                    },
                   ),
+                  /*
                   ListTile(
                     title: Text(
                       'KOZAN',

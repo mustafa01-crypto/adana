@@ -54,7 +54,9 @@ class _HomeState extends State<Home> {
         // Ensure the first frame is shown after the video is initialized.
         setState(() {});
       });
+
   }
+
 
   baglantiAl() async {
     String baglanti = await FirebaseStorage.instance
@@ -231,5 +233,10 @@ class _HomeState extends State<Home> {
             ],
           )),
     );
+  }
+  @override
+  void dispose() {
+    super.dispose();
+    _controller!.dispose();
   }
 }

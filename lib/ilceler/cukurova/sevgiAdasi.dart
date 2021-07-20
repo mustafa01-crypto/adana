@@ -1,4 +1,5 @@
 import 'package:adana/constants/constants.dart';
+import 'package:adana/ilceler/cukurova/yorumlar/sevgi.dart';
 import 'package:adana/ilceler/karaisali/yorumlar/varda.dart';
 import 'package:adana/map/map.dart';
 import 'package:adana/map/mapUtils.dart';
@@ -66,7 +67,7 @@ class _SevgiAdasiState extends State<SevgiAdasi>
       onCancelled: () {},
       onSubmitted: (response) {
         FirebaseFirestore.instance
-            .collection("vardaYorum")
+            .collection("SevgiYorum")
             .doc(loggedInuser.email)
             .set({
           "zaman": formattedDate.toString(),
@@ -230,7 +231,7 @@ class _SevgiAdasiState extends State<SevgiAdasi>
               ),
               TextButton(
                 onPressed: () {
-                  Get.to(() => VardaYorum());
+                  Get.to(() => SevgiYorum());
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width,

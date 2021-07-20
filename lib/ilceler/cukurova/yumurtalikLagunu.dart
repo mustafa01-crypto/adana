@@ -1,4 +1,5 @@
 import 'package:adana/constants/constants.dart';
+import 'package:adana/ilceler/cukurova/yorumlar/lagun.dart';
 import 'package:adana/ilceler/karaisali/yorumlar/varda.dart';
 import 'package:adana/map/map.dart';
 import 'package:adana/map/mapUtils.dart';
@@ -66,7 +67,7 @@ class _YumurtalikLagunuState extends State<YumurtalikLagunu>
       onCancelled: () {},
       onSubmitted: (response) {
         FirebaseFirestore.instance
-            .collection("vardaYorum")
+            .collection("LagunYorum")
             .doc(loggedInuser.email)
             .set({
           "zaman": formattedDate.toString(),
@@ -229,7 +230,7 @@ class _YumurtalikLagunuState extends State<YumurtalikLagunu>
               ),
               TextButton(
                 onPressed: () {
-                  Get.to(() => VardaYorum());
+                  Get.to(() => LagunYorum());
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width,

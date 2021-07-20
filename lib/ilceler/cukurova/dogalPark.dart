@@ -1,4 +1,5 @@
 import 'package:adana/constants/constants.dart';
+import 'package:adana/ilceler/cukurova/yorumlar/park.dart';
 import 'package:adana/ilceler/karaisali/yorumlar/varda.dart';
 import 'package:adana/map/map.dart';
 import 'package:adana/map/mapUtils.dart';
@@ -68,7 +69,7 @@ class _DogalParkState extends State<DogalPark>
       onCancelled: () {},
       onSubmitted: (response) {
         FirebaseFirestore.instance
-            .collection("vardaYorum")
+            .collection("ParkYorum")
             .doc(loggedInuser.email)
             .set({
           "zaman": formattedDate.toString(),
@@ -233,7 +234,7 @@ class _DogalParkState extends State<DogalPark>
               ),
               TextButton(
                 onPressed: () {
-                  Get.to(() => VardaYorum());
+                  Get.to(() => ParkYorum());
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width,

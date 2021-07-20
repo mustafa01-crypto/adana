@@ -1,4 +1,5 @@
 import 'package:adana/constants/constants.dart';
+import 'package:adana/ilceler/cukurova/yorumlar/muze.dart';
 import 'package:adana/ilceler/karaisali/yorumlar/varda.dart';
 import 'package:adana/map/map.dart';
 import 'package:adana/map/mapUtils.dart';
@@ -68,7 +69,7 @@ class _MuzeKompleksiState extends State<MuzeKompleksi>
       onCancelled: () {},
       onSubmitted: (response) {
         FirebaseFirestore.instance
-            .collection("vardaYorum")
+            .collection("MuzeYorum")
             .doc(loggedInuser.email)
             .set({
           "zaman": formattedDate.toString(),
@@ -233,7 +234,7 @@ class _MuzeKompleksiState extends State<MuzeKompleksi>
               ),
               TextButton(
                 onPressed: () {
-                  Get.to(() => VardaYorum());
+                  Get.to(() => MuzeYorum());
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width,

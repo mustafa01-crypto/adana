@@ -275,6 +275,7 @@ class _KaraisaliState extends State<Karapinar>
           ),
         ),
       ),
+
     );
   }
 }

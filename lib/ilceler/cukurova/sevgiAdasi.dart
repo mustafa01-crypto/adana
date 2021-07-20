@@ -32,7 +32,7 @@ class _SevgiAdasiState extends State<SevgiAdasi>
   void initState() {
     super.initState();
     getCurrentUser();
-    tabController = TabController(length: 6, vsync: this);
+    tabController = TabController(length: 5, vsync: this);
   }
 
   void getCurrentUser() {
@@ -45,12 +45,11 @@ class _SevgiAdasiState extends State<SevgiAdasi>
   TabController? tabController;
 
   static List<String> links = [
-    "https://www.kulturportali.gov.tr/repoKulturPortali/large/SehirRehberi//GezilecekYer/20190711105722848_Varda%20Koprusu%201.jpg?format=jpg&quality=50",
-    "https://seyyahdefteri.com/wp-content/uploads/2018/12/Varda-K%C3%B6pr%C3%BCs%C3%BC-Nerede-Nas%C4%B1l-Gidilir-Neler-Yap%C4%B1l%C4%B1r-3.jpg",
-    "https://www.karaisali.bel.tr/wp-content/uploads/2020/03/Varda-Koprusu%E2%80%99nde-Isiklandirma-Calismalari-Tamamlandi.jpg",
-    "https://i.sozcu.com.tr/wp-content/uploads/2021/02/14/iecrop/varda-koprusu-iha.jpg1__16_9_1613290099.jpg",
-    "https://gezilmesigerekenyerler.com/wp-content/uploads/2017/05/Varda-Koprusu.jpg",
-    "https://pbs.twimg.com/media/EfKi-EdWAAIxPpI.jpg",
+    "https://i.ytimg.com/vi/SJCjbQgiVsU/maxresdefault.jpg",
+    "https://iatkv.tmgrup.com.tr/83d650/616/275/0/7/1766/792?u=https://itkv.tmgrup.com.tr/2017/10/16/sevgi-yolu-1508186751683.jpeg",
+   "https://mapio.net/images-p/10905115.jpg",
+    "https://pbs.twimg.com/media/EYihfBFWkAAGukS.jpg",
+    "https://i.pinimg.com/originals/3c/c6/8b/3cc68b07bb41ea933021c4109b563fbe.jpg"
   ];
 
   void _showRatingAppDialog() {
@@ -59,8 +58,8 @@ class _SevgiAdasiState extends State<SevgiAdasi>
       title: title,
       commentHint: "...",
       message: '${title} hakkında ne düşünüyorsunuz',
-      image: Image.asset(
-        "assets/karaisali/varda/v4.jpg",
+      image: Image.network(
+        "https://mapio.net/images-p/10905115.jpg",
         height: 100,
       ),
       submitButton: 'Gönder',

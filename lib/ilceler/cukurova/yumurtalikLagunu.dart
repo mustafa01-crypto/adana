@@ -32,7 +32,7 @@ class _YumurtalikLagunuState extends State<YumurtalikLagunu>
   void initState() {
     super.initState();
     getCurrentUser();
-    tabController = TabController(length: 6, vsync: this);
+    tabController = TabController(length: 4, vsync: this);
   }
 
   void getCurrentUser() {
@@ -46,12 +46,10 @@ class _YumurtalikLagunuState extends State<YumurtalikLagunu>
   TabController? tabController;
 
   static List<String> links = [
-    "https://www.kulturportali.gov.tr/repoKulturPortali/large/SehirRehberi//GezilecekYer/20190711105722848_Varda%20Koprusu%201.jpg?format=jpg&quality=50",
-    "https://seyyahdefteri.com/wp-content/uploads/2018/12/Varda-K%C3%B6pr%C3%BCs%C3%BC-Nerede-Nas%C4%B1l-Gidilir-Neler-Yap%C4%B1l%C4%B1r-3.jpg",
-    "https://www.karaisali.bel.tr/wp-content/uploads/2020/03/Varda-Koprusu%E2%80%99nde-Isiklandirma-Calismalari-Tamamlandi.jpg",
-    "https://i.sozcu.com.tr/wp-content/uploads/2021/02/14/iecrop/varda-koprusu-iha.jpg1__16_9_1613290099.jpg",
-    "https://gezilmesigerekenyerler.com/wp-content/uploads/2017/05/Varda-Koprusu.jpg",
-    "https://pbs.twimg.com/media/EfKi-EdWAAIxPpI.jpg",
+    "https://dogadakiler.com/img/A/2020/11/6362529.jpg",
+    "https://adabul.com/wp-content/uploads/2016/03/havadan-adana-3.jpg",
+    "https://lh3.googleusercontent.com/proxy/y9-7Vx1iOHqaiRdvImOqNmnAlnCFW8qtDiTlYarvAyvtYtHtR_SYTO0rndmvIPok7sotz3YgPJLndjZfWr9fb8GfzQh7vZgQfd7B_Li7HdmiZTM",
+    "https://lh3.googleusercontent.com/proxy/39RP4V8sjXq9-JpVJhAzhZvb9DDnebl3tpPVg6q1qc24MO1K6DwKumLCiv07-_71smPnwsI76y4dl2aqqVXwhJ8pUSeSNiFnfh4lE73mULK6136ke7Z5ABMkNbD3cNxZmrBWr0XfV-dUL-Tmfi2fqNYcl1MxnkIQ0JDxhExW"
   ];
 
   void _showRatingAppDialog() {
@@ -60,8 +58,8 @@ class _YumurtalikLagunuState extends State<YumurtalikLagunu>
       title: title,
       commentHint: "...",
       message: '${title} hakkında ne düşünüyorsunuz',
-      image: Image.asset(
-        "assets/karaisali/varda/v4.jpg",
+      image: Image.network(
+        "https://dogadakiler.com/img/A/2020/11/6362529.jpg",
         height: 100,
       ),
       submitButton: 'Gönder',

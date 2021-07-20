@@ -46,12 +46,12 @@ class _MuzeKompleksiState extends State<MuzeKompleksi>
   TabController? tabController;
 
   static List<String> links = [
-    "https://www.kulturportali.gov.tr/repoKulturPortali/large/SehirRehberi//GezilecekYer/20190711105722848_Varda%20Koprusu%201.jpg?format=jpg&quality=50",
-    "https://seyyahdefteri.com/wp-content/uploads/2018/12/Varda-K%C3%B6pr%C3%BCs%C3%BC-Nerede-Nas%C4%B1l-Gidilir-Neler-Yap%C4%B1l%C4%B1r-3.jpg",
-    "https://www.karaisali.bel.tr/wp-content/uploads/2020/03/Varda-Koprusu%E2%80%99nde-Isiklandirma-Calismalari-Tamamlandi.jpg",
-    "https://i.sozcu.com.tr/wp-content/uploads/2021/02/14/iecrop/varda-koprusu-iha.jpg1__16_9_1613290099.jpg",
-    "https://gezilmesigerekenyerler.com/wp-content/uploads/2017/05/Varda-Koprusu.jpg",
-    "https://pbs.twimg.com/media/EfKi-EdWAAIxPpI.jpg",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRL2SZsXeMHUwlr6j4fzn_sTM3CbdLVMjH4Qw&usqp=CAU",
+    "https://i.dha.com.tr/15648/imgs/191120181045489063498.jpg",
+    "https://arkeofili.com/wp-content/uploads/2017/05/adana2.jpg",
+    "https://media-cdn.tripadvisor.com/media/photo-s/05/20/62/74/adana-arkeoloji-muzesi.jpg",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0mfhVnx-iw5fqr4uEhHCzyGwe9UxDz-Ocqw&usqp=CAU",
+    "https://www.kulturportali.gov.tr/repoKulturPortali/large/SehirRehberi//GezilecekYer/20190724104356353_Adana%20Muze%20Kompleksi%20(1).png?format=jpg&quality=50",
   ];
 
   void _showRatingAppDialog() {
@@ -60,8 +60,8 @@ class _MuzeKompleksiState extends State<MuzeKompleksi>
       title: title,
       commentHint: "...",
       message: '${title} hakkında ne düşünüyorsunuz',
-      image: Image.asset(
-        "assets/karaisali/varda/v4.jpg",
+      image: Image.network(
+        "https://arkeofili.com/wp-content/uploads/2017/05/adana2.jpg",
         height: 100,
       ),
       submitButton: 'Gönder',

@@ -32,7 +32,7 @@ class _SeyhanBarajiState extends State<SeyhanBaraji>
   void initState() {
     super.initState();
     getCurrentUser();
-    tabController = TabController(length: 6, vsync: this);
+    tabController = TabController(length: 4, vsync: this);
   }
 
   void getCurrentUser() {
@@ -46,12 +46,10 @@ class _SeyhanBarajiState extends State<SeyhanBaraji>
   TabController? tabController;
 
   static List<String> links = [
-    "https://www.kulturportali.gov.tr/repoKulturPortali/large/SehirRehberi//GezilecekYer/20190711105722848_Varda%20Koprusu%201.jpg?format=jpg&quality=50",
-    "https://seyyahdefteri.com/wp-content/uploads/2018/12/Varda-K%C3%B6pr%C3%BCs%C3%BC-Nerede-Nas%C4%B1l-Gidilir-Neler-Yap%C4%B1l%C4%B1r-3.jpg",
-    "https://www.karaisali.bel.tr/wp-content/uploads/2020/03/Varda-Koprusu%E2%80%99nde-Isiklandirma-Calismalari-Tamamlandi.jpg",
-    "https://i.sozcu.com.tr/wp-content/uploads/2021/02/14/iecrop/varda-koprusu-iha.jpg1__16_9_1613290099.jpg",
-    "https://gezilmesigerekenyerler.com/wp-content/uploads/2017/05/Varda-Koprusu.jpg",
-    "https://pbs.twimg.com/media/EfKi-EdWAAIxPpI.jpg",
+   "https://i.borsagundem.com/files/2021/4/7/1562038/1562038.jpg?v=1622180246",
+    "https://im.haberturk.com/yerel_haber/2021/04/08/ver1617863880/86146042_620x410.jpg",
+    "https://media-cdn.tripadvisor.com/media/photo-s/03/8c/18/69/seyhan-baraji.jpg",
+    "https://i.ytimg.com/vi/5hKpY-To5ZU/maxresdefault.jpg"
   ];
 
   void _showRatingAppDialog() {
@@ -60,8 +58,8 @@ class _SeyhanBarajiState extends State<SeyhanBaraji>
       title: title,
       commentHint: "...",
       message: '${title} hakkında ne düşünüyorsunuz',
-      image: Image.asset(
-        "assets/karaisali/varda/v4.jpg",
+      image: Image.network(
+        "https://i.ytimg.com/vi/5hKpY-To5ZU/maxresdefault.jpg",
         height: 100,
       ),
       submitButton: 'Gönder',

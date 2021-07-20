@@ -46,12 +46,12 @@ class _KaratasPlajiState extends State<KaratasPlaji>
   TabController? tabController;
 
   static List<String> links = [
-    "https://www.kulturportali.gov.tr/repoKulturPortali/large/SehirRehberi//GezilecekYer/20190711105722848_Varda%20Koprusu%201.jpg?format=jpg&quality=50",
-    "https://seyyahdefteri.com/wp-content/uploads/2018/12/Varda-K%C3%B6pr%C3%BCs%C3%BC-Nerede-Nas%C4%B1l-Gidilir-Neler-Yap%C4%B1l%C4%B1r-3.jpg",
-    "https://www.karaisali.bel.tr/wp-content/uploads/2020/03/Varda-Koprusu%E2%80%99nde-Isiklandirma-Calismalari-Tamamlandi.jpg",
-    "https://i.sozcu.com.tr/wp-content/uploads/2021/02/14/iecrop/varda-koprusu-iha.jpg1__16_9_1613290099.jpg",
-    "https://gezilmesigerekenyerler.com/wp-content/uploads/2017/05/Varda-Koprusu.jpg",
-    "https://pbs.twimg.com/media/EfKi-EdWAAIxPpI.jpg",
+    "https://cdn.otelleri.net/landing/karatas/gezi-rehberi/karatas-plaji-2478-61.jpg",
+    "https://cdn.otelleri.net/landing/karatas/gezi-rehberi/bahce-belediye-halk-plaji-2478-31.jpg",
+    "https://seyyahdefteri.com/wp-content/uploads/2019/05/Karata%C5%9F-Plaj%C4%B1.jpg",
+    "https://blog.biletbayi.com/wp-content/uploads/2018/08/karatas-adana-scaled.jpg",
+    "https://www.gezi-yorum.net/wp-content/uploads/2019/12/karata%C5%9F.genel_.1.jpg",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfhl1rAZl9z6yWACxAhO-iXvjoDvMw5IAO-g&usqp=CAU"
   ];
 
   void _showRatingAppDialog() {
@@ -60,8 +60,8 @@ class _KaratasPlajiState extends State<KaratasPlaji>
       title: title,
       commentHint: "...",
       message: '${title} hakkında ne düşünüyorsunuz',
-      image: Image.asset(
-        "assets/karaisali/varda/v4.jpg",
+      image: Image.network(
+        "https://blog.biletbayi.com/wp-content/uploads/2018/08/karatas-adana-scaled.jpg",
         height: 100,
       ),
       submitButton: 'Gönder',

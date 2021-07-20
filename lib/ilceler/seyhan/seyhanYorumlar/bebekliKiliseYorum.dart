@@ -64,13 +64,13 @@ class _YorumlarState extends State<Yorumlar> {
           children: snapshot.data!.docs.map((DocumentSnapshot document) {
             Map<String, dynamic> data = document.data() as Map<String, dynamic>;
             return Padding(
-              padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+              padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
                     //height: MediaQuery.of(context).size.height * 1/8,
-                    margin: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+                    margin: EdgeInsets.symmetric(horizontal: 10, vertical: 15),
                     width: double.infinity,
                     padding: EdgeInsets.symmetric(
                         horizontal: MediaQuery.of(context).size.width * 1 / 50),
@@ -121,7 +121,7 @@ class _YorumlarState extends State<Yorumlar> {
                                   vertical: 1, horizontal: 8),
                               valueLabelMargin: const EdgeInsets.only(right: 8),
                               starOffColor: const Color(0xffe7e8ea),
-                              starColor: Colors.yellow,
+                              starColor: Colors.amber,
                             ),
                           ],
                         ),

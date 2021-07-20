@@ -54,11 +54,11 @@ Gradient gradient = LinearGradient(
 
 );
 TextStyle email = GoogleFonts.sourceSansPro(
-  color: Colors.grey.shade900,fontWeight: FontWeight.w700,fontSize: 14
+  color: Colors.black,fontWeight: FontWeight.w900,fontSize: 14
 );
 
 TextStyle icerik = GoogleFonts.sourceSansPro(
-    color: Colors.grey.shade800,fontWeight: FontWeight.w500,fontSize: 16
+    color: Colors.grey.shade800,fontWeight: FontWeight.w700,fontSize: 16
 );
 TextStyle icerik2 = GoogleFonts.sourceSansPro(
     color: Colors.white,fontWeight: FontWeight.w500,fontSize: 18

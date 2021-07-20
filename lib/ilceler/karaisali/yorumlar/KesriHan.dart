@@ -4,7 +4,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_stars/flutter_rating_stars.dart';
 
-
 class KesriHanYorum extends StatefulWidget {
   const KesriHanYorum({Key? key}) : super(key: key);
 
@@ -16,10 +15,8 @@ class _KesriHanYorumState extends State<KesriHanYorum> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-
       child: Scaffold(
         appBar: AppBar(
-
           centerTitle: true,
           title: Text(
             "YORUMLAR",
@@ -29,17 +26,13 @@ class _KesriHanYorumState extends State<KesriHanYorum> {
               gradient: gradient2,
             ),
           ),
-
         ),
         backgroundColor: Colors.white,
-
-
         body: Yorumlar(),
       ),
     );
   }
 }
-
 
 class Yorumlar extends StatefulWidget {
   const Yorumlar({Key? key}) : super(key: key);
@@ -51,16 +44,13 @@ class Yorumlar extends StatefulWidget {
 class _YorumlarState extends State<Yorumlar> {
   @override
   Widget build(BuildContext context) {
-
-    double value =1.0;
-    Query karapinarYorumlar = FirebaseFirestore.instance
-        .collection('kesriYorum');
-
+    double value = 1.0;
+    Query karapinarYorumlar =
+        FirebaseFirestore.instance.collection('kesriYorum');
 
     return StreamBuilder<QuerySnapshot>(
-
       stream: karapinarYorumlar.snapshots(),
-      builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot){
+      builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
         if (snapshot.hasError) {
           return Text('Something went wrong');
         }
@@ -73,18 +63,16 @@ class _YorumlarState extends State<Yorumlar> {
           children: snapshot.data!.docs.map((DocumentSnapshot document) {
             Map<String, dynamic> data = document.data() as Map<String, dynamic>;
             return Padding(
-              padding: const EdgeInsets.symmetric(
-                  vertical: 10,
-                  horizontal: 10
-              ),
+              padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
                     //height: MediaQuery.of(context).size.height * 1/8,
-                    margin: EdgeInsets.symmetric(horizontal: 15,vertical: 15),
+                    margin: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
                     width: double.infinity,
-                    padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width*1/50),
+                    padding: EdgeInsets.symmetric(
+                        horizontal: MediaQuery.of(context).size.width * 1 / 50),
                     decoration: BoxDecoration(
                       border: Border.all(color: scaffold, width: 4),
                       borderRadius: BorderRadius.only(
@@ -93,7 +81,6 @@ class _YorumlarState extends State<Yorumlar> {
                           bottomLeft: Radius.circular(15),
                           bottomRight: Radius.circular(15)),
                       color: Colors.white,
-
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -147,9 +134,9 @@ class _YorumlarState extends State<Yorumlar> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-
-                            Text(data["zaman"],style: email,
-
+                            Text(
+                              data["zaman"],
+                              style: email,
                             ),
                           ],
                         )
@@ -162,7 +149,6 @@ class _YorumlarState extends State<Yorumlar> {
           }).toList(),
         );
       },
-
     );
   }
 }

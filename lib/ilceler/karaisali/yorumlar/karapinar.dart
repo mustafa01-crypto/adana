@@ -75,7 +75,7 @@ class _YorumlarState extends State<Yorumlar> {
             Map<String, dynamic> data = document.data() as Map<String, dynamic>;
             return Padding(
               padding: const EdgeInsets.symmetric(
-                  vertical: 10,
+                  vertical: 5,
                   horizontal: 10
               ),
               child: Column(

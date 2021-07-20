@@ -41,9 +41,9 @@ class _UluCamiiState extends State<UluCamii>
     "https://okuryazarim.com/wp-content/uploads/2016/12/Adana-Ulu-Cami-Genel.jpg",
     "https://www.gezipedia.net/uploads/posts/2020-03/1585517792_adana-ulu-cami.jpg",
     "https://tarihiyapi.net/wp-content/uploads/2020/05/Adana-Ulu-Cami-Tarihi.jpg",
-    "https://lh3.googleusercontent.com/proxy/x5XFIj7oWjzhT9hGHf23-RHUEUIHHCViqUhfLLU7hTAfFaClyVxfzjzYZ0DI-aXlQfnDuoezxU1vrOHbyUAR1TVWN_Qab2yYG0gRiymhlJhQShvJoYzy7khUAKPt",
+    "https://www.kulturportali.gov.tr/contents/images/asde.jpg",
     "https://www.otelcenneti.com/uploads/resimler/adana-ulu-camii-2.jpg",
-    "https://lh3.googleusercontent.com/proxy/tn9BaN_qZrWzYX3kwc72weCeiJinHmMjVDfVwcLMjmqy5ArW_Je9SJJqcOdTaQEeW-up0LvMNjVdDBvTdNlz-ja75_ltquCV_aQzshV7JQGXIKtwm_09SQ",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs_doxoEGOGxV07G3j9C_-xH5DndTllcJIHA&usqp=CAU",
   ];
 
   void getCurrentUser() {

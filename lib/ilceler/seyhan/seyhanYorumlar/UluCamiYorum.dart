@@ -64,7 +64,7 @@ class _YorumlarState extends State<Yorumlar> {
           children: snapshot.data!.docs.map((DocumentSnapshot document) {
             Map<String, dynamic> data = document.data() as Map<String, dynamic>;
             return Padding(
-              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+              padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
@@ -135,9 +135,9 @@ class _YorumlarState extends State<Yorumlar> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-
-                            Text(data["zaman"],style: email,
-
+                            Text(
+                              data["zaman"],
+                              style: email,
                             ),
                           ],
                         )
@@ -152,5 +152,4 @@ class _YorumlarState extends State<Yorumlar> {
       },
     );
   }
-
 }

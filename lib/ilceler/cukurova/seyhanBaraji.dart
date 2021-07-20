@@ -24,9 +24,9 @@ class SeyhanBaraji extends StatefulWidget {
 
 class _SeyhanBarajiState extends State<SeyhanBaraji>
     with SingleTickerProviderStateMixin {
-  double x = 37.242919;
-  double y = 34.976780;
-  String title = "Alman (Varda) Köprüsü";
+  double x = 37.081475;
+  double y = 35.295896;
+  String title = "Seyhan Barajı";
   FirebaseAuth auth = FirebaseAuth.instance;
 
   void initState() {
@@ -59,7 +59,7 @@ class _SeyhanBarajiState extends State<SeyhanBaraji>
       ratingColor: Colors.amber,
       title: title,
       commentHint: "...",
-      message: 'Varda Köprüsü hakkında ne düşünüyorsunuz',
+      message: '${title} hakkında ne düşünüyorsunuz',
       image: Image.asset(
         "assets/karaisali/varda/v4.jpg",
         height: 100,
@@ -185,17 +185,11 @@ class _SeyhanBarajiState extends State<SeyhanBaraji>
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      "Varda Köprüsü, Adana ili Karaisalı ilçesi Hacıkırı "
-                          "(Kıralan) mahallesi'nde bulunan, yöre halkı tarafından Koca "
-                          "Köprü diye anılan köprü. Hacıkırı Demiryolu"
-                          " Köprüsü olarak ya da 1912 yılında Almanlar"
-                          " tarafından inşa edildiği için Alman köprüsü olarak bilinmektedir."
-                          " Adana'ya uzaklığı karayolu ile Karaisalı üzerinden 64 km'dir."
-                          " Demir yolu ile Adana İstasyonu'na mesafesi 63 km'dir."
-                          "Bu köprü Almanlar tarafından, çelik kafes taş örme "
-                          "tekniği ile yapılmıştır. 6. Bölge sınırları içinde "
-                          "bulunmaktadır. 1912 yılında hizmete açılmıştır. Köprünün"
-                          " yapılış amacı İstanbul-Bağdat-Hicaz Demiryolu hattını tamamlamaktır.",
+                      "Çukurova’ya gidildiğinde ilk uğranılması gereken yerlerin başında Seyhan Baraj Gölü gelmektedir. 1956 yılında inşa edilen baraj gölü şuan şehre sadece elektrik sağlamamakta aynı zamanda turizm faaliyetleriyle de dikkat çekmektedir."
+
+                      "Adana halkının büyük bir bölümü yıl içerisinde bu baraj gölünün etrafında gezinti yapmakta, piknik alanlarını kullanmaktadır."
+
+                    "Barajın içerisinde deniz bisikleti ile tur atma şansının yanında kayıkla gezme imkanı da verilmektedir. Durgun bir su olması kullanımını daha kolay bir hale getirmektedir.  ",
                       style: icerik2,
                     ),
                   ),

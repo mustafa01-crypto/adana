@@ -24,9 +24,9 @@ class SevgiAdasi extends StatefulWidget {
 
 class _SevgiAdasiState extends State<SevgiAdasi>
     with SingleTickerProviderStateMixin {
-  double x = 37.242919;
-  double y = 34.976780;
-  String title = "Alman (Varda) Köprüsü";
+  double x = 37.046063;
+  double y = 35.324507;
+  String title = "SEVGİ ADASI";
   FirebaseAuth auth = FirebaseAuth.instance;
 
   void initState() {
@@ -36,7 +36,6 @@ class _SevgiAdasiState extends State<SevgiAdasi>
   }
 
   void getCurrentUser() {
-
     final user = auth.currentUser;
     if (user != null) {
       loggedInuser = user;
@@ -59,7 +58,7 @@ class _SevgiAdasiState extends State<SevgiAdasi>
       ratingColor: Colors.amber,
       title: title,
       commentHint: "...",
-      message: 'Varda Köprüsü hakkında ne düşünüyorsunuz',
+      message: '${title} hakkında ne düşünüyorsunuz',
       image: Image.asset(
         "assets/karaisali/varda/v4.jpg",
         height: 100,
@@ -94,12 +93,13 @@ class _SevgiAdasiState extends State<SevgiAdasi>
         title: Center(child: Text(title)),
         actions: [
           IconButton(
-            onPressed: ()
-            {
+            onPressed: () {
               MapUtils.openMap(x, y);
             },
-            icon: Icon(Icons.map_sharp,color: Colors.white,),
-
+            icon: Icon(
+              Icons.map_sharp,
+              color: Colors.white,
+            ),
           ),
           IconButton(
             onPressed: () {
@@ -157,14 +157,13 @@ class _SevgiAdasiState extends State<SevgiAdasi>
                 children: links.map((String link) {
                   return new ClipRRect(
                       child: Image.network(
-                        link,
-                        width: MediaQuery.of(context).size.width,
-                        height: 220,
-                        fit: BoxFit.fill,
-                      ));
+                    link,
+                    width: MediaQuery.of(context).size.width,
+                    height: 220,
+                    fit: BoxFit.fill,
+                  ));
                 }).toList(),
               ),
-
               SizedBox(
                 height: 10,
               ),
@@ -185,17 +184,8 @@ class _SevgiAdasiState extends State<SevgiAdasi>
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      "Varda Köprüsü, Adana ili Karaisalı ilçesi Hacıkırı "
-                          "(Kıralan) mahallesi'nde bulunan, yöre halkı tarafından Koca "
-                          "Köprü diye anılan köprü. Hacıkırı Demiryolu"
-                          " Köprüsü olarak ya da 1912 yılında Almanlar"
-                          " tarafından inşa edildiği için Alman köprüsü olarak bilinmektedir."
-                          " Adana'ya uzaklığı karayolu ile Karaisalı üzerinden 64 km'dir."
-                          " Demir yolu ile Adana İstasyonu'na mesafesi 63 km'dir."
-                          "Bu köprü Almanlar tarafından, çelik kafes taş örme "
-                          "tekniği ile yapılmıştır. 6. Bölge sınırları içinde "
-                          "bulunmaktadır. 1912 yılında hizmete açılmıştır. Köprünün"
-                          " yapılış amacı İstanbul-Bağdat-Hicaz Demiryolu hattını tamamlamaktır.",
+                      "Baraj gölü içerisinde yer alan en yüksek nokta olan ve halk tarafından Sevgi Adası olarak bilinen adayı mutlaka görmeniz önerilmektedir. Gece olduğunda yanan neon ışıklar adanın güzelliğini taçlandırmaktadır. "
+                      "Bu ismi almasındaki temel neden çiftlerin buluşma noktası olmasıdır. Buraya kayıklar ile belirli bir ücret ödeyerek rahatlıkla geçilmektedir. Kurak aylarda suların çekilmesi ile birlikte bu noktaya yürüyerek de ulaşmak mümkün olmaktadır. ",
                       style: icerik2,
                     ),
                   ),

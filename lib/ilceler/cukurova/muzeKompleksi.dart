@@ -24,9 +24,9 @@ class MuzeKompleksi extends StatefulWidget {
 
 class _MuzeKompleksiState extends State<MuzeKompleksi>
     with SingleTickerProviderStateMixin {
-  double x = 37.242919;
-  double y = 34.976780;
-  String title = "Alman (Varda) Köprüsü";
+  double x = 36.9951108;
+  double y = 35.3114389;
+  String title = "Adana Müze Kompleksi";
   FirebaseAuth auth = FirebaseAuth.instance;
 
   void initState() {
@@ -59,7 +59,7 @@ class _MuzeKompleksiState extends State<MuzeKompleksi>
       ratingColor: Colors.amber,
       title: title,
       commentHint: "...",
-      message: 'Varda Köprüsü hakkında ne düşünüyorsunuz',
+      message: '${title} hakkında ne düşünüyorsunuz',
       image: Image.asset(
         "assets/karaisali/varda/v4.jpg",
         height: 100,
@@ -185,17 +185,9 @@ class _MuzeKompleksiState extends State<MuzeKompleksi>
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      "Varda Köprüsü, Adana ili Karaisalı ilçesi Hacıkırı "
-                          "(Kıralan) mahallesi'nde bulunan, yöre halkı tarafından Koca "
-                          "Köprü diye anılan köprü. Hacıkırı Demiryolu"
-                          " Köprüsü olarak ya da 1912 yılında Almanlar"
-                          " tarafından inşa edildiği için Alman köprüsü olarak bilinmektedir."
-                          " Adana'ya uzaklığı karayolu ile Karaisalı üzerinden 64 km'dir."
-                          " Demir yolu ile Adana İstasyonu'na mesafesi 63 km'dir."
-                          "Bu köprü Almanlar tarafından, çelik kafes taş örme "
-                          "tekniği ile yapılmıştır. 6. Bölge sınırları içinde "
-                          "bulunmaktadır. 1912 yılında hizmete açılmıştır. Köprünün"
-                          " yapılış amacı İstanbul-Bağdat-Hicaz Demiryolu hattını tamamlamaktır.",
+                      "Adana’nın birçok farklı noktasında yapılan kazı çalışmaları ile ortaya çıkan tarihi eserleri tek bir noktada sergilemeyi amaçlayan ve eski bir fabrika restore edilerek yapılan geniş müze kompleksi 2017 yılında açılmıştır. "
+
+                      "Çukurova içerisinde yer alan bu komplekste birbirinden farklı bölümler bulunmaktadır. Özellikle arkeolojik müzenin çok dikkat çeken parçalara ev sahipliğini üstlendiği rahatlıkla fark edilmektedir. Tam olarak tamamlandığında ise kültürel ve sanatsal alanlarla konukları bambaşka bir dünya karşılayacaktır. ",
                       style: icerik2,
                     ),
                   ),

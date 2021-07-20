@@ -1,11 +1,10 @@
 import 'package:adana/constants/constants.dart';
-import 'package:adana/ilceler/karaisali/almankoprusu.dart';
-import 'package:adana/ilceler/karaisali/dokuzoluk.dart';
-import 'package:adana/ilceler/karaisali/kanyon.dart';
-import 'package:adana/ilceler/karaisali/karapinar.dart';
-import 'package:adana/ilceler/karaisali/kesireHan.dart';
-import 'package:adana/ilceler/karaisali/kizildagYaylasi.dart';
-import 'package:adana/ilceler/karaisali/yerkopru.dart';
+import 'package:adana/ilceler/cukurova/dogalPark.dart';
+import 'package:adana/ilceler/cukurova/karatasPlaji.dart';
+import 'package:adana/ilceler/cukurova/muzeKompleksi.dart';
+import 'package:adana/ilceler/cukurova/sevgiAdasi.dart';
+import 'package:adana/ilceler/cukurova/seyhanBaraji.dart';
+import 'package:adana/ilceler/cukurova/yumurtalikLagunu.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -32,49 +31,41 @@ class _CukurovaListState extends State<CukurovaList> {
 
               InkWell(
                   onTap: () {
-                    Get.to(() => Karapinar());
+                    Get.to(() => SevgiAdasi());
                   },
                   child: sehirler("SEVGİ ADASI")),
               InkWell(
                   onTap: ()
                   {
-                    Get.to(() => Dokuzoluk());
+                    Get.to(() => SeyhanBaraji());
                   },
                   child: sehirler("SEYHAN BARAJI GÖLÜ")),
               InkWell(
 
                   onTap: ()
                   {
-                    Get.to( () => YerKopru());
+                    Get.to( () => MuzeKompleksi());
                   },
 
                   child: sehirler("ADANA MÜZE KOMPLEKSİ")),
               InkWell(
                   onTap: ()
                   {
-                    Get.to( () => AlmanKoprusu());
+                    Get.to( () => DogalPark());
                   },
                   child: sehirler("ÇUKUROVA DOĞAL PARK")),
               InkWell(
                   onTap: ()
                   {
-                    Get.to( () => Kanyon());
+                    Get.to( () => YumurtalikLagunu());
                   },
                   child: sehirler("YUMURTALIK LAGÜNÜ MİLLİ PARKI")),
               InkWell(
                   onTap: ()
                   {
-                    Get.to( () => Kizildag());
+                    Get.to( () => KaratasPlaji());
                   },
                   child: sehirler("KARATAŞ PLAJI")),
-              InkWell(
-                  onTap: ()
-                  {
-                    Get.to( () => KesireHan());
-                  },
-                  child: sehirler("MİSİS  ÖREN YERİ")),
-
-
 
             ],
           ),

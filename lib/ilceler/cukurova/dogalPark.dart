@@ -24,9 +24,9 @@ class DogalPark extends StatefulWidget {
 
 class _DogalParkState extends State<DogalPark>
     with SingleTickerProviderStateMixin {
-  double x = 37.242919;
-  double y = 34.976780;
-  String title = "Alman (Varda) Köprüsü";
+  double x = 37.0501546;
+  double y = 35.2526337;
+  String title = "Çukurova Doğal Park";
   FirebaseAuth auth = FirebaseAuth.instance;
 
   void initState() {
@@ -59,7 +59,7 @@ class _DogalParkState extends State<DogalPark>
       ratingColor: Colors.amber,
       title: title,
       commentHint: "...",
-      message: 'Varda Köprüsü hakkında ne düşünüyorsunuz',
+      message: '${title} hakkında ne düşünüyorsunuz',
       image: Image.asset(
         "assets/karaisali/varda/v4.jpg",
         height: 100,
@@ -185,17 +185,9 @@ class _DogalParkState extends State<DogalPark>
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      "Varda Köprüsü, Adana ili Karaisalı ilçesi Hacıkırı "
-                          "(Kıralan) mahallesi'nde bulunan, yöre halkı tarafından Koca "
-                          "Köprü diye anılan köprü. Hacıkırı Demiryolu"
-                          " Köprüsü olarak ya da 1912 yılında Almanlar"
-                          " tarafından inşa edildiği için Alman köprüsü olarak bilinmektedir."
-                          " Adana'ya uzaklığı karayolu ile Karaisalı üzerinden 64 km'dir."
-                          " Demir yolu ile Adana İstasyonu'na mesafesi 63 km'dir."
-                          "Bu köprü Almanlar tarafından, çelik kafes taş örme "
-                          "tekniği ile yapılmıştır. 6. Bölge sınırları içinde "
-                          "bulunmaktadır. 1912 yılında hizmete açılmıştır. Köprünün"
-                          " yapılış amacı İstanbul-Bağdat-Hicaz Demiryolu hattını tamamlamaktır.",
+                      "Çukurova Belediyesi tarafından ilçenin içerisine yapılan bu park gerçekten dikkat çekici bir kullanım yapısına sahiptir. İçerisinde akarsular, piknik alanları, kuşlar ve farklı hayvan türleri bulunmaktadır. "
+
+                     " İlçede yaşayanlar genellikle sıcak havada bu parkı ziyaret etmeyi tercih etmektedir. İçinde ayrıca amfi tiyatro, konser alanları ve gösteri noktaları da yer almaktadır. Ayrıca düğün salonu hizmet vermektedir. Merkezi bir noktada olduğu için biraz dinlenmek ve rahatlamak için bu parka kolayca ulaşmanız mümkündür.  ",
                       style: icerik2,
                     ),
                   ),

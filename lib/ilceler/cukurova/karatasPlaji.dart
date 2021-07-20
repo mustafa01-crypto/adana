@@ -24,9 +24,9 @@ class KaratasPlaji extends StatefulWidget {
 
 class _KaratasPlajiState extends State<KaratasPlaji>
     with SingleTickerProviderStateMixin {
-  double x = 37.242919;
-  double y = 34.976780;
-  String title = "Alman (Varda) Köprüsü";
+  double x = 36.5521353;
+  double y = 35.3600489;
+  String title = "Karataş Plajı";
   FirebaseAuth auth = FirebaseAuth.instance;
 
   void initState() {
@@ -59,7 +59,7 @@ class _KaratasPlajiState extends State<KaratasPlaji>
       ratingColor: Colors.amber,
       title: title,
       commentHint: "...",
-      message: 'Varda Köprüsü hakkında ne düşünüyorsunuz',
+      message: '${title} hakkında ne düşünüyorsunuz',
       image: Image.asset(
         "assets/karaisali/varda/v4.jpg",
         height: 100,
@@ -185,17 +185,10 @@ class _KaratasPlajiState extends State<KaratasPlaji>
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      "Varda Köprüsü, Adana ili Karaisalı ilçesi Hacıkırı "
-                          "(Kıralan) mahallesi'nde bulunan, yöre halkı tarafından Koca "
-                          "Köprü diye anılan köprü. Hacıkırı Demiryolu"
-                          " Köprüsü olarak ya da 1912 yılında Almanlar"
-                          " tarafından inşa edildiği için Alman köprüsü olarak bilinmektedir."
-                          " Adana'ya uzaklığı karayolu ile Karaisalı üzerinden 64 km'dir."
-                          " Demir yolu ile Adana İstasyonu'na mesafesi 63 km'dir."
-                          "Bu köprü Almanlar tarafından, çelik kafes taş örme "
-                          "tekniği ile yapılmıştır. 6. Bölge sınırları içinde "
-                          "bulunmaktadır. 1912 yılında hizmete açılmıştır. Köprünün"
-                          " yapılış amacı İstanbul-Bağdat-Hicaz Demiryolu hattını tamamlamaktır.",
+                      "Karataş Plajı Çukurova’ya yaklaşık 90 km uzaklıktadır."
+                          " Türkiye’nin ve Dünya’nın en önemli ve uzun "
+                          "kumsallarından biridir. Akdeniz’in ikliminden "
+                          "kaynaklı yılın çoğunluğu denize girilebilmektedir.",
                       style: icerik2,
                     ),
                   ),

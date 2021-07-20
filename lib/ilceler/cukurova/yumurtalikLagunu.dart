@@ -24,9 +24,9 @@ class YumurtalikLagunu extends StatefulWidget {
 
 class _YumurtalikLagunuState extends State<YumurtalikLagunu>
     with SingleTickerProviderStateMixin {
-  double x = 37.242919;
-  double y = 34.976780;
-  String title = "Alman (Varda) Köprüsü";
+  double x = 36.6937859;
+  double y = 35.5516076;
+  String title = "Yumurtalık Lagünü";
   FirebaseAuth auth = FirebaseAuth.instance;
 
   void initState() {
@@ -59,7 +59,7 @@ class _YumurtalikLagunuState extends State<YumurtalikLagunu>
       ratingColor: Colors.amber,
       title: title,
       commentHint: "...",
-      message: 'Varda Köprüsü hakkında ne düşünüyorsunuz',
+      message: '${title} hakkında ne düşünüyorsunuz',
       image: Image.asset(
         "assets/karaisali/varda/v4.jpg",
         height: 100,
@@ -185,17 +185,7 @@ class _YumurtalikLagunuState extends State<YumurtalikLagunu>
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      "Varda Köprüsü, Adana ili Karaisalı ilçesi Hacıkırı "
-                          "(Kıralan) mahallesi'nde bulunan, yöre halkı tarafından Koca "
-                          "Köprü diye anılan köprü. Hacıkırı Demiryolu"
-                          " Köprüsü olarak ya da 1912 yılında Almanlar"
-                          " tarafından inşa edildiği için Alman köprüsü olarak bilinmektedir."
-                          " Adana'ya uzaklığı karayolu ile Karaisalı üzerinden 64 km'dir."
-                          " Demir yolu ile Adana İstasyonu'na mesafesi 63 km'dir."
-                          "Bu köprü Almanlar tarafından, çelik kafes taş örme "
-                          "tekniği ile yapılmıştır. 6. Bölge sınırları içinde "
-                          "bulunmaktadır. 1912 yılında hizmete açılmıştır. Köprünün"
-                          " yapılış amacı İstanbul-Bağdat-Hicaz Demiryolu hattını tamamlamaktır.",
+                      "Yumurtalık Lagünü Milli Parkı Çukurova’ya yaklaşık 40 km uzaklıktadır. Birçok kuş türüne ev sahipliği yapan ve onların göç yolu üzerinde bulunan özel bir yerdir. Kuş gözlemi yapmak isteyenlerin oldukça ilgisini çekmektedir.",
                       style: icerik2,
                     ),
                   ),

@@ -32,7 +32,7 @@ class _YilanKaleState extends State<YilanKale>
   void initState() {
     super.initState();
     getCurrentUser();
-    tabController = TabController(length: 6, vsync: this);
+    tabController = TabController(length: 5, vsync: this);
   }
 
   void getCurrentUser() {
@@ -46,12 +46,11 @@ class _YilanKaleState extends State<YilanKale>
   TabController? tabController;
 
   static List<String> links = [
-    "https://www.adanadacocukolmak.com/wp-content/uploads/2017/06/IMG_5466-500x300.jpg",
-    "https://mapio.net/images-p/11663891.jpg",
-    "https://www.adanadacocukolmak.com/wp-content/uploads/2016/10/Resul_GUL_YilanKale-e1489673203320-500x300.jpg",
-    "https://www.adanadacocukolmak.com/wp-content/uploads/2016/10/do%C4%9Falpark2-500x300.jpg",
-    "https://i.ytimg.com/vi/Ye5dAkFMr8Q/maxresdefault.jpg",
-    "https://www.adanadacocukolmak.com/wp-content/uploads/2016/10/do%C4%9Falpark-500x300.jpg"
+    "https://www.kulturportali.gov.tr/contents/images/20180907111604258_yilan%20kale%20logolu.jpg",
+    "https://ia.tmgrup.com.tr/ff648a/0/0/0/0/800/451?u=https://i.tmgrup.com.tr/fikriyat/2018/05/16/efsaneler-kalesi-yilankale-1526470807530.jpg&mw=660",
+    "https://www.serpmekahvalti.com/wp-content/uploads/2020/11/Yilanli-Kale-Hakkinda.jpeg",
+    "https://avatars.mds.yandex.net/get-altay/1514203/2a00000167fb962bef4b07b37f27c290aea4/XXL",
+    "https://www.nkfu.com/wp-content/uploads/2014/04/yilan-kale-1.jpg"
   ];
 
   void _showRatingAppDialog() {
@@ -185,9 +184,17 @@ class _YilanKaleState extends State<YilanKale>
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      "Çukurova Belediyesi tarafından ilçenin içerisine yapılan bu park gerçekten dikkat çekici bir kullanım yapısına sahiptir. İçerisinde akarsular, piknik alanları, kuşlar ve farklı hayvan türleri bulunmaktadır. "
-
-                          " İlçede yaşayanlar genellikle sıcak havada bu parkı ziyaret etmeyi tercih etmektedir. İçinde ayrıca amfi tiyatro, konser alanları ve gösteri noktaları da yer almaktadır. Ayrıca düğün salonu hizmet vermektedir. Merkezi bir noktada olduğu için biraz dinlenmek ve rahatlamak için bu parka kolayca ulaşmanız mümkündür.  ",
+                    "Toros Dağları’nı aşarak Antakya’ya giden tarihi İpek Yolu "
+                        "üzerinde yer alan Yılan Kalesi, Orta Çağ’da Çukurova'nın"
+                        " Haçlı işgali döneminde Bizanslılar tarafından yapılmıştır."
+                        " Anavarza, Tumlu ve Kozan Kaleleri gibi ovadaki"
+                        " diğer kaleleri de görüş alanının içine alan"
+                        " kalenin sekiz yuvarlak burcu vardır. Kalenin "
+                        "güneyinde yer alan nizamiye kapısından itibaren "
+                        "taş basamaklı merdivenlerle teraslara çıkılmaktadır. "
+                        "Kilise ve sarnıcı bulunan kalenin garnizonu en üst "
+                        "bölümde yer almıştır. Sarp kayalar üzerine yapılmış"
+                        " olan kalenin önemli bir sanat değeri vardır.",
                       style: icerik2,
                     ),
                   ),

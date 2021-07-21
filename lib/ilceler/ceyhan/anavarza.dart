@@ -46,12 +46,12 @@ class _AnavarzaState extends State<Anavarza>
   TabController? tabController;
 
   static List<String> links = [
-    "https://www.adanadacocukolmak.com/wp-content/uploads/2017/06/IMG_5466-500x300.jpg",
-    "https://mapio.net/images-p/11663891.jpg",
-    "https://www.adanadacocukolmak.com/wp-content/uploads/2016/10/Resul_GUL_Anavarza-e1489673203320-500x300.jpg",
-    "https://www.adanadacocukolmak.com/wp-content/uploads/2016/10/do%C4%9Falpark2-500x300.jpg",
-    "https://i.ytimg.com/vi/Ye5dAkFMr8Q/maxresdefault.jpg",
-    "https://www.adanadacocukolmak.com/wp-content/uploads/2016/10/do%C4%9Falpark-500x300.jpg"
+
+    "https://cdnuploads.aa.com.tr/uploads/Contents/2018/08/06/thumbs_b_c_9e6375297d46cc38d01fa70e293d49a3.jpg",
+    "https://blog.tatildukkani.com/wp-content/uploads/2018/10/anavarza-antik-kenti-kapak.jpg",
+    "https://img.bilgihanem.com/wp-content/uploads/2016/02/anavarza-kalesi-hakkinda-bilgiler.jpg",
+    "https://adanabaska.com/thumb.php?src=files/anavarzajpg_31-05-2018_15-43-57.jpg&size=1094x715"
+
   ];
 
   void _showRatingAppDialog() {
@@ -185,9 +185,7 @@ class _AnavarzaState extends State<Anavarza>
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      "Çukurova Belediyesi tarafından ilçenin içerisine yapılan bu park gerçekten dikkat çekici bir kullanım yapısına sahiptir. İçerisinde akarsular, piknik alanları, kuşlar ve farklı hayvan türleri bulunmaktadır. "
-
-                          " İlçede yaşayanlar genellikle sıcak havada bu parkı ziyaret etmeyi tercih etmektedir. İçinde ayrıca amfi tiyatro, konser alanları ve gösteri noktaları da yer almaktadır. Ayrıca düğün salonu hizmet vermektedir. Merkezi bir noktada olduğu için biraz dinlenmek ve rahatlamak için bu parka kolayca ulaşmanız mümkündür.  ",
+                      "Tarihi 2100 yıl öncesine giden ve en parlak dönemini Roma İmparatoru Septimius Severus’un ödüllendirmesiyle M.S. 2'nci yüzyılda yaşamaya başlayan Anavarza, zaman içinde önemli bir kent haline gelerek 408 yılında Kilikya Başkenti unvanına kavuşmuştur. Bizans Dönemi’nde önemini devam ettiren, sonraki yıllarda Ermeniler, Abbasiler, Selçuklular, Ramazanoğulları, Osmanlılar gibi çeşitli medeniyetlere ev sahipliği yapan Anavarza’da farklı kültürlere ait izleri bir arada görmek mümkün. Bu kültürel zenginliği sayesinde de UNESCO Dünya Miras Geçici Listesi’nde yer alması uygun görülen kent; kalıntıları, tarihi ve efsaneleri ile dikkat çekiyor.",
                       style: icerik2,
                     ),
                   ),

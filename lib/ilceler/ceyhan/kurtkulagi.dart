@@ -33,7 +33,7 @@ class _KurtKulagiState extends State<KurtKulagi>
   void initState() {
     super.initState();
     getCurrentUser();
-    tabController = TabController(length: 6, vsync: this);
+    tabController = TabController(length: 4, vsync: this);
   }
 
   void getCurrentUser() {
@@ -47,12 +47,10 @@ class _KurtKulagiState extends State<KurtKulagi>
   TabController? tabController;
 
   static List<String> links = [
-    "https://www.adanadacocukolmak.com/wp-content/uploads/2017/06/IMG_5466-500x300.jpg",
-    "https://mapio.net/images-p/11663891.jpg",
-    "https://www.adanadacocukolmak.com/wp-content/uploads/2016/10/Resul_GUL_KurtKulagi-e1489673203320-500x300.jpg",
-    "https://www.adanadacocukolmak.com/wp-content/uploads/2016/10/do%C4%9Falpark2-500x300.jpg",
-    "https://i.ytimg.com/vi/Ye5dAkFMr8Q/maxresdefault.jpg",
-    "https://www.adanadacocukolmak.com/wp-content/uploads/2016/10/do%C4%9Falpark-500x300.jpg"
+   "https://i.arkeolojikhaber.com/images/2019/51/27515.jpg",
+    "https://mapio.net/images-p/14857663.jpg",
+    "https://foto.sondakika.com/haber/2019/12/22/osmanli-mirasi-kurtkulagi-kervansarayi-turizm-4-12742111_osd.jpg",
+    "https://im.haberturk.com/2019/12/23/ver1577096633/2552202_1024x576.jpg"
   ];
 
   void _showRatingAppDialog() {
@@ -186,9 +184,8 @@ class _KurtKulagiState extends State<KurtKulagi>
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      "Çukurova Belediyesi tarafından ilçenin içerisine yapılan bu park gerçekten dikkat çekici bir kullanım yapısına sahiptir. İçerisinde akarsular, piknik alanları, kuşlar ve farklı hayvan türleri bulunmaktadır. "
-
-                          " İlçede yaşayanlar genellikle sıcak havada bu parkı ziyaret etmeyi tercih etmektedir. İçinde ayrıca amfi tiyatro, konser alanları ve gösteri noktaları da yer almaktadır. Ayrıca düğün salonu hizmet vermektedir. Merkezi bir noktada olduğu için biraz dinlenmek ve rahatlamak için bu parka kolayca ulaşmanız mümkündür.  ",
+                    " Ceyhan'ın 12 km güneydoğusunda[1] Kurtkulağı mahallesi'ndedir. Adana Müzesinde bulunan kervansaray kitabesine göre eser 1659'da[not 1] Hüseyin Paşa tarafından yaptırılmış olup, mimarı Mehmed Ağa'dır. Adana-Halep kervan yolu üzerindeki Kurtkulağı menzilinde bulunan kervansaray, bir Osmanlı menzil handır. Kervansaray bir kale sağlamlığında gayet kalın ve sağlam duvarlara sahiptir. 2006 yılında restore edilmiştir."
+                      "Büyük bir dikdörtgenden oluşan planı doğu cephede klasik kervansaray mimarisinden farklı özellikler taşımaktadır. Üç yanda saçak hizasına kadar kuvvetli payandalarla takviye edilmiş olan beden duvarlarının tamamı taştandır. Doğu cephedeki çıkıntıları hariç, 45,75 x 23,60 metre ebadındaki kervansarayın planını, enine uzanan iki sıralı payelerin birbirlerine sivri kemerlerle birleşmesi ve bütün üst örtüyü teşkil eden boyuna uzanan beşik tonozlar meydana getirmektedir.",
                       style: icerik2,
                     ),
                   ),

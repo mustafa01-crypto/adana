@@ -46,12 +46,9 @@ class _DurhasanState extends State<Durhasan>
   TabController? tabController;
 
   static List<String> links = [
-    "https://www.adanadacocukolmak.com/wp-content/uploads/2017/06/IMG_5466-500x300.jpg",
-    "https://mapio.net/images-p/11663891.jpg",
-    "https://www.adanadacocukolmak.com/wp-content/uploads/2016/10/Resul_GUL_Durhasan-e1489673203320-500x300.jpg",
-    "https://www.adanadacocukolmak.com/wp-content/uploads/2016/10/do%C4%9Falpark2-500x300.jpg",
-    "https://i.ytimg.com/vi/Ye5dAkFMr8Q/maxresdefault.jpg",
-    "https://www.adanadacocukolmak.com/wp-content/uploads/2016/10/do%C4%9Falpark-500x300.jpg"
+    "https://i.ytimg.com/vi/8WdGt7jBbDc/maxresdefault.jpg",
+    "https://www.kulturportali.gov.tr/repoKulturPortali/large/12052015/d2b528e5-7bd1-4290-a80d-6f9172600893.jpg?format=jpg&quality=50",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3kQrQLUvbvu8OtnSZncdkIGIBF1JhVfgIHxLV_yngGXx0ad4OWsH38DYlfDHDIAJ3lx0&usqp=CAU"
   ];
 
   void _showRatingAppDialog() {
@@ -185,9 +182,9 @@ class _DurhasanState extends State<Durhasan>
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      "Çukurova Belediyesi tarafından ilçenin içerisine yapılan bu park gerçekten dikkat çekici bir kullanım yapısına sahiptir. İçerisinde akarsular, piknik alanları, kuşlar ve farklı hayvan türleri bulunmaktadır. "
-
-                          " İlçede yaşayanlar genellikle sıcak havada bu parkı ziyaret etmeyi tercih etmektedir. İçinde ayrıca amfi tiyatro, konser alanları ve gösteri noktaları da yer almaktadır. Ayrıca düğün salonu hizmet vermektedir. Merkezi bir noktada olduğu için biraz dinlenmek ve rahatlamak için bu parka kolayca ulaşmanız mümkündür.  ",
+                      "Ceyhan ilçesinin Durhasan köyü girişinde sağ tarafta bir tepenin üzerinde bulunan asırlık bir meşe ağacının altında, Selçuklu mimari tarzının görüldüğü bir türbede medfundur. Türbenin bakımı köylüler tarafından yapılmaktadır."
+                      "Durhasan dede; Çukurova velilerinde Misis kütüklü köyünde kabri bulunan Cabbar Dede’nin kardeşidir. Bu zatı vesile ederek yapılan duaların kabul olduğu yöre halkı tarafından söylenmektedir."
+                    "Yaşadığı ve vefat ettiği tarihler kesin olarak bilinmektedir. Türbenin üzerindeki kitabeden 1287 tarihinde restore edildiği anlaşılmaktadır.",
                       style: icerik2,
                     ),
                   ),

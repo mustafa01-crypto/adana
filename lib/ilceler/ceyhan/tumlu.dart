@@ -33,7 +33,7 @@ class _TumluState extends State<Tumlu>
   void initState() {
     super.initState();
     getCurrentUser();
-    tabController = TabController(length: 6, vsync: this);
+    tabController = TabController(length: 4, vsync: this);
   }
 
   void getCurrentUser() {
@@ -47,12 +47,10 @@ class _TumluState extends State<Tumlu>
   TabController? tabController;
 
   static List<String> links = [
-    "https://www.adanadacocukolmak.com/wp-content/uploads/2017/06/IMG_5466-500x300.jpg",
-    "https://mapio.net/images-p/11663891.jpg",
-    "https://www.adanadacocukolmak.com/wp-content/uploads/2016/10/Resul_GUL_Tumlu-e1489673203320-500x300.jpg",
-    "https://www.adanadacocukolmak.com/wp-content/uploads/2016/10/do%C4%9Falpark2-500x300.jpg",
-    "https://i.ytimg.com/vi/Ye5dAkFMr8Q/maxresdefault.jpg",
-    "https://www.adanadacocukolmak.com/wp-content/uploads/2016/10/do%C4%9Falpark-500x300.jpg"
+    "https://i.ytimg.com/vi/j7X7jPTfIjc/maxresdefault.jpg",
+    "https://fastly.4sqi.net/img/general/200x200/134963895_uK3ormhfylwva4IG_I2Kd_pDksY7GVvgsbh186Q89uc.jpg",
+    "https://www.kulturportali.gov.tr/repoKulturPortali/small/07052015/ff8bbd7b-f76a-4a58-bb8e-901349301168.jpg?format=jpg&quality=50",
+    "https://lh3.googleusercontent.com/proxy/sGZOhnVX2RWye5gkxN-k4dZ_FUweHMAl24K7hal3IE5dYWvIAc6fkDlPFDZU5-S2viRNGLlTOT_n8iql3q5DaPLlnxvBOsRbH77IohYlIR335sE38f7Eww"
   ];
 
   void _showRatingAppDialog() {
@@ -186,9 +184,9 @@ class _TumluState extends State<Tumlu>
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      "Çukurova Belediyesi tarafından ilçenin içerisine yapılan bu park gerçekten dikkat çekici bir kullanım yapısına sahiptir. İçerisinde akarsular, piknik alanları, kuşlar ve farklı hayvan türleri bulunmaktadır. "
+                    "Ceyhan'ın 17 km kuzeybatısında Sağkaya bucağının Dumlu (Tumlu) mahallesinin batısında ve 75 m kadar yükseklikteki sert kalkerli bir tepe üzerindedir. 12. yüzyılda yapıldığı sanılmaktadır. Çevresi 800 metredir. Sekiz burçludur. Ovaya bakan doğu köşesinde gözetleme kulesi bulunmaktadır. Tek kapısı doğuya bakmaktadır. Kale içerisinde yapı kalıntıları ve sarnıçlar yer almaktadır. Tepe etrafında kaya mezarları görülmektedir."
 
-                          " İlçede yaşayanlar genellikle sıcak havada bu parkı ziyaret etmeyi tercih etmektedir. İçinde ayrıca amfi tiyatro, konser alanları ve gösteri noktaları da yer almaktadır. Ayrıca düğün salonu hizmet vermektedir. Merkezi bir noktada olduğu için biraz dinlenmek ve rahatlamak için bu parka kolayca ulaşmanız mümkündür.  ",
+                      "Kalenin kuzeyinde yarım haç şeklinde birçok mezar vardır. Bu mezarlar genelde küçük el yapımı mağaralar biçimindedir. Kuzeybatısında mozaikler bulunan kalede yakın zamanda bir mağara mezar ve bir toplu mezar ortaya çıkmıştır.",
                       style: icerik2,
                     ),
                   ),

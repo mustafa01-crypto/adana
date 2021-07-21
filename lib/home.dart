@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:adana/auth/login.dart';
 import 'package:adana/constants/constants.dart';
+import 'package:adana/mesire/ceyhanList.dart';
 import 'package:adana/mesire/karaisaliMesire.dart';
 import 'package:adana/mesire/seyhanList.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -177,14 +178,17 @@ class _HomeState extends State<Home> {
                       Get.to(() => CukurovaList());
                     },
                   ),
-                  /*
+
                   ListTile(
                     title: Text(
-                      'KOZAN',
+                      'CEYHAN',
                       style: baslik2,
                     ),
-                    onTap: () {},
+                    onTap: () {
+                      Get.to(() => CeyhanList());
+                    },
                   ),
+                  /*
                   ListTile(
                     title: Text(
                       'POZANTI',

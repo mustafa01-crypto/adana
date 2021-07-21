@@ -1,4 +1,9 @@
 import 'package:adana/constants/constants.dart';
+import 'package:adana/ilceler/ceyhan/anavarza.dart';
+import 'package:adana/ilceler/ceyhan/durhasan.dart';
+import 'package:adana/ilceler/ceyhan/kurtkulagi.dart';
+import 'package:adana/ilceler/ceyhan/tumlu.dart';
+import 'package:adana/ilceler/ceyhan/yilanKale.dart';
 import 'package:adana/ilceler/cukurova/dogalPark.dart';
 import 'package:adana/ilceler/cukurova/karatasPlaji.dart';
 import 'package:adana/ilceler/cukurova/muzeKompleksi.dart';
@@ -31,33 +36,33 @@ class _CeyhanListState extends State<CeyhanList> {
 
               InkWell(
                   onTap: () {
-                    Get.to(() => SevgiAdasi());
+                    Get.to(() => YilanKale());
                   },
                   child: sehirler("YILAN KALE")),
               InkWell(
                   onTap: ()
                   {
-                    Get.to(() => SeyhanBaraji());
+                    Get.to(() => KurtKulagi());
                   },
                   child: sehirler("KURTKULAĞI KERVANSARAYI")),
               InkWell(
 
                   onTap: ()
                   {
-                    Get.to( () => MuzeKompleksi());
+                    Get.to( () => Tumlu());
                   },
 
                   child: sehirler("TUMLU KALESİ")),
               InkWell(
                   onTap: ()
                   {
-                    Get.to( () => DogalPark());
+                    Get.to( () => Durhasan());
                   },
                   child: sehirler("DURHASAN DEDE TÜRBESİ")),
               InkWell(
                   onTap: ()
                   {
-                    Get.to( () => YumurtalikLagunu());
+                    Get.to( () => Anavarza());
                   },
                   child: sehirler("ANAVARZA KALESİ")),
 

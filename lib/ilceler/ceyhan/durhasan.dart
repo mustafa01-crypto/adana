@@ -1,4 +1,5 @@
 import 'package:adana/constants/constants.dart';
+import 'package:adana/ilceler/ceyhan/yorumlar/DurHasan.dart';
 import 'package:adana/ilceler/cukurova/yorumlar/park.dart';
 import 'package:adana/map/map.dart';
 import 'package:adana/map/mapUtils.dart';
@@ -36,7 +37,6 @@ class _DurhasanState extends State<Durhasan>
   }
 
   void getCurrentUser() {
-
     final user = auth.currentUser;
     if (user != null) {
       loggedInuser = user;
@@ -58,14 +58,14 @@ class _DurhasanState extends State<Durhasan>
       commentHint: "...",
       message: '${title} hakkında ne düşünüyorsunuz',
       image: Image.network(
-        "https://mapio.net/images-p/11663891.jpg",
+        "https://i.ytimg.com/vi/8WdGt7jBbDc/maxresdefault.jpg",
         height: 100,
       ),
       submitButton: 'Gönder',
       onCancelled: () {},
       onSubmitted: (response) {
         FirebaseFirestore.instance
-            .collection("ParkYorum")
+            .collection("DurHasanYorum")
             .doc(loggedInuser.email)
             .set({
           "zaman": formattedDate.toString(),
@@ -91,12 +91,13 @@ class _DurhasanState extends State<Durhasan>
         title: Center(child: Text(title)),
         actions: [
           IconButton(
-            onPressed: ()
-            {
+            onPressed: () {
               MapUtils.openMap(x, y);
             },
-            icon: Icon(Icons.map_sharp,color: Colors.white,),
-
+            icon: Icon(
+              Icons.map_sharp,
+              color: Colors.white,
+            ),
           ),
           IconButton(
             onPressed: () {
@@ -154,14 +155,13 @@ class _DurhasanState extends State<Durhasan>
                 children: links.map((String link) {
                   return new ClipRRect(
                       child: Image.network(
-                        link,
-                        width: MediaQuery.of(context).size.width,
-                        height: 220,
-                        fit: BoxFit.fill,
-                      ));
+                    link,
+                    width: MediaQuery.of(context).size.width,
+                    height: 220,
+                    fit: BoxFit.fill,
+                  ));
                 }).toList(),
               ),
-
               SizedBox(
                 height: 10,
               ),
@@ -184,7 +184,7 @@ class _DurhasanState extends State<Durhasan>
                     child: Text(
                       "Ceyhan ilçesinin Durhasan köyü girişinde sağ tarafta bir tepenin üzerinde bulunan asırlık bir meşe ağacının altında, Selçuklu mimari tarzının görüldüğü bir türbede medfundur. Türbenin bakımı köylüler tarafından yapılmaktadır."
                       "Durhasan dede; Çukurova velilerinde Misis kütüklü köyünde kabri bulunan Cabbar Dede’nin kardeşidir. Bu zatı vesile ederek yapılan duaların kabul olduğu yöre halkı tarafından söylenmektedir."
-                    "Yaşadığı ve vefat ettiği tarihler kesin olarak bilinmektedir. Türbenin üzerindeki kitabeden 1287 tarihinde restore edildiği anlaşılmaktadır.",
+                      "Yaşadığı ve vefat ettiği tarihler kesin olarak bilinmektedir. Türbenin üzerindeki kitabeden 1287 tarihinde restore edildiği anlaşılmaktadır.",
                       style: icerik2,
                     ),
                   ),
@@ -230,7 +230,7 @@ class _DurhasanState extends State<Durhasan>
               ),
               TextButton(
                 onPressed: () {
-                  Get.to(() => ParkYorum());
+                  Get.to(() => DurHasanYorum());
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width,

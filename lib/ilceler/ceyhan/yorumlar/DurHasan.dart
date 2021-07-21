@@ -3,14 +3,14 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_stars/flutter_rating_stars.dart';
 
-class DurHasan extends StatefulWidget {
-  const DurHasan({Key? key}) : super(key: key);
+class DurHasanYorum extends StatefulWidget {
+  const DurHasanYorum({Key? key}) : super(key: key);
 
   @override
-  _DurHasanState createState() => _DurHasanState();
+  _DurHasanYorumState createState() => _DurHasanYorumState();
 }
 
-class _DurHasanState extends State<DurHasan> {
+class _DurHasanYorumState extends State<DurHasanYorum> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -45,7 +45,7 @@ class _YorumlarState extends State<Yorumlar> {
   Widget build(BuildContext context) {
     double value = 1.0;
     Query karapinarYorumlar =
-    FirebaseFirestore.instance.collection('DurHasan');
+    FirebaseFirestore.instance.collection('DurHasanYorum');
 
     return StreamBuilder<QuerySnapshot>(
       stream: karapinarYorumlar.snapshots(),

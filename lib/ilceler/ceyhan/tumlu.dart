@@ -1,6 +1,5 @@
 import 'package:adana/constants/constants.dart';
-import 'package:adana/ilceler/cukurova/yorumlar/park.dart';
-import 'package:adana/ilceler/karaisali/yorumlar/varda.dart';
+import 'package:adana/ilceler/ceyhan/yorumlar/tumluYorum.dart';
 import 'package:adana/map/map.dart';
 import 'package:adana/map/mapUtils.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -60,14 +59,14 @@ class _TumluState extends State<Tumlu>
       commentHint: "...",
       message: '${title} hakkında ne düşünüyorsunuz',
       image: Image.network(
-        "https://mapio.net/images-p/11663891.jpg",
+        "https://i.ytimg.com/vi/j7X7jPTfIjc/maxresdefault.jpg",
         height: 100,
       ),
       submitButton: 'Gönder',
       onCancelled: () {},
       onSubmitted: (response) {
         FirebaseFirestore.instance
-            .collection("ParkYorum")
+            .collection("TumluYorum")
             .doc(loggedInuser.email)
             .set({
           "zaman": formattedDate.toString(),
@@ -232,7 +231,7 @@ class _TumluState extends State<Tumlu>
               ),
               TextButton(
                 onPressed: () {
-                  Get.to(() => ParkYorum());
+                  Get.to(() => TumluYorum());
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width,

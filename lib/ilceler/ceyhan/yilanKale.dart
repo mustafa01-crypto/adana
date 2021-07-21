@@ -1,4 +1,5 @@
 import 'package:adana/constants/constants.dart';
+import 'package:adana/ilceler/ceyhan/yorumlar/yilankale.dart';
 import 'package:adana/ilceler/cukurova/yorumlar/park.dart';
 import 'package:adana/map/map.dart';
 import 'package:adana/map/mapUtils.dart';
@@ -60,14 +61,14 @@ class _YilanKaleState extends State<YilanKale>
       commentHint: "...",
       message: '${title} hakkında ne düşünüyorsunuz',
       image: Image.network(
-        "https://mapio.net/images-p/11663891.jpg",
+        "https://www.nkfu.com/wp-content/uploads/2014/04/yilan-kale-1.jpg",
         height: 100,
       ),
       submitButton: 'Gönder',
       onCancelled: () {},
       onSubmitted: (response) {
         FirebaseFirestore.instance
-            .collection("ParkYorum")
+            .collection("YilanYorum")
             .doc(loggedInuser.email)
             .set({
           "zaman": formattedDate.toString(),
@@ -240,7 +241,7 @@ class _YilanKaleState extends State<YilanKale>
               ),
               TextButton(
                 onPressed: () {
-                  Get.to(() => ParkYorum());
+                  Get.to(() => YilanYorum());
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width,

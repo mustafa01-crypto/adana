@@ -1,6 +1,5 @@
 import 'package:adana/constants/constants.dart';
 import 'package:adana/ilceler/ceyhan/yorumlar/DurHasan.dart';
-import 'package:adana/ilceler/cukurova/yorumlar/park.dart';
 import 'package:adana/map/map.dart';
 import 'package:adana/map/mapUtils.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -33,7 +32,7 @@ class _DurhasanState extends State<Durhasan>
   void initState() {
     super.initState();
     getCurrentUser();
-    tabController = TabController(length: 6, vsync: this);
+    tabController = TabController(length: 3, vsync: this);
   }
 
   void getCurrentUser() {

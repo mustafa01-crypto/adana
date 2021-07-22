@@ -1,9 +1,11 @@
 import 'package:adana/components/riv.dart';
+import 'package:adana/components/showDialog.dart';
 import 'package:adana/constants/constants.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 import '../home.dart';
 import 'login.dart';
 
@@ -24,6 +26,7 @@ class _RegisterState extends State<Register> {
   static final _auth = FirebaseAuth.instance;
   static final _firestore = FirebaseFirestore.instance;
   bool showPassword = false;
+  late BuildContext context;
 
   TextStyle hint = TextStyle(
     color: Colors.white,
@@ -40,7 +43,7 @@ class _RegisterState extends State<Register> {
             .collection('users')
             .doc(signedInUser.email)
             .set({'name': name, 'email': email, 'parola': password});
-
+        Get.to(() => Home());
         return true;
       }
       return false;
@@ -181,22 +184,22 @@ class _RegisterState extends State<Register> {
                                     hintStyle: TextStyle(color: sinir),
                                     suffixIcon: Padding(
                                       padding: EdgeInsets.all(0.0),
-                                      child: showPassword == false
+                                      child: showPassword == true
                                           ? IconButton(
-                                              icon: Icon(Icons.remove_red_eye),
-                                              color: sinir,
-                                              onPressed: () {
-                                                setState(() {
-                                                  showPassword = true;
-                                                });
-                                              },
-                                            )
-                                          : IconButton(
                                               icon: Icon(Icons.remove_red_eye),
                                               color: Colors.grey,
                                               onPressed: () {
                                                 setState(() {
                                                   showPassword = false;
+                                                });
+                                              },
+                                            )
+                                          : IconButton(
+                                              icon: Icon(Icons.remove_red_eye),
+                                              color: sinir,
+                                              onPressed: () {
+                                                setState(() {
+                                                  showPassword = true;
                                                 });
                                               },
                                             ),
@@ -226,7 +229,11 @@ class _RegisterState extends State<Register> {
                                       if (_formKey.currentState!.validate()) {
                                         signUp(t1.text, t2.text, t3.text);
 
-                                        Get.to(() => Home());
+                                        showMaterialDialog(
+                                          title: "Kayıt Başarılı",
+                                          content: "Başarılı bir şekilde kayıt oldunuz",
+                                          context: context,
+                                        );
                                       }
                                     },
                                     child: Text('KAYIT OL',style: butonBaslik,),
@@ -238,15 +245,12 @@ class _RegisterState extends State<Register> {
                                 ),
                               ),
                               SizedBox(
-                                height: height * 1 / 20,
+                                height: height * 1 / 30,
                               ),
                               Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Padding(
-                                    padding: const EdgeInsets.only(left: 5),
-                                    child: Text("Hesabım var?",style: baslik3,),
-                                  ),
+                                  Text("Hesabım var",style: baslik3,),
                                   TextButton(
                                     onPressed: () {
                                       Get.to(() => Login());
@@ -255,7 +259,7 @@ class _RegisterState extends State<Register> {
                                       padding: const EdgeInsets.only(right: 5),
                                       child: Text(
                                         "Giriş Yap",
-                                        style: baslik,
+                                        style: link,
                                       ),
                                     ),
                                   ),

@@ -76,3 +76,9 @@ Gradient gradient2 = LinearGradient(
   ],
 
 );
+
+TextStyle link = TextStyle(
+
+    color:Colors.indigo,fontSize: 24,fontWeight: FontWeight.w900,
+    decoration: TextDecoration.underline
+);

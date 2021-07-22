@@ -1,9 +1,8 @@
 import 'package:adana/constants/constants.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_stars/flutter_rating_stars.dart';
-
 
 class ParkYorum extends StatefulWidget {
   const ParkYorum({Key? key}) : super(key: key);
@@ -43,12 +42,17 @@ class Yorumlar extends StatefulWidget {
 }
 
 class _YorumlarState extends State<Yorumlar> {
+
+  String? url;
+  double value = 1.0;
+  Query karapinarYorumlar =
+  FirebaseFirestore.instance.collection('karaipinarYorum');
+
+
+
   @override
   Widget build(BuildContext context) {
-    double value = 1.0;
 
-    Query karapinarYorumlar =
-        FirebaseFirestore.instance.collection('karaipinarYorum');
 
     return StreamBuilder<QuerySnapshot>(
       stream: karapinarYorumlar.snapshots(),
@@ -90,6 +94,7 @@ class _YorumlarState extends State<Yorumlar> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
+
                             Text(
                               data["email"],
                               style: email,
@@ -154,4 +159,3 @@ class _YorumlarState extends State<Yorumlar> {
     );
   }
 }
-

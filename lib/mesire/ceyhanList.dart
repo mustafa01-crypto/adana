@@ -4,12 +4,6 @@ import 'package:adana/ilceler/ceyhan/durhasan.dart';
 import 'package:adana/ilceler/ceyhan/kurtkulagi.dart';
 import 'package:adana/ilceler/ceyhan/tumlu.dart';
 import 'package:adana/ilceler/ceyhan/yilanKale.dart';
-import 'package:adana/ilceler/cukurova/dogalPark.dart';
-import 'package:adana/ilceler/cukurova/karatasPlaji.dart';
-import 'package:adana/ilceler/cukurova/muzeKompleksi.dart';
-import 'package:adana/ilceler/cukurova/sevgiAdasi.dart';
-import 'package:adana/ilceler/cukurova/seyhanBaraji.dart';
-import 'package:adana/ilceler/cukurova/yumurtalikLagunu.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

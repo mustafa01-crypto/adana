@@ -221,7 +221,7 @@ class _TasKopruState extends State<TasKopru>
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width,
-                  height: 80,
+                  height: 70,
                   child: Center(
                     child: Text(
                       "HARİTADA GÖSTER",
@@ -256,7 +256,7 @@ class _TasKopruState extends State<TasKopru>
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width,
-                  height: 80,
+                  height: 70,
                   child: Center(
                     child: Text(
                       "YORUMLARI GÖSTER",

@@ -1,6 +1,5 @@
 import 'package:adana/constants/constants.dart';
 import 'package:adana/ilceler/cukurova/yorumlar/baraj.dart';
-import 'package:adana/ilceler/karaisali/yorumlar/varda.dart';
 import 'package:adana/map/map.dart';
 import 'package:adana/map/mapUtils.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -203,7 +202,7 @@ class _SeyhanBarajiState extends State<SeyhanBaraji>
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width,
-                  height: 80,
+                  height: 70,
                   child: Center(
                     child: Text(
                       "HARİTADA GÖSTER",
@@ -238,7 +237,7 @@ class _SeyhanBarajiState extends State<SeyhanBaraji>
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width,
-                  height: 80,
+                  height: 70,
                   child: Center(
                     child: Text(
                       "YORUMLARI GÖSTER",

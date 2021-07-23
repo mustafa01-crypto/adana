@@ -215,7 +215,7 @@ class _KesireHanState extends State<KesireHan>
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width,
-                  height: 80,
+                  height: 70,
                   child: Center(
                     child: Text(
                       "HARİTADA GÖSTER",
@@ -250,7 +250,7 @@ class _KesireHanState extends State<KesireHan>
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width,
-                  height: 80,
+                  height: 70,
                   child: Center(
                     child: Text(
                       "YORUMLARI GÖSTER",

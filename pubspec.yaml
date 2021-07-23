@@ -115,8 +115,9 @@ flutter:
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
 flutter_native_splash:
-  color: "FFFFFF"
+  color: "FC7925"
   image: assets/adana.png
   web: false
+  fullscreen: true
   android_gravity: center
   android12: true

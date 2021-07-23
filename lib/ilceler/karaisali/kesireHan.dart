@@ -171,7 +171,7 @@ class _KesireHanState extends State<KesireHan>
                 child: Container(
                   decoration: BoxDecoration(
                       color: scaffold,
-                      border: Border.all(color: sinir, width: 2),
+                     // border: Border.all(color: sinir, width: 2),
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(14),
                           topRight: Radius.circular(14),

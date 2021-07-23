@@ -248,7 +248,7 @@ class _KaratasPlajiState extends State<KaratasPlaji>
                   ),
                   decoration: BoxDecoration(
                     color: sinir,
-                    border: Border.all(color: scaffold, width: 4),
+                  //  border: Border.all(color: scaffold, width: 4),
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(15),
                         topRight: Radius.circular(15),

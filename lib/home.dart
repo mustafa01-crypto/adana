@@ -73,7 +73,7 @@ class _HomeState extends State<Home> {
   }
 
   kameradanYukle() async {
-    var alinanDosya = await ImagePicker().pickImage(source: ImageSource.camera);
+    var alinanDosya = await ImagePicker().pickImage(source: ImageSource.gallery);
     setState(() {
       yuklenecekDosya = File(alinanDosya!.path);
     });

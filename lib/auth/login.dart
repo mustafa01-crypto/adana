@@ -226,24 +226,24 @@ class _LoginState extends State<Login> {
                               SizedBox(
                                 height: height * 1 / 20,
                               ),
-                              Padding(
-                                padding: EdgeInsets.symmetric(
-                                    horizontal: width * 1 / 20),
-                                child: Container(
-                                  width: width * 9 / 10,
-                                  height: height * 1 / 15,
-                                  child: ElevatedButton(
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text("Hesabım yok",style: baslik3,),
+                                  TextButton(
                                     onPressed: () {
                                       Get.to(() => Register());
                                     },
-                                    child: Text('KAYIT OL',style: butonBaslik,),
-                                    style: ElevatedButton.styleFrom(
-                                        primary: sinir,
-                                        shape: StadiumBorder(
-                                            side: BorderSide.none)),
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(right: 5),
+                                      child: Text(
+                                        "Kayıt Ol",
+                                        style: link,
+                                      ),
+                                    ),
                                   ),
-                                ),
-                              )
+                                ],
+                              ),
                             ],
                           ),
                         ),

@@ -209,7 +209,7 @@ class _TumluState extends State<Tumlu>
                   ),
                   decoration: BoxDecoration(
                     color: Colors.white,
-                    border: Border.all(color: scaffold, width: 4),
+                   // border: Border.all(color: scaffold, width: 4),
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(15),
                         topRight: Radius.circular(15),

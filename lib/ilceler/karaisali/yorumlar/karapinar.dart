@@ -1,5 +1,6 @@
 import 'package:adana/constants/constants.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_stars/flutter_rating_stars.dart';
@@ -43,11 +44,44 @@ class Yorumlar extends StatefulWidget {
 
 class _YorumlarState extends State<Yorumlar> {
 
+  late User loggedInuser;
+
   String? url;
   double value = 1.0;
+  FirebaseAuth auth = FirebaseAuth.instance;
   Query karapinarYorumlar =
   FirebaseFirestore.instance.collection('karaipinarYorum');
 
+
+
+  void getCurrentUser() {
+    final user = auth.currentUser;
+    if (user != null) {
+      setState(() {
+        loggedInuser = user;
+      });
+    }
+  }
+
+  baglantiAl() async {
+    String baglanti = await FirebaseStorage.instance
+        .ref()
+        .child("profilresimleri")
+        .child(loggedInuser.email!)
+        .child("profilResmi.png")
+        .getDownloadURL();
+
+    setState(() {
+      url = baglanti;
+    });
+  }
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    getCurrentUser();
+    baglantiAl();
+  }
 
 
   @override
@@ -92,8 +126,23 @@ class _YorumlarState extends State<Yorumlar> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
+                            ClipOval(
+                                child: url == null
+                                    ? Image.asset(
+                                  "assets/profile.png",
+                                  width: 25,
+                                  height: 25,
+                                  fit: BoxFit.cover,
+                                )
+                                    : Image.network(
+                                  url!,
+                                  width: 25,
+                                  height: 25,
+                                  fit: BoxFit.cover,
+                                )),
+
 
                             Text(
                               data["email"],

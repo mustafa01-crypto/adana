@@ -36,11 +36,8 @@ class _HomeState extends State<Home> {
         setState(() {
           loggedInuser = user;
         });
-
       }
-
   }
-
   void initState() {
     super.initState();
     getCurrentUser();
@@ -57,8 +54,6 @@ class _HomeState extends State<Home> {
       });
 
   }
-
-
   baglantiAl() async {
     String baglanti = await FirebaseStorage.instance
         .ref()
@@ -71,7 +66,6 @@ class _HomeState extends State<Home> {
       indirmeBaglantisi = baglanti;
     });
   }
-
   kameradanYukle() async {
     var alinanDosya = await ImagePicker().pickImage(source: ImageSource.gallery);
     setState(() {
@@ -116,7 +110,7 @@ class _HomeState extends State<Home> {
           drawer: Drawer(
             child: Container(
               decoration: BoxDecoration(
-                gradient: gradient,
+                gradient: deneme,
               ),
               child: ListView(
                 // Important: Remove any padding from the ListView.

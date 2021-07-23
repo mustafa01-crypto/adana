@@ -41,6 +41,11 @@ Color deniz =Color(0xffB3CDE0);
 
 Color sinir =Color(0xFFFF6701);
 Color scaffold = Color(0xFFFC7925);
+Color scaffold2 = Color(0xFFFBFAFE);
+
+Color kutu = Color(0xFFEBE9FA);
+Color kutu2 = Color(0xFFc5bdfb);
+Color kutu3 = Color(0xFF958bdd);
 
 
 Gradient gradient = LinearGradient(
@@ -49,12 +54,7 @@ Gradient gradient = LinearGradient(
   colors: [
     Colors.white,
     scaffold,
-
-
-
-
   ],
-
 );
 TextStyle email = GoogleFonts.sourceSansPro(
   color: Colors.black,fontWeight: FontWeight.w900,fontSize: 14
@@ -64,7 +64,7 @@ TextStyle icerik = GoogleFonts.sourceSansPro(
     color: Colors.grey.shade800,fontWeight: FontWeight.w700,fontSize: 16
 );
 TextStyle icerik2 = GoogleFonts.sourceSansPro(
-    color: Colors.white,fontWeight: FontWeight.w500,fontSize: 18
+    color: sinir,fontWeight: FontWeight.w500,fontSize: 18
 );
 
 Gradient gradient2 = LinearGradient(
@@ -81,4 +81,13 @@ TextStyle link = TextStyle(
 
     color:Colors.indigo,fontSize: 24,fontWeight: FontWeight.w900,
     decoration: TextDecoration.underline
+);
+
+Gradient deneme = LinearGradient(
+  begin: Alignment.topCenter,
+  end: Alignment.bottomCenter,
+  colors: [
+    Colors.white,
+    kutu2,
+  ],
 );

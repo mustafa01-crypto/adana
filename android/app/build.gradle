@@ -45,7 +45,7 @@ android {
         applicationId "com.adana.rum.adana"
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 8
+        versionCode 9
         multiDexEnabled true
         versionName flutterVersionName
     }

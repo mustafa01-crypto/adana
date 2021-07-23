@@ -21,6 +21,7 @@ environment:
   sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
+  rate_my_app: ^1.1.1
   intl: ^0.17.0
   google_fonts: ^2.1.0
   flutter_rating_stars: ^1.0.3+4
@@ -116,7 +117,7 @@ flutter:
   # see https://flutter.dev/custom-fonts/#from-packages
 flutter_native_splash:
   color: "FC7925"
-  image: assets/adana.png
+  image: assets/adana2.png
   web: false
   fullscreen: true
   android_gravity: center

@@ -181,7 +181,7 @@ class _LoginState extends State<Login> {
                                             )
                                           : IconButton(
                                               icon: Icon(Icons.remove_red_eye),
-                                              color: Colors.grey,
+                                              color: kutu,
                                               onPressed: () {
                                                 setState(() {
                                                   showPassword = false;

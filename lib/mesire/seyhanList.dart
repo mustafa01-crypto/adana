@@ -26,7 +26,7 @@ class _SeyhanListState extends State<SeyhanList> {
 
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.grey.shade100,
+        backgroundColor: scaffold2,
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -111,8 +111,8 @@ class _SeyhanListState extends State<SeyhanList> {
           ],
         ),
         decoration: BoxDecoration(
-          color: Colors.white,
-          border: Border.all(color: scaffold, width: 4),
+          color: kutu,
+          //border: Border.all(color: scaffold, width: 4),
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(15),
               topRight: Radius.circular(15),
@@ -120,9 +120,9 @@ class _SeyhanListState extends State<SeyhanList> {
               bottomRight: Radius.circular(15)),
           boxShadow: [
             BoxShadow(
-              color: Colors.white,
-              spreadRadius: 5,
-              blurRadius: 7,
+              color: Colors.black.withOpacity(0.2),
+              spreadRadius: 3,
+              blurRadius: 5,
               offset: Offset(0, 3), // changes position of shadow
             ),
           ],

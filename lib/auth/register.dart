@@ -184,13 +184,13 @@ class _RegisterState extends State<Register> {
                                     hintStyle: TextStyle(color: sinir),
                                     suffixIcon: Padding(
                                       padding: EdgeInsets.all(0.0),
-                                      child: showPassword == true
+                                      child: showPassword == false
                                           ? IconButton(
                                               icon: Icon(Icons.remove_red_eye),
-                                              color: Colors.grey,
+                                              color: kutu,
                                               onPressed: () {
                                                 setState(() {
-                                                  showPassword = false;
+                                                  showPassword = true;
                                                 });
                                               },
                                             )
@@ -199,7 +199,7 @@ class _RegisterState extends State<Register> {
                                               color: sinir,
                                               onPressed: () {
                                                 setState(() {
-                                                  showPassword = true;
+                                                  showPassword = false;
                                                 });
                                               },
                                             ),

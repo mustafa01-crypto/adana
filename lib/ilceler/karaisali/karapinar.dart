@@ -89,9 +89,16 @@ class _KaraisaliState extends State<Karapinar>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: scaffold2,
       appBar: AppBar(
         backgroundColor: sinir,
         title: Center(child: Text(title)),
+
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: deneme,
+          ),
+        ),
         actions: [
           IconButton(
             onPressed: () {
@@ -172,8 +179,8 @@ class _KaraisaliState extends State<Karapinar>
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Container(
                   decoration: BoxDecoration(
-                      color: scaffold,
-                      border: Border.all(color: sinir, width: 2),
+                      color: kutu,
+                     // border: Border.all(color: sinir, width: 2),
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(14),
                           topRight: Radius.circular(14),
@@ -219,7 +226,7 @@ class _KaraisaliState extends State<Karapinar>
                   ),
                   decoration: BoxDecoration(
                     color: Colors.white,
-                    border: Border.all(color: scaffold, width: 4),
+                  //  border: Border.all(color: kutu, width: 4),
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(15),
                         topRight: Radius.circular(15),
@@ -227,9 +234,9 @@ class _KaraisaliState extends State<Karapinar>
                         bottomRight: Radius.circular(15)),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.white,
-                        spreadRadius: 5,
-                        blurRadius: 7,
+                        color: Colors.black.withOpacity(0.2),
+                        spreadRadius: 3,
+                        blurRadius: 5,
                         offset: Offset(0, 3), // changes position of shadow
                       ),
                     ],
@@ -249,11 +256,11 @@ class _KaraisaliState extends State<Karapinar>
                   child: Center(
                     child: Text(
                       "YORUMLARI GÖSTER",
-                      style: cityName2,
+                      style: cityName,
                     ),
                   ),
                   decoration: BoxDecoration(
-                    color: sinir,
+                    color: kutu,
                   //  border: Border.all(color: scaffold, width: 4),
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(15),

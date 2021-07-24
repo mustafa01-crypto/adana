@@ -115,3 +115,10 @@ TextStyle xdAppBarBaslik = GoogleFonts.roboto(
 TextStyle xdUzunYazi = GoogleFonts.roboto(
     color: sinir,fontWeight: FontWeight.w500,fontSize: 18
 );
+TextStyle xdBeyaz = GoogleFonts.roboto(
+    color: Colors.white,fontWeight: FontWeight.w500,fontSize: 18
+);
+TextStyle xdBeyazBaslik = GoogleFonts.roboto(
+    color: Colors.white,fontWeight: FontWeight.w500,fontSize: 24
+);
+

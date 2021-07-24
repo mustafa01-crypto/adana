@@ -161,7 +161,7 @@ class _AnavarzaState extends State<Anavarza>
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Container(
                   decoration: BoxDecoration(
-                      color: xdArka,
+                      color: sol,
                       border: Border.all(color: xdArka, width: 1),
                       borderRadius: BorderRadius.all(Radius.circular(15)),
                       boxShadow: [
@@ -178,7 +178,7 @@ class _AnavarzaState extends State<Anavarza>
                     padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 15),
                     child: Text(
                       "Tarihi 2100 yıl öncesine giden ve en parlak dönemini Roma İmparatoru Septimius Severus’un ödüllendirmesiyle M.S. 2'nci yüzyılda yaşamaya başlayan Anavarza, zaman içinde önemli bir kent haline gelerek 408 yılında Kilikya Başkenti unvanına kavuşmuştur. Bizans Dönemi’nde önemini devam ettiren, sonraki yıllarda Ermeniler, Abbasiler, Selçuklular, Ramazanoğulları, Osmanlılar gibi çeşitli medeniyetlere ev sahipliği yapan Anavarza’da farklı kültürlere ait izleri bir arada görmek mümkün. Bu kültürel zenginliği sayesinde de UNESCO Dünya Miras Geçici Listesi’nde yer alması uygun görülen kent; kalıntıları, tarihi ve efsaneleri ile dikkat çekiyor.",
-                      style: xdUzunYazi,
+                      style: xdBeyaz,
                     ),
                   ),
                 ),

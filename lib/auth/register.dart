@@ -82,14 +82,10 @@ class _RegisterState extends State<Register> {
                         child: Container(
                           width: double.infinity,
                           height: height * 2 / 3,
-                          decoration:
-                              BoxDecoration(color: Colors.white, boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withOpacity(0.3),
-                              spreadRadius: 5,
-                              blurRadius: 7,
-                            ),
-                          ]),
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+
+                          ),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -233,12 +229,12 @@ class _RegisterState extends State<Register> {
                                   height: 70,
                                   child: Center(
                                     child: Text(
-                                      "GİRİŞ YAP",
-                                      style: cityName,
+                                      "KAYIT OL",
+                                      style: xdBeyazBaslik,
                                     ),
                                   ),
                                   decoration: BoxDecoration(
-                                    color: xdArka,
+                                    color: sol,
                                     //border: Border.all(color: kutu, width: 4),
                                     borderRadius:
                                         BorderRadius.all(Radius.circular(30)),
@@ -248,7 +244,7 @@ class _RegisterState extends State<Register> {
                                         spreadRadius: 1,
                                         blurRadius: 1,
                                         offset: Offset(0,
-                                            -3), // changes position of shadow
+                                            -1), // changes position of shadow
                                       ),
                                     ],
                                   ),

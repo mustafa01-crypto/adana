@@ -23,11 +23,11 @@ class _AnavarzaYorumState extends State<AnavarzaYorum> {
           ),
           flexibleSpace: Container(
             decoration: BoxDecoration(
-              gradient: gradient2,
+              gradient: xdGradient,
             ),
           ),
         ),
-        backgroundColor: Colors.white,
+        backgroundColor: kutu,
         body: Yorumlar(),
       ),
     );
@@ -74,13 +74,14 @@ class _YorumlarState extends State<Yorumlar> {
                     padding: EdgeInsets.symmetric(
                         horizontal: MediaQuery.of(context).size.width * 1 / 50),
                     decoration: BoxDecoration(
-                      border: Border.all(color: scaffold, width: 4),
+                      color: sol,
+                     // border: Border.all(color: scaffold, width: 4),
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(15),
                           topRight: Radius.circular(15),
                           bottomLeft: Radius.circular(15),
                           bottomRight: Radius.circular(15)),
-                      color: Colors.white,
+
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -100,7 +101,7 @@ class _YorumlarState extends State<Yorumlar> {
                         ),
                         Text(
                           data["icerik"],
-                          style: icerik,
+                          style: xdBeyaz,
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,

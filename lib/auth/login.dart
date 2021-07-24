@@ -94,13 +94,7 @@ class _LoginState extends State<Login> {
                           decoration: BoxDecoration(
                               color: Colors.white,
 
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.black.withOpacity(0.3),
-                                  spreadRadius: 5,
-                                  blurRadius: 7,
-                                ),
-                              ]),
+                          ),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -214,11 +208,11 @@ class _LoginState extends State<Login> {
                                   child: Center(
                                     child: Text(
                                       "GİRİŞ YAP",
-                                      style: cityName,
+                                      style: xdBeyazBaslik,
                                     ),
                                   ),
                                   decoration: BoxDecoration(
-                                    color: xdArka,
+                                    color: sol,
                                     //border: Border.all(color: kutu, width: 4),
                                     borderRadius: BorderRadius.all(Radius.circular(30)),
                                     boxShadow: [
@@ -226,7 +220,7 @@ class _LoginState extends State<Login> {
                                         color: Colors.black38.withOpacity(0.1),
                                         spreadRadius: 1,
                                         blurRadius: 1,
-                                        offset: Offset(0, -3), // changes position of shadow
+                                        offset: Offset(0, -1), // changes position of shadow
                                       ),
                                     ],
                                   ),

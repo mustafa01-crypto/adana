@@ -76,22 +76,20 @@ class _RegisterState extends State<Register> {
                   ),
                   child: Stack(
                     children: [
-                      rives(context,"assets/riv/hourglass.riv"),
+                      rives(context, "assets/riv/hourglass.riv"),
                       Padding(
                         padding: EdgeInsets.only(top: height * 1 / 3),
                         child: Container(
                           width: double.infinity,
                           height: height * 2 / 3,
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.black.withOpacity(0.3),
-                                  spreadRadius: 5,
-                                  blurRadius: 7,
-                                ),
-                              ]),
+                          decoration:
+                              BoxDecoration(color: Colors.white, boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(0.3),
+                              spreadRadius: 5,
+                              blurRadius: 7,
+                            ),
+                          ]),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -103,7 +101,7 @@ class _RegisterState extends State<Register> {
                                 children: [
                                   Text(
                                     "KAYIT",
-                                    style: baslik2,
+                                    style: xdAppBarBaslik,
                                   )
                                 ],
                               ),
@@ -123,10 +121,10 @@ class _RegisterState extends State<Register> {
                                 child: TextFormField(
                                   controller: t1,
                                   keyboardType: TextInputType.name,
-                                  style: citytext,
+                                  style: TextStyle(color: sol),
                                   decoration: InputDecoration(
                                       hintText: "Ad Soyad",
-                                      hintStyle: TextStyle(color: sinir)
+                                      hintStyle: TextStyle(color: sol)
                                       // icon is 48px widget.
                                       ),
                                 ),
@@ -154,10 +152,10 @@ class _RegisterState extends State<Register> {
                                   },
                                   controller: t2,
                                   keyboardType: TextInputType.emailAddress,
-                                  style: citytext,
+                                  style: TextStyle(color: sol),
                                   decoration: InputDecoration(
                                       hintText: "E mail",
-                                      hintStyle: TextStyle(color: sinir)
+                                      hintStyle: TextStyle(color: sol)
                                       // icon is 48px widget.
                                       ),
                                 ),
@@ -177,17 +175,17 @@ class _RegisterState extends State<Register> {
                                     const EdgeInsets.symmetric(horizontal: 15),
                                 child: TextFormField(
                                   controller: t3,
-                                  style: TextStyle(color: sinir),
+                                  style: TextStyle(color: sol),
                                   obscureText: showPassword,
                                   decoration: InputDecoration(
                                     hintText: "Şifre",
-                                    hintStyle: TextStyle(color: sinir),
+                                    hintStyle: TextStyle(color: sol),
                                     suffixIcon: Padding(
                                       padding: EdgeInsets.all(0.0),
                                       child: showPassword == false
                                           ? IconButton(
                                               icon: Icon(Icons.remove_red_eye),
-                                              color: kutu,
+                                              color: sol,
                                               onPressed: () {
                                                 setState(() {
                                                   showPassword = true;
@@ -217,30 +215,42 @@ class _RegisterState extends State<Register> {
                               SizedBox(
                                 height: height * 1 / 30,
                               ),
+                              TextButton(
+                                onPressed: () {
+                                  if (_formKey.currentState!.validate()) {
+                                    signUp(t1.text, t2.text, t3.text);
 
-                              Padding(
-                                padding: EdgeInsets.symmetric(
-                                    horizontal: width * 1 / 20),
+                                    showMaterialDialog(
+                                      title: "Kayıt Başarılı",
+                                      content:
+                                          "Başarılı bir şekilde kayıt oldunuz",
+                                      context: context,
+                                    );
+                                  }
+                                },
                                 child: Container(
-                                  width: width * 9 / 10,
-                                  height: height * 1 / 15,
-                                  child: ElevatedButton(
-                                    onPressed: () {
-                                      if (_formKey.currentState!.validate()) {
-                                        signUp(t1.text, t2.text, t3.text);
-
-                                        showMaterialDialog(
-                                          title: "Kayıt Başarılı",
-                                          content: "Başarılı bir şekilde kayıt oldunuz",
-                                          context: context,
-                                        );
-                                      }
-                                    },
-                                    child: Text('KAYIT OL',style: butonBaslik,),
-                                    style: ElevatedButton.styleFrom(
-                                        primary: sinir,
-                                        shape: StadiumBorder(
-                                            side: BorderSide.none)),
+                                  width: MediaQuery.of(context).size.width,
+                                  height: 70,
+                                  child: Center(
+                                    child: Text(
+                                      "GİRİŞ YAP",
+                                      style: cityName,
+                                    ),
+                                  ),
+                                  decoration: BoxDecoration(
+                                    color: xdArka,
+                                    //border: Border.all(color: kutu, width: 4),
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(30)),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Colors.black38.withOpacity(0.1),
+                                        spreadRadius: 1,
+                                        blurRadius: 1,
+                                        offset: Offset(0,
+                                            -3), // changes position of shadow
+                                      ),
+                                    ],
                                   ),
                                 ),
                               ),
@@ -250,7 +260,10 @@ class _RegisterState extends State<Register> {
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Text("Hesabım var",style: baslik3,),
+                                  Text(
+                                    "Hesabım var",
+                                    style: baslik3,
+                                  ),
                                   TextButton(
                                     onPressed: () {
                                       Get.to(() => Login());
@@ -265,7 +278,6 @@ class _RegisterState extends State<Register> {
                                   ),
                                 ],
                               ),
-
                             ],
                           ),
                         ),
@@ -300,3 +312,14 @@ class _RegisterState extends State<Register> {
     );
   }
 }
+/*
+ if (_formKey.currentState!.validate()) {
+                                        signUp(t1.text, t2.text, t3.text);
+
+                                        showMaterialDialog(
+                                          title: "Kayıt Başarılı",
+                                          content: "Başarılı bir şekilde kayıt oldunuz",
+                                          context: context,
+                                        );
+                                      }
+ */

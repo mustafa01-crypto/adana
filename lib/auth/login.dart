@@ -68,7 +68,7 @@ class _LoginState extends State<Login> {
 
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: kutu,
         body: SingleChildScrollView(
           child: Form(
             key: _formKey,
@@ -81,7 +81,7 @@ class _LoginState extends State<Login> {
                   height: height,
                   width: width,
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: xdArka,
                   ),
                   child: Stack(
                     children: [
@@ -112,7 +112,7 @@ class _LoginState extends State<Login> {
                                 children: [
                                   Text(
                                     "GİRİŞ",
-                                    style: baslik2,
+                                    style: xdAppBarBaslik,
                                   )
                                 ],
                               ),
@@ -139,10 +139,10 @@ class _LoginState extends State<Login> {
                                   },
                                   controller: t1,
                                   keyboardType: TextInputType.emailAddress,
-                                  style: citytext,
+                                  style: TextStyle(color: sol),
                                   decoration: InputDecoration(
                                       hintText: "E mail",
-                                      hintStyle: TextStyle(color: sinir)
+                                      hintStyle: TextStyle(color: sol)
                                       // icon is 48px widget.
                                       ),
                                 ),
@@ -162,11 +162,11 @@ class _LoginState extends State<Login> {
                                     const EdgeInsets.symmetric(horizontal: 15),
                                 child: TextFormField(
                                   controller: t2,
-                                  style: TextStyle(color: sinir),
+                                  style: TextStyle(color: sol),
                                   obscureText: showPassword,
                                   decoration: InputDecoration(
                                     hintText: "Şifre",
-                                    hintStyle: TextStyle(color: sinir),
+                                    hintStyle: TextStyle(color: sol),
                                     suffixIcon: Padding(
                                       padding: EdgeInsets.all(0.0),
                                       child: showPassword == false
@@ -181,7 +181,7 @@ class _LoginState extends State<Login> {
                                             )
                                           : IconButton(
                                               icon: Icon(Icons.remove_red_eye),
-                                              color: kutu,
+                                              color: sol,
                                               onPressed: () {
                                                 setState(() {
                                                   showPassword = false;
@@ -202,29 +202,38 @@ class _LoginState extends State<Login> {
                               SizedBox(
                                 height: height * 1 / 30,
                               ),
-                              Padding(
-                                padding: EdgeInsets.symmetric(
-                                    horizontal: width * 1 / 20),
+                              TextButton(
+                                onPressed: () {
+                                  if (_formKey.currentState!.validate()) {
+                                    girisYap();
+                                  }
+                                },
                                 child: Container(
-                                  width: width * 9 / 10,
-                                  height: height * 1 / 15,
-                                  child: ElevatedButton(
-                                    onPressed: () {
-                                      if (_formKey.currentState!.validate()) {
-                                        girisYap();
-                                      }
-                                    },
-                                    child: Text('GİRİŞ YAP',style: butonBaslik,),
-                                    style: ElevatedButton.styleFrom(
-                                      primary: sinir,
-                                      shape:
-                                          StadiumBorder(side: BorderSide.none),
+                                  width: MediaQuery.of(context).size.width,
+                                  height: 70,
+                                  child: Center(
+                                    child: Text(
+                                      "GİRİŞ YAP",
+                                      style: cityName,
                                     ),
+                                  ),
+                                  decoration: BoxDecoration(
+                                    color: xdArka,
+                                    //border: Border.all(color: kutu, width: 4),
+                                    borderRadius: BorderRadius.all(Radius.circular(30)),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Colors.black38.withOpacity(0.1),
+                                        spreadRadius: 1,
+                                        blurRadius: 1,
+                                        offset: Offset(0, -3), // changes position of shadow
+                                      ),
+                                    ],
                                   ),
                                 ),
                               ),
                               SizedBox(
-                                height: height * 1 / 20,
+                                height: height * 1 / 30,
                               ),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -261,65 +270,7 @@ class _LoginState extends State<Login> {
 }
 
 /*
-Padding(
-                        padding: const EdgeInsets.only(
-                            left: 8, top: 15, right: 8, bottom: 15),
-                        child: TextFormField(
-                          validator: (val) {
-                            return RegExp(
-                                        r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-                                    .hasMatch(val!)
-                                ? null
-                                : "Lütfen geçerli bir mail adresi giriniz";
-                          },
-                          controller: t1,
-                          keyboardType: TextInputType.emailAddress,
-                          style: TextStyle(color: Colors.white),
-                          decoration: InputDecoration(
-                              hintText: "E mail",
-                              hintStyle: TextStyle(color: Colors.white)
-                              // icon is 48px widget.
-                              ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(
-                            left: 8, top: 15, right: 8, bottom: 15),
-                        child: TextFormField(
-                            controller: t2,
-                            style: TextStyle(color: Colors.white),
-                            obscureText: showPassword,
-                            decoration: InputDecoration(
-                              hintText: "Şifre",
-                              hintStyle: TextStyle(color: Colors.white),
-                              suffixIcon: Padding(
-                                padding: EdgeInsets.all(0.0),
-                                child: showPassword == false
-                                    ? IconButton(
-                                        icon: Icon(Icons.remove_red_eye),
-                                        color: Colors.red.shade700,
-                                        onPressed: () {
-                                          setState(() {
-                                            showPassword = true;
-                                          });
-                                        },
-                                      )
-                                    : IconButton(
-                                        icon: Icon(Icons.remove_red_eye),
-                                        color: Colors.grey.shade700,
-                                        onPressed: () {
-                                          setState(() {
-                                            showPassword = false;
-                                          });
-                                        },
-                                      ),
-                              ), // icon is 48px widget.
-                            ),
-                            validator: (deger) {
-                              if (deger!.isEmpty || deger.length < 6) {
-                                return "Lütfen 6 karakterden uzun bir şifre giriniz";
-                              }
-                              return null;
-                            }),
-                      ),
+ if (_formKey.currentState!.validate()) {
+                                        girisYap();
+                                      }
  */

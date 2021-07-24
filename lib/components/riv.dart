@@ -10,7 +10,7 @@ Widget rives(BuildContext context,String yol) {
     width: double.infinity,
     height: height* 1/3,
     decoration: BoxDecoration(
-        gradient: gradient,
+        gradient: xdGradient,
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.2),

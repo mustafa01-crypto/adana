@@ -44,7 +44,7 @@ class _HomeState extends State<Home> {
     baglantiAl();
     // Pointing the video controller to our local asset.
     _controller = VideoPlayerController.asset(
-        "assets/video/as.mp4")
+        "assets/video/tanitim.mp4")
       ..initialize().then((_) {
         // Once the video has been loaded we play the video and set looping to true.
         _controller!.play();

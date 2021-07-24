@@ -89,36 +89,17 @@ class _KaraisaliState extends State<Karapinar>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: scaffold2,
+      backgroundColor: kutu,
       appBar: AppBar(
-        backgroundColor: sinir,
-        title: Center(child: Text(title)),
+      //  backgroundColor: sinir,
+        centerTitle: true,
+        title: Text(title,style: xdAppBarBaslik,),
 
         flexibleSpace: Container(
           decoration: BoxDecoration(
-            gradient: deneme,
+            gradient: xdGradient,
           ),
         ),
-        actions: [
-          IconButton(
-            onPressed: () {
-              MapUtils.openMap(x, y);
-            },
-            icon: Icon(
-              Icons.map_sharp,
-              color: Colors.white,
-            ),
-          ),
-          IconButton(
-            onPressed: () {
-              _showRatingAppDialog();
-            },
-            icon: Icon(
-              Icons.comment_rounded,
-              color: Colors.white,
-            ),
-          ),
-        ],
       ),
       body: SingleChildScrollView(
         child: SafeArea(
@@ -179,19 +160,21 @@ class _KaraisaliState extends State<Karapinar>
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Container(
                   decoration: BoxDecoration(
-                      color: kutu,
-                     // border: Border.all(color: sinir, width: 2),
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(14),
-                          topRight: Radius.circular(14),
-                          bottomLeft: Radius.circular(14),
-                          bottomRight: Radius.circular(14)),
+                      color: xdArka,
+                      border: Border.all(color: xdArka, width: 1),
+                      borderRadius: BorderRadius.all(Radius.circular(15)),
                       boxShadow: [
                         BoxShadow(
-                            color: Colors.black.withOpacity(0.4), spreadRadius: 1)
-                      ]),
+                          color: Colors.black38.withOpacity(0.1),
+                          spreadRadius: 1,
+                          blurRadius: 1,
+                          offset: Offset(0, -3), // changes position of shadow
+                        ),
+                      ]
+
+                  ),
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 15),
                     child: Text(
                       "Türkiye’nin Akdeniz Bölgesinde bulunan"
                       " Karaisalı, Roma Döneminden önemli izler taşıyan"
@@ -199,7 +182,7 @@ class _KaraisaliState extends State<Karapinar>
                       " soyunun Ramazanoğulları ve Menemencioğullarından geldiği"
                       " günümüzdeki adını"
                       " da Ramazanoğullarından Kara İsa Bey’den aldığı bilinen bir husustur.",
-                      style: icerik2,
+                      style: xdUzunYazi,
                     ),
                   ),
                 ),
@@ -225,19 +208,15 @@ class _KaraisaliState extends State<Karapinar>
                     ),
                   ),
                   decoration: BoxDecoration(
-                    color: Colors.white,
-                  //  border: Border.all(color: kutu, width: 4),
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(15),
-                        topRight: Radius.circular(15),
-                        bottomLeft: Radius.circular(15),
-                        bottomRight: Radius.circular(15)),
+                    color: xdArka,
+                    //border: Border.all(color: kutu, width: 4),
+                    borderRadius: BorderRadius.all(Radius.circular(30)),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black.withOpacity(0.2),
-                        spreadRadius: 3,
-                        blurRadius: 5,
-                        offset: Offset(0, 3), // changes position of shadow
+                        color: Colors.black38.withOpacity(0.1),
+                        spreadRadius: 1,
+                        blurRadius: 1,
+                        offset: Offset(0, -3), // changes position of shadow
                       ),
                     ],
                   ),
@@ -260,19 +239,79 @@ class _KaraisaliState extends State<Karapinar>
                     ),
                   ),
                   decoration: BoxDecoration(
-                    color: kutu,
+                    color: xdArka,
                   //  border: Border.all(color: scaffold, width: 4),
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(15),
-                        topRight: Radius.circular(15),
-                        bottomLeft: Radius.circular(15),
-                        bottomRight: Radius.circular(15)),
+                    borderRadius: BorderRadius.all(Radius.circular(30)),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.white,
-                        spreadRadius: 5,
-                        blurRadius: 7,
-                        offset: Offset(0, 3), // changes position of shadow
+                        color: Colors.black38.withOpacity(0.1),
+                        spreadRadius: 1,
+                        blurRadius: 1,
+                        offset: Offset(0, -3), // changes position of shadow
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+
+              //xd
+              SizedBox(
+                height: 15,
+              ),
+              TextButton(
+                onPressed: () {
+                  MapUtils.openMap(x, y);
+                },
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: 70,
+                  child: Center(
+                    child: Text(
+                      "YOL TARİFİ",
+                      style: cityName,
+                    ),
+                  ),
+                  decoration: BoxDecoration(
+                    color: xdArka,
+                    //border: Border.all(color: kutu, width: 4),
+                    borderRadius: BorderRadius.all(Radius.circular(30)),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black38.withOpacity(0.1),
+                        spreadRadius: 1,
+                        blurRadius: 1,
+                        offset: Offset(0, -3), // changes position of shadow
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              TextButton(
+                onPressed: () {
+                  _showRatingAppDialog();
+                },
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: 70,
+                  child: Center(
+                    child: Text(
+                      "YORUM YAP",
+                      style: cityName,
+                    ),
+                  ),
+                  decoration: BoxDecoration(
+                    color: xdArka,
+                    //  border: Border.all(color: scaffold, width: 4),
+                    borderRadius: BorderRadius.all(Radius.circular(30)),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black38.withOpacity(0.1),
+                        spreadRadius: 1,
+                        blurRadius: 1,
+                        offset: Offset(0, -3), // changes position of shadow
                       ),
                     ],
                   ),

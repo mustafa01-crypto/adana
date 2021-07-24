@@ -23,7 +23,6 @@ class Kanyon extends StatefulWidget {
 }
 
 class _KanyonState extends State<Kanyon> with SingleTickerProviderStateMixin {
-
   double x = 37.233555;
   double y = 35.014943;
   String title = "KAPIKAYA KANYONU";
@@ -45,13 +44,14 @@ class _KanyonState extends State<Kanyon> with SingleTickerProviderStateMixin {
     "https://www.gezenbilir.com/attachments/dsc_4832-jpg.307310/",
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlO-5wY9xI7DOSIXjmArxTj0zYB8o1kOuYAw&usqp=CAU",
   ];
-  void getCurrentUser() {
 
+  void getCurrentUser() {
     final user = auth.currentUser;
     if (user != null) {
       loggedInuser = user;
     }
   }
+
   void _showRatingAppDialog() {
     final _ratingDialog = RatingDialog(
       ratingColor: Colors.amber,
@@ -84,32 +84,19 @@ class _KanyonState extends State<Kanyon> with SingleTickerProviderStateMixin {
     );
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: kutu,
       appBar: AppBar(
-        backgroundColor: sinir,
-        title: Center(child: Text(title)),
-        actions: [
-          IconButton(
-            onPressed: ()
-            {
-              MapUtils.openMap(x, y);
-            },
-            icon: Icon(Icons.map_sharp,color: Colors.white,),
-
+        //  backgroundColor: sinir,
+        centerTitle: true,
+        title: Text(title, style: xdAppBarBaslik),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: xdGradient,
           ),
-          IconButton(
-            onPressed: () {
-              _showRatingAppDialog();
-            },
-            icon: Icon(
-              Icons.comment_rounded,
-              color: Colors.white,
-            ),
-          ),
-        ],
+        ),
       ),
       body: SingleChildScrollView(
         child: SafeArea(
@@ -156,14 +143,13 @@ class _KanyonState extends State<Kanyon> with SingleTickerProviderStateMixin {
                 children: links.map((String link) {
                   return new ClipRRect(
                       child: Image.network(
-                        link,
-                        width: MediaQuery.of(context).size.width,
-                        height: 220,
-                        fit: BoxFit.fill,
-                      ));
+                    link,
+                    width: MediaQuery.of(context).size.width,
+                    height: 220,
+                    fit: BoxFit.fill,
+                  ));
                 }).toList(),
               ),
-
               SizedBox(
                 height: 10,
               ),
@@ -171,47 +157,54 @@ class _KanyonState extends State<Kanyon> with SingleTickerProviderStateMixin {
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Container(
                   decoration: BoxDecoration(
-                      color: scaffold,
-                      border: Border.all(color: sinir, width: 2),
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(14),
-                          topRight: Radius.circular(14),
-                          bottomLeft: Radius.circular(14),
-                          bottomRight: Radius.circular(14)),
+                      color: xdArka,
+                      border: Border.all(color: xdArka, width: 1),
+                      borderRadius: BorderRadius.all(Radius.circular(15)),
                       boxShadow: [
-                        BoxShadow(color: Colors.blue.shade300, spreadRadius: 1)
-                      ]),
+                        BoxShadow(
+                          color: Colors.black38.withOpacity(0.1),
+                          spreadRadius: 1,
+                          blurRadius: 1,
+                          offset: Offset(0, -3), // changes position of shadow
+                        ),
+                      ]
+
+                  ),
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 15),
                     child: Text(
                       "Kapıkaya Kanyonu, Adana ili Karaisalı ilçesinde "
-                          "Kapıkaya köyünde bulunan kanyon."
-
-                          "Kanyonu Seyhan Nehri'nin kollarından Çakıt'"
-                          " Deresi açmıştır. Çakıt Deresi, Seyhan Nehri'"
-                          "nin Batı koludur. Pozantı Boğazından dağlık "
-                          "alanlara doğru uzanır. Kanyon Varda Köprüsü'ne '"
-                          "'2 km uzaklığındadır."
-                          "Kanyon çevresinde bitki örtüsü; zakkum, "
-                          " zeytin, keçiboynuzu ve çınar ağaçlarından "
-                          "oluşur. 20 km'lik kanyonun 7,25 km'si yürüyüş"
-                          "yolu olarak düzenlenmiş, doğa yürüyüşleri yapılmaktadır."
-                          "Kanyonun doğa turizmi için cazibe merkezi haline getirilmesine"
-                          "çalışılmaktadır. Yerköprü piknik alanı ile kanyon yolu yeni"
-                          "yapılan bir köprü ile birleştirilmiştir. 7,250 m yürüyüş yolu "
-                          "düzenlenmiş, şelaleyi görecek bir alana ahşap seyir terası"
-                          "yapılmıştır. Sarp olan 400 metrelik kısma korkuluk yapılıp,"
-                          "dar alanlarda yol genişletilmiştir.",
-                      style: icerik2,
+                      "Kapıkaya köyünde bulunan kanyon."
+                      "Kanyonu Seyhan Nehri'nin kollarından Çakıt'"
+                      " Deresi açmıştır. Çakıt Deresi, Seyhan Nehri'"
+                      "nin Batı koludur. Pozantı Boğazından dağlık "
+                      "alanlara doğru uzanır. Kanyon Varda Köprüsü'ne '"
+                      "'2 km uzaklığındadır."
+                      "Kanyon çevresinde bitki örtüsü; zakkum, "
+                      " zeytin, keçiboynuzu ve çınar ağaçlarından "
+                      "oluşur. 20 km'lik kanyonun 7,25 km'si yürüyüş"
+                      "yolu olarak düzenlenmiş, doğa yürüyüşleri yapılmaktadır."
+                      "Kanyonun doğa turizmi için cazibe merkezi haline getirilmesine"
+                      "çalışılmaktadır. Yerköprü piknik alanı ile kanyon yolu yeni"
+                      "yapılan bir köprü ile birleştirilmiştir. 7,250 m yürüyüş yolu "
+                      "düzenlenmiş, şelaleyi görecek bir alana ahşap seyir terası"
+                      "yapılmıştır. Sarp olan 400 metrelik kısma korkuluk yapılıp,"
+                      "dar alanlarda yol genişletilmiştir.",
+                      style: xdUzunYazi,
                     ),
                   ),
                 ),
               ),
-              SizedBox(height: 15,),
+              SizedBox(
+                height: 15,
+              ),
               TextButton(
-                onPressed: ()
-                {
-                  Get.to(() => Maps(x: x, y: y, title: title));
+                onPressed: () {
+                  Get.to(() => Maps(
+                    x: x,
+                    y: y,
+                    title: title,
+                  ));
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width,
@@ -220,23 +213,18 @@ class _KanyonState extends State<Kanyon> with SingleTickerProviderStateMixin {
                     child: Text(
                       "HARİTADA GÖSTER",
                       style: cityName,
-
                     ),
                   ),
                   decoration: BoxDecoration(
-                    color: Colors.white,
-                    border: Border.all(color: scaffold, width: 4),
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(15),
-                        topRight: Radius.circular(15),
-                        bottomLeft: Radius.circular(15),
-                        bottomRight: Radius.circular(15)),
+                    color: xdArka,
+                    //border: Border.all(color: kutu, width: 4),
+                    borderRadius: BorderRadius.all(Radius.circular(30)),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.white,
-                        spreadRadius: 5,
-                        blurRadius: 7,
-                        offset: Offset(0, 3), // changes position of shadow
+                        color: Colors.black38.withOpacity(0.1),
+                        spreadRadius: 1,
+                        blurRadius: 1,
+                        offset: Offset(0, -3), // changes position of shadow
                       ),
                     ],
                   ),
@@ -255,23 +243,83 @@ class _KanyonState extends State<Kanyon> with SingleTickerProviderStateMixin {
                   child: Center(
                     child: Text(
                       "YORUMLARI GÖSTER",
-                      style: cityName2,
+                      style: cityName,
                     ),
                   ),
                   decoration: BoxDecoration(
-                    color: sinir,
-                  //  border: Border.all(color: scaffold, width: 4),
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(15),
-                        topRight: Radius.circular(15),
-                        bottomLeft: Radius.circular(15),
-                        bottomRight: Radius.circular(15)),
+                    color: xdArka,
+                    //  border: Border.all(color: scaffold, width: 4),
+                    borderRadius: BorderRadius.all(Radius.circular(30)),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.white,
-                        spreadRadius: 5,
-                        blurRadius: 7,
-                        offset: Offset(0, 3), // changes position of shadow
+                        color: Colors.black38.withOpacity(0.1),
+                        spreadRadius: 1,
+                        blurRadius: 1,
+                        offset: Offset(0, -3), // changes position of shadow
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+
+              //xd
+              SizedBox(
+                height: 15,
+              ),
+              TextButton(
+                onPressed: () {
+                  MapUtils.openMap(x, y);
+                },
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: 70,
+                  child: Center(
+                    child: Text(
+                      "YOL TARİFİ",
+                      style: cityName,
+                    ),
+                  ),
+                  decoration: BoxDecoration(
+                    color: xdArka,
+                    //border: Border.all(color: kutu, width: 4),
+                    borderRadius: BorderRadius.all(Radius.circular(30)),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black38.withOpacity(0.1),
+                        spreadRadius: 1,
+                        blurRadius: 1,
+                        offset: Offset(0, -3), // changes position of shadow
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              TextButton(
+                onPressed: () {
+                  _showRatingAppDialog();
+                },
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: 70,
+                  child: Center(
+                    child: Text(
+                      "YORUM YAP",
+                      style: cityName,
+                    ),
+                  ),
+                  decoration: BoxDecoration(
+                    color: xdArka,
+                    //  border: Border.all(color: scaffold, width: 4),
+                    borderRadius: BorderRadius.all(Radius.circular(30)),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black38.withOpacity(0.1),
+                        spreadRadius: 1,
+                        blurRadius: 1,
+                        offset: Offset(0, -3), // changes position of shadow
                       ),
                     ],
                   ),

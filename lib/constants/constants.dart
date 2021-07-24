@@ -91,3 +91,27 @@ Gradient deneme = LinearGradient(
     kutu2,
   ],
 );
+
+//XD
+Color xdArka = Color(0xFFE6D3EA);
+Color sol = Color(0xFFE38ED4);
+Color orta = Color(0xFFDCB5D5);
+Color sag = Color(0xFFFFFFFF);
+
+Gradient xdGradient =LinearGradient(
+  begin: Alignment.centerLeft,
+  end: Alignment.centerRight,
+  colors: [
+    sol,
+    orta,
+    sag,
+  ],
+);
+
+TextStyle xdAppBarBaslik = GoogleFonts.roboto(
+    color: sinir,fontWeight: FontWeight.w500,fontSize: 22
+);
+
+TextStyle xdUzunYazi = GoogleFonts.roboto(
+    color: sinir,fontWeight: FontWeight.w500,fontSize: 18
+);

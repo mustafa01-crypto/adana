@@ -72,33 +72,23 @@ class _CeyhanListState extends State<CeyhanList> {
       padding: const EdgeInsets.all(15.0),
       child: Container(
         width: MediaQuery.of(context).size.width,
-        height: 100,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(left: 8),
-              child: Text(
-                text,
-                style: cityName,
-              ),
-            ),
-          ],
+        height: 70,
+        child: Center(
+          child: Text(
+            text,
+            style: cityName,
+          ),
         ),
         decoration: BoxDecoration(
-          color: kutu,
-         // border: Border.all(color: scaffold, width: 4),
-          borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(15),
-              topRight: Radius.circular(15),
-              bottomLeft: Radius.circular(15),
-              bottomRight: Radius.circular(15)),
+          color: xdArka,
+          //  border: Border.all(color: scaffold, width: 4),
+          borderRadius: BorderRadius.all(Radius.circular(15)),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.2),
-              spreadRadius: 3,
-              blurRadius: 5,
-              offset: Offset(0, 3), // changes position of shadow
+              color: Colors.black38.withOpacity(0.1),
+              spreadRadius: 1,
+              blurRadius: 1,
+              offset: Offset(0, -3), // changes position of shadow
             ),
           ],
         ),

@@ -87,28 +87,16 @@ class _YumurtalikLagunuState extends State<YumurtalikLagunu>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: kutu,
       appBar: AppBar(
-        backgroundColor: sinir,
-        title: Center(child: Text(title)),
-        actions: [
-          IconButton(
-            onPressed: ()
-            {
-              MapUtils.openMap(x, y);
-            },
-            icon: Icon(Icons.map_sharp,color: Colors.white,),
-
+        centerTitle: true,
+        // backgroundColor: sinir,
+        title: Text(title,style: xdAppBarBaslik,),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: xdGradient,
           ),
-          IconButton(
-            onPressed: () {
-              _showRatingAppDialog();
-            },
-            icon: Icon(
-              Icons.comment_rounded,
-              color: Colors.white,
-            ),
-          ),
-        ],
+        ),
       ),
       body: SingleChildScrollView(
         child: SafeArea(
@@ -170,21 +158,24 @@ class _YumurtalikLagunuState extends State<YumurtalikLagunu>
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Container(
                   decoration: BoxDecoration(
-                      color: scaffold,
-                      border: Border.all(color: sinir, width: 2),
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(14),
-                          topRight: Radius.circular(14),
-                          bottomLeft: Radius.circular(14),
-                          bottomRight: Radius.circular(14)),
+                      color: xdArka,
+                      border: Border.all(color: xdArka, width: 1),
+                      borderRadius: BorderRadius.all(Radius.circular(15)),
                       boxShadow: [
-                        BoxShadow(color: Colors.blue.shade300, spreadRadius: 1)
-                      ]),
+                        BoxShadow(
+                          color: Colors.black38.withOpacity(0.1),
+                          spreadRadius: 1,
+                          blurRadius: 1,
+                          offset: Offset(0, -3), // changes position of shadow
+                        ),
+                      ]
+
+                  ),
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 15),
                     child: Text(
                       "Yumurtalık Lagünü Milli Parkı Çukurova’ya yaklaşık 40 km uzaklıktadır. Birçok kuş türüne ev sahipliği yapan ve onların göç yolu üzerinde bulunan özel bir yerdir. Kuş gözlemi yapmak isteyenlerin oldukça ilgisini çekmektedir.",
-                      style: icerik2,
+                      style: xdUzunYazi,
                     ),
                   ),
                 ),
@@ -194,7 +185,11 @@ class _YumurtalikLagunuState extends State<YumurtalikLagunu>
               ),
               TextButton(
                 onPressed: () {
-                  Get.to(() => Maps(x: x, y: y, title: title));
+                  Get.to(() => Maps(
+                    x: x,
+                    y: y,
+                    title: title,
+                  ));
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width,
@@ -206,19 +201,15 @@ class _YumurtalikLagunuState extends State<YumurtalikLagunu>
                     ),
                   ),
                   decoration: BoxDecoration(
-                    color: Colors.white,
-                    border: Border.all(color: scaffold, width: 4),
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(15),
-                        topRight: Radius.circular(15),
-                        bottomLeft: Radius.circular(15),
-                        bottomRight: Radius.circular(15)),
+                    color: xdArka,
+                    //border: Border.all(color: kutu, width: 4),
+                    borderRadius: BorderRadius.all(Radius.circular(30)),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.white,
-                        spreadRadius: 5,
-                        blurRadius: 7,
-                        offset: Offset(0, 3), // changes position of shadow
+                        color: Colors.black38.withOpacity(0.1),
+                        spreadRadius: 1,
+                        blurRadius: 1,
+                        offset: Offset(0, -3), // changes position of shadow
                       ),
                     ],
                   ),
@@ -233,27 +224,87 @@ class _YumurtalikLagunuState extends State<YumurtalikLagunu>
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width,
-                  height: 80,
+                  height: 70,
                   child: Center(
                     child: Text(
                       "YORUMLARI GÖSTER",
-                      style: cityName2,
+                      style: cityName,
                     ),
                   ),
                   decoration: BoxDecoration(
-                    color: sinir,
-                 //   border: Border.all(color: scaffold, width: 4),
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(15),
-                        topRight: Radius.circular(15),
-                        bottomLeft: Radius.circular(15),
-                        bottomRight: Radius.circular(15)),
+                    color: xdArka,
+                    //  border: Border.all(color: scaffold, width: 4),
+                    borderRadius: BorderRadius.all(Radius.circular(30)),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.white,
-                        spreadRadius: 5,
-                        blurRadius: 7,
-                        offset: Offset(0, 3), // changes position of shadow
+                        color: Colors.black38.withOpacity(0.1),
+                        spreadRadius: 1,
+                        blurRadius: 1,
+                        offset: Offset(0, -3), // changes position of shadow
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+
+              //xd
+              SizedBox(
+                height: 15,
+              ),
+              TextButton(
+                onPressed: () {
+                  MapUtils.openMap(x, y);
+                },
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: 70,
+                  child: Center(
+                    child: Text(
+                      "YOL TARİFİ",
+                      style: cityName,
+                    ),
+                  ),
+                  decoration: BoxDecoration(
+                    color: xdArka,
+                    //border: Border.all(color: kutu, width: 4),
+                    borderRadius: BorderRadius.all(Radius.circular(30)),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black38.withOpacity(0.1),
+                        spreadRadius: 1,
+                        blurRadius: 1,
+                        offset: Offset(0, -3), // changes position of shadow
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              TextButton(
+                onPressed: () {
+                  _showRatingAppDialog();
+                },
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: 70,
+                  child: Center(
+                    child: Text(
+                      "YORUM YAP",
+                      style: cityName,
+                    ),
+                  ),
+                  decoration: BoxDecoration(
+                    color: xdArka,
+                    //  border: Border.all(color: scaffold, width: 4),
+                    borderRadius: BorderRadius.all(Radius.circular(30)),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black38.withOpacity(0.1),
+                        spreadRadius: 1,
+                        blurRadius: 1,
+                        offset: Offset(0, -3), // changes position of shadow
                       ),
                     ],
                   ),

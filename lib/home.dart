@@ -95,14 +95,13 @@ class _HomeState extends State<Home> {
     return SafeArea(
       child: Scaffold(
           appBar: AppBar(
-
             centerTitle: true,
             title: Text(
               "DİYAR DİYAR ADANA",
             ),
             flexibleSpace: Container(
               decoration: BoxDecoration(
-                gradient: gradient2,
+                gradient: xdGradient,
               ),
             ),
 

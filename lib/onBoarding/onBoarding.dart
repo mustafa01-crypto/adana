@@ -106,7 +106,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
         ),
       ),
       dotsContainerDecorator:  ShapeDecoration(
-        color: sol,
+        color: sinir,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(8.0)),
         ),

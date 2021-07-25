@@ -21,6 +21,8 @@ environment:
   sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
+  shared_preferences: ^2.0.6
+  introduction_screen: ^2.1.0
   rate_my_app: ^1.1.1
   intl: ^0.17.0
   google_fonts: ^2.1.0
@@ -49,7 +51,7 @@ dependencies:
   cupertino_icons: ^1.0.2
 
 dev_dependencies:
-  flutter_native_splash: ^1.2.0
+  flutter_launcher_icons: ^0.9.0
 
   flutter_test:
     sdk: flutter
@@ -115,10 +117,3 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
-flutter_native_splash:
-  color: "FC7925"
-  image: assets/adana2.png
-  web: false
-  fullscreen: true
-  android_gravity: center
-  android12: true

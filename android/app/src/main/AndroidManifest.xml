@@ -7,7 +7,7 @@
 
    <application
 
-        android:label="adana"
+        android:label="DİYAR DİYAR ADANA"
         android:icon="@mipmap/ic_launcher">
         <activity
 

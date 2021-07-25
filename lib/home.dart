@@ -97,7 +97,7 @@ class _HomeState extends State<Home> {
           appBar: AppBar(
             centerTitle: true,
             title: Text(
-              "DİYAR DİYAR ADANA",
+              "DİYAR DİYAR ADANA",style: xdAppBarBaslik,
             ),
             flexibleSpace: Container(
               decoration: BoxDecoration(
@@ -153,20 +153,20 @@ class _HomeState extends State<Home> {
                   Divider(color: Colors.white,thickness: 2,),
 
                   ListTile(
-                    title: Text('KARAİSALI', style: baslik2),
+                    title: Text('KARAİSALI', style: xdAppBarBaslik),
                     onTap: () {
                       Get.to(() => KaraisaliMesireList());
                     },
                   ),
                   ListTile(
-                    title: Text('SEYHAN', style: baslik2),
+                    title: Text('SEYHAN', style: xdAppBarBaslik),
                     onTap: () {
 
                       Get.to(() => SeyhanList());
                     },
                   ),
                  ListTile(
-                    title: Text('ÇUKUROVA', style: baslik2),
+                    title: Text('ÇUKUROVA', style: xdAppBarBaslik),
                     onTap: () {
                       Get.to(() => CukurovaList());
                     },
@@ -175,7 +175,7 @@ class _HomeState extends State<Home> {
                   ListTile(
                     title: Text(
                       'CEYHAN',
-                      style: baslik2,
+                      style: xdAppBarBaslik,
                     ),
                     onTap: () {
                       Get.to(() => CeyhanList());
@@ -204,7 +204,7 @@ class _HomeState extends State<Home> {
 
                       Icons.exit_to_app,color: sinir,size: 30,
                     ) ,
-                    title: Text('ÇIKIŞ YAP', style: baslik2),
+                    title: Text('ÇIKIŞ YAP', style: xdAppBarBaslik),
                     onTap: () {
                       FirebaseAuth.instance.signOut().then((deger) {
                         Get.to(() => Login());

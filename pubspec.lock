@@ -275,6 +275,27 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.0"
+  google_sign_in:
+    dependency: "direct main"
+    description:
+      name: google_sign_in
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "5.0.5"
+  google_sign_in_platform_interface:
+    dependency: transitive
+    description:
+      name: google_sign_in_platform_interface
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.1"
+  google_sign_in_web:
+    dependency: transitive
+    description:
+      name: google_sign_in_web
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.10.0"
   graphs:
     dependency: transitive
     description:
@@ -443,13 +464,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.2.1"
-  rate_my_app:
-    dependency: "direct main"
+  quiver:
+    dependency: transitive
     description:
-      name: rate_my_app
+      name: quiver
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.1.1"
+    version: "3.0.1"
   rating_dialog:
     dependency: "direct main"
     description:

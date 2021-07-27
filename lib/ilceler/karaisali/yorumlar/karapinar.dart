@@ -1,7 +1,13 @@
+import 'package:adana/components/toast.dart';
 import 'package:adana/constants/constants.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_stars/flutter_rating_stars.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+
+
+late User loggedInuser;
 
 class ParkYorum extends StatefulWidget {
   const ParkYorum({Key? key}) : super(key: key);
@@ -11,6 +17,23 @@ class ParkYorum extends StatefulWidget {
 }
 
 class _ParkYorumState extends State<ParkYorum> {
+  FirebaseAuth auth = FirebaseAuth.instance;
+  late Query<Object> parkYorum;
+
+  void getCurrentUser() {
+    final user = auth.currentUser;
+    if (user != null) {
+      loggedInuser = user;
+    }
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    getCurrentUser();
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -25,6 +48,32 @@ class _ParkYorumState extends State<ParkYorum> {
               gradient: xdGradient,
             ),
           ),
+          actions: [
+            IconButton(
+              icon: Icon(
+                Icons.delete,
+                color: Colors.red,
+              ),
+              onPressed: () {
+
+                Fluttertoast.showToast(
+                    msg: "Yorumunuz başarıyla silindi",
+                    toastLength: Toast.LENGTH_SHORT,
+                    gravity: ToastGravity.CENTER,
+                    timeInSecForIosWeb: 1,
+                    backgroundColor: Colors.red,
+                    textColor: Colors.white,
+                    fontSize: 16.0
+                );
+                parkYorum = FirebaseFirestore.instance
+                    .collection("karaipinarYorum")
+                    .doc(loggedInuser.email)
+                    .delete() as Query<Object>;
+
+
+              },
+            )
+          ],
         ),
         backgroundColor: kutu,
         body: Yorumlar(),
@@ -41,16 +90,12 @@ class Yorumlar extends StatefulWidget {
 }
 
 class _YorumlarState extends State<Yorumlar> {
-
-
   double value = 1.0;
   Query karapinarYorumlar =
-  FirebaseFirestore.instance.collection('karaipinarYorum');
+      FirebaseFirestore.instance.collection('karaipinarYorum');
 
   @override
   Widget build(BuildContext context) {
-
-
     return StreamBuilder<QuerySnapshot>(
       stream: karapinarYorumlar.snapshots(),
       builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
@@ -66,7 +111,6 @@ class _YorumlarState extends State<Yorumlar> {
           children: snapshot.data!.docs.map((DocumentSnapshot document) {
             Map<String, dynamic> data = document.data() as Map<String, dynamic>;
 
-
             return Padding(
               padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
               child: Column(
@@ -79,7 +123,7 @@ class _YorumlarState extends State<Yorumlar> {
                     padding: EdgeInsets.symmetric(
                         horizontal: MediaQuery.of(context).size.width * 1 / 50),
                     decoration: BoxDecoration(
-                   //   border: Border.all(color: scaffold, width: 4),
+                      //   border: Border.all(color: scaffold, width: 4),
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(15),
                           topRight: Radius.circular(15),
@@ -93,7 +137,6 @@ class _YorumlarState extends State<Yorumlar> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-
                             Text(
                               data["email"],
                               style: email,

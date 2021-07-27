@@ -20,7 +20,7 @@ showMaterialDialog(
             width: width,
             height: height,
             child: ElevatedButton(
-              child: Text("Geri Dön"),
+              child: Text("Tamam"),
               style: ElevatedButton.styleFrom(
                 primary: sinir,
                 shape: BeveledRectangleBorder(

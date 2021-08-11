@@ -92,12 +92,12 @@ class _YorumlarState extends State<Yorumlar> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-
+                            Profiles(path: data['email']!),
                             Text(
                               data["email"],
                               style: email,
                             ),
-                            Profiles(path: data['email']!),
+
                           ],
                         ),
                         SizedBox(

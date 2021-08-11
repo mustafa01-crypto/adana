@@ -26,7 +26,7 @@ class _YerKopruState extends State<YerKopru>
     with SingleTickerProviderStateMixin {
   double x = 37.279220;
   double y = 34.998238;
-  String title = "yerkopru";
+  String title = "YERKÖPRÜ";
   FirebaseAuth auth = FirebaseAuth.instance;
 
   void initState() {

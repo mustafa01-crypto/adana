@@ -43,11 +43,14 @@ class Yorumlar extends StatefulWidget {
 }
 
 class _YorumlarState extends State<Yorumlar> {
+
+  double value = 1.0;
+
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
+   // final width = MediaQuery.of(context).size.width;
 
-    double value = 1.0;
+
     Query karapinarYorumlar =
         FirebaseFirestore.instance.collection('AtaturkEviYorum');
 

@@ -1,10 +1,9 @@
 import 'package:adana/constants/constants.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_stars/flutter_rating_stars.dart';
-import 'package:intl/intl.dart';
+
 
 class TasKopruYorum extends StatefulWidget {
   const TasKopruYorum({Key? key}) : super(key: key);
@@ -50,10 +49,6 @@ class _YorumlarState extends State<Yorumlar> {
     Query karapinarYorumlar =
         FirebaseFirestore.instance.collection('TasKopruYorum');
 
-
-    var now = new DateTime.now();
-    var formatter = new DateFormat('dd-MM-yyyy');
-    String formattedDate = formatter.format(now);
 
     return StreamBuilder<QuerySnapshot>(
       stream: karapinarYorumlar.snapshots(),

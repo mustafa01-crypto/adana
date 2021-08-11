@@ -43,12 +43,13 @@ class Yorumlar extends StatefulWidget {
 }
 
 class _YorumlarState extends State<Yorumlar> {
+  double value = 1.0;
   @override
   Widget build(BuildContext context) {
     Query karapinarYorumlar =
         FirebaseFirestore.instance.collection('UluCamiYorum');
 
-    double value = 1.0;
+
 
     return StreamBuilder<QuerySnapshot>(
       stream: karapinarYorumlar.snapshots(),

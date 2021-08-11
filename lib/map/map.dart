@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -7,7 +6,6 @@ class Maps extends StatefulWidget {
   double x;
   double y;
   String title;
-
 
   Maps({required this.x, required this.y,required this.title});
 
@@ -19,12 +17,9 @@ class _MapsState extends State<Maps> {
 
   Completer<GoogleMapController> _controller = Completer();
 
-
   void _onMapCreated(GoogleMapController controller) {
     _controller.complete(controller);
   }
-
-
 
   @override
   Widget build(BuildContext context) {

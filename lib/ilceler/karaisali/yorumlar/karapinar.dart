@@ -1,11 +1,9 @@
-import 'package:adana/components/toast.dart';
 import 'package:adana/constants/constants.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_stars/flutter_rating_stars.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 
 
 late User loggedInuser;
@@ -49,32 +47,7 @@ class _ParkYorumState extends State<ParkYorum> {
               gradient: xdGradient,
             ),
           ),
-          actions: [
-            IconButton(
-              icon: Icon(
-                Icons.delete,
-                color: Colors.red,
-              ),
-              onPressed: () {
 
-                Fluttertoast.showToast(
-                    msg: "Yorumunuz başarıyla silindi",
-                    toastLength: Toast.LENGTH_SHORT,
-                    gravity: ToastGravity.CENTER,
-                    timeInSecForIosWeb: 1,
-                    backgroundColor: Colors.red,
-                    textColor: Colors.white,
-                    fontSize: 16.0
-                );
-                parkYorum = FirebaseFirestore.instance
-                    .collection("karaipinarYorum")
-                    .doc(loggedInuser.email)
-                    .delete() as Query<Object>;
-
-
-              },
-            )
-          ],
         ),
         backgroundColor: kutu,
         body: Yorumlar(),
@@ -242,13 +215,22 @@ class _ProfilesState extends State<Profiles> {
     final width = MediaQuery.of(context).size.width;
     // final height = MediaQuery.of(context).size.height;
     return Container(
+      width: width * 1 / 9,
+      height: width * 1 / 8,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: ClipOval(
-            child:  Image.network(
+            child: indirmeBaglantisi == null
+                ? Image.asset(
+              "assets/profile.png",
+              width: width * 1 / 10,
+              height: width * 1 / 9,
+              fit: BoxFit.cover,
+            )
+                : Image.network(
               indirmeBaglantisi!,
-              width: width * 3 / 30,
-              height: width * 2 / 18,
+              width: width * 1 / 10,
+              height: width * 1 / 9,
               fit: BoxFit.cover,
             )),
       ),

@@ -4,6 +4,7 @@ Uygulamadan görseller.
 
 ## Getting Started
 
+![alt text](https://github.com/mustafa01-crypto/adana/blob/master/assets/WhatsApp%20Image%202021-08-14%20at%2000.00.09%20(4).jpeg?raw=true)
 ![alt text](https://github.com/mustafa01-crypto/adana/blob/master/assets/WhatsApp%20Image%202021-08-14%20at%2000.00.09.jpeg?raw=true)
 
 This project is a starting point for a Flutter application.

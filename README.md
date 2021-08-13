@@ -2,10 +2,10 @@
 
 Uygulamadan görseller.
 
-## Uygulama menüsü
+## Uygulama menüsü --(Drawer Menu)
 
 ![alt text](https://github.com/mustafa01-crypto/adana/blob/master/assets/WhatsApp%20Image%202021-08-14%20at%2000.00.09%20(4).jpeg?raw=true)
-## Tüm Yorumlar
+## Tüm Yorumlar --(All Comments)
 
 ![alt text](https://github.com/mustafa01-crypto/adana/blob/master/assets/WhatsApp%20Image%202021-08-14%20at%2000.00.09.jpeg?raw=true)
 

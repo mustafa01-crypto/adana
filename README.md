@@ -1,6 +1,6 @@
 # adana
 
-A new Flutter project.
+Uygulamadan görseller.
 
 ## Getting Started
 

@@ -1,3 +1,4 @@
+import 'package:adana/components/ilceMesire.dart';
 import 'package:adana/constants/constants.dart';
 import 'package:adana/ilceler/ceyhan/anavarza.dart';
 import 'package:adana/ilceler/ceyhan/durhasan.dart';
@@ -32,13 +33,13 @@ class _CeyhanListState extends State<CeyhanList> {
                   onTap: () {
                     Get.to(() => YilanKale());
                   },
-                  child: sehirler("YILAN KALE")),
+                  child: sehirYerleri(context,"YILAN KALE")),
               InkWell(
                   onTap: ()
                   {
                     Get.to(() => KurtKulagi());
                   },
-                  child: sehirler("KURTKULAĞI KERVANSARAYI")),
+                  child: sehirYerleri(context,"KURTKULAĞI KERVANSARAYI")),
               InkWell(
 
                   onTap: ()
@@ -46,19 +47,19 @@ class _CeyhanListState extends State<CeyhanList> {
                     Get.to( () => Tumlu());
                   },
 
-                  child: sehirler("TUMLU KALESİ")),
+                  child: sehirYerleri(context,"TUMLU KALESİ")),
               InkWell(
                   onTap: ()
                   {
                     Get.to( () => Durhasan());
                   },
-                  child: sehirler("DURHASAN DEDE TÜRBESİ")),
+                  child:sehirYerleri(context,"DURHASAN DEDE TÜRBESİ")),
               InkWell(
                   onTap: ()
                   {
                     Get.to( () => Anavarza());
                   },
-                  child: sehirler("ANAVARZA KALESİ")),
+                  child: sehirYerleri(context,"ANAVARZA KALESİ")),
 
             ],
           ),
@@ -67,32 +68,4 @@ class _CeyhanListState extends State<CeyhanList> {
     );
   }
 
-  Widget sehirler(String text) {
-    return Padding(
-      padding: const EdgeInsets.all(15.0),
-      child: Container(
-        width: MediaQuery.of(context).size.width,
-        height: 70,
-        child: Center(
-          child: Text(
-            text,
-            style: cityName,
-          ),
-        ),
-        decoration: BoxDecoration(
-          color: xdArka,
-          //  border: Border.all(color: scaffold, width: 4),
-          borderRadius: BorderRadius.all(Radius.circular(15)),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black38.withOpacity(0.1),
-              spreadRadius: 1,
-              blurRadius: 1,
-              offset: Offset(0, -3), // changes position of shadow
-            ),
-          ],
-        ),
-      ),
-    );
-  }
 }

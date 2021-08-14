@@ -1,3 +1,4 @@
+import 'package:adana/components/ilceMesire.dart';
 import 'package:adana/constants/constants.dart';
 import 'package:adana/ilceler/cukurova/dogalPark.dart';
 import 'package:adana/ilceler/cukurova/karatasPlaji.dart';
@@ -21,7 +22,7 @@ class _CukurovaListState extends State<CukurovaList> {
 
   @override
   Widget build(BuildContext context) {
-    final height = MediaQuery.of(context).size.height;
+   // final height = MediaQuery.of(context).size.height;
     return SafeArea(
       child: Scaffold(
         backgroundColor: scaffold2,
@@ -33,13 +34,13 @@ class _CukurovaListState extends State<CukurovaList> {
                   onTap: () {
                     Get.to(() => SevgiAdasi());
                   },
-                  child: sehirler("SEVGİ ADASI")),
+                  child: sehirYerleri(context,"SEVGİ ADASI")),
               InkWell(
                   onTap: ()
                   {
                     Get.to(() => SeyhanBaraji());
                   },
-                  child: sehirler("SEYHAN BARAJI GÖLÜ")),
+                  child: sehirYerleri(context,"SEYHAN BARAJI GÖLÜ")),
               InkWell(
 
                   onTap: ()
@@ -47,25 +48,25 @@ class _CukurovaListState extends State<CukurovaList> {
                     Get.to( () => MuzeKompleksi());
                   },
 
-                  child: sehirler("ADANA MÜZE KOMPLEKSİ")),
+                  child: sehirYerleri(context,"ADANA MÜZE KOMPLEKSİ")),
               InkWell(
                   onTap: ()
                   {
                     Get.to( () => DogalPark());
                   },
-                  child: sehirler("ÇUKUROVA DOĞAL PARK")),
+                  child: sehirYerleri(context,"ÇUKUROVA DOĞAL PARK")),
               InkWell(
                   onTap: ()
                   {
                     Get.to( () => YumurtalikLagunu());
                   },
-                  child: sehirler("YUMURTALIK LAGÜNÜ MİLLİ PARKI")),
+                  child: sehirYerleri(context,"YUMURTALIK LAGÜNÜ MİLLİ PARKI")),
               InkWell(
                   onTap: ()
                   {
                     Get.to( () => KaratasPlaji());
                   },
-                  child: sehirler("KARATAŞ PLAJI")),
+                  child: sehirYerleri(context,"KARATAŞ PLAJI")),
 
             ],
           ),
@@ -74,32 +75,5 @@ class _CukurovaListState extends State<CukurovaList> {
     );
   }
 
-  Widget sehirler(String text) {
-    return Padding(
-      padding: const EdgeInsets.all(15.0),
-      child: Container(
-        width: MediaQuery.of(context).size.width,
-        height: 70,
-        child: Center(
-          child: Text(
-            text,
-            style: cityName,
-          ),
-        ),
-        decoration: BoxDecoration(
-          color: xdArka,
-          //  border: Border.all(color: scaffold, width: 4),
-          borderRadius: BorderRadius.all(Radius.circular(15)),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black38.withOpacity(0.1),
-              spreadRadius: 1,
-              blurRadius: 1,
-              offset: Offset(0, -3), // changes position of shadow
-            ),
-          ],
-        ),
-      ),
-    );
-  }
+
 }

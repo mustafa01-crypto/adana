@@ -1,3 +1,4 @@
+import 'package:adana/components/ilceMesire.dart';
 import 'package:adana/constants/constants.dart';
 import 'package:adana/ilceler/karaisali/almankoprusu.dart';
 import 'package:adana/ilceler/karaisali/dokuzoluk.dart';
@@ -22,7 +23,7 @@ class _KaraisaliMesireListState extends State<KaraisaliMesireList> {
 
   @override
   Widget build(BuildContext context) {
-    final height = MediaQuery.of(context).size.height;
+    //final height = MediaQuery.of(context).size.height;
     return SafeArea(
       child: Scaffold(
         backgroundColor: scaffold2,
@@ -34,13 +35,13 @@ class _KaraisaliMesireListState extends State<KaraisaliMesireList> {
                   onTap: () {
                     Get.to(() => Karapinar());
                   },
-                  child: sehirler("KARAPINAR PARKI")),
+                  child: sehirYerleri(context,"KARAPINAR PARKI")),
               InkWell(
                   onTap: ()
                   {
                     Get.to(() => Dokuzoluk());
                   },
-                  child: sehirler("DOKUZOLUK")),
+                  child: sehirYerleri(context,"DOKUZOLUK")),
               InkWell(
 
                 onTap: ()
@@ -48,31 +49,31 @@ class _KaraisaliMesireListState extends State<KaraisaliMesireList> {
                     Get.to( () => YerKopru());
                   },
 
-                  child: sehirler("YERKÖPRÜ")),
+                  child: sehirYerleri(context,"YERKÖPRÜ")),
               InkWell(
                   onTap: ()
                   {
                     Get.to( () => AlmanKoprusu());
                   },
-                  child: sehirler("ALMAN KÖPRÜSÜ")),
+                  child:sehirYerleri(context,"ALMAN KÖPRÜSÜ")),
               InkWell(
                   onTap: ()
                   {
                     Get.to( () => Kanyon());
                   },
-                  child: sehirler("KAPIKAYA KANYONU")),
+                  child: sehirYerleri(context,"KAPIKAYA KANYONU")),
               InkWell(
                   onTap: ()
                   {
                     Get.to( () => Kizildag());
                   },
-                  child: sehirler("KIZILDAĞ YAYLASI")),
+                  child: sehirYerleri(context,"KIZILDAĞ YAYLASI")),
               InkWell(
                   onTap: ()
                   {
                     Get.to( () => KesireHan());
                   },
-                  child: sehirler("KESİRİ HAN")),
+                  child: sehirYerleri(context,"KESİRİ HAN")),
 
 
 

@@ -35,13 +35,13 @@ class _SeyhanListState extends State<SeyhanList> {
                   onTap: () {
                     Get.to(() => TasKopru());
                   },
-                  child: sehirler("TAŞ KÖPRÜ")),
+                  child: sehirYerleri(context,"TAŞ KÖPRÜ")),
               InkWell(
                   onTap: ()
                   {
                     Get.to(() => SabanciMerkezCamii());
                   },
-                  child: sehirler("SABANCI MERKEZ CAMİ")),
+                  child: sehirYerleri(context,"SABANCI MERKEZ CAMİ")),
               InkWell(
 
                   onTap: ()
@@ -49,39 +49,39 @@ class _SeyhanListState extends State<SeyhanList> {
                     Get.to( () => UluCamii());
                   },
 
-                  child: sehirler("ADANA ULU CAMİİ")),
+                  child: sehirYerleri(context,"ADANA ULU CAMİİ")),
 
               InkWell(
                   onTap: ()
                   {
                     Get.to( () => CobanDede());
                   },
-                  child: sehirler("ÇOBAN DEDE PARKI")),
+                  child: sehirYerleri(context,"ÇOBAN DEDE PARKI")),
               InkWell(
                   onTap: ()
                   {
                     Get.to( () => SaatKulesi());
                   },
-                  child: sehirler("BÜYÜK SAAT KULESİ")),
+                  child: sehirYerleri(context,"BÜYÜK SAAT KULESİ")),
               InkWell(
                   onTap: ()
                   {
                     Get.to( () => BebekliKilisesi());
                   },
-                  child: sehirler("BEBEKLİ KİLİSESİ")),
+                  child: sehirYerleri(context,"BEBEKLİ KİLİSESİ")),
 
               InkWell(
                   onTap: ()
                   {
                     Get.to( () => SinemaMuzesi());
                   },
-                  child: sehirler("ADANA SİNEMA MÜZESİ")),
+                  child: sehirYerleri(context,"ADANA SİNEMA MÜZESİ")),
               InkWell(
                   onTap: ()
                   {
                     Get.to( () => AtaturkEvi());
                   },
-                  child: sehirler("ATATÜRK EVİ VE MÜZESİ")),
+                  child: sehirYerleri(context,"ATATÜRK EVİ VE MÜZESİ")),
 
 
 
@@ -92,7 +92,7 @@ class _SeyhanListState extends State<SeyhanList> {
     );
   }
 
-  Widget sehirler(String text) {
+  Widget sehirYerleri(context,String text) {
     return Padding(
       padding: const EdgeInsets.all(15.0),
       child: Container(

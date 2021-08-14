@@ -12,9 +12,9 @@ showMaterialDialog(
   ;
   return showDialog(
       context: context,
-      builder: (_) => new AlertDialog(
-        title: new Text(title),
-        content: new Text(content),
+      builder: (_) =>  AlertDialog(
+        title:  Text(title),
+        content:  Text(content),
         actions: <Widget>[
           Container(
             width: width,

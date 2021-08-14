@@ -1,3 +1,4 @@
+import 'package:adana/components/mainAppBar.dart';
 import 'package:adana/constants/constants.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
@@ -16,17 +17,7 @@ class _KurtYorumState extends State<KurtYorum> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          title: Text(
-            "YORUMLAR",
-          ),
-          flexibleSpace: Container(
-            decoration: BoxDecoration(
-              gradient: xdGradient,
-            ),
-          ),
-        ),
+        appBar: mainAppBar("YORUMLAR"),
         backgroundColor: kutu,
         body: Yorumlar(),
       ),
@@ -42,9 +33,10 @@ class Yorumlar extends StatefulWidget {
 }
 
 class _YorumlarState extends State<Yorumlar> {
+  double value = 1.0;
   @override
   Widget build(BuildContext context) {
-    double value = 1.0;
+
     Query karapinarYorumlar =
     FirebaseFirestore.instance.collection('KurtYorum');
 

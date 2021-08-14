@@ -1,3 +1,4 @@
+import 'package:adana/components/mainAppBar.dart';
 import 'package:adana/constants/constants.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
@@ -17,17 +18,7 @@ class _ParkYorumState extends State<ParkYorum> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          title: Text(
-            "YORUMLAR",
-          ),
-          flexibleSpace: Container(
-            decoration: BoxDecoration(
-              gradient: xdGradient,
-            ),
-          ),
-        ),
+        appBar: mainAppBar("YORUMLAR"),
         backgroundColor: kutu,
         body: Yorumlar(),
       ),

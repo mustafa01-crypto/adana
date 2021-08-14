@@ -1,5 +1,6 @@
 import 'package:adana/components/buttonText.dart';
 import 'package:adana/components/infoText.dart';
+import 'package:adana/components/mainAppBar.dart';
 import 'package:adana/components/sliderImage.dart';
 import 'package:adana/constants/constants.dart';
 import 'package:adana/ilceler/cukurova/yorumlar/muze.dart';
@@ -92,16 +93,7 @@ class _MuzeKompleksiState extends State<MuzeKompleksi>
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kutu,
-      appBar: AppBar(
-        centerTitle: true,
-        // backgroundColor: sinir,
-        title: Text(title,style: xdAppBarBaslik,),
-        flexibleSpace: Container(
-          decoration: BoxDecoration(
-            gradient: xdGradient,
-          ),
-        ),
-      ),
+      appBar: mainAppBar("YORUMLAR"),
       body: SingleChildScrollView(
         child: SafeArea(
           child: Column(

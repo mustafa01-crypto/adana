@@ -1,3 +1,4 @@
+import 'package:adana/components/infoText.dart';
 import 'package:adana/components/sliderImage.dart';
 import 'package:adana/constants/constants.dart';
 import 'package:adana/ilceler/seyhan/seyhanYorumlar/cobanDedeYorum.dart';
@@ -118,38 +119,15 @@ class _CobanDedeState extends State<CobanDede> with SingleTickerProviderStateMix
               SizedBox(
                 height: 10,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: xdArka,
-                      border: Border.all(color: xdArka, width: 1),
-                      borderRadius: BorderRadius.all(Radius.circular(15)),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black38.withOpacity(0.1),
-                          spreadRadius: 1,
-                          blurRadius: 1,
-                          offset: Offset(0, -3), // changes position of shadow
-                        ),
-                      ]
-
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 15),
-                    child: Text(
-                      "Çoban Dede Türbesinin ve Parkın bulunduğu alanın bir "
-                          "kısmı 2015 yılında kuş cenneti ve mini hayvanat bahçesine "
-                          "dönüştürüldü. Hayvanat bahçesinde memeliler, su kuşları,"
-                          " yırtıcı kuşlar, süs tavukları gibi hayvanlar yer almaktadır. "
-                          "Küçük bir göletin etrafında yer alan hayvanların dışında "
-                          "hayvanların için veterinerler ve poliklinikte bulunmaktadır. "
-                          "Doğal yaşamda bir şekilde yaralanmış ve hasta olmuş hayvanlar "
-                          "burada iyileştirilerek rehabilite edilmekte ve gelen misafirlerle tanıştırılmaktadır.",
-                      style: xdUzunYazi,
-                    ),
-                  ),
-                ),
+              infoText(
+                  "Çoban Dede Türbesinin ve Parkın bulunduğu alanın bir "
+                      "kısmı 2015 yılında kuş cenneti ve mini hayvanat bahçesine "
+                      "dönüştürüldü. Hayvanat bahçesinde memeliler, su kuşları,"
+                      " yırtıcı kuşlar, süs tavukları gibi hayvanlar yer almaktadır. "
+                      "Küçük bir göletin etrafında yer alan hayvanların dışında "
+                      "hayvanların için veterinerler ve poliklinikte bulunmaktadır. "
+                      "Doğal yaşamda bir şekilde yaralanmış ve hasta olmuş hayvanlar "
+                      "burada iyileştirilerek rehabilite edilmekte ve gelen misafirlerle tanıştırılmaktadır."
               ),
               SizedBox(
                 height: 15,

@@ -1,3 +1,4 @@
+import 'package:adana/components/infoText.dart';
 import 'package:adana/components/sliderImage.dart';
 import 'package:adana/constants/constants.dart';
 import 'package:adana/ilceler/seyhan/seyhanYorumlar/bebekliKiliseYorum.dart';
@@ -116,41 +117,16 @@ class _BebekliKilisesiState extends State<BebekliKilisesi>
               SizedBox(
                 height: 10,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: xdArka,
-                      border: Border.all(color: xdArka, width: 1),
-                      borderRadius: BorderRadius.all(Radius.circular(15)),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black38.withOpacity(0.1),
-                          spreadRadius: 1,
-                          blurRadius: 1,
-                          offset: Offset(0, -3), // changes position of shadow
-                        ),
-                      ]
-
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 15),
-                    child: Text(
-                      "Adana Bebekli Kilise veya Aziz Pavlus Kilisesi, "
-                      "üzerinde Meryem'in tunçtan heykelinin bulunduğu, tahminen 1880-90"
-                      " yılları arasında yapılan Adana'nın merkezindeki İtalyan katolik"
-                      " kilisesidir. Ermeni Apostolik Kilisesi olarak inşa edilmiştir."
-                      " 1915 Ermeni Kırımı'ndan sonra Adana'da Ermeni cemaat kalmamıştır "
-                      "ve Bebekli kilise Katolik Cemaate verilmiştir. Kilisenin tepesindeki "
-                      "Meryem Ana’nın 2.5 metrelik tunç heykeli bebeğe benzetildiği için "
-                      "halk arasında Kilisenin ismi Bebekli Kiliseolarak geçer. Kilise Pavlus"
-                      " adına yaptırılmıştır."
-                      " Kilise hem katolik cemaati, hem de Protestan Cemaati tarafından kullanılmaktadır.",
-                      style: xdUzunYazi,
-                    ),
-                  ),
-                ),
-              ),
+              infoText("Adana Bebekli Kilise veya Aziz Pavlus Kilisesi, "
+                  "üzerinde Meryem'in tunçtan heykelinin bulunduğu, tahminen 1880-90"
+                  " yılları arasında yapılan Adana'nın merkezindeki İtalyan katolik"
+                  " kilisesidir. Ermeni Apostolik Kilisesi olarak inşa edilmiştir."
+                  " 1915 Ermeni Kırımı'ndan sonra Adana'da Ermeni cemaat kalmamıştır "
+                  "ve Bebekli kilise Katolik Cemaate verilmiştir. Kilisenin tepesindeki "
+                  "Meryem Ana’nın 2.5 metrelik tunç heykeli bebeğe benzetildiği için "
+                  "halk arasında Kilisenin ismi Bebekli Kiliseolarak geçer. Kilise Pavlus"
+                  " adına yaptırılmıştır."
+                  " Kilise hem katolik cemaati, hem de Protestan Cemaati tarafından kullanılmaktadır."),
               SizedBox(
                 height: 15,
               ),

@@ -1,3 +1,4 @@
+import 'package:adana/components/infoText.dart';
 import 'package:adana/components/sliderImage.dart';
 import 'package:adana/constants/constants.dart';
 import 'package:adana/ilceler/ceyhan/yorumlar/yilankale.dart';
@@ -37,7 +38,6 @@ class _YilanKaleState extends State<YilanKale>
   }
 
   void getCurrentUser() {
-
     final user = auth.currentUser;
     if (user != null) {
       loggedInuser = user;
@@ -93,7 +93,10 @@ class _YilanKaleState extends State<YilanKale>
       appBar: AppBar(
         centerTitle: true,
         // backgroundColor: sinir,
-        title: Text(title,style: xdAppBarBaslik,),
+        title: Text(
+          title,
+          style: xdAppBarBaslik,
+        ),
         flexibleSpace: Container(
           decoration: BoxDecoration(
             gradient: xdGradient,
@@ -104,65 +107,46 @@ class _YilanKaleState extends State<YilanKale>
         child: SafeArea(
           child: Column(
             children: [
-              sliderImage(tabController!, context, links.map((String link) {
-                return new ClipRRect(
-                    child: Image.network(
-                      link,
-                      width: MediaQuery.of(context).size.width,
-                      height: 220,
-                      fit: BoxFit.fill,
-                    ));
-              }).toList(),),
+              sliderImage(
+                tabController!,
+                context,
+                links.map((String link) {
+                  return new ClipRRect(
+                      child: Image.network(
+                    link,
+                    width: MediaQuery.of(context).size.width,
+                    height: 220,
+                    fit: BoxFit.fill,
+                  ));
+                }).toList(),
+              ),
 
               SizedBox(
                 height: 10,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: xdArka,
-                      border: Border.all(color: xdArka, width: 1),
-                      borderRadius: BorderRadius.all(Radius.circular(15)),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black38.withOpacity(0.1),
-                          spreadRadius: 1,
-                          blurRadius: 1,
-                          offset: Offset(0, -3), // changes position of shadow
-                        ),
-                      ]
+              infoText(
+                  "Toros Dağları’nı aşarak Antakya’ya giden tarihi İpek Yolu "
+                  "üzerinde yer alan Yılan Kalesi, Orta Çağ’da Çukurova'nın"
+                  " Haçlı işgali döneminde Bizanslılar tarafından yapılmıştır."
+                  " Anavarza, Tumlu ve Kozan Kaleleri gibi ovadaki"
+                  " diğer kaleleri de görüş alanının içine alan"
+                  " kalenin sekiz yuvarlak burcu vardır. Kalenin "
+                  "güneyinde yer alan nizamiye kapısından itibaren "
+                  "taş basamaklı merdivenlerle teraslara çıkılmaktadır. "
+                  "Kilise ve sarnıcı bulunan kalenin garnizonu en üst "
+                  "bölümde yer almıştır. Sarp kayalar üzerine yapılmış"
+                  " olan kalenin önemli bir sanat değeri vardır."),
 
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 15),
-                    child: Text(
-                    "Toros Dağları’nı aşarak Antakya’ya giden tarihi İpek Yolu "
-                        "üzerinde yer alan Yılan Kalesi, Orta Çağ’da Çukurova'nın"
-                        " Haçlı işgali döneminde Bizanslılar tarafından yapılmıştır."
-                        " Anavarza, Tumlu ve Kozan Kaleleri gibi ovadaki"
-                        " diğer kaleleri de görüş alanının içine alan"
-                        " kalenin sekiz yuvarlak burcu vardır. Kalenin "
-                        "güneyinde yer alan nizamiye kapısından itibaren "
-                        "taş basamaklı merdivenlerle teraslara çıkılmaktadır. "
-                        "Kilise ve sarnıcı bulunan kalenin garnizonu en üst "
-                        "bölümde yer almıştır. Sarp kayalar üzerine yapılmış"
-                        " olan kalenin önemli bir sanat değeri vardır.",
-                      style: xdUzunYazi,
-                    ),
-                  ),
-                ),
-              ),
               SizedBox(
                 height: 15,
               ),
               TextButton(
                 onPressed: () {
                   Get.to(() => Maps(
-                    x: x,
-                    y: y,
-                    title: title,
-                  ));
+                        x: x,
+                        y: y,
+                        title: title,
+                      ));
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width,

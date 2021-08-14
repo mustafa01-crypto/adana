@@ -1,3 +1,4 @@
+import 'package:adana/components/infoText.dart';
 import 'package:adana/components/sliderImage.dart';
 import 'package:adana/constants/constants.dart';
 import 'package:adana/ilceler/seyhan/seyhanYorumlar/UluCamiYorum.dart';
@@ -116,38 +117,15 @@ class _UluCamiiState extends State<UluCamii>
               SizedBox(
                 height: 10,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: xdArka,
-                      border: Border.all(color: xdArka, width: 1),
-                      borderRadius: BorderRadius.all(Radius.circular(15)),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black38.withOpacity(0.1),
-                          spreadRadius: 1,
-                          blurRadius: 1,
-                          offset: Offset(0, -3), // changes position of shadow
-                        ),
-                      ]
-
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 15),
-                    child: Text(
-                      "Ulu Cami büyüklüğü ve tarihî açısından Adana'nın önemli "
-                          "eserleri arasında gösterilmektedir. Selçuklu, Memlûklu"
-                          " ve Osmanlılar Dönem'lerine ait mimarî karakterleri"
-                          " üzerinde toplayan bu eserin üç ayrı kitabesinden,"
-                          " ilk defa 1513 yıllarında Ramazan oğlu Halil Bey"
-                          " tarafından inşasına başlandığı, 1541 yılında Halil"
-                          " Beyin oğlu Piri Mehmet Paşa tarafından bitirilerek "
-                          "ibadete açıldığı anlaşılmaktadır.",
-                      style: xdUzunYazi,
-                    ),
-                  ),
-                ),
+              infoText(
+                  "Ulu Cami büyüklüğü ve tarihî açısından Adana'nın önemli "
+                      "eserleri arasında gösterilmektedir. Selçuklu, Memlûklu"
+                      " ve Osmanlılar Dönem'lerine ait mimarî karakterleri"
+                      " üzerinde toplayan bu eserin üç ayrı kitabesinden,"
+                      " ilk defa 1513 yıllarında Ramazan oğlu Halil Bey"
+                      " tarafından inşasına başlandığı, 1541 yılında Halil"
+                      " Beyin oğlu Piri Mehmet Paşa tarafından bitirilerek "
+                      "ibadete açıldığı anlaşılmaktadır."
               ),
               SizedBox(
                 height: 15,

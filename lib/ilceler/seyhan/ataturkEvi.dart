@@ -1,3 +1,4 @@
+import 'package:adana/components/infoText.dart';
 import 'package:adana/components/sliderImage.dart';
 import 'package:adana/constants/constants.dart';
 import 'package:adana/ilceler/seyhan/seyhanYorumlar/ataturkYorum.dart';
@@ -117,41 +118,16 @@ class _AtaturkEviState extends State<AtaturkEvi>
               SizedBox(
                 height: 10,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: xdArka,
-                      border: Border.all(color: xdArka, width: 1),
-                      borderRadius: BorderRadius.all(Radius.circular(15)),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black38.withOpacity(0.1),
-                          spreadRadius: 1,
-                          blurRadius: 1,
-                          offset: Offset(0, -3), // changes position of shadow
-                        ),
-                      ]
-
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 15),
-                    child: Text(
-                      "Adana Atatürk Evi Müzesi, Adana Seyhan Caddesi üzerinde bulunan müze."
-                      " 15 Mart 1923 tarihinde Mustafa Kemal Atatürk ve eşi Adana'yı ziyaret "
-                      "ettiğinde bu binada konaklamıştır. Bina daha önceleri Ramazanoğulları"
-                      " ailesine mensup Suphi Paşa'ya aitti. Bina sonraları Atatürk Bilim "
-                      "ve Kültür Müzesi Koruma ve Yaşatma Derneği'nce kamulaştırılmış ve "
-                      "restore edilmiştir. 1981 yılında, Atatürk'ün 100. doğum yılı dolayısıyla, "
-                      "Müze Müdürlüğü'ne bağlı bir müze olarak açılmıştır. Her 15 Mart'ta "
-                      "Mustafa Kemal Atatürk'ün Adana'ya gelişi resmi töreni bu müzede "
-                      "tertiplenir.Müzede Atatürk'ün Adana seyahati ile ilgili fotoğrafları, "
-                      "bilgiler ve belgelerle birlikte, etnografik eserler de sergilenmektedir.",
-                      style: xdUzunYazi,
-                    ),
-                  ),
-                ),
-              ),
+              infoText("Adana Atatürk Evi Müzesi, Adana Seyhan Caddesi üzerinde bulunan müze."
+                  " 15 Mart 1923 tarihinde Mustafa Kemal Atatürk ve eşi Adana'yı ziyaret "
+                  "ettiğinde bu binada konaklamıştır. Bina daha önceleri Ramazanoğulları"
+                  " ailesine mensup Suphi Paşa'ya aitti. Bina sonraları Atatürk Bilim "
+                  "ve Kültür Müzesi Koruma ve Yaşatma Derneği'nce kamulaştırılmış ve "
+                  "restore edilmiştir. 1981 yılında, Atatürk'ün 100. doğum yılı dolayısıyla, "
+                  "Müze Müdürlüğü'ne bağlı bir müze olarak açılmıştır. Her 15 Mart'ta "
+                  "Mustafa Kemal Atatürk'ün Adana'ya gelişi resmi töreni bu müzede "
+                  "tertiplenir.Müzede Atatürk'ün Adana seyahati ile ilgili fotoğrafları, "
+                  "bilgiler ve belgelerle birlikte, etnografik eserler de sergilenmektedir."),
               SizedBox(
                 height: 15,
               ),

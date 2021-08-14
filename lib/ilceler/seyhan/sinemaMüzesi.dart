@@ -1,3 +1,4 @@
+import 'package:adana/components/infoText.dart';
 import 'package:adana/components/sliderImage.dart';
 import 'package:adana/constants/constants.dart';
 import 'package:adana/ilceler/seyhan/seyhanYorumlar/sinemaMuzesiYorum.dart';
@@ -116,39 +117,24 @@ class _SinemaMuzesiState extends State<SinemaMuzesi>
               SizedBox(
                 height: 10,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: xdArka,
-                      border: Border.all(color: xdArka, width: 1),
-                      borderRadius: BorderRadius.all(Radius.circular(15)),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black38.withOpacity(0.1),
-                          spreadRadius: 1,
-                          blurRadius: 1,
-                          offset: Offset(0, -3), // changes position of shadow
-                        ),
-                      ]
-
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 15),
-                    child: Text(
-                      "Adana Sinema Müzesi, Türkiye'nin Adana kentinde bulunan "
+              infoText(
+                  "Adana Sinema Müzesi, Türkiye'nin Adana kentinde bulunan "
                       "bir sinema müzesidir. Müze, 23 Eylül 2011 tarihinde eski "
-                      "bir Adana evinde kurulmuş olup Seyhan ilçesine bağlı Kayalıbağ Mahallesi'nde Seyhan Nehri'nin batısında yer almaktadır. Özellikle şehre özgü yönetmenler, oyuncular ve yapımcılar ile ilgili eserler tanıtılmaktadır."
+                      "bir Adana evinde kurulmuş olup Seyhan ilçesine bağlı Kayalıbağ"
+                      " Mahallesi'nde Seyhan Nehri'nin batısında yer almaktadır. "
+                      "Özellikle şehre özgü yönetmenler, oyuncular ve yapımcılar"
+                      " ile ilgili eserler tanıtılmaktadır."
                       " Müzenin zemin katı film afişleri için ayrılmıştır. Posterdeki "
                       "en az bir isim (yönetmen, oyuncu, senarist vb.) "
                       "Adana sakinine aittir. Birinci katta, Yılmaz Güney'in "
                       "fotoğraflarını, film afişlerini ve eşyalarını gösteren "
                       "bir oda bulunmaktadır. Ayrıca Yılmaz Güney, ressam Abidin "
-                      "Dino ve yazar Orhan Kemal'in heykelleri vardır. Adana'dan sinema ile ilgili diğer tanınmış kişilerin sergilendiği fotoğraflar ve eserler ise yazar Yaşar Kemal, oyuncu Şener Şen ve babası oyuncu Ali Şen, Muzaffer İzgü, Ali Özgentürk, Orhan Duru, Aytaç Arman, Bilal İnci, Merve Mahmut Hekimoğludur. Müzede bir de kütüphane bulunmaktadır.",
-                      style: xdUzunYazi,
-                    ),
-                  ),
-                ),
+                      "Dino ve yazar Orhan Kemal'in heykelleri vardır. Adana'dan sinema"
+                      " ile ilgili diğer tanınmış kişilerin sergilendiği fotoğraflar"
+                      " ve eserler ise yazar Yaşar Kemal, oyuncu Şener Şen ve babası"
+                      " oyuncu Ali Şen, Muzaffer İzgü, Ali Özgentürk, Orhan Duru,"
+                      " Aytaç Arman, Bilal İnci, Merve Mahmut Hekimoğludur. Müzede"
+                      " bir de kütüphane bulunmaktadır."
               ),
               SizedBox(
                 height: 15,

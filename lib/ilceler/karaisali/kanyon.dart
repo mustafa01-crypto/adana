@@ -1,3 +1,4 @@
+import 'package:adana/components/infoText.dart';
 import 'package:adana/components/sliderImage.dart';
 import 'package:adana/constants/constants.dart';
 import 'package:adana/ilceler/karaisali/yorumlar/kanyon.dart';
@@ -115,48 +116,23 @@ class _KanyonState extends State<Kanyon> with SingleTickerProviderStateMixin {
               SizedBox(
                 height: 10,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: xdArka,
-                      border: Border.all(color: xdArka, width: 1),
-                      borderRadius: BorderRadius.all(Radius.circular(15)),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black38.withOpacity(0.1),
-                          spreadRadius: 1,
-                          blurRadius: 1,
-                          offset: Offset(0, -3), // changes position of shadow
-                        ),
-                      ]
-
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 15),
-                    child: Text(
-                      "Kapıkaya Kanyonu, Adana ili Karaisalı ilçesinde "
-                      "Kapıkaya köyünde bulunan kanyon."
-                      "Kanyonu Seyhan Nehri'nin kollarından Çakıt'"
-                      " Deresi açmıştır. Çakıt Deresi, Seyhan Nehri'"
-                      "nin Batı koludur. Pozantı Boğazından dağlık "
-                      "alanlara doğru uzanır. Kanyon Varda Köprüsü'ne '"
-                      "'2 km uzaklığındadır."
-                      "Kanyon çevresinde bitki örtüsü; zakkum, "
-                      " zeytin, keçiboynuzu ve çınar ağaçlarından "
-                      "oluşur. 20 km'lik kanyonun 7,25 km'si yürüyüş"
-                      "yolu olarak düzenlenmiş, doğa yürüyüşleri yapılmaktadır."
-                      "Kanyonun doğa turizmi için cazibe merkezi haline getirilmesine"
-                      "çalışılmaktadır. Yerköprü piknik alanı ile kanyon yolu yeni"
-                      "yapılan bir köprü ile birleştirilmiştir. 7,250 m yürüyüş yolu "
-                      "düzenlenmiş, şelaleyi görecek bir alana ahşap seyir terası"
-                      "yapılmıştır. Sarp olan 400 metrelik kısma korkuluk yapılıp,"
-                      "dar alanlarda yol genişletilmiştir.",
-                      style: xdUzunYazi,
-                    ),
-                  ),
-                ),
-              ),
+              infoText("Kapıkaya Kanyonu, Adana ili Karaisalı ilçesinde "
+                  "Kapıkaya köyünde bulunan kanyon."
+                  "Kanyonu Seyhan Nehri'nin kollarından Çakıt'"
+                  " Deresi açmıştır. Çakıt Deresi, Seyhan Nehri'"
+                  "nin Batı koludur. Pozantı Boğazından dağlık "
+                  "alanlara doğru uzanır. Kanyon Varda Köprüsü'ne '"
+                  "'2 km uzaklığındadır."
+                  "Kanyon çevresinde bitki örtüsü; zakkum, "
+                  " zeytin, keçiboynuzu ve çınar ağaçlarından "
+                  "oluşur. 20 km'lik kanyonun 7,25 km'si yürüyüş"
+                  "yolu olarak düzenlenmiş, doğa yürüyüşleri yapılmaktadır."
+                  "Kanyonun doğa turizmi için cazibe merkezi haline getirilmesine"
+                  "çalışılmaktadır. Yerköprü piknik alanı ile kanyon yolu yeni"
+                  "yapılan bir köprü ile birleştirilmiştir. 7,250 m yürüyüş yolu "
+                  "düzenlenmiş, şelaleyi görecek bir alana ahşap seyir terası"
+                  "yapılmıştır. Sarp olan 400 metrelik kısma korkuluk yapılıp,"
+                  "dar alanlarda yol genişletilmiştir."),
               SizedBox(
                 height: 15,
               ),

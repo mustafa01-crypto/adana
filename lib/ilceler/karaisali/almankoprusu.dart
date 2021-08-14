@@ -1,3 +1,4 @@
+import 'package:adana/components/infoText.dart';
 import 'package:adana/components/sliderImage.dart';
 import 'package:adana/constants/constants.dart';
 import 'package:adana/ilceler/karaisali/yorumlar/varda.dart';
@@ -118,42 +119,18 @@ class _AlmanKoprusuState extends State<AlmanKoprusu>
               SizedBox(
                 height: 10,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: xdArka,
-                      border: Border.all(color: xdArka, width: 1),
-                      borderRadius: BorderRadius.all(Radius.circular(15)),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black38.withOpacity(0.1),
-                          spreadRadius: 1,
-                          blurRadius: 1,
-                          offset: Offset(0, -3), // changes position of shadow
-                        ),
-                      ]
+              infoText("Varda Köprüsü, Adana ili Karaisalı ilçesi Hacıkırı "
+                  "(Kıralan) mahallesi'nde bulunan, yöre halkı tarafından Koca "
+                  "Köprü diye anılan köprü. Hacıkırı Demiryolu"
+                  " Köprüsü olarak ya da 1912 yılında Almanlar"
+                  " tarafından inşa edildiği için Alman köprüsü olarak bilinmektedir."
+                  " Adana'ya uzaklığı karayolu ile Karaisalı üzerinden 64 km'dir."
+                  " Demir yolu ile Adana İstasyonu'na mesafesi 63 km'dir."
+                  "Bu köprü Almanlar tarafından, çelik kafes taş örme "
+                  "tekniği ile yapılmıştır. 6. Bölge sınırları içinde "
+                  "bulunmaktadır. 1912 yılında hizmete açılmıştır. Köprünün"
+                  " yapılış amacı İstanbul-Bağdat-Hicaz Demiryolu hattını tamamlamaktır."),
 
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 15),
-                    child: Text(
-                      "Varda Köprüsü, Adana ili Karaisalı ilçesi Hacıkırı "
-                          "(Kıralan) mahallesi'nde bulunan, yöre halkı tarafından Koca "
-                          "Köprü diye anılan köprü. Hacıkırı Demiryolu"
-                    " Köprüsü olarak ya da 1912 yılında Almanlar"
-                      " tarafından inşa edildiği için Alman köprüsü olarak bilinmektedir."
-                          " Adana'ya uzaklığı karayolu ile Karaisalı üzerinden 64 km'dir."
-                          " Demir yolu ile Adana İstasyonu'na mesafesi 63 km'dir."
-                    "Bu köprü Almanlar tarafından, çelik kafes taş örme "
-                          "tekniği ile yapılmıştır. 6. Bölge sınırları içinde "
-                          "bulunmaktadır. 1912 yılında hizmete açılmıştır. Köprünün"
-                          " yapılış amacı İstanbul-Bağdat-Hicaz Demiryolu hattını tamamlamaktır.",
-                      style: xdUzunYazi,
-                    ),
-                  ),
-                ),
-              ),
               SizedBox(
                 height: 15,
               ),

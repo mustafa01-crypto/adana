@@ -1,3 +1,4 @@
+import 'package:adana/components/infoText.dart';
 import 'package:adana/components/sliderImage.dart';
 import 'package:adana/constants/constants.dart';
 import 'package:adana/ilceler/ceyhan/yorumlar/Anavarza.dart';
@@ -118,32 +119,16 @@ class _AnavarzaState extends State<Anavarza>
               SizedBox(
                 height: 10,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: xdArka,
-                      border: Border.all(color: xdArka, width: 1),
-                      borderRadius: BorderRadius.all(Radius.circular(15)),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black38.withOpacity(0.1),
-                          spreadRadius: 1,
-                          blurRadius: 1,
-                          offset: Offset(0, -3), // changes position of shadow
-                        ),
-                      ]
-
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 15),
-                    child: Text(
-                      "Tarihi 2100 yıl öncesine giden ve en parlak dönemini Roma İmparatoru Septimius Severus’un ödüllendirmesiyle M.S. 2'nci yüzyılda yaşamaya başlayan Anavarza, zaman içinde önemli bir kent haline gelerek 408 yılında Kilikya Başkenti unvanına kavuşmuştur. Bizans Dönemi’nde önemini devam ettiren, sonraki yıllarda Ermeniler, Abbasiler, Selçuklular, Ramazanoğulları, Osmanlılar gibi çeşitli medeniyetlere ev sahipliği yapan Anavarza’da farklı kültürlere ait izleri bir arada görmek mümkün. Bu kültürel zenginliği sayesinde de UNESCO Dünya Miras Geçici Listesi’nde yer alması uygun görülen kent; kalıntıları, tarihi ve efsaneleri ile dikkat çekiyor.",
-                      style: xdUzunYazi,
-                    ),
-                  ),
-                ),
-              ),
+              infoText("Tarihi 2100 yıl öncesine giden ve en parlak dönemini Roma"
+              " İmparatoru Septimius Severus’un ödüllendirmesiyle "
+              "M.S. 2'nci yüzyılda yaşamaya başlayan Anavarza, zaman içinde"
+              " önemli bir kent haline gelerek 408 yılında Kilikya Başkenti"
+              " unvanına kavuşmuştur. Bizans Dönemi’nde önemini devam ettiren, "
+              "sonraki yıllarda Ermeniler, Abbasiler, Selçuklular, Ramazanoğulları, "
+                "Osmanlılar gibi çeşitli medeniyetlere ev sahipliği yapan Anavarza’da"
+                " farklı kültürlere ait izleri bir arada görmek mümkün. Bu kültürel "
+                "zenginliği sayesinde de UNESCO Dünya Miras Geçici Listesi’nde yer"
+                " alması uygun görülen kent; kalıntıları, tarihi ve efsaneleri ile dikkat çekiyor."),
               SizedBox(
                 height: 15,
               ),

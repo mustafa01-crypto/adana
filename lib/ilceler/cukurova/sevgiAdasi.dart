@@ -1,3 +1,4 @@
+import 'package:adana/components/infoText.dart';
 import 'package:adana/components/sliderImage.dart';
 import 'package:adana/constants/constants.dart';
 import 'package:adana/ilceler/cukurova/yorumlar/sevgi.dart';
@@ -115,33 +116,13 @@ class _SevgiAdasiState extends State<SevgiAdasi>
               SizedBox(
                 height: 10,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: xdArka,
-                      border: Border.all(color: xdArka, width: 1),
-                      borderRadius: BorderRadius.all(Radius.circular(15)),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black38.withOpacity(0.1),
-                          spreadRadius: 1,
-                          blurRadius: 1,
-                          offset: Offset(0, -3), // changes position of shadow
-                        ),
-                      ]
-
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 15),
-                    child: Text(
-                      "Baraj gölü içerisinde yer alan en yüksek nokta olan ve halk tarafından Sevgi Adası olarak bilinen adayı mutlaka görmeniz önerilmektedir. Gece olduğunda yanan neon ışıklar adanın güzelliğini taçlandırmaktadır. "
-                      "Bu ismi almasındaki temel neden çiftlerin buluşma noktası olmasıdır. Buraya kayıklar ile belirli bir ücret ödeyerek rahatlıkla geçilmektedir. Kurak aylarda suların çekilmesi ile birlikte bu noktaya yürüyerek de ulaşmak mümkün olmaktadır. ",
-                      style: xdUzunYazi,
-                    ),
-                  ),
-                ),
-              ),
+              infoText("Baraj gölü içerisinde yer alan en yüksek nokta olan ve halk tarafından"
+                  " Sevgi Adası olarak bilinen adayı mutlaka görmeniz önerilmektedir."
+                  " Gece olduğunda yanan neon ışıklar adanın güzelliğini taçlandırmaktadır. "
+                  "Bu ismi almasındaki temel neden çiftlerin buluşma noktası olmasıdır."
+                  "Buraya kayıklar ile belirli bir ücret ödeyerek rahatlıkla geçilmektedir."
+                  "Kurak aylarda suların çekilmesi ile birlikte bu noktaya yürüyerek "
+                  "de ulaşmak mümkün olmaktadır."),
               SizedBox(
                 height: 15,
               ),

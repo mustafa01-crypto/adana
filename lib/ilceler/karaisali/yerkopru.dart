@@ -1,3 +1,4 @@
+import 'package:adana/components/infoText.dart';
 import 'package:adana/components/sliderImage.dart';
 import 'package:adana/constants/constants.dart';
 import 'package:adana/ilceler/karaisali/yorumlar/yerKopru.dart';
@@ -117,36 +118,11 @@ class _YerKopruState extends State<YerKopru>
               SizedBox(
                 height: 10,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: xdArka,
-                      border: Border.all(color: xdArka, width: 1),
-                      borderRadius: BorderRadius.all(Radius.circular(15)),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black38.withOpacity(0.1),
-                          spreadRadius: 1,
-                          blurRadius: 1,
-                          offset: Offset(0, -3), // changes position of shadow
-                        ),
-                      ]
-
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 15),
-                    child: Text(
-                      "Yerköprü Mesire Alanı Adana şehir merkezine 53 km "
-                      "Karaisalı ilçemize 13 km mesafede yer almaktadır. "
-                      "Yerköprü mesire alanı, bahar aylarında yeşilin her"
-                      " tonunun görülebileceği insanları şehrin gürültüsünden"
-                      " ve stresinden uzaklaştıracak günübirlik piknik ve dinlenme alanıdır.",
-                      style: xdUzunYazi,
-                    ),
-                  ),
-                ),
-              ),
+              infoText("Yerköprü Mesire Alanı Adana şehir merkezine 53 km "
+                  "Karaisalı ilçemize 13 km mesafede yer almaktadır. "
+                  "Yerköprü mesire alanı, bahar aylarında yeşilin her"
+                  " tonunun görülebileceği insanları şehrin gürültüsünden"
+                  " ve stresinden uzaklaştıracak günübirlik piknik ve dinlenme alanıdır."),
               SizedBox(
                 height: 15,
               ),

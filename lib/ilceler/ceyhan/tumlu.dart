@@ -1,3 +1,4 @@
+import 'package:adana/components/infoText.dart';
 import 'package:adana/components/sliderImage.dart';
 import 'package:adana/constants/constants.dart';
 import 'package:adana/ilceler/ceyhan/yorumlar/tumluYorum.dart';
@@ -116,34 +117,17 @@ class _TumluState extends State<Tumlu>
               SizedBox(
                 height: 10,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: xdArka,
-                      border: Border.all(color: xdArka, width: 1),
-                      borderRadius: BorderRadius.all(Radius.circular(15)),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black38.withOpacity(0.1),
-                          spreadRadius: 1,
-                          blurRadius: 1,
-                          offset: Offset(0, -3), // changes position of shadow
-                        ),
-                      ]
-
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 15),
-                    child: Text(
-                    "Ceyhan'ın 17 km kuzeybatısında Sağkaya bucağının Dumlu (Tumlu) mahallesinin batısında ve 75 m kadar yükseklikteki sert kalkerli bir tepe üzerindedir. 12. yüzyılda yapıldığı sanılmaktadır. Çevresi 800 metredir. Sekiz burçludur. Ovaya bakan doğu köşesinde gözetleme kulesi bulunmaktadır. Tek kapısı doğuya bakmaktadır. Kale içerisinde yapı kalıntıları ve sarnıçlar yer almaktadır. Tepe etrafında kaya mezarları görülmektedir."
-
-                      "Kalenin kuzeyinde yarım haç şeklinde birçok mezar vardır. Bu mezarlar genelde küçük el yapımı mağaralar biçimindedir. Kuzeybatısında mozaikler bulunan kalede yakın zamanda bir mağara mezar ve bir toplu mezar ortaya çıkmıştır.",
-                      style: xdUzunYazi,
-                    ),
-                  ),
-                ),
-              ),
+              infoText("Ceyhan'ın 17 km kuzeybatısında Sağkaya bucağının Dumlu (Tumlu) "
+                  "mahallesinin batısında ve 75 m kadar yükseklikteki sert kalkerli"
+                  " bir tepe üzerindedir. 12. yüzyılda yapıldığı sanılmaktadır."
+                  " Çevresi 800 metredir. Sekiz burçludur. Ovaya bakan doğu köşesinde "
+                  "gözetleme kulesi bulunmaktadır. Tek kapısı doğuya bakmaktadır. "
+                  "Kale içerisinde yapı kalıntıları ve sarnıçlar yer almaktadır."
+                  " Tepe etrafında kaya mezarları görülmektedir."
+                  "Kalenin kuzeyinde yarım haç şeklinde birçok mezar vardır. Bu mezarlar"
+                  " genelde küçük el yapımı mağaralar biçimindedir. Kuzeybatısında "
+                  "mozaikler bulunan kalede yakın zamanda bir mağara mezar ve bir toplu"
+                  " mezar ortaya çıkmıştır."),
               SizedBox(
                 height: 15,
               ),

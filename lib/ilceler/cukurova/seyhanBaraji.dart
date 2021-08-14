@@ -1,3 +1,4 @@
+import 'package:adana/components/infoText.dart';
 import 'package:adana/components/sliderImage.dart';
 import 'package:adana/constants/constants.dart';
 import 'package:adana/ilceler/cukurova/yorumlar/baraj.dart';
@@ -7,7 +8,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:image_slider/image_slider.dart';
 import 'package:intl/intl.dart';
 import 'package:rating_dialog/rating_dialog.dart';
 
@@ -58,7 +58,7 @@ class _SeyhanBarajiState extends State<SeyhanBaraji>
       ratingColor: Colors.amber,
       title: title,
       commentHint: "...",
-      message: '${title} hakkında ne düşünüyorsunuz',
+      message: '$title hakkında ne düşünüyorsunuz',
       image: Image.network(
         "https://i.ytimg.com/vi/5hKpY-To5ZU/maxresdefault.jpg",
         height: 100,
@@ -116,36 +116,15 @@ class _SeyhanBarajiState extends State<SeyhanBaraji>
               SizedBox(
                 height: 10,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: xdArka,
-                      border: Border.all(color: xdArka, width: 1),
-                      borderRadius: BorderRadius.all(Radius.circular(15)),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black38.withOpacity(0.1),
-                          spreadRadius: 1,
-                          blurRadius: 1,
-                          offset: Offset(0, -3), // changes position of shadow
-                        ),
-                      ]
-
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 15),
-                    child: Text(
-                      "Çukurova’ya gidildiğinde ilk uğranılması gereken yerlerin başında Seyhan Baraj Gölü gelmektedir. 1956 yılında inşa edilen baraj gölü şuan şehre sadece elektrik sağlamamakta aynı zamanda turizm faaliyetleriyle de dikkat çekmektedir."
-
-                      "Adana halkının büyük bir bölümü yıl içerisinde bu baraj gölünün etrafında gezinti yapmakta, piknik alanlarını kullanmaktadır."
-
-                    "Barajın içerisinde deniz bisikleti ile tur atma şansının yanında kayıkla gezme imkanı da verilmektedir. Durgun bir su olması kullanımını daha kolay bir hale getirmektedir.  ",
-                      style: xdUzunYazi,
-                    ),
-                  ),
-                ),
-              ),
+              infoText("Çukurova’ya gidildiğinde ilk uğranılması gereken yerlerin başında"
+                  " Seyhan Baraj Gölü gelmektedir. 1956 yılında inşa edilen baraj"
+                  " gölü şuan şehre sadece elektrik sağlamamakta aynı zamanda"
+                  " turizm faaliyetleriyle de dikkat çekmektedir."
+                  "Adana halkının büyük bir bölümü yıl içerisinde bu baraj gölünün "
+                  "etrafında gezinti yapmakta, piknik alanlarını kullanmaktadır."
+                  "Barajın içerisinde deniz bisikleti ile tur atma şansının yanında "
+                  "kayıkla gezme imkanı da verilmektedir. Durgun bir su olması "
+                  "kullanımını daha kolay bir hale getirmektedir."),
               SizedBox(
                 height: 15,
               ),

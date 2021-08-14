@@ -1,3 +1,4 @@
+import 'package:adana/components/infoText.dart';
 import 'package:adana/components/sliderImage.dart';
 import 'package:adana/constants/constants.dart';
 import 'package:adana/ilceler/karaisali/yorumlar/kizildag.dart';
@@ -115,39 +116,14 @@ class _KizildagState extends State<Kizildag>
               SizedBox(
                 height: 10,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: xdArka,
-                      border: Border.all(color: xdArka, width: 1),
-                      borderRadius: BorderRadius.all(Radius.circular(15)),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black38.withOpacity(0.1),
-                          spreadRadius: 1,
-                          blurRadius: 1,
-                          offset: Offset(0, -3), // changes position of shadow
-                        ),
-                      ]
-
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 15),
-                    child: Text(
-                      "Adını Kızıldağ’dan alan yayla Karaisalı İlçesi’ne "
-                      "27 kilometre mesafededir. Karaisalı İlçesi halkının"
-                      " yoğun olarak rağbet ettiği Kızıldağ Yaylası'nda "
-                      "kır kahveleri, kır lokantaları, bakkallar, fırınlar"
-                      " ve kasaplar hizmet vermektedir. Elma, "
-                      "armut, kiraz, vişne ve ceviz ağaçları ile iç içe olan yaylada kamp "
-                      "kurarak Kızıldağ’da yürüyüş yapılabilir, yaban "
-                      "hayatı incelenerek fotoğraf çekilebilir.",
-                      style: xdUzunYazi,
-                    ),
-                  ),
-                ),
-              ),
+              infoText("Adını Kızıldağ’dan alan yayla Karaisalı İlçesi’ne "
+                  "27 kilometre mesafededir. Karaisalı İlçesi halkının"
+                  " yoğun olarak rağbet ettiği Kızıldağ Yaylası'nda "
+                  "kır kahveleri, kır lokantaları, bakkallar, fırınlar"
+                  " ve kasaplar hizmet vermektedir. Elma, "
+                  "armut, kiraz, vişne ve ceviz ağaçları ile iç içe olan yaylada kamp "
+                  "kurarak Kızıldağ’da yürüyüş yapılabilir, yaban "
+                  "hayatı incelenerek fotoğraf çekilebilir."),
               SizedBox(
                 height: 15,
               ),

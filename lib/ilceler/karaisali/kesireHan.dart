@@ -1,3 +1,4 @@
+import 'package:adana/components/infoText.dart';
 import 'package:adana/components/sliderImage.dart';
 import 'package:adana/constants/constants.dart';
 import 'package:adana/ilceler/karaisali/yorumlar/KesriHan.dart';
@@ -6,7 +7,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:image_slider/image_slider.dart';
 import 'package:intl/intl.dart';
 import 'package:rating_dialog/rating_dialog.dart';
 
@@ -115,49 +115,24 @@ class _KesireHanState extends State<KesireHan>
               SizedBox(
                 height: 10,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: xdArka,
-                      border: Border.all(color: xdArka, width: 1),
-                      borderRadius: BorderRadius.all(Radius.circular(15)),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black38.withOpacity(0.1),
-                          spreadRadius: 1,
-                          blurRadius: 1,
-                          offset: Offset(0, -3), // changes position of shadow
-                        ),
-                      ]
-
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 15),
-                    child: Text(
-                      "İçinde yaşadığımız coğrafya insanlık tarihinin en "
-                      "önemli değişimlerine tanıklık etmiş binlerce"
-                      " kültür mirasına sahip bir coğrafyadır. Ancak "
-                      "şu da bir gerçektir ki bu tarihi mirası olması "
-                      "gerektiği biçimde koruma, kollama ve yaşatma "
-                      "görevlerini bu toplum yönetenler ve bu toplumun"
-                      " bireyleri yerine getirememiştir. Kentlerimiz "
-                      "günlük çıkarlara feda edilmiş, pek çok eser yok "
-                      "edilmiş, yakılmış, yurt dışına kaçırılmış,"
-                      " müzelerimizde sergilenmeden depolarda terk "
-                      "edilmiş, alınmış, satılmış, mekânlar harabe "
-                      "ve mezbele durumlara düşürülmüş bazen yenileme "
-                      "adı altında aslı ile ilgisi olmayan formlara "
-                      "dönüştürülmüştür. Korunmaya değer görülenler "
-                      "ise dönemlerinin ekonomik, sosyal ve siyasal "
-                      "koşullarınca belirlenmiştir. Oyda bugün insanlık "
-                      "tarihi hakkında bildiklerimizin pek çoğu yıllara"
-                      " meydan okuyan bu eserler sayesinde olmuştur.",
-                      style: xdUzunYazi,
-                    ),
-                  ),
-                ),
-              ),
+              infoText("İçinde yaşadığımız coğrafya insanlık tarihinin en "
+                  "önemli değişimlerine tanıklık etmiş binlerce"
+                  " kültür mirasına sahip bir coğrafyadır. Ancak "
+                  "şu da bir gerçektir ki bu tarihi mirası olması "
+                  "gerektiği biçimde koruma, kollama ve yaşatma "
+                  "görevlerini bu toplum yönetenler ve bu toplumun"
+                  " bireyleri yerine getirememiştir. Kentlerimiz "
+                  "günlük çıkarlara feda edilmiş, pek çok eser yok "
+                  "edilmiş, yakılmış, yurt dışına kaçırılmış,"
+                  " müzelerimizde sergilenmeden depolarda terk "
+                  "edilmiş, alınmış, satılmış, mekânlar harabe "
+                  "ve mezbele durumlara düşürülmüş bazen yenileme "
+                  "adı altında aslı ile ilgisi olmayan formlara "
+                  "dönüştürülmüştür. Korunmaya değer görülenler "
+                  "ise dönemlerinin ekonomik, sosyal ve siyasal "
+                  "koşullarınca belirlenmiştir. Oyda bugün insanlık "
+                  "tarihi hakkında bildiklerimizin pek çoğu yıllara"
+                  " meydan okuyan bu eserler sayesinde olmuştur."),
               SizedBox(
                 height: 15,
               ),

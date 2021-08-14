@@ -1,3 +1,4 @@
+import 'package:adana/components/infoText.dart';
 import 'package:adana/components/sliderImage.dart';
 import 'package:adana/constants/constants.dart';
 import 'package:adana/ilceler/ceyhan/yorumlar/DurHasan.dart';
@@ -90,68 +91,58 @@ class _DurhasanState extends State<Durhasan>
       appBar: AppBar(
         centerTitle: true,
         // backgroundColor: sinir,
-        title: Text(title,style: xdAppBarBaslik,),
+        title: Text(
+          title,
+          style: xdAppBarBaslik,
+        ),
         flexibleSpace: Container(
           decoration: BoxDecoration(
             gradient: xdGradient,
           ),
         ),
-
       ),
       body: SingleChildScrollView(
         child: SafeArea(
           child: Column(
             children: [
-              sliderImage(tabController!, context, links.map((String link) {
-                return new ClipRRect(
-                    child: Image.network(
-                      link,
-                      width: MediaQuery.of(context).size.width,
-                      height: 220,
-                      fit: BoxFit.fill,
-                    ));
-              }).toList(),),
+              sliderImage(
+                tabController!,
+                context,
+                links.map((String link) {
+                  return new ClipRRect(
+                      child: Image.network(
+                    link,
+                    width: MediaQuery.of(context).size.width,
+                    height: 220,
+                    fit: BoxFit.fill,
+                  ));
+                }).toList(),
+              ),
               SizedBox(
                 height: 10,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: xdArka,
-                      border: Border.all(color: xdArka, width: 1),
-                      borderRadius: BorderRadius.all(Radius.circular(15)),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black38.withOpacity(0.1),
-                          spreadRadius: 1,
-                          blurRadius: 1,
-                          offset: Offset(0, -3), // changes position of shadow
-                        ),
-                      ]
+              infoText(
+                  "Ceyhan ilçesinin Durhasan köyü girişinde sağ tarafta bir tepenin"
+                  " üzerinde bulunan asırlık bir meşe ağacının altında, Selçuklu "
+                  "mimari tarzının görüldüğü bir türbede medfundur. Türbenin "
+                  "bakımı köylüler tarafından yapılmaktadır."
+                  "Durhasan dede; Çukurova velilerinde Misis kütüklü köyünde kabri"
+                  " bulunan Cabbar Dede’nin kardeşidir. Bu zatı vesile ederek"
+                  " yapılan duaların kabul olduğu yöre halkı tarafından söylenmektedir."
+                  "Yaşadığı ve vefat ettiği tarihler kesin olarak bilinmektedir."
+                  " Türbenin üzerindeki kitabeden 1287 tarihinde restore"
+                  " edildiği anlaşılmaktadır."),
 
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 15),
-                    child: Text(
-                      "Ceyhan ilçesinin Durhasan köyü girişinde sağ tarafta bir tepenin üzerinde bulunan asırlık bir meşe ağacının altında, Selçuklu mimari tarzının görüldüğü bir türbede medfundur. Türbenin bakımı köylüler tarafından yapılmaktadır."
-                      "Durhasan dede; Çukurova velilerinde Misis kütüklü köyünde kabri bulunan Cabbar Dede’nin kardeşidir. Bu zatı vesile ederek yapılan duaların kabul olduğu yöre halkı tarafından söylenmektedir."
-                      "Yaşadığı ve vefat ettiği tarihler kesin olarak bilinmektedir. Türbenin üzerindeki kitabeden 1287 tarihinde restore edildiği anlaşılmaktadır.",
-                      style: xdUzunYazi,
-                    ),
-                  ),
-                ),
-              ),
               SizedBox(
                 height: 15,
               ),
               TextButton(
                 onPressed: () {
                   Get.to(() => Maps(
-                    x: x,
-                    y: y,
-                    title: title,
-                  ));
+                        x: x,
+                        y: y,
+                        title: title,
+                      ));
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width,

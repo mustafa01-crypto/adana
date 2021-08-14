@@ -1,3 +1,4 @@
+import 'package:adana/components/infoText.dart';
 import 'package:adana/components/sliderImage.dart';
 import 'package:adana/constants/constants.dart';
 import 'package:adana/ilceler/seyhan/seyhanYorumlar/saatKulesiYorum.dart';
@@ -116,42 +117,17 @@ class _SaatKulesiState extends State<SaatKulesi>
               SizedBox(
                 height: 10,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: xdArka,
-                      border: Border.all(color: xdArka, width: 1),
-                      borderRadius: BorderRadius.all(Radius.circular(15)),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black38.withOpacity(0.1),
-                          spreadRadius: 1,
-                          blurRadius: 1,
-                          offset: Offset(0, -3), // changes position of shadow
-                        ),
-                      ]
-
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 15),
-                    child: Text(
-                      "Kule kesme taştan yapılmıştır. Uzunluğu 32 metre olan kule "
-                      "kare prizma şeklindedir ve kulenin duvarları tuğla ile"
-                      " inşa edilmiştir. Temel derinliğinin 35 metre olduğu "
-                      "söylenir. Saat kulesi dikdörtgen şeklinde taş tuğlalardan "
-                      "yapılmıştır. Kulenin inşası sırasında Osmanlı'da değişik "
-                      "illerde saat kuleleri vardı. Bu saat kuleleri arasında en "
-                      "uzunu Büyük Saat'tir. İkincisi ise Dolmabahçe Saat Kulesi’dir."
-                      " Örme işlemi oldukça zor olan küçük taş tuğlalardan imal edilmiş "
-                      "ve yapımından uzun bir süre sonra Almanya’dan özel olarak saat "
-                      "makinesi getirilmiştir. O kadar sağlam yapılmıştır ki 1998’deki "
-                      "Adana depreminden sonra bile ayakta kalmayı başarabilmiştir.",
-                      style: xdUzunYazi,
-                    ),
-                  ),
-                ),
-              ),
+              infoText("Kule kesme taştan yapılmıştır. Uzunluğu 32 metre olan kule "
+                  "kare prizma şeklindedir ve kulenin duvarları tuğla ile"
+                  " inşa edilmiştir. Temel derinliğinin 35 metre olduğu "
+                  "söylenir. Saat kulesi dikdörtgen şeklinde taş tuğlalardan "
+                  "yapılmıştır. Kulenin inşası sırasında Osmanlı'da değişik "
+                  "illerde saat kuleleri vardı. Bu saat kuleleri arasında en "
+                  "uzunu Büyük Saat'tir. İkincisi ise Dolmabahçe Saat Kulesi’dir."
+                  " Örme işlemi oldukça zor olan küçük taş tuğlalardan imal edilmiş "
+                  "ve yapımından uzun bir süre sonra Almanya’dan özel olarak saat "
+                  "makinesi getirilmiştir. O kadar sağlam yapılmıştır ki 1998’deki "
+                  "Adana depreminden sonra bile ayakta kalmayı başarabilmiştir."),
               SizedBox(
                 height: 15,
               ),

@@ -1,3 +1,4 @@
+import 'package:adana/components/infoText.dart';
 import 'package:adana/components/sliderImage.dart';
 import 'package:adana/constants/constants.dart';
 import 'package:adana/ilceler/cukurova/yorumlar/muze.dart';
@@ -118,34 +119,15 @@ class _MuzeKompleksiState extends State<MuzeKompleksi>
               SizedBox(
                 height: 10,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: xdArka,
-                      border: Border.all(color: xdArka, width: 1),
-                      borderRadius: BorderRadius.all(Radius.circular(15)),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black38.withOpacity(0.1),
-                          spreadRadius: 1,
-                          blurRadius: 1,
-                          offset: Offset(0, -3), // changes position of shadow
-                        ),
-                      ]
-
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 15),
-                    child: Text(
-                      "Adana’nın birçok farklı noktasında yapılan kazı çalışmaları ile ortaya çıkan tarihi eserleri tek bir noktada sergilemeyi amaçlayan ve eski bir fabrika restore edilerek yapılan geniş müze kompleksi 2017 yılında açılmıştır. "
-
-                      "Çukurova içerisinde yer alan bu komplekste birbirinden farklı bölümler bulunmaktadır. Özellikle arkeolojik müzenin çok dikkat çeken parçalara ev sahipliğini üstlendiği rahatlıkla fark edilmektedir. Tam olarak tamamlandığında ise kültürel ve sanatsal alanlarla konukları bambaşka bir dünya karşılayacaktır. ",
-                      style: xdUzunYazi,
-                    ),
-                  ),
-                ),
-              ),
+              infoText("Adana’nın birçok farklı noktasında yapılan kazı çalışmaları ile"
+                  " ortaya çıkan tarihi eserleri tek bir noktada sergilemeyi"
+                  " amaçlayan ve eski bir fabrika restore edilerek yapılan"
+                  " geniş müze kompleksi 2017 yılında açılmıştır. "
+                  "Çukurova içerisinde yer alan bu komplekste birbirinden "
+                  "farklı bölümler bulunmaktadır. Özellikle arkeolojik "
+                  "müzenin çok dikkat çeken parçalara ev sahipliğini üstlendiği"
+                  " rahatlıkla fark edilmektedir. Tam olarak tamamlandığında "
+                  "ise kültürel ve sanatsal alanlarla konukları bambaşka bir dünya karşılayacaktır."),
               SizedBox(
                 height: 15,
               ),

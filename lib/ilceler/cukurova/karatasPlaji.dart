@@ -1,3 +1,4 @@
+import 'package:adana/components/infoText.dart';
 import 'package:adana/components/sliderImage.dart';
 import 'package:adana/constants/constants.dart';
 import 'package:adana/ilceler/cukurova/yorumlar/plaj.dart';
@@ -118,35 +119,10 @@ class _KaratasPlajiState extends State<KaratasPlaji>
               SizedBox(
                 height: 10,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: xdArka,
-                      border: Border.all(color: xdArka, width: 1),
-                      borderRadius: BorderRadius.all(Radius.circular(15)),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black38.withOpacity(0.1),
-                          spreadRadius: 1,
-                          blurRadius: 1,
-                          offset: Offset(0, -3), // changes position of shadow
-                        ),
-                      ]
-
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 15),
-                    child: Text(
-                      "Karataş Plajı Çukurova’ya yaklaşık 90 km uzaklıktadır."
-                          " Türkiye’nin ve Dünya’nın en önemli ve uzun "
-                          "kumsallarından biridir. Akdeniz’in ikliminden "
-                          "kaynaklı yılın çoğunluğu denize girilebilmektedir.",
-                      style: xdUzunYazi,
-                    ),
-                  ),
-                ),
-              ),
+              infoText("Karataş Plajı Çukurova’ya yaklaşık 90 km uzaklıktadır."
+                  " Türkiye’nin ve Dünya’nın en önemli ve uzun "
+                  "kumsallarından biridir. Akdeniz’in ikliminden "
+                  "kaynaklı yılın çoğunluğu denize girilebilmektedir."),
               SizedBox(
                 height: 15,
               ),

@@ -1,3 +1,4 @@
+import 'package:adana/components/infoText.dart';
 import 'package:adana/components/sliderImage.dart';
 import 'package:adana/constants/constants.dart';
 import 'package:adana/ilceler/cukurova/yorumlar/park.dart';
@@ -118,34 +119,16 @@ class _DogalParkState extends State<DogalPark>
               SizedBox(
                 height: 10,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: xdArka,
-                      border: Border.all(color: xdArka, width: 1),
-                      borderRadius: BorderRadius.all(Radius.circular(15)),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black38.withOpacity(0.1),
-                          spreadRadius: 1,
-                          blurRadius: 1,
-                          offset: Offset(0, -3), // changes position of shadow
-                        ),
-                      ]
-
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 15),
-                    child: Text(
-                      "Çukurova Belediyesi tarafından ilçenin içerisine yapılan bu park gerçekten dikkat çekici bir kullanım yapısına sahiptir. İçerisinde akarsular, piknik alanları, kuşlar ve farklı hayvan türleri bulunmaktadır. "
-
-                     " İlçede yaşayanlar genellikle sıcak havada bu parkı ziyaret etmeyi tercih etmektedir. İçinde ayrıca amfi tiyatro, konser alanları ve gösteri noktaları da yer almaktadır. Ayrıca düğün salonu hizmet vermektedir. Merkezi bir noktada olduğu için biraz dinlenmek ve rahatlamak için bu parka kolayca ulaşmanız mümkündür.  ",
-                      style: xdUzunYazi,
-                    ),
-                  ),
-                ),
-              ),
+              infoText("Çukurova Belediyesi tarafından ilçenin içerisine yapılan bu park"
+                  " gerçekten dikkat çekici bir kullanım yapısına sahiptir."
+                  " İçerisinde akarsular, piknik alanları, kuşlar ve farklı "
+                  "hayvan türleri bulunmaktadır. "
+                  " İlçede yaşayanlar genellikle sıcak havada bu parkı ziyaret "
+                  "etmeyi tercih etmektedir. İçinde ayrıca amfi tiyatro,"
+                  " konser alanları ve gösteri noktaları da yer almaktadır."
+                  " Ayrıca düğün salonu hizmet vermektedir. Merkezi bir "
+                  "noktada olduğu için biraz dinlenmek ve rahatlamak için "
+                  "bu parka kolayca ulaşmanız mümkündür."),
               SizedBox(
                 height: 15,
               ),

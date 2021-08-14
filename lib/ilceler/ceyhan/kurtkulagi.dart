@@ -1,3 +1,4 @@
+import 'package:adana/components/infoText.dart';
 import 'package:adana/components/sliderImage.dart';
 import 'package:adana/constants/constants.dart';
 import 'package:adana/ilceler/ceyhan/yorumlar/kurtYorum.dart';
@@ -115,33 +116,21 @@ class _KurtKulagiState extends State<KurtKulagi>
               SizedBox(
                 height: 10,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: xdArka,
-                      border: Border.all(color: xdArka, width: 1),
-                      borderRadius: BorderRadius.all(Radius.circular(15)),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black38.withOpacity(0.1),
-                          spreadRadius: 1,
-                          blurRadius: 1,
-                          offset: Offset(0, -3), // changes position of shadow
-                        ),
-                      ]
-
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 15),
-                    child: Text(
-                    " Ceyhan'ın 12 km güneydoğusunda[1] Kurtkulağı mahallesi'ndedir. Adana Müzesinde bulunan kervansaray kitabesine göre eser 1659'da[not 1] Hüseyin Paşa tarafından yaptırılmış olup, mimarı Mehmed Ağa'dır. Adana-Halep kervan yolu üzerindeki Kurtkulağı menzilinde bulunan kervansaray, bir Osmanlı menzil handır. Kervansaray bir kale sağlamlığında gayet kalın ve sağlam duvarlara sahiptir. 2006 yılında restore edilmiştir."
-                      "Büyük bir dikdörtgenden oluşan planı doğu cephede klasik kervansaray mimarisinden farklı özellikler taşımaktadır. Üç yanda saçak hizasına kadar kuvvetli payandalarla takviye edilmiş olan beden duvarlarının tamamı taştandır. Doğu cephedeki çıkıntıları hariç, 45,75 x 23,60 metre ebadındaki kervansarayın planını, enine uzanan iki sıralı payelerin birbirlerine sivri kemerlerle birleşmesi ve bütün üst örtüyü teşkil eden boyuna uzanan beşik tonozlar meydana getirmektedir.",
-                      style: xdUzunYazi,
-                    ),
-                  ),
-                ),
-              ),
+              infoText("Ceyhan'ın 12 km güneydoğusunda Kurtkulağı mahallesi'ndedir. "
+                  "Adana Müzesinde bulunan kervansaray kitabesine göre eser "
+                  "1659'da Hüseyin Paşa tarafından yaptırılmış olup, mimarı Mehmed "
+                  "Ağa'dır. Adana-Halep kervan yolu üzerindeki Kurtkulağı menzilinde "
+                  "bulunan kervansaray, bir Osmanlı menzil handır. Kervansaray bir kale"
+                  " sağlamlığında gayet kalın ve sağlam duvarlara sahiptir. 2006 "
+                  "yılında restore edilmiştir."
+                  "Büyük bir dikdörtgenden oluşan planı doğu cephede klasik kervansaray"
+                  " mimarisinden farklı özellikler taşımaktadır. Üç yanda "
+                  "saçak hizasına kadar kuvvetli payandalarla takviye edilmiş"
+                  " olan beden duvarlarının tamamı taştandır. Doğu cephedeki "
+                  "çıkıntıları hariç, 45,75 x 23,60 metre ebadındaki kervansarayın "
+                  "planını, enine uzanan iki sıralı payelerin birbirlerine sivri kemerlerle "
+                  "birleşmesi ve bütün üst örtüyü teşkil eden boyuna uzanan beşik tonozlar"
+                  " meydana getirmektedir."),
               SizedBox(
                 height: 15,
               ),

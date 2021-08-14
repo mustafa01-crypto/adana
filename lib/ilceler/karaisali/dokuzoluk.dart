@@ -1,3 +1,4 @@
+import 'package:adana/components/infoText.dart';
 import 'package:adana/components/sliderImage.dart';
 import 'package:adana/constants/constants.dart';
 import 'package:adana/ilceler/karaisali/yorumlar/dokuzoluk.dart';
@@ -116,43 +117,18 @@ class _DokuzolukState extends State<Dokuzoluk>
               SizedBox(
                 height: 10,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: xdArka,
-                      border: Border.all(color: xdArka, width: 1),
-                      borderRadius: BorderRadius.all(Radius.circular(15)),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black38.withOpacity(0.1),
-                          spreadRadius: 1,
-                          blurRadius: 1,
-                          offset: Offset(0, -3), // changes position of shadow
-                        ),
-                      ]
-
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 15),
-                    child: Text(
-                      "Dokuzoluk piknik alanı bir kanyonun hemen kenarında çeşitli "
-                          "noktalardan fışkıran pınarlar, yemyeşil bitki örtüsü ve"
-                          " ziyaretçilerin buz gibi suyunda serinledikleri göletlerden"
-                          " oluşmaktadır. Piknik yapmak, yüzmek, balık tutmak,"
-                          " yürüyüş yapmak, fotoğraf çekmek burada gerçekleştirilebilecek"
-                          " aktiviteler arasındadır. Köprünün üzerinden kanyon manzarasının "
-                          "fotoğrafının çekilmesi tavsiye edilir."
-                      "Dokuzoluk’ta ziyaretçilerin piknik için kullanabilecekleri "
-                          "masalar, kamelyalar, mangal alanları, mescit, çeşme ve tuvaletler"
-                          " bulunmaktadır. Giriş ücreti 10 TL’dir. Özellikle Adana’nın "
-                          "sıcağından uzaklaşmak, farklı ve dinlendirici bir doğa harikasında"
-                          " gününü geçirmek isteyenler tarafından tercih edilmektedir.",
-                      style: xdUzunYazi,
-                    ),
-                  ),
-                ),
-              ),
+              infoText("Dokuzoluk piknik alanı bir kanyonun hemen kenarında çeşitli "
+                  "noktalardan fışkıran pınarlar, yemyeşil bitki örtüsü ve"
+                  " ziyaretçilerin buz gibi suyunda serinledikleri göletlerden"
+                  " oluşmaktadır. Piknik yapmak, yüzmek, balık tutmak,"
+                  " yürüyüş yapmak, fotoğraf çekmek burada gerçekleştirilebilecek"
+                  " aktiviteler arasındadır. Köprünün üzerinden kanyon manzarasının "
+                  "fotoğrafının çekilmesi tavsiye edilir."
+                  "Dokuzoluk’ta ziyaretçilerin piknik için kullanabilecekleri "
+                  "masalar, kamelyalar, mangal alanları, mescit, çeşme ve tuvaletler"
+                  " bulunmaktadır. Giriş ücreti 10 TL’dir. Özellikle Adana’nın "
+                  "sıcağından uzaklaşmak, farklı ve dinlendirici bir doğa harikasında"
+                  " gününü geçirmek isteyenler tarafından tercih edilmektedir."),
               SizedBox(
                 height: 15,
               ),

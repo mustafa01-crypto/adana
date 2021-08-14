@@ -1,3 +1,4 @@
+import 'package:adana/components/infoText.dart';
 import 'package:adana/components/sliderImage.dart';
 import 'package:adana/constants/constants.dart';
 import 'package:adana/ilceler/seyhan/seyhanYorumlar/merkezCamiYorum.dart';
@@ -116,33 +117,20 @@ class _SabanciMerkezCamiiState extends State<SabanciMerkezCamii>
               SizedBox(
                 height: 10,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: xdArka,
-                      border: Border.all(color: xdArka, width: 1),
-                      borderRadius: BorderRadius.all(Radius.circular(15)),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black38.withOpacity(0.1),
-                          spreadRadius: 1,
-                          blurRadius: 1,
-                          offset: Offset(0, -3), // changes position of shadow
-                        ),
-                      ]
-
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 15),
-                    child: Text(
-                      "Adana'nın Reşatbey Semti'nde, Merkez Park'ın güneyinde ve Seyhan Nehri'nin batı kıyısında yer alan cami, 1998 yılında hizmete açılmıştır. 32 metre çaplı ana kubbesi vardır. Caminin proje mimarı Necip Dinç’tir. 20 bin kişilik cami (açık alanın düzenlenmesiyle 28 bin kişi) son cemaat mahaliyle birlikte 6 bin 600 metrekareye yayılmıştır."
-                      " Klasik Osmanlı mimarisi tarzında yapılmıştır ve dokuz fil ayağı üzerine oturur. Genel görünüm olarak Sultan Ahmet Camii’ne, plan ve iç mekân olarak Selimiye Camii’ne benzer. Dört yarım-kubbe, beş kubbe, altı minaresi vardır; bunlar dört halife ve dört mezhebe, İslam’ın beş şartına, imanın altı şartına karşılık gelmektedir. 32 metre çaplı ana kubbe 32 farza, avludaki 28 kubbe Kuran-ı Kerim'de adı geçen 28 peygambere, ana kubbedeki 40 pencere Hz.Muhammed (s.a.v.)’in peygamber olduğu yaşa ve 40 rekat namaza, 99 metrelik 6 minare Allah’ın 99 güzel ismine karşılık gelir.",
-                      style: xdUzunYazi,
-                    ),
-                  ),
-                ),
-              ),
+              infoText("Adana'nın Reşatbey Semti'nde, Merkez Park'ın güneyinde ve Seyhan "
+                  "Nehri'nin batı kıyısında yer alan cami, 1998 yılında hizmete "
+                  "açılmıştır. 32 metre çaplı ana kubbesi vardır. Caminin proje "
+                  "mimarı Necip Dinç’tir. 20 bin kişilik cami (açık alanın düzenlenmesiyle"
+                  " 28 bin kişi) son cemaat mahaliyle birlikte 6 bin 600 metrekareye yayılmıştır."
+                  " Klasik Osmanlı mimarisi tarzında yapılmıştır ve dokuz fil ayağı üzerine"
+                  " oturur. Genel görünüm olarak Sultan Ahmet Camii’ne, plan ve iç mekân "
+                  "olarak Selimiye Camii’ne benzer. Dört yarım-kubbe, beş kubbe, altı "
+                  "minaresi vardır; bunlar dört halife ve dört mezhebe, İslam’ın beş "
+                  "şartına, imanın altı şartına karşılık gelmektedir. 32 metre çaplı "
+                  "ana kubbe 32 farza, avludaki 28 kubbe Kuran-ı Kerim'de adı geçen"
+                  " 28 peygambere, ana kubbedeki 40 pencere Hz.Muhammed (s.a.v.)’in "
+                  "peygamber olduğu yaşa ve 40 rekat namaza, 99 metrelik 6 minare "
+                  "Allah’ın 99 güzel ismine karşılık gelir."),
               SizedBox(
                 height: 15,
               ),

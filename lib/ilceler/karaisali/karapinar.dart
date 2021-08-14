@@ -1,3 +1,4 @@
+import 'package:adana/components/infoText.dart';
 import 'package:adana/components/sliderImage.dart';
 import 'package:adana/constants/constants.dart';
 import 'package:adana/ilceler/karaisali/yorumlar/karapinar.dart';
@@ -118,37 +119,12 @@ class _KaraisaliState extends State<Karapinar>
               SizedBox(
                 height: 10,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: xdArka,
-                      border: Border.all(color: xdArka, width: 1),
-                      borderRadius: BorderRadius.all(Radius.circular(15)),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black38.withOpacity(0.1),
-                          spreadRadius: 1,
-                          blurRadius: 1,
-                          offset: Offset(0, -3), // changes position of shadow
-                        ),
-                      ]
-
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 15),
-                    child: Text(
-                      "Türkiye’nin Akdeniz Bölgesinde bulunan"
-                      " Karaisalı, Roma Döneminden önemli izler taşıyan"
-                      " ilçe konumuna sahip olan bir bölgedir. Bu ilçe,"
-                      " soyunun Ramazanoğulları ve Menemencioğullarından geldiği"
-                      " günümüzdeki adını"
-                      " da Ramazanoğullarından Kara İsa Bey’den aldığı bilinen bir husustur.",
-                      style: xdUzunYazi,
-                    ),
-                  ),
-                ),
-              ),
+              infoText("Türkiye’nin Akdeniz Bölgesinde bulunan"
+                  " Karaisalı, Roma Döneminden önemli izler taşıyan"
+                  " ilçe konumuna sahip olan bir bölgedir. Bu ilçe,"
+                  " soyunun Ramazanoğulları ve Menemencioğullarından geldiği"
+                  " günümüzdeki adını"
+                  " da Ramazanoğullarından Kara İsa Bey’den aldığı bilinen bir husustur."),
               SizedBox(
                 height: 15,
               ),

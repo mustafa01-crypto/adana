@@ -1,3 +1,4 @@
+import 'package:adana/components/infoText.dart';
 import 'package:adana/components/sliderImage.dart';
 import 'package:adana/constants/constants.dart';
 import 'package:adana/ilceler/seyhan/seyhanYorumlar/taskopruYorum.dart';
@@ -120,46 +121,23 @@ class _TasKopruState extends State<TasKopru>
               SizedBox(
                 height: 10,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: xdArka,
-                      border: Border.all(color: xdArka, width: 1),
-                      borderRadius: BorderRadius.all(Radius.circular(15)),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black38.withOpacity(0.1),
-                          spreadRadius: 1,
-                          blurRadius: 1,
-                          offset: Offset(0, -3), // changes position of shadow
-                        ),
-                      ]
-
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 15),
-                    child: Text(
-                      "Adana Taş Köprü Seyhan Nehri üzerindedir. IV. (385) yüzyılda "
-                          "Roma İmparatoru Hadrianus tarafından yaptırılmıştır."
-                          " Yüzyıllarca Avrupa ile Asya arasında önemli bir köprü "
-                          "olmuştur. Harun Reşit (766-809) köprüyü bazı eklerle"
-                          " Adana Kalesi'ne birleştirmiştir. IX. yüzyıl başında"
-                          "Harun Reşit’in oğlu olan 7'inci Abbasi Halifesi Memun "
-                          "(786-833) tarafından onartılmıştır. III. Ahmet (1713),"
-                          " Kel Hasan Paşa (1847) ve Adana Valisi Ziya Paşa (1789) "
-                          "tarafından da değişik zamanlarda tamirat görmüştür."
-                          " Bu üç onarımının yazıtları mevcuttur. Son onarım"
-                          " 1949 yılında yapılmıştır."
+              infoText(
+                  "Adana Taş Köprü Seyhan Nehri üzerindedir. IV. (385) yüzyılda "
+                      "Roma İmparatoru Hadrianus tarafından yaptırılmıştır."
+                      " Yüzyıllarca Avrupa ile Asya arasında önemli bir köprü "
+                      "olmuştur. Harun Reşit (766-809) köprüyü bazı eklerle"
+                      " Adana Kalesi'ne birleştirmiştir. IX. yüzyıl başında"
+                      "Harun Reşit’in oğlu olan 7'inci Abbasi Halifesi Memun "
+                      "(786-833) tarafından onartılmıştır. III. Ahmet (1713),"
+                      " Kel Hasan Paşa (1847) ve Adana Valisi Ziya Paşa (1789) "
+                      "tarafından da değişik zamanlarda tamirat görmüştür."
+                      " Bu üç onarımının yazıtları mevcuttur. Son onarım"
+                      " 1949 yılında yapılmıştır."
                       "Taş Köprü 319 metre uzunluğunda ve 13 metre "
-                          "yüksekliğindedir. 21 kemerinden 14’ü ayaktadır."
-                          " Ortadaki büyük kemerde iki aslan kabartması "
-                          "görülmektedir. Dünyanın halen kullanılan en "
-                          "eski köprülerden biri olarak bilinmektedir.",
-                      style: xdUzunYazi,
-                    ),
-                  ),
-                ),
+                      "yüksekliğindedir. 21 kemerinden 14’ü ayaktadır."
+                      " Ortadaki büyük kemerde iki aslan kabartması "
+                      "görülmektedir. Dünyanın halen kullanılan en "
+                      "eski köprülerden biri olarak bilinmektedir."
               ),
               SizedBox(
                 height: 15,

@@ -5,12 +5,11 @@ import 'package:rive/rive.dart';
 
 
 Widget rives(BuildContext context,String yol) {
-  final height = MediaQuery.of(context).size.height;
+  final width = MediaQuery.of(context).size.width;
   return Container(
-    width: double.infinity,
-    height: height* 1/3,
+    height: width* 1/2,
     decoration: BoxDecoration(
-        gradient: xdGradient,
+
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.2),

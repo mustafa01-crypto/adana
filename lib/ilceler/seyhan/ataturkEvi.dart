@@ -1,3 +1,4 @@
+import 'package:adana/components/sliderImage.dart';
 import 'package:adana/constants/constants.dart';
 import 'package:adana/ilceler/seyhan/seyhanYorumlar/ataturkYorum.dart';
 import 'package:adana/map/map.dart';
@@ -104,54 +105,15 @@ class _AtaturkEviState extends State<AtaturkEvi>
         child: SafeArea(
           child: Column(
             children: [
-              ImageSlider(
-                /// Shows the tab indicating circles at the bottom
-                showTabIndicator: true,
-
-                /// Cutomize tab's colors
-                tabIndicatorColor: Colors.lightBlue.shade300,
-
-                /// Customize selected tab's colors
-                tabIndicatorSelectedColor: Colors.lightBlue.shade800,
-
-                /// Height of the indicators from the bottom
-                tabIndicatorHeight: 9,
-
-                /// Size of the tab indicator circles
-                tabIndicatorSize: 9,
-
-                /// tabController for walkthrough or other implementations
-                tabController: tabController,
-
-                /// Animation curves of sliding
-                curve: Curves.fastOutSlowIn,
-
-                /// Width of the slider
-                width: MediaQuery.of(context).size.width,
-
-                /// Height of the slider
-                height: 220,
-
-                /// If automatic sliding is required
-                autoSlide: true,
-
-                /// Time for automatic sliding
-                duration: new Duration(seconds: 3),
-
-                /// If manual sliding is required
-                allowManualSlide: true,
-
-                /// Children in slideView to slide
-                children: links.map((String link) {
-                  return new ClipRRect(
-                      child: Image.network(
-                    link,
-                    width: MediaQuery.of(context).size.width,
-                    height: 220,
-                    fit: BoxFit.fill,
-                  ));
-                }).toList(),
-              ),
+              sliderImage(tabController!, context, links.map((String link) {
+                return new ClipRRect(
+                    child: Image.network(
+                      link,
+                      width: MediaQuery.of(context).size.width,
+                      height: 220,
+                      fit: BoxFit.fill,
+                    ));
+              }).toList(),),
               SizedBox(
                 height: 10,
               ),

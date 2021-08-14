@@ -1,4 +1,4 @@
-import 'package:adana/auth/buttonText.dart';
+import 'package:adana/components/buttonText.dart';
 import 'package:adana/components/infoText.dart';
 import 'package:adana/components/sliderImage.dart';
 import 'package:adana/constants/constants.dart';
@@ -9,7 +9,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:image_slider/image_slider.dart';
 import 'package:intl/intl.dart';
 import 'package:rating_dialog/rating_dialog.dart';
 
@@ -60,7 +59,7 @@ class _YumurtalikLagunuState extends State<YumurtalikLagunu>
       ratingColor: Colors.amber,
       title: title,
       commentHint: "...",
-      message: '${title} hakkında ne düşünüyorsunuz',
+      message: '$title hakkında ne düşünüyorsunuz',
       image: Image.network(
         "https://dogadakiler.com/img/A/2020/11/6362529.jpg",
         height: 100,

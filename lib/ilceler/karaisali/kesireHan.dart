@@ -1,4 +1,4 @@
-import 'package:adana/auth/buttonText.dart';
+import 'package:adana/components/buttonText.dart';
 import 'package:adana/components/infoText.dart';
 import 'package:adana/components/sliderImage.dart';
 import 'package:adana/constants/constants.dart';

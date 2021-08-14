@@ -1,4 +1,4 @@
-import 'package:adana/auth/buttonText.dart';
+import 'package:adana/components/buttonText.dart';
 import 'package:adana/components/infoText.dart';
 import 'package:adana/components/sliderImage.dart';
 import 'package:adana/constants/constants.dart';
@@ -59,7 +59,7 @@ class _YilanKaleState extends State<YilanKale>
       ratingColor: Colors.amber,
       title: title,
       commentHint: "...",
-      message: '${title} hakkında ne düşünüyorsunuz',
+      message: '$title hakkında ne düşünüyorsunuz',
       image: Image.network(
         "https://www.nkfu.com/wp-content/uploads/2014/04/yilan-kale-1.jpg",
         height: 100,

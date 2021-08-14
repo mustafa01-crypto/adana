@@ -1,4 +1,4 @@
-import 'package:adana/auth/buttonText.dart';
+import 'package:adana/components/buttonText.dart';
 import 'package:adana/components/infoText.dart';
 import 'package:adana/components/sliderImage.dart';
 import 'package:adana/constants/constants.dart';
@@ -59,7 +59,7 @@ class _KurtKulagiState extends State<KurtKulagi>
       ratingColor: Colors.amber,
       title: title,
       commentHint: "...",
-      message: '${title} hakkında ne düşünüyorsunuz',
+      message: '$title hakkında ne düşünüyorsunuz',
       image: Image.network(
         "https://mapio.net/images-p/14857663.jpg",
         height: 100,

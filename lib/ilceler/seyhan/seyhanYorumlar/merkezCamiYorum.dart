@@ -203,13 +203,13 @@ class _ProfilesState extends State<Profiles> {
                 ? Image.asset(
               "assets/profile.png",
               width: width * 1 / 10,
-              height: width * 1 / 9,
+              height: width * 1 / 10,
               fit: BoxFit.cover,
             )
                 : Image.network(
               indirmeBaglantisi!,
               width: width * 1 / 10,
-              height: width * 1 / 9,
+              height: width * 1 / 10,
               fit: BoxFit.cover,
             )),
       ),

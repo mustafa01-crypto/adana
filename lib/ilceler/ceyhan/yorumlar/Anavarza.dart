@@ -43,9 +43,10 @@ class Yorumlar extends StatefulWidget {
 }
 
 class _YorumlarState extends State<Yorumlar> {
+  double value = 1.0;
   @override
   Widget build(BuildContext context) {
-    double value = 1.0;
+
     Query karapinarYorumlar =
     FirebaseFirestore.instance.collection('AnavarzaYorum');
 
@@ -202,13 +203,13 @@ class _ProfilesState extends State<Profiles> {
                 ? Image.asset(
               "assets/profile.png",
               width: width * 1 / 10,
-              height: width * 1 / 9,
+              height: width * 1 / 10,
               fit: BoxFit.cover,
             )
                 : Image.network(
               indirmeBaglantisi!,
               width: width * 1 / 10,
-              height: width * 1 / 9,
+              height: width * 1 / 10,
               fit: BoxFit.cover,
             )),
       ),

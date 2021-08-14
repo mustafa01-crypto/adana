@@ -1,3 +1,4 @@
+import 'package:adana/auth/buttonText.dart';
 import 'package:adana/components/infoText.dart';
 import 'package:adana/components/sliderImage.dart';
 import 'package:adana/constants/constants.dart';
@@ -8,7 +9,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:image_slider/image_slider.dart';
 import 'package:intl/intl.dart';
 import 'package:rating_dialog/rating_dialog.dart';
 
@@ -148,29 +148,7 @@ class _YilanKaleState extends State<YilanKale>
                         title: title,
                       ));
                 },
-                child: Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: 70,
-                  child: Center(
-                    child: Text(
-                      "HARİTADA GÖSTER",
-                      style: cityName,
-                    ),
-                  ),
-                  decoration: BoxDecoration(
-                    color: xdArka,
-                    //border: Border.all(color: kutu, width: 4),
-                    borderRadius: BorderRadius.all(Radius.circular(30)),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black38.withOpacity(0.1),
-                        spreadRadius: 1,
-                        blurRadius: 1,
-                        offset: Offset(0, -3), // changes position of shadow
-                      ),
-                    ],
-                  ),
-                ),
+                child: buttonTextContainer(context,"HARİTADA GÖSTER")
               ),
               SizedBox(
                 height: 15,
@@ -179,29 +157,7 @@ class _YilanKaleState extends State<YilanKale>
                 onPressed: () {
                   Get.to(() => YilanYorum());
                 },
-                child: Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: 70,
-                  child: Center(
-                    child: Text(
-                      "YORUMLARI GÖSTER",
-                      style: cityName,
-                    ),
-                  ),
-                  decoration: BoxDecoration(
-                    color: xdArka,
-                    //  border: Border.all(color: scaffold, width: 4),
-                    borderRadius: BorderRadius.all(Radius.circular(30)),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black38.withOpacity(0.1),
-                        spreadRadius: 1,
-                        blurRadius: 1,
-                        offset: Offset(0, -3), // changes position of shadow
-                      ),
-                    ],
-                  ),
-                ),
+                child: buttonTextContainer(context,"YORUMLARI GÖSTER")
               ),
 
               //xd
@@ -212,29 +168,7 @@ class _YilanKaleState extends State<YilanKale>
                 onPressed: () {
                   MapUtils.openMap(x, y);
                 },
-                child: Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: 70,
-                  child: Center(
-                    child: Text(
-                      "YOL TARİFİ",
-                      style: cityName,
-                    ),
-                  ),
-                  decoration: BoxDecoration(
-                    color: xdArka,
-                    //border: Border.all(color: kutu, width: 4),
-                    borderRadius: BorderRadius.all(Radius.circular(30)),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black38.withOpacity(0.1),
-                        spreadRadius: 1,
-                        blurRadius: 1,
-                        offset: Offset(0, -3), // changes position of shadow
-                      ),
-                    ],
-                  ),
-                ),
+                child: buttonTextContainer(context,"YOL TARİFİ")
               ),
               SizedBox(
                 height: 15,
@@ -243,29 +177,7 @@ class _YilanKaleState extends State<YilanKale>
                 onPressed: () {
                   _showRatingAppDialog();
                 },
-                child: Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: 70,
-                  child: Center(
-                    child: Text(
-                      "YORUM YAP",
-                      style: cityName,
-                    ),
-                  ),
-                  decoration: BoxDecoration(
-                    color: xdArka,
-                    //  border: Border.all(color: scaffold, width: 4),
-                    borderRadius: BorderRadius.all(Radius.circular(30)),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black38.withOpacity(0.1),
-                        spreadRadius: 1,
-                        blurRadius: 1,
-                        offset: Offset(0, -3), // changes position of shadow
-                      ),
-                    ],
-                  ),
-                ),
+                child: buttonTextContainer(context,"YORUM YAP"),
               ),
             ],
           ),

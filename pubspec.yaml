@@ -75,7 +75,6 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/
-    - assets/images/
     - assets/karaisali/park/
     - assets/karaisali/yerkopru/
     - assets/karaisali/dokuzoluk/
@@ -85,8 +84,6 @@ flutter:
     - assets/karaisali/kesire/
     - assets/karaisali/kizildag/
     - assets/karaisali/yanik/
-    - assets/riv/hourglass.riv
-    - assets/riv/new_file.riv
     - assets/video/
 
   #   - images/a_dot_ham.jpeg

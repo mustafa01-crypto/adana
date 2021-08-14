@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:adana/auth/register.dart';
 import 'package:adana/components/showDialog.dart';
+import 'package:adana/constants/constants.dart';
 import 'package:adana/home.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -77,8 +78,8 @@ class _LoginState extends State<Login> {
                 decoration: BoxDecoration(
                   image: DecorationImage(
                     fit: BoxFit.cover,
-                    image: NetworkImage(
-                      'https://images.pexels.com/photos/1366919/pexels-photo-1366919.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+                    image: AssetImage(
+                      'assets/back_photo.jpeg',
                     ),
                   ),
                 ),
@@ -91,8 +92,8 @@ class _LoginState extends State<Login> {
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                         colors: [
-                          Colors.red,
-                          Colors.blue,
+                          sol,
+                        Colors.blue,
                         ]),
                   ),
                 ),

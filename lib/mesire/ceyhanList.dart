@@ -16,56 +16,43 @@ class CeyhanList extends StatefulWidget {
 }
 
 class _CeyhanListState extends State<CeyhanList> {
-
-
-
   @override
   Widget build(BuildContext context) {
-   // final height = MediaQuery.of(context).size.height;
     return SafeArea(
       child: Scaffold(
         backgroundColor: scaffold2,
         body: SingleChildScrollView(
           child: Column(
             children: [
-
               InkWell(
                   onTap: () {
                     Get.to(() => YilanKale());
                   },
-                  child: sehirYerleri(context,"YILAN KALE")),
+                  child: sehirYerleri(context, "YILAN KALE")),
               InkWell(
-                  onTap: ()
-                  {
+                  onTap: () {
                     Get.to(() => KurtKulagi());
                   },
-                  child: sehirYerleri(context,"KURTKULAĞI KERVANSARAYI")),
+                  child: sehirYerleri(context, "KURTKULAĞI KERVANSARAYI")),
               InkWell(
-
-                  onTap: ()
-                  {
-                    Get.to( () => Tumlu());
+                  onTap: () {
+                    Get.to(() => Tumlu());
                   },
-
-                  child: sehirYerleri(context,"TUMLU KALESİ")),
+                  child: sehirYerleri(context, "TUMLU KALESİ")),
               InkWell(
-                  onTap: ()
-                  {
-                    Get.to( () => Durhasan());
+                  onTap: () {
+                    Get.to(() => Durhasan());
                   },
-                  child:sehirYerleri(context,"DURHASAN DEDE TÜRBESİ")),
+                  child: sehirYerleri(context, "DURHASAN DEDE TÜRBESİ")),
               InkWell(
-                  onTap: ()
-                  {
-                    Get.to( () => Anavarza());
+                  onTap: () {
+                    Get.to(() => Anavarza());
                   },
-                  child: sehirYerleri(context,"ANAVARZA KALESİ")),
-
+                  child: sehirYerleri(context, "ANAVARZA KALESİ")),
             ],
           ),
         ),
       ),
     );
   }
-
 }

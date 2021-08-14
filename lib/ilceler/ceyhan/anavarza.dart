@@ -39,7 +39,6 @@ class _AnavarzaState extends State<Anavarza>
   }
 
   void getCurrentUser() {
-
     final user = auth.currentUser;
     if (user != null) {
       loggedInuser = user;
@@ -49,12 +48,10 @@ class _AnavarzaState extends State<Anavarza>
   TabController? tabController;
 
   static List<String> links = [
-
     "https://cdnuploads.aa.com.tr/uploads/Contents/2018/08/06/thumbs_b_c_9e6375297d46cc38d01fa70e293d49a3.jpg",
     "https://blog.tatildukkani.com/wp-content/uploads/2018/10/anavarza-antik-kenti-kapak.jpg",
     "https://img.bilgihanem.com/wp-content/uploads/2016/02/anavarza-kalesi-hakkinda-bilgiler.jpg",
     "https://adanabaska.com/thumb.php?src=files/anavarzajpg_31-05-2018_15-43-57.jpg&size=1094x715"
-
   ];
 
   void _showRatingAppDialog() {
@@ -62,7 +59,7 @@ class _AnavarzaState extends State<Anavarza>
       ratingColor: Colors.amber,
       title: title,
       commentHint: "...",
-      message: '${title} hakkında ne düşünüyorsunuz',
+      message: '$title hakkında ne düşünüyorsunuz',
       image: Image.network(
         "https://adanabaska.com/thumb.php?src=files/anavarzajpg_31-05-2018_15-43-57.jpg&size=1094x715",
         height: 100,
@@ -98,41 +95,46 @@ class _AnavarzaState extends State<Anavarza>
         child: SafeArea(
           child: Column(
             children: [
-              sliderImage(tabController!, context, links.map((String link) {
-                return new ClipRRect(
-                    child: Image.network(
-                      link,
-                      width: MediaQuery.of(context).size.width,
-                      height: 220,
-                      fit: BoxFit.fill,
-                    ));
-              }).toList(),),
+              sliderImage(
+                tabController!,
+                context,
+                links.map((String link) {
+                  return new ClipRRect(
+                      child: Image.network(
+                    link,
+                    width: MediaQuery.of(context).size.width,
+                    height: 220,
+                    fit: BoxFit.fill,
+                  ));
+                }).toList(),
+              ),
 
               SizedBox(
                 height: 10,
               ),
-              infoText("Tarihi 2100 yıl öncesine giden ve en parlak dönemini Roma"
-              " İmparatoru Septimius Severus’un ödüllendirmesiyle "
-              "M.S. 2'nci yüzyılda yaşamaya başlayan Anavarza, zaman içinde"
-              " önemli bir kent haline gelerek 408 yılında Kilikya Başkenti"
-              " unvanına kavuşmuştur. Bizans Dönemi’nde önemini devam ettiren, "
-              "sonraki yıllarda Ermeniler, Abbasiler, Selçuklular, Ramazanoğulları, "
-                "Osmanlılar gibi çeşitli medeniyetlere ev sahipliği yapan Anavarza’da"
-                " farklı kültürlere ait izleri bir arada görmek mümkün. Bu kültürel "
-                "zenginliği sayesinde de UNESCO Dünya Miras Geçici Listesi’nde yer"
-                " alması uygun görülen kent; kalıntıları, tarihi ve efsaneleri ile dikkat çekiyor."),
+              infoText(
+                  "Tarihi 2100 yıl öncesine giden ve en parlak dönemini Roma"
+                  " İmparatoru Septimius Severus’un ödüllendirmesiyle "
+                  "M.S. 2'nci yüzyılda yaşamaya başlayan Anavarza, zaman içinde"
+                  " önemli bir kent haline gelerek 408 yılında Kilikya Başkenti"
+                  " unvanına kavuşmuştur. Bizans Dönemi’nde önemini devam ettiren, "
+                  "sonraki yıllarda Ermeniler, Abbasiler, Selçuklular, Ramazanoğulları, "
+                  "Osmanlılar gibi çeşitli medeniyetlere ev sahipliği yapan Anavarza’da"
+                  " farklı kültürlere ait izleri bir arada görmek mümkün. Bu kültürel "
+                  "zenginliği sayesinde de UNESCO Dünya Miras Geçici Listesi’nde yer"
+                  " alması uygun görülen kent; kalıntıları, tarihi ve efsaneleri ile dikkat çekiyor."),
               SizedBox(
                 height: 15,
               ),
               TextButton(
                 onPressed: () {
                   Get.to(() => Maps(
-                    x: x,
-                    y: y,
-                    title: title,
-                  ));
+                        x: x,
+                        y: y,
+                        title: title,
+                      ));
                 },
-                child: buttonTextContainer(context,"HARİTADA GÖSTER"),
+                child: buttonTextContainer(context, "HARİTADA GÖSTER"),
               ),
               SizedBox(
                 height: 15,
@@ -141,7 +143,7 @@ class _AnavarzaState extends State<Anavarza>
                 onPressed: () {
                   Get.to(() => AnavarzaYorum());
                 },
-                child: buttonTextContainer(context,"YORUMLARI GÖSTER"),
+                child: buttonTextContainer(context, "YORUMLARI GÖSTER"),
               ),
 
               //xd
@@ -149,20 +151,18 @@ class _AnavarzaState extends State<Anavarza>
                 height: 15,
               ),
               TextButton(
-                onPressed: () {
-                  MapUtils.openMap(x, y);
-                },
-                child: buttonTextContainer(context,"YOL TARİFİ")
-              ),
+                  onPressed: () {
+                    MapUtils.openMap(x, y);
+                  },
+                  child: buttonTextContainer(context, "YOL TARİFİ")),
               SizedBox(
                 height: 15,
               ),
               TextButton(
-                onPressed: () {
-                  _showRatingAppDialog();
-                },
-                child: buttonTextContainer(context,"YORUM YAP")
-              ),
+                  onPressed: () {
+                    _showRatingAppDialog();
+                  },
+                  child: buttonTextContainer(context, "YORUM YAP")),
             ],
           ),
         ),

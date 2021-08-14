@@ -72,8 +72,8 @@ class _RegisterState extends State<Register> {
                 decoration: BoxDecoration(
                   image: DecorationImage(
                     fit: BoxFit.cover,
-                    image: NetworkImage(
-                      'https://images.pexels.com/photos/1366919/pexels-photo-1366919.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+                    image: AssetImage(
+                      'assets/back_photo.jpeg',
                     ),
                   ),
                 ),

@@ -181,22 +181,7 @@ class _HomeState extends State<Home> {
                       Get.to(() => CeyhanList());
                     },
                   ),
-                  /*
-                  ListTile(
-                    title: Text(
-                      'POZANTI',
-                      style: baslik2,
-                    ),
-                    onTap: () {},
-                  ),
-                  ListTile(
-                    title: Text('YUMURTALIK', style: baslik2),
-                    onTap: () {},
-                  ),
-                  ListTile(
-                    title: Text('KARATAŞ', style: baslik2),
-                    onTap: () {},
-                  ), */
+
                   Divider(color: Colors.white,thickness: 2,),
 
                   ListTile(

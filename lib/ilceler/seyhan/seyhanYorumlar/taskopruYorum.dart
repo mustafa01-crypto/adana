@@ -5,7 +5,6 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_stars/flutter_rating_stars.dart';
 
-
 class TasKopruYorum extends StatefulWidget {
   const TasKopruYorum({Key? key}) : super(key: key);
 
@@ -35,11 +34,11 @@ class Yorumlar extends StatefulWidget {
 
 class _YorumlarState extends State<Yorumlar> {
   double value = 1.0;
+
   @override
   Widget build(BuildContext context) {
     Query karapinarYorumlar =
         FirebaseFirestore.instance.collection('TasKopruYorum');
-
 
     return StreamBuilder<QuerySnapshot>(
       stream: karapinarYorumlar.snapshots(),
@@ -86,7 +85,6 @@ class _YorumlarState extends State<Yorumlar> {
                               data["email"],
                               style: email,
                             ),
-
                           ],
                         ),
                         SizedBox(
@@ -158,7 +156,6 @@ class Profiles extends StatefulWidget {
 }
 
 class _ProfilesState extends State<Profiles> {
-
   String? indirmeBaglantisi;
 
   baglantiAl() async {
@@ -173,6 +170,7 @@ class _ProfilesState extends State<Profiles> {
       indirmeBaglantisi = baglanti;
     });
   }
+
   @override
   void initState() {
     // TODO: implement initState
@@ -192,17 +190,17 @@ class _ProfilesState extends State<Profiles> {
         child: ClipOval(
             child: indirmeBaglantisi == null
                 ? Image.asset(
-              "assets/profile.png",
-              width: width * 1 / 10,
-              height: width * 1 / 10,
-              fit: BoxFit.cover,
-            )
+                    "assets/profile.png",
+                    width: width * 1 / 10,
+                    height: width * 1 / 10,
+                    fit: BoxFit.cover,
+                  )
                 : Image.network(
-              indirmeBaglantisi!,
-              width: width * 1 / 10,
-              height: width * 1 / 10,
-              fit: BoxFit.cover,
-            )),
+                    indirmeBaglantisi!,
+                    width: width * 1 / 10,
+                    height: width * 1 / 10,
+                    fit: BoxFit.cover,
+                  )),
       ),
     );
   }

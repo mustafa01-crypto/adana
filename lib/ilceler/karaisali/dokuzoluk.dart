@@ -31,7 +31,7 @@ class _DokuzolukState extends State<Dokuzoluk>
   double y = 35.209563;
   String title = "Dokuzoluk";
   FirebaseAuth auth = FirebaseAuth.instance;
-
+  late TabController tabController;
   void initState() {
     super.initState();
     getCurrentUser();
@@ -44,8 +44,6 @@ class _DokuzolukState extends State<Dokuzoluk>
       loggedInuser = user;
     }
   }
-
-  TabController? tabController;
 
   static List<String> links = [
     "https://media-cdn.tripadvisor.com/media/photo-s/0c/f9/48/fc/muhtesem-manzara.jpg",
@@ -98,7 +96,7 @@ class _DokuzolukState extends State<Dokuzoluk>
           child: Column(
             children: [
               sliderImage(
-                tabController!,
+                tabController,
                 context,
                 links.map((String link) {
                   return new ClipRRect(
@@ -172,4 +170,5 @@ class _DokuzolukState extends State<Dokuzoluk>
       ),
     );
   }
+
 }

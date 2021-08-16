@@ -5,7 +5,7 @@ Widget sliderImage(TabController tabController,BuildContext context,List<Widget>
 {
   return ImageSlider(
     /// Shows the tab indicating circles at the bottom
-    showTabIndicator: true,
+    showTabIndicator: false,
 
     /// Cutomize tab's colors
     tabIndicatorColor: Colors.lightBlue.shade300,

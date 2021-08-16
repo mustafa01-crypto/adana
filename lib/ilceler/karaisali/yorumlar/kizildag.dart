@@ -34,9 +34,10 @@ class Yorumlar extends StatefulWidget {
 }
 
 class _YorumlarState extends State<Yorumlar> {
+  double value = 1.0;
   @override
   Widget build(BuildContext context) {
-    double value = 1.0;
+
 
     Query karapinarYorumlar =
         FirebaseFirestore.instance.collection('kizildagYorum');
@@ -79,7 +80,7 @@ class _YorumlarState extends State<Yorumlar> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Profiles(path: data['email']!),
                             Text(

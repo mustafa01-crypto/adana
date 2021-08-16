@@ -186,21 +186,21 @@ class _ProfilesState extends State<Profiles> {
     // final height = MediaQuery.of(context).size.height;
     return Container(
       width: width * 1 / 9,
-      height: width * 1 / 8,
+      height: width * 1 / 9,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: ClipOval(
             child: indirmeBaglantisi == null
                 ? Image.asset(
               "assets/profile.png",
-              width: width * 1 / 10,
-              height: width * 1 / 10,
+              width: width * 1 / 9,
+              height: width * 1 / 9,
               fit: BoxFit.cover,
             )
                 : Image.network(
               indirmeBaglantisi!,
-              width: width * 1 / 10,
-              height: width * 1 / 10,
+              width: width * 1 / 9,
+              height: width * 1 / 9,
               fit: BoxFit.cover,
             )),
       ),

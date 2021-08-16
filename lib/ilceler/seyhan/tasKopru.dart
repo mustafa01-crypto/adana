@@ -33,7 +33,6 @@ class _TasKopruState extends State<TasKopru>
   String title = "TAŞ KÖPRÜ";
   FirebaseAuth auth = FirebaseAuth.instance;
 
-
   void initState() {
     super.initState();
     getCurrentUser();
@@ -75,7 +74,7 @@ class _TasKopruState extends State<TasKopru>
             .collection("TasKopruYorum")
             .doc(loggedInuser.email)
             .set({
-          "zaman":formattedDate.toString(),
+          "zaman": formattedDate.toString(),
           'email': loggedInuser.email.toString(),
           'icerik': response.comment.toString(),
           'puan': response.rating.toDouble()
@@ -90,8 +89,6 @@ class _TasKopruState extends State<TasKopru>
     );
   }
 
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -101,49 +98,51 @@ class _TasKopruState extends State<TasKopru>
         child: SafeArea(
           child: Column(
             children: [
-              sliderImage(tabController!, context, links.map((String link) {
-                return new ClipRRect(
-                    child: Image.network(
-                      link,
-                      width: MediaQuery.of(context).size.width,
-                      height: 220,
-                      fit: BoxFit.fill,
-                    ));
-              }).toList(),),
+              sliderImage(
+                tabController!,
+                context,
+                links.map((String link) {
+                  return new ClipRRect(
+                      child: Image.network(
+                    link,
+                    width: MediaQuery.of(context).size.width,
+                    height: 220,
+                    fit: BoxFit.fill,
+                  ));
+                }).toList(),
+              ),
               SizedBox(
                 height: 10,
               ),
               infoText(
                   "Adana Taş Köprü Seyhan Nehri üzerindedir. IV. (385) yüzyılda "
-                      "Roma İmparatoru Hadrianus tarafından yaptırılmıştır."
-                      " Yüzyıllarca Avrupa ile Asya arasında önemli bir köprü "
-                      "olmuştur. Harun Reşit (766-809) köprüyü bazı eklerle"
-                      " Adana Kalesi'ne birleştirmiştir. IX. yüzyıl başında"
-                      "Harun Reşit’in oğlu olan 7'inci Abbasi Halifesi Memun "
-                      "(786-833) tarafından onartılmıştır. III. Ahmet (1713),"
-                      " Kel Hasan Paşa (1847) ve Adana Valisi Ziya Paşa (1789) "
-                      "tarafından da değişik zamanlarda tamirat görmüştür."
-                      " Bu üç onarımının yazıtları mevcuttur. Son onarım"
-                      " 1949 yılında yapılmıştır."
-                      "Taş Köprü 319 metre uzunluğunda ve 13 metre "
-                      "yüksekliğindedir. 21 kemerinden 14’ü ayaktadır."
-                      " Ortadaki büyük kemerde iki aslan kabartması "
-                      "görülmektedir. Dünyanın halen kullanılan en "
-                      "eski köprülerden biri olarak bilinmektedir."
-              ),
+                  "Roma İmparatoru Hadrianus tarafından yaptırılmıştır."
+                  " Yüzyıllarca Avrupa ile Asya arasında önemli bir köprü "
+                  "olmuştur. Harun Reşit (766-809) köprüyü bazı eklerle"
+                  " Adana Kalesi'ne birleştirmiştir. IX. yüzyıl başında"
+                  "Harun Reşit’in oğlu olan 7'inci Abbasi Halifesi Memun "
+                  "(786-833) tarafından onartılmıştır. III. Ahmet (1713),"
+                  " Kel Hasan Paşa (1847) ve Adana Valisi Ziya Paşa (1789) "
+                  "tarafından da değişik zamanlarda tamirat görmüştür."
+                  " Bu üç onarımının yazıtları mevcuttur. Son onarım"
+                  " 1949 yılında yapılmıştır."
+                  "Taş Köprü 319 metre uzunluğunda ve 13 metre "
+                  "yüksekliğindedir. 21 kemerinden 14’ü ayaktadır."
+                  " Ortadaki büyük kemerde iki aslan kabartması "
+                  "görülmektedir. Dünyanın halen kullanılan en "
+                  "eski köprülerden biri olarak bilinmektedir."),
               SizedBox(
                 height: 15,
               ),
               TextButton(
                   onPressed: () {
                     Get.to(() => Maps(
-                      x: x,
-                      y: y,
-                      title: title,
-                    ));
+                          x: x,
+                          y: y,
+                          title: title,
+                        ));
                   },
-                  child: buttonTextContainer(context,"HARİTADA GÖSTER")
-              ),
+                  child: buttonTextContainer(context, "HARİTADA GÖSTER")),
               SizedBox(
                 height: 15,
               ),
@@ -151,8 +150,7 @@ class _TasKopruState extends State<TasKopru>
                   onPressed: () {
                     Get.to(() => TasKopruYorum());
                   },
-                  child: buttonTextContainer(context,"YORUMLARI GÖSTER")
-              ),
+                  child: buttonTextContainer(context, "YORUMLARI GÖSTER")),
 
               //xd
               SizedBox(
@@ -162,16 +160,15 @@ class _TasKopruState extends State<TasKopru>
                   onPressed: () {
                     MapUtils.openMap(x, y);
                   },
-                  child: buttonTextContainer(context,"YOL TARİFİ")
-              ),
+                  child: buttonTextContainer(context, "YOL TARİFİ")),
               SizedBox(
                 height: 15,
               ),
               TextButton(
-                  onPressed: () {
-                    _showRatingAppDialog();
-                  },
-                  child: buttonTextContainer(context,"HARİTADA GÖSTER")
+                onPressed: () {
+                  _showRatingAppDialog();
+                },
+                child: buttonTextContainer(context, "YORUM YAP"),
               ),
             ],
           ),

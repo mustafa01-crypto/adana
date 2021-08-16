@@ -85,14 +85,14 @@ class _LoginState extends State<Login> {
                 ),
               ),
               Opacity(
-                opacity: 0.85,
+                opacity: 0.59,
                 child: Container(
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                         colors: [
-                          sol,
+                          Colors.red,
                         Colors.blue,
                         ]),
                   ),

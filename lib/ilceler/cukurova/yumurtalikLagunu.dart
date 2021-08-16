@@ -153,7 +153,7 @@ class _YumurtalikLagunuState extends State<YumurtalikLagunu>
                 onPressed: () {
                   _showRatingAppDialog();
                 },
-                child: buttonTextContainer(context,"HARİTADA GÖSTER")
+                child: buttonTextContainer(context, "YORUM YAP"),
               ),
             ],
           ),

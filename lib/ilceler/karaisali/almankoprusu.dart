@@ -163,7 +163,7 @@ class _AlmanKoprusuState extends State<AlmanKoprusu>
                   onPressed: () {
                     _showRatingAppDialog();
                   },
-                  child: buttonTextContainer(context,"HARİTADA GÖSTER")
+                  child: buttonTextContainer(context, "YORUM YAP"),
               ),
             ],
           ),

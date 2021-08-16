@@ -97,41 +97,43 @@ class _UluCamiiState extends State<UluCamii>
         child: SafeArea(
           child: Column(
             children: [
-              sliderImage(tabController!, context, links.map((String link) {
-                return new ClipRRect(
-                    child: Image.network(
-                      link,
-                      width: MediaQuery.of(context).size.width,
-                      height: 220,
-                      fit: BoxFit.fill,
-                    ));
-              }).toList(),),
+              sliderImage(
+                tabController!,
+                context,
+                links.map((String link) {
+                  return new ClipRRect(
+                      child: Image.network(
+                    link,
+                    width: MediaQuery.of(context).size.width,
+                    height: 220,
+                    fit: BoxFit.fill,
+                  ));
+                }).toList(),
+              ),
               SizedBox(
                 height: 10,
               ),
               infoText(
                   "Ulu Cami büyüklüğü ve tarihî açısından Adana'nın önemli "
-                      "eserleri arasında gösterilmektedir. Selçuklu, Memlûklu"
-                      " ve Osmanlılar Dönem'lerine ait mimarî karakterleri"
-                      " üzerinde toplayan bu eserin üç ayrı kitabesinden,"
-                      " ilk defa 1513 yıllarında Ramazan oğlu Halil Bey"
-                      " tarafından inşasına başlandığı, 1541 yılında Halil"
-                      " Beyin oğlu Piri Mehmet Paşa tarafından bitirilerek "
-                      "ibadete açıldığı anlaşılmaktadır."
-              ),
+                  "eserleri arasında gösterilmektedir. Selçuklu, Memlûklu"
+                  " ve Osmanlılar Dönem'lerine ait mimarî karakterleri"
+                  " üzerinde toplayan bu eserin üç ayrı kitabesinden,"
+                  " ilk defa 1513 yıllarında Ramazan oğlu Halil Bey"
+                  " tarafından inşasına başlandığı, 1541 yılında Halil"
+                  " Beyin oğlu Piri Mehmet Paşa tarafından bitirilerek "
+                  "ibadete açıldığı anlaşılmaktadır."),
               SizedBox(
                 height: 15,
               ),
               TextButton(
                   onPressed: () {
                     Get.to(() => Maps(
-                      x: x,
-                      y: y,
-                      title: title,
-                    ));
+                          x: x,
+                          y: y,
+                          title: title,
+                        ));
                   },
-                  child: buttonTextContainer(context,"HARİTADA GÖSTER")
-              ),
+                  child: buttonTextContainer(context, "HARİTADA GÖSTER")),
               SizedBox(
                 height: 15,
               ),
@@ -139,8 +141,7 @@ class _UluCamiiState extends State<UluCamii>
                   onPressed: () {
                     Get.to(() => UluCamiYorum());
                   },
-                  child: buttonTextContainer(context,"YORUMLARI GÖSTER")
-              ),
+                  child: buttonTextContainer(context, "YORUMLARI GÖSTER")),
 
               //xd
               SizedBox(
@@ -150,16 +151,15 @@ class _UluCamiiState extends State<UluCamii>
                   onPressed: () {
                     MapUtils.openMap(x, y);
                   },
-                  child: buttonTextContainer(context,"YOL TARİFİ")
-              ),
+                  child: buttonTextContainer(context, "YOL TARİFİ")),
               SizedBox(
                 height: 15,
               ),
               TextButton(
-                  onPressed: () {
-                    _showRatingAppDialog();
-                  },
-                  child: buttonTextContainer(context,"HARİTADA GÖSTER")
+                onPressed: () {
+                  _showRatingAppDialog();
+                },
+                child: buttonTextContainer(context, "YORUM YAP"),
               ),
             ],
           ),

@@ -97,50 +97,52 @@ class _SinemaMuzesiState extends State<SinemaMuzesi>
         child: SafeArea(
           child: Column(
             children: [
-              sliderImage(tabController!, context, links.map((String link) {
-                return new ClipRRect(
-                    child: Image.network(
-                      link,
-                      width: MediaQuery.of(context).size.width,
-                      height: 220,
-                      fit: BoxFit.fill,
-                    ));
-              }).toList(),),
+              sliderImage(
+                tabController!,
+                context,
+                links.map((String link) {
+                  return new ClipRRect(
+                      child: Image.network(
+                    link,
+                    width: MediaQuery.of(context).size.width,
+                    height: 220,
+                    fit: BoxFit.fill,
+                  ));
+                }).toList(),
+              ),
               SizedBox(
                 height: 10,
               ),
               infoText(
                   "Adana Sinema Müzesi, Türkiye'nin Adana kentinde bulunan "
-                      "bir sinema müzesidir. Müze, 23 Eylül 2011 tarihinde eski "
-                      "bir Adana evinde kurulmuş olup Seyhan ilçesine bağlı Kayalıbağ"
-                      " Mahallesi'nde Seyhan Nehri'nin batısında yer almaktadır. "
-                      "Özellikle şehre özgü yönetmenler, oyuncular ve yapımcılar"
-                      " ile ilgili eserler tanıtılmaktadır."
-                      " Müzenin zemin katı film afişleri için ayrılmıştır. Posterdeki "
-                      "en az bir isim (yönetmen, oyuncu, senarist vb.) "
-                      "Adana sakinine aittir. Birinci katta, Yılmaz Güney'in "
-                      "fotoğraflarını, film afişlerini ve eşyalarını gösteren "
-                      "bir oda bulunmaktadır. Ayrıca Yılmaz Güney, ressam Abidin "
-                      "Dino ve yazar Orhan Kemal'in heykelleri vardır. Adana'dan sinema"
-                      " ile ilgili diğer tanınmış kişilerin sergilendiği fotoğraflar"
-                      " ve eserler ise yazar Yaşar Kemal, oyuncu Şener Şen ve babası"
-                      " oyuncu Ali Şen, Muzaffer İzgü, Ali Özgentürk, Orhan Duru,"
-                      " Aytaç Arman, Bilal İnci, Merve Mahmut Hekimoğludur. Müzede"
-                      " bir de kütüphane bulunmaktadır."
-              ),
+                  "bir sinema müzesidir. Müze, 23 Eylül 2011 tarihinde eski "
+                  "bir Adana evinde kurulmuş olup Seyhan ilçesine bağlı Kayalıbağ"
+                  " Mahallesi'nde Seyhan Nehri'nin batısında yer almaktadır. "
+                  "Özellikle şehre özgü yönetmenler, oyuncular ve yapımcılar"
+                  " ile ilgili eserler tanıtılmaktadır."
+                  " Müzenin zemin katı film afişleri için ayrılmıştır. Posterdeki "
+                  "en az bir isim (yönetmen, oyuncu, senarist vb.) "
+                  "Adana sakinine aittir. Birinci katta, Yılmaz Güney'in "
+                  "fotoğraflarını, film afişlerini ve eşyalarını gösteren "
+                  "bir oda bulunmaktadır. Ayrıca Yılmaz Güney, ressam Abidin "
+                  "Dino ve yazar Orhan Kemal'in heykelleri vardır. Adana'dan sinema"
+                  " ile ilgili diğer tanınmış kişilerin sergilendiği fotoğraflar"
+                  " ve eserler ise yazar Yaşar Kemal, oyuncu Şener Şen ve babası"
+                  " oyuncu Ali Şen, Muzaffer İzgü, Ali Özgentürk, Orhan Duru,"
+                  " Aytaç Arman, Bilal İnci, Merve Mahmut Hekimoğludur. Müzede"
+                  " bir de kütüphane bulunmaktadır."),
               SizedBox(
                 height: 15,
               ),
               TextButton(
                   onPressed: () {
                     Get.to(() => Maps(
-                      x: x,
-                      y: y,
-                      title: title,
-                    ));
+                          x: x,
+                          y: y,
+                          title: title,
+                        ));
                   },
-                  child: buttonTextContainer(context,"HARİTADA GÖSTER")
-              ),
+                  child: buttonTextContainer(context, "HARİTADA GÖSTER")),
               SizedBox(
                 height: 15,
               ),
@@ -148,8 +150,7 @@ class _SinemaMuzesiState extends State<SinemaMuzesi>
                   onPressed: () {
                     Get.to(() => MuzeYorum());
                   },
-                  child: buttonTextContainer(context,"YORUMLARI GÖSTER")
-              ),
+                  child: buttonTextContainer(context, "YORUMLARI GÖSTER")),
 
               //xd
               SizedBox(
@@ -159,16 +160,15 @@ class _SinemaMuzesiState extends State<SinemaMuzesi>
                   onPressed: () {
                     MapUtils.openMap(x, y);
                   },
-                  child: buttonTextContainer(context,"YOL TARİFİ")
-              ),
+                  child: buttonTextContainer(context, "YOL TARİFİ")),
               SizedBox(
                 height: 15,
               ),
               TextButton(
-                  onPressed: () {
-                    _showRatingAppDialog();
-                  },
-                  child: buttonTextContainer(context,"HARİTADA GÖSTER")
+                onPressed: () {
+                  _showRatingAppDialog();
+                },
+                child: buttonTextContainer(context, "YORUM YAP"),
               ),
             ],
           ),

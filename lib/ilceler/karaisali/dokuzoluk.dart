@@ -17,6 +17,7 @@ late User loggedInuser;
 var now = new DateTime.now();
 var formatter = new DateFormat('dd-MM-yyyy');
 String formattedDate = formatter.format(now);
+
 class Dokuzoluk extends StatefulWidget {
   const Dokuzoluk({Key? key}) : super(key: key);
 
@@ -36,8 +37,8 @@ class _DokuzolukState extends State<Dokuzoluk>
     getCurrentUser();
     tabController = TabController(length: 6, vsync: this);
   }
-  void getCurrentUser() {
 
+  void getCurrentUser() {
     final user = auth.currentUser;
     if (user != null) {
       loggedInuser = user;
@@ -54,6 +55,7 @@ class _DokuzolukState extends State<Dokuzoluk>
     "https://www.kampusulasi.com/wp-content/uploads/2021/03/Dokuzoluk-1-1080x738.jpg",
     "https://foto.haberler.com/haber/2013/08/01/doga-harikasi-dokuzoluk-2-4895535_o.jpg",
   ];
+
   void _showRatingAppDialog() {
     final _ratingDialog = RatingDialog(
       ratingColor: Colors.amber,
@@ -95,20 +97,25 @@ class _DokuzolukState extends State<Dokuzoluk>
         child: SafeArea(
           child: Column(
             children: [
-              sliderImage(tabController!, context, links.map((String link) {
-                return new ClipRRect(
-                    child: Image.network(
-                      link,
-                      width: MediaQuery.of(context).size.width,
-                      height: 220,
-                      fit: BoxFit.fill,
-                    ));
-              }).toList(),),
+              sliderImage(
+                tabController!,
+                context,
+                links.map((String link) {
+                  return new ClipRRect(
+                      child: Image.network(
+                    link,
+                    width: MediaQuery.of(context).size.width,
+                    height: 220,
+                    fit: BoxFit.fill,
+                  ));
+                }).toList(),
+              ),
 
               SizedBox(
                 height: 10,
               ),
-              infoText("Dokuzoluk piknik alanı bir kanyonun hemen kenarında çeşitli "
+              infoText(
+                  "Dokuzoluk piknik alanı bir kanyonun hemen kenarında çeşitli "
                   "noktalardan fışkıran pınarlar, yemyeşil bitki örtüsü ve"
                   " ziyaretçilerin buz gibi suyunda serinledikleri göletlerden"
                   " oluşmaktadır. Piknik yapmak, yüzmek, balık tutmak,"
@@ -123,45 +130,42 @@ class _DokuzolukState extends State<Dokuzoluk>
               SizedBox(
                 height: 15,
               ),
-          TextButton(
-              onPressed: () {
-                Get.to(() => Maps(
-                  x: x,
-                  y: y,
-                  title: title,
-                ));
-              },
-              child: buttonTextContainer(context,"HARİTADA GÖSTER")
-          ),
-          SizedBox(
-            height: 15,
-          ),
-          TextButton(
-              onPressed: () {
-                Get.to(() => DokuzolukYorum());
-              },
-              child: buttonTextContainer(context,"YORUMLARI GÖSTER")
-          ),
+              TextButton(
+                  onPressed: () {
+                    Get.to(() => Maps(
+                          x: x,
+                          y: y,
+                          title: title,
+                        ));
+                  },
+                  child: buttonTextContainer(context, "HARİTADA GÖSTER")),
+              SizedBox(
+                height: 15,
+              ),
+              TextButton(
+                  onPressed: () {
+                    Get.to(() => DokuzolukYorum());
+                  },
+                  child: buttonTextContainer(context, "YORUMLARI GÖSTER")),
 
-          //xd
-          SizedBox(
-            height: 15,
-          ),
-          TextButton(
-              onPressed: () {
-                MapUtils.openMap(x, y);
-              },
-              child: buttonTextContainer(context,"YOL TARİFİ")
-          ),
-          SizedBox(
-            height: 15,
-          ),
-          TextButton(
-              onPressed: () {
-                _showRatingAppDialog();
-              },
-              child: buttonTextContainer(context,"HARİTADA GÖSTER")
-          ),
+              //xd
+              SizedBox(
+                height: 15,
+              ),
+              TextButton(
+                  onPressed: () {
+                    MapUtils.openMap(x, y);
+                  },
+                  child: buttonTextContainer(context, "YOL TARİFİ")),
+              SizedBox(
+                height: 15,
+              ),
+              TextButton(
+                onPressed: () {
+                  _showRatingAppDialog();
+                },
+                child: buttonTextContainer(context, "YORUM YAP"),
+              ),
             ],
           ),
         ),

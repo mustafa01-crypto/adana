@@ -18,7 +18,6 @@ var now = new DateTime.now();
 var formatter = new DateFormat('dd-MM-yyyy');
 String formattedDate = formatter.format(now);
 
-
 class AtaturkEvi extends StatefulWidget {
   const AtaturkEvi({Key? key}) : super(key: key);
 
@@ -98,19 +97,24 @@ class _AtaturkEviState extends State<AtaturkEvi>
         child: SafeArea(
           child: Column(
             children: [
-              sliderImage(tabController!, context, links.map((String link) {
-                return new ClipRRect(
-                    child: Image.network(
-                      link,
-                      width: MediaQuery.of(context).size.width,
-                      height: 220,
-                      fit: BoxFit.fill,
-                    ));
-              }).toList(),),
+              sliderImage(
+                tabController!,
+                context,
+                links.map((String link) {
+                  return new ClipRRect(
+                      child: Image.network(
+                    link,
+                    width: MediaQuery.of(context).size.width,
+                    height: 220,
+                    fit: BoxFit.fill,
+                  ));
+                }).toList(),
+              ),
               SizedBox(
                 height: 10,
               ),
-              infoText("Adana Atatürk Evi Müzesi, Adana Seyhan Caddesi üzerinde bulunan müze."
+              infoText(
+                  "Adana Atatürk Evi Müzesi, Adana Seyhan Caddesi üzerinde bulunan müze."
                   " 15 Mart 1923 tarihinde Mustafa Kemal Atatürk ve eşi Adana'yı ziyaret "
                   "ettiğinde bu binada konaklamıştır. Bina daha önceleri Ramazanoğulları"
                   " ailesine mensup Suphi Paşa'ya aitti. Bina sonraları Atatürk Bilim "
@@ -126,13 +130,12 @@ class _AtaturkEviState extends State<AtaturkEvi>
               TextButton(
                   onPressed: () {
                     Get.to(() => Maps(
-                      x: x,
-                      y: y,
-                      title: title,
-                    ));
+                          x: x,
+                          y: y,
+                          title: title,
+                        ));
                   },
-                  child: buttonTextContainer(context,"HARİTADA GÖSTER")
-              ),
+                  child: buttonTextContainer(context, "HARİTADA GÖSTER")),
               SizedBox(
                 height: 15,
               ),
@@ -140,8 +143,7 @@ class _AtaturkEviState extends State<AtaturkEvi>
                   onPressed: () {
                     Get.to(() => AtaturkYorum());
                   },
-                  child: buttonTextContainer(context,"YORUMLARI GÖSTER")
-              ),
+                  child: buttonTextContainer(context, "YORUMLARI GÖSTER")),
 
               //xd
               SizedBox(
@@ -151,16 +153,15 @@ class _AtaturkEviState extends State<AtaturkEvi>
                   onPressed: () {
                     MapUtils.openMap(x, y);
                   },
-                  child: buttonTextContainer(context,"YOL TARİFİ")
-              ),
+                  child: buttonTextContainer(context, "YOL TARİFİ")),
               SizedBox(
                 height: 15,
               ),
               TextButton(
-                  onPressed: () {
-                    _showRatingAppDialog();
-                  },
-                  child: buttonTextContainer(context,"HARİTADA GÖSTER")
+                onPressed: () {
+                  _showRatingAppDialog();
+                },
+                child: buttonTextContainer(context, "YORUM YAP"),
               ),
             ],
           ),

@@ -25,9 +25,8 @@ class CobanDede extends StatefulWidget {
   _CobanDedeState createState() => _CobanDedeState();
 }
 
-class _CobanDedeState extends State<CobanDede> with SingleTickerProviderStateMixin {
-
-
+class _CobanDedeState extends State<CobanDede>
+    with SingleTickerProviderStateMixin {
   double x = 37.062775;
   double y = 35.301432;
   String title = "ÇOBAN DEDE";
@@ -49,13 +48,14 @@ class _CobanDedeState extends State<CobanDede> with SingleTickerProviderStateMix
     "https://seyyahdefteri.com/wp-content/uploads/2019/05/%C3%87oban-Dede-T%C3%BCrbesi-ve-Park%C4%B1-2.jpg",
     "https://www.adanadacocukolmak.com/wp-content/uploads/2016/10/%C3%A7oban-dede-3-500x300.jpg",
   ];
-  void getCurrentUser() {
 
+  void getCurrentUser() {
     final user = auth.currentUser;
     if (user != null) {
       loggedInuser = user;
     }
   }
+
   void _showRatingAppDialog() {
     final _ratingDialog = RatingDialog(
       ratingColor: Colors.amber,
@@ -97,71 +97,73 @@ class _CobanDedeState extends State<CobanDede> with SingleTickerProviderStateMix
         child: SafeArea(
           child: Column(
             children: [
-              sliderImage(tabController!, context, links.map((String link) {
-                return new ClipRRect(
-                    child: Image.network(
-                      link,
-                      width: MediaQuery.of(context).size.width,
-                      height: 220,
-                      fit: BoxFit.fill,
-                    ));
-              }).toList(),),
+              sliderImage(
+                tabController!,
+                context,
+                links.map((String link) {
+                  return new ClipRRect(
+                      child: Image.network(
+                    link,
+                    width: MediaQuery.of(context).size.width,
+                    height: 220,
+                    fit: BoxFit.fill,
+                  ));
+                }).toList(),
+              ),
 
               SizedBox(
                 height: 10,
               ),
-              infoText(
-                  "Çoban Dede Türbesinin ve Parkın bulunduğu alanın bir "
-                      "kısmı 2015 yılında kuş cenneti ve mini hayvanat bahçesine "
-                      "dönüştürüldü. Hayvanat bahçesinde memeliler, su kuşları,"
-                      " yırtıcı kuşlar, süs tavukları gibi hayvanlar yer almaktadır. "
-                      "Küçük bir göletin etrafında yer alan hayvanların dışında "
-                      "hayvanların için veterinerler ve poliklinikte bulunmaktadır. "
-                      "Doğal yaşamda bir şekilde yaralanmış ve hasta olmuş hayvanlar "
-                      "burada iyileştirilerek rehabilite edilmekte ve gelen misafirlerle tanıştırılmaktadır."
-              ),
+              infoText("Çoban Dede Türbesinin ve Parkın bulunduğu alanın bir "
+                  "kısmı 2015 yılında kuş cenneti ve mini hayvanat bahçesine "
+                  "dönüştürüldü. Hayvanat bahçesinde memeliler, su kuşları,"
+                  " yırtıcı kuşlar, süs tavukları gibi hayvanlar yer almaktadır. "
+                  "Küçük bir göletin etrafında yer alan hayvanların dışında "
+                  "hayvanların için veterinerler ve poliklinikte bulunmaktadır. "
+                  "Doğal yaşamda bir şekilde yaralanmış ve hasta olmuş hayvanlar "
+                  "burada iyileştirilerek rehabilite edilmekte ve gelen misafirlerle tanıştırılmaktadır."),
               SizedBox(
                 height: 15,
               ),
-          TextButton(
-              onPressed: () {
-                Get.to(() => Maps(
-                  x: x,
-                  y: y,
-                  title: title,
-                ));
-              },
-              child: buttonTextContainer(context,"HARİTADA GÖSTER")
-          ),
-          SizedBox(
-            height: 15,
-          ),
-          TextButton(
-              onPressed: () {
-                Get.to(() => CobanDedeYorum());
-              },
-              child: buttonTextContainer(context,"YORUMLARI GÖSTER")
-          ),
+              TextButton(
+                  onPressed: () {
+                    Get.to(() => Maps(
+                          x: x,
+                          y: y,
+                          title: title,
+                        ));
+                  },
+                  child: buttonTextContainer(context, "HARİTADA GÖSTER")),
+              SizedBox(
+                height: 15,
+              ),
+              TextButton(
+                  onPressed: () {
+                    Get.to(() => CobanDedeYorum());
+                  },
+                  child: buttonTextContainer(context, "YORUMLARI GÖSTER")),
 
-          //xd
-          SizedBox(
-            height: 15,
-          ),
-          TextButton(
-              onPressed: () {
-                MapUtils.openMap(x, y);
-              },
-              child: buttonTextContainer(context,"YOL TARİFİ")
-          ),
-          SizedBox(
-            height: 15,
-          ),
-          TextButton(
-              onPressed: () {
-                _showRatingAppDialog();
-              },
-              child: buttonTextContainer(context,"HARİTADA GÖSTER")
-          ),
+              //xd
+              SizedBox(
+                height: 15,
+              ),
+              TextButton(
+                  onPressed: () {
+                    MapUtils.openMap(x, y);
+                  },
+                  child: buttonTextContainer(context, "YOL TARİFİ")),
+              SizedBox(
+                height: 15,
+              ),
+              TextButton(
+                onPressed: () {
+                  _showRatingAppDialog();
+                },
+                child: buttonTextContainer(
+                  context,
+                  "YORUM YAP",
+                ),
+              ),
             ],
           ),
         ),

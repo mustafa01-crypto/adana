@@ -97,15 +97,19 @@ class _YerKopruState extends State<YerKopru>
         child: SafeArea(
           child: Column(
             children: [
-              sliderImage(tabController!, context, links.map((String link) {
-                return new ClipRRect(
-                    child: Image.network(
-                      link,
-                      width: MediaQuery.of(context).size.width,
-                      height: 220,
-                      fit: BoxFit.fill,
-                    ));
-              }).toList(),),
+              sliderImage(
+                tabController!,
+                context,
+                links.map((String link) {
+                  return new ClipRRect(
+                      child: Image.network(
+                    link,
+                    width: MediaQuery.of(context).size.width,
+                    height: 220,
+                    fit: BoxFit.fill,
+                  ));
+                }).toList(),
+              ),
               SizedBox(
                 height: 10,
               ),
@@ -120,13 +124,12 @@ class _YerKopruState extends State<YerKopru>
               TextButton(
                   onPressed: () {
                     Get.to(() => Maps(
-                      x: x,
-                      y: y,
-                      title: title,
-                    ));
+                          x: x,
+                          y: y,
+                          title: title,
+                        ));
                   },
-                  child: buttonTextContainer(context,"HARİTADA GÖSTER")
-              ),
+                  child: buttonTextContainer(context, "HARİTADA GÖSTER")),
               SizedBox(
                 height: 15,
               ),
@@ -134,8 +137,7 @@ class _YerKopruState extends State<YerKopru>
                   onPressed: () {
                     Get.to(() => YerKopruYorum());
                   },
-                  child: buttonTextContainer(context,"YORUMLARI GÖSTER")
-              ),
+                  child: buttonTextContainer(context, "YORUMLARI GÖSTER")),
 
               //xd
               SizedBox(
@@ -145,16 +147,15 @@ class _YerKopruState extends State<YerKopru>
                   onPressed: () {
                     MapUtils.openMap(x, y);
                   },
-                  child: buttonTextContainer(context,"YOL TARİFİ")
-              ),
+                  child: buttonTextContainer(context, "YOL TARİFİ")),
               SizedBox(
                 height: 15,
               ),
               TextButton(
-                  onPressed: () {
-                    _showRatingAppDialog();
-                  },
-                  child: buttonTextContainer(context,"HARİTADA GÖSTER")
+                onPressed: () {
+                  _showRatingAppDialog();
+                },
+                child: buttonTextContainer(context, "YORUM YAP"),
               ),
             ],
           ),

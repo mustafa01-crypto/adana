@@ -17,12 +17,14 @@ class _RegisterState extends State<Register> {
   TextEditingController t1 = TextEditingController();
   TextEditingController t2 = TextEditingController();
   TextEditingController t3 = TextEditingController();
+  TextEditingController t4 = TextEditingController();
 
   final _formKey = GlobalKey<FormState>();
 
   static final _auth = FirebaseAuth.instance;
   static final _firestore = FirebaseFirestore.instance;
   bool _passwordVisible = true;
+  bool _passwordVisible2 = true;
   late BuildContext context;
 
   TextStyle hint = TextStyle(
@@ -54,6 +56,7 @@ class _RegisterState extends State<Register> {
   void initState() {
     super.initState();
     _passwordVisible = false;
+    _passwordVisible2 = false;
   }
 
   @override
@@ -79,7 +82,7 @@ class _RegisterState extends State<Register> {
                 ),
               ),
               Opacity(
-                opacity: 0.85,
+                opacity: 0.59,
                 child: Container(
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
@@ -97,7 +100,7 @@ class _RegisterState extends State<Register> {
                 children: [
 
                   SizedBox(
-                    height: width*1/2,
+                    height: width*1/2 -50,
                   ),
                   Text(
                     'KAYIT EKRANI',
@@ -247,6 +250,62 @@ class _RegisterState extends State<Register> {
                         return null;
                       },
                       controller: t3,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20),
+                    child: TextFormField(
+                      style: TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.w300),
+                      obscureText: !_passwordVisible2,
+                      decoration: InputDecoration(
+                        hintText: "Parola Yeniden",
+                        hintStyle: TextStyle(color: Colors.white),
+                        labelText: "Parola",
+                        labelStyle: TextStyle(color: Colors.white),
+                        fillColor: Colors.white,
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(25.0),
+                          borderSide: BorderSide(
+                            color: Colors.white,
+                            style: BorderStyle.solid,
+                            width: 1.5,
+                          ),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(25.0),
+                          borderSide: BorderSide(
+                            color: Colors.white,
+                            style: BorderStyle.solid,
+                            width: 1.5,
+                          ),
+                        ),
+                        prefixIcon: Icon(
+                          Icons.lock_outline,
+                          color: Colors.grey.shade300,
+                        ),
+                        suffixIcon: IconButton(
+                          icon: Icon(_passwordVisible2
+                              ? Icons.visibility
+                              : Icons.visibility_off),
+                          color: Colors.grey.shade300,
+                          onPressed: () {
+                            setState(() {
+                              _passwordVisible2 = !_passwordVisible2;
+                            });
+                          },
+                        ),
+                      ),
+                      validator: (deger) {
+                        if (t3.text != deger) {
+                          return "Parolanız eşleşmiyor";
+                        }
+                        return null;
+                      },
+                      controller: t4,
                     ),
                   ),
                   SizedBox(

@@ -96,15 +96,19 @@ class _KanyonState extends State<Kanyon> with SingleTickerProviderStateMixin {
         child: SafeArea(
           child: Column(
             children: [
-              sliderImage(tabController!, context, links.map((String link) {
-                return new ClipRRect(
-                    child: Image.network(
-                      link,
-                      width: MediaQuery.of(context).size.width,
-                      height: 220,
-                      fit: BoxFit.fill,
-                    ));
-              }).toList(),),
+              sliderImage(
+                tabController!,
+                context,
+                links.map((String link) {
+                  return new ClipRRect(
+                      child: Image.network(
+                    link,
+                    width: MediaQuery.of(context).size.width,
+                    height: 220,
+                    fit: BoxFit.fill,
+                  ));
+                }).toList(),
+              ),
               SizedBox(
                 height: 10,
               ),
@@ -128,45 +132,45 @@ class _KanyonState extends State<Kanyon> with SingleTickerProviderStateMixin {
               SizedBox(
                 height: 15,
               ),
-          TextButton(
-              onPressed: () {
-                Get.to(() => Maps(
-                  x: x,
-                  y: y,
-                  title: title,
-                ));
-              },
-              child: buttonTextContainer(context,"HARİTADA GÖSTER")
-          ),
-          SizedBox(
-            height: 15,
-          ),
-          TextButton(
-              onPressed: () {
-                Get.to(() => KanyonYorum());
-              },
-              child: buttonTextContainer(context,"YORUMLARI GÖSTER")
-          ),
+              TextButton(
+                  onPressed: () {
+                    Get.to(() => Maps(
+                          x: x,
+                          y: y,
+                          title: title,
+                        ));
+                  },
+                  child: buttonTextContainer(context, "HARİTADA GÖSTER")),
+              SizedBox(
+                height: 15,
+              ),
+              TextButton(
+                  onPressed: () {
+                    Get.to(() => KanyonYorum());
+                  },
+                  child: buttonTextContainer(context, "YORUMLARI GÖSTER")),
 
-          //xd
-          SizedBox(
-            height: 15,
-          ),
-          TextButton(
-              onPressed: () {
-                MapUtils.openMap(x, y);
-              },
-              child: buttonTextContainer(context,"YOL TARİFİ")
-          ),
-          SizedBox(
-            height: 15,
-          ),
-          TextButton(
-              onPressed: () {
-                _showRatingAppDialog();
-              },
-              child: buttonTextContainer(context,"HARİTADA GÖSTER")
-          ),
+              //xd
+              SizedBox(
+                height: 15,
+              ),
+              TextButton(
+                  onPressed: () {
+                    MapUtils.openMap(x, y);
+                  },
+                  child: buttonTextContainer(context, "YOL TARİFİ")),
+              SizedBox(
+                height: 15,
+              ),
+              TextButton(
+                onPressed: () {
+                  _showRatingAppDialog();
+                },
+                child: buttonTextContainer(
+                  context,
+                  "YORUM YAP",
+                ),
+              ),
             ],
           ),
         ),

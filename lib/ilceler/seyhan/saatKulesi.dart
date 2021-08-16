@@ -73,7 +73,7 @@ class _SaatKulesiState extends State<SaatKulesi>
             .collection("SaatKulesiYorum")
             .doc(loggedInuser.email)
             .set({
-          "zaman" : formattedDate.toString(),
+          "zaman": formattedDate.toString(),
           'email': loggedInuser.email.toString(),
           'icerik': response.comment.toString(),
           'puan': response.rating.toDouble()
@@ -97,19 +97,24 @@ class _SaatKulesiState extends State<SaatKulesi>
         child: SafeArea(
           child: Column(
             children: [
-              sliderImage(tabController!, context, links.map((String link) {
-                return new ClipRRect(
-                    child: Image.network(
-                      link,
-                      width: MediaQuery.of(context).size.width,
-                      height: 220,
-                      fit: BoxFit.fill,
-                    ));
-              }).toList(),),
+              sliderImage(
+                tabController!,
+                context,
+                links.map((String link) {
+                  return new ClipRRect(
+                      child: Image.network(
+                    link,
+                    width: MediaQuery.of(context).size.width,
+                    height: 220,
+                    fit: BoxFit.fill,
+                  ));
+                }).toList(),
+              ),
               SizedBox(
                 height: 10,
               ),
-              infoText("Kule kesme taştan yapılmıştır. Uzunluğu 32 metre olan kule "
+              infoText(
+                  "Kule kesme taştan yapılmıştır. Uzunluğu 32 metre olan kule "
                   "kare prizma şeklindedir ve kulenin duvarları tuğla ile"
                   " inşa edilmiştir. Temel derinliğinin 35 metre olduğu "
                   "söylenir. Saat kulesi dikdörtgen şeklinde taş tuğlalardan "
@@ -126,13 +131,12 @@ class _SaatKulesiState extends State<SaatKulesi>
               TextButton(
                   onPressed: () {
                     Get.to(() => Maps(
-                      x: x,
-                      y: y,
-                      title: title,
-                    ));
+                          x: x,
+                          y: y,
+                          title: title,
+                        ));
                   },
-                  child: buttonTextContainer(context,"HARİTADA GÖSTER")
-              ),
+                  child: buttonTextContainer(context, "HARİTADA GÖSTER")),
               SizedBox(
                 height: 15,
               ),
@@ -140,8 +144,7 @@ class _SaatKulesiState extends State<SaatKulesi>
                   onPressed: () {
                     Get.to(() => SaatKulesiYorum());
                   },
-                  child: buttonTextContainer(context,"YORUMLARI GÖSTER")
-              ),
+                  child: buttonTextContainer(context, "YORUMLARI GÖSTER")),
 
               //xd
               SizedBox(
@@ -151,16 +154,15 @@ class _SaatKulesiState extends State<SaatKulesi>
                   onPressed: () {
                     MapUtils.openMap(x, y);
                   },
-                  child: buttonTextContainer(context,"YOL TARİFİ")
-              ),
+                  child: buttonTextContainer(context, "YOL TARİFİ")),
               SizedBox(
                 height: 15,
               ),
               TextButton(
-                  onPressed: () {
-                    _showRatingAppDialog();
-                  },
-                  child: buttonTextContainer(context,"HARİTADA GÖSTER")
+                onPressed: () {
+                  _showRatingAppDialog();
+                },
+                child: buttonTextContainer(context, "YORUM YAP"),
               ),
             ],
           ),

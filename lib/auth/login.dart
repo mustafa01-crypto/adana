@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:adana/auth/register.dart';
+import 'package:adana/auth/updatePassword.dart';
 import 'package:adana/components/showDialog.dart';
 import 'package:adana/home.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -277,7 +278,7 @@ class _LoginState extends State<Login> {
                       ),
                     ),
                     SizedBox(
-                      height: 20,
+                      height: 10,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -307,6 +308,23 @@ class _LoginState extends State<Login> {
                         ),
                       ],
                     ),
+                    TextButton(
+                      onPressed: () {
+                        Get.to(() => ForgotPassword());
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.only(right: 5),
+                        child: Text(
+                          "Şifremi Unuttum",
+                          style: TextStyle(
+                              decoration: TextDecoration.underline,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w600,
+                              fontSize: 18),
+                        ),
+                      ),
+                    ),
+
                   ],
                 ),
               ],

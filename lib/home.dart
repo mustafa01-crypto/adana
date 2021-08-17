@@ -8,6 +8,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:video_player/video_player.dart';
@@ -29,6 +30,8 @@ class _HomeState extends State<Home> {
   File? yuklenecekDosya;
   FirebaseAuth auth = FirebaseAuth.instance;
   String? indirmeBaglantisi;
+
+  bool getImage = false;
 
   void getCurrentUser() {
       final user = auth.currentUser;
@@ -64,6 +67,7 @@ class _HomeState extends State<Home> {
 
     setState(() {
       indirmeBaglantisi = baglanti;
+      getImage = true;
     });
   }
   kameradanYukle() async {
@@ -86,134 +90,161 @@ class _HomeState extends State<Home> {
       indirmeBaglantisi = url;
     });
   }
+  DateTime timeDifference = DateTime.now();
+
+  Future<bool> exitApp() async {
+    FirebaseAuth.instance.signOut().then((_) {
+      Get.to(() => Login());
+    });
+    return false;
+  }
 
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     //final height = MediaQuery.of(context).size.height;
 
-    return SafeArea(
-      child: Scaffold(
-          appBar: AppBar(
-            centerTitle: true,
-            title: Text(
-              "DİYAR DİYAR ADANA",style: xdAppBarBaslik,
-            ),
-            flexibleSpace: Container(
-              decoration: BoxDecoration(
-                gradient: xdGradient,
+    return WillPopScope(
+      onWillPop: () async {
+        final difference = DateTime.now().difference(timeDifference);
+        final isExitWarning = difference >= Duration(seconds:2);
+
+        timeDifference = DateTime.now();
+        if(isExitWarning)
+        {
+          final message = "Çıkış Yapmak için tekrar tıklayın" ;
+          Fluttertoast.showToast(msg: message);
+          return false;
+        }
+        else{
+          exitApp();
+          return true;
+        }
+      },
+
+      child: SafeArea(
+        child: Scaffold(
+            appBar: AppBar(
+              centerTitle: true,
+              title: Text(
+                "DİYAR DİYAR ADANA",style: xdAppBarBaslik,
               ),
-            ),
-
-          ),
-          drawer: Drawer(
-            child: Container(
-              decoration: BoxDecoration(
-                gradient: deneme,
-              ),
-              child: ListView(
-                // Important: Remove any padding from the ListView.
-                padding: EdgeInsets.zero,
-                children: <Widget>[
-                  DrawerHeader(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        InkWell(
-                          onTap: () {
-                            kameradanYukle();
-                          },
-                          child: Center(
-                            child: ClipOval(
-                                child: indirmeBaglantisi == null
-                                    ? Image.asset(
-                                  "assets/profile.png",
-                                  width: width * 3 / 10,
-                                  height: width * 2 / 7,
-                                  fit: BoxFit.cover,
-                                )
-                                    : Image.network(
-                                  indirmeBaglantisi!,
-                                  width: width * 3 / 10,
-                                  height: width * 2 / 7,
-                                  fit: BoxFit.cover,
-                                )),
-                          ),
-                        ),
-
-                      ],
-                    )
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(loggedInuser.email.toString(),style: cityName,),
-                    ],
-                  ),
-                  Divider(color: Colors.white,thickness: 2,),
-
-                  ListTile(
-                    title: Text('KARAİSALI', style: xdAppBarBaslik),
-                    onTap: () {
-                      Get.to(() => KaraisaliMesireList());
-                    },
-                  ),
-                  ListTile(
-                    title: Text('SEYHAN', style: xdAppBarBaslik),
-                    onTap: () {
-
-                      Get.to(() => SeyhanList());
-                    },
-                  ),
-                 ListTile(
-                    title: Text('ÇUKUROVA', style: xdAppBarBaslik),
-                    onTap: () {
-                      Get.to(() => CukurovaList());
-                    },
-                  ),
-
-                  ListTile(
-                    title: Text(
-                      'CEYHAN',
-                      style: xdAppBarBaslik,
-                    ),
-                    onTap: () {
-                      Get.to(() => CeyhanList());
-                    },
-                  ),
-
-                  Divider(color: Colors.white,thickness: 2,),
-
-                  ListTile(
-                    leading: Icon(
-
-                      Icons.exit_to_app,color: sinir,size: 30,
-                    ) ,
-                    title: Text('ÇIKIŞ YAP', style: xdAppBarBaslik),
-                    onTap: () {
-                      FirebaseAuth.instance.signOut().then((deger) {
-                        Get.to(() => Login());
-                      });
-                    },
-                  ),
-                ],
-              ),
-            ),
-          ),
-          body: Stack(
-            children: [
-              SizedBox.expand(
-                child: FittedBox(
-                  fit: BoxFit.cover,
-                  child: SizedBox(
-                    width: _controller!.value.size.width,
-                    height: _controller!.value.size.height,
-                    child: VideoPlayer(_controller!),
-                  ),
+              flexibleSpace: Container(
+                decoration: BoxDecoration(
+                  gradient: xdGradient,
                 ),
-              )
-            ],
-          )),
+              ),
+
+            ),
+            drawer: Drawer(
+              child: Container(
+                decoration: BoxDecoration(
+                  gradient: deneme,
+                ),
+                child: ListView(
+                  // Important: Remove any padding from the ListView.
+                  padding: EdgeInsets.zero,
+                  children: <Widget>[
+                    DrawerHeader(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          InkWell(
+                            onTap: () {
+                              kameradanYukle();
+                            },
+                            child: Center(
+                              child: ClipOval(
+                                  child: indirmeBaglantisi == null
+                                      ? Image.asset(
+                                    "assets/profile.png",
+                                    width: width * 3 / 10,
+                                    height: width * 2 / 7,
+                                    fit: BoxFit.cover,
+                                  )
+                                      : Image.network(
+                                    indirmeBaglantisi!,
+                                    width: width * 3 / 10,
+                                    height: width * 2 / 7,
+                                    fit: BoxFit.cover,
+                                  )),
+                            ),
+                          ),
+
+                        ],
+                      )
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(loggedInuser.email.toString(),style: cityName,),
+                      ],
+                    ),
+                    Divider(color: Colors.white,thickness: 2,),
+
+                    ListTile(
+                      title: Text('KARAİSALI', style: xdAppBarBaslik),
+                      onTap: () {
+                        Get.to(() => KaraisaliMesireList());
+                      },
+                    ),
+                    ListTile(
+                      title: Text('SEYHAN', style: xdAppBarBaslik),
+                      onTap: () {
+
+                        Get.to(() => SeyhanList());
+                      },
+                    ),
+                   ListTile(
+                      title: Text('ÇUKUROVA', style: xdAppBarBaslik),
+                      onTap: () {
+                        Get.to(() => CukurovaList());
+                      },
+                    ),
+
+                    ListTile(
+                      title: Text(
+                        'CEYHAN',
+                        style: xdAppBarBaslik,
+                      ),
+                      onTap: () {
+                        Get.to(() => CeyhanList());
+                      },
+                    ),
+
+                    Divider(color: Colors.white,thickness: 2,),
+
+                    ListTile(
+                      leading: Icon(
+
+                        Icons.exit_to_app,color: sinir,size: 30,
+                      ) ,
+                      title: Text('ÇIKIŞ YAP', style: xdAppBarBaslik),
+                      onTap: () {
+                        FirebaseAuth.instance.signOut().then((deger) {
+                          Get.to(() => Login());
+                        });
+                      },
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            body: Stack(
+              children: [
+                SizedBox.expand(
+                  child: FittedBox(
+                    fit: BoxFit.cover,
+                    child: SizedBox(
+                      width: _controller!.value.size.width,
+                      height: _controller!.value.size.height,
+                      child: VideoPlayer(_controller!),
+                    ),
+                  ),
+                )
+              ],
+            )),
+      ),
     );
   }
   @override

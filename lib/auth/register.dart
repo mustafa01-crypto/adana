@@ -1,9 +1,9 @@
+import 'package:adana/auth/verify.dart';
 import 'package:adana/components/showDialog.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../home.dart';
 import 'login.dart';
 
 class Register extends StatefulWidget {
@@ -42,7 +42,7 @@ class _RegisterState extends State<Register> {
             .collection('users')
             .doc(signedInUser.email)
             .set({'name': name, 'email': email, 'parola': password});
-        Get.to(() => Home());
+        Get.to(() => VerifyScreen());
         return true;
       }
       return false;
@@ -319,8 +319,8 @@ class _RegisterState extends State<Register> {
                           signUp(t1.text, t2.text, t3.text);
 
                           showMaterialDialog(
-                            title: "Kayıt Başarılı",
-                            content: "Başarılı bir şekilde kayıt oldunuz",
+                            title: "E Posta Doğrulama",
+                            content: "E postanıza gelen doğrulama kodunu giriniz",
                             context: context,
                           );
                         }

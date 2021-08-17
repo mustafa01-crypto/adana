@@ -92,6 +92,12 @@ class _HomeState extends State<Home> {
   }
   DateTime timeDifference = DateTime.now();
 
+  @override
+  void dispose() {
+    super.dispose();
+    _controller!.dispose();
+  }
+
   Future<bool> exitApp() async {
     FirebaseAuth.instance.signOut().then((_) {
       Get.to(() => Login());
@@ -247,9 +253,5 @@ class _HomeState extends State<Home> {
       ),
     );
   }
-  @override
-  void dispose() {
-    super.dispose();
-    _controller!.dispose();
-  }
+
 }

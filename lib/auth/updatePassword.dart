@@ -135,10 +135,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
 
                           );
 
-                          Future.delayed(Duration(seconds: 5), () {
                             Get.to(() => Login());
-                          });
-
 
                         }
                       },

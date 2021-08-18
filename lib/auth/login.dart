@@ -115,7 +115,6 @@ class _LoginState extends State<Login> {
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
                           colors: [
-
                             Colors.black26,
                             Colors.black54,
                             Colors.black,
@@ -145,6 +144,7 @@ class _LoginState extends State<Login> {
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 20),
                       child: TextFormField(
+                        keyboardType: TextInputType.emailAddress,
                         style: TextStyle(
                             color: Colors.white, fontWeight: FontWeight.w300),
                         decoration: InputDecoration(
@@ -177,14 +177,11 @@ class _LoginState extends State<Login> {
                         ),
                         autovalidateMode: AutovalidateMode.onUserInteraction,
                         validator: (val) {
-
                           if (!GetUtils.isEmail(val!))
                             return "Geçersiz email adresi";
                           else
                             return null;
-
                         },
-
                         controller: t1,
                       ),
                     ),
@@ -254,8 +251,6 @@ class _LoginState extends State<Login> {
                         onPressed: () {
                           if (_formKey.currentState!.validate()) {
                             girisYap();
-
-
                           }
                         },
                         child: Container(

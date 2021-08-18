@@ -30,6 +30,7 @@ class _RegisterState extends State<Register> {
     _passwordVisible = false;
     _passwordVisible2 = false;
   }
+
   DateTime timeDifference = DateTime.now();
 
   @override
@@ -38,11 +39,10 @@ class _RegisterState extends State<Register> {
     return WillPopScope(
       onWillPop: () async {
         final difference = DateTime.now().difference(timeDifference);
-        final isExitWarning = difference >= Duration(seconds:2);
+        final isExitWarning = difference >= Duration(seconds: 2);
 
         timeDifference = DateTime.now();
-        if(isExitWarning)
-        {
+        if (isExitWarning) {
           final message = "Çıkış Yapmak için artarda 2 kez tıklayın";
           Get.snackbar(
             "Bilgi",
@@ -51,8 +51,7 @@ class _RegisterState extends State<Register> {
             snackPosition: SnackPosition.BOTTOM,
           );
           return false;
-        }
-        else{
+        } else {
           return true;
         }
       },
@@ -70,7 +69,7 @@ class _RegisterState extends State<Register> {
                     image: DecorationImage(
                       fit: BoxFit.cover,
                       image: NetworkImage(
-                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8oVAQa4WUS0NKXAM01h-Yxr7O9Pdnm605WQ1FwmRcAEpR7c5mY0VFiQwJPYYuTFe9lHs&usqp=CAU',
+                        'https://wallpaperaccess.com/full/459222.jpg',
                       ),
                     ),
                   ),
@@ -91,11 +90,10 @@ class _RegisterState extends State<Register> {
                   ),
                 ),
                 Column(
-                   mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-
                     SizedBox(
-                      height: width*1/2 -50,
+                      height: width * 1 / 2 - 50,
                     ),
                     Text(
                       'KAYIT EKRANI',
@@ -151,6 +149,7 @@ class _RegisterState extends State<Register> {
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 20),
                       child: TextFormField(
+                        keyboardType: TextInputType.emailAddress,
                         style: TextStyle(
                             color: Colors.white, fontWeight: FontWeight.w300),
                         decoration: InputDecoration(
@@ -310,14 +309,17 @@ class _RegisterState extends State<Register> {
                       child: TextButton(
                         onPressed: () {
                           if (_formKey.currentState!.validate()) {
-
-                            store
-                                .collection('users')
-                                .doc(t2.text)
-                                .set({'name': t1.text, 'email': t2.text, 'parola': t3.text});
-                            _auth.createUserWithEmailAndPassword(email: t2.text, password: t3.text).then((value) =>
-                                Get.to(() => VerifyScreen()),
-                            );
+                            store.collection('users').doc(t2.text).set({
+                              'name': t1.text,
+                              'email': t2.text,
+                              'parola': t3.text
+                            });
+                            _auth
+                                .createUserWithEmailAndPassword(
+                                    email: t2.text, password: t3.text)
+                                .then(
+                                  (value) => Get.to(() => VerifyScreen()),
+                                );
                           }
                         },
                         child: Container(
@@ -388,5 +390,4 @@ class _RegisterState extends State<Register> {
       ),
     );
   }
-
 }

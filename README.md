@@ -1,6 +1,6 @@
 # adana
 
-![caption](https://github.com/mustafa01-crypto/adana/blob/master/assets/WhatsApp%20Video%202021-08-18%20at%2021.13.57.mp4)
+![caption](https://github.com/mustafa01-crypto/adana/blob/master/assets/WhatsApp%20Video%202021-08-18%20at%2021.13.57.mp4?raw=true)
 
 Uygulamadan görseller.
 ##Giriş Yap

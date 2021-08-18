@@ -1,4 +1,5 @@
 # adana
+https://user-images.githubusercontent.com/69385336/129952247-18f0b2bb-0892-4983-b524-35f4a94b5b74.mp4
 
 ![caption](https://github.com/mustafa01-crypto/adana/blob/master/assets/WhatsApp%20Video%202021-08-18%20at%2021.13.57.mp4?raw=true)
 
@@ -19,6 +20,6 @@ Uygulamadan görseller.
 
 Bu uygulama adana şehrinde olan gezilmesi görülmesi gereken yerleri sizlerin kolaylıkla bulması amacıyla yapılmıştır.Umarım beğenirsiniz.
 
-https://user-images.githubusercontent.com/69385336/129952247-18f0b2bb-0892-4983-b524-35f4a94b5b74.mp4
+
 
 

@@ -1,5 +1,4 @@
 import 'package:adana/auth/verify.dart';
-import 'package:adana/components/showDialog.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +22,7 @@ class _RegisterState extends State<Register> {
   final _formKey = GlobalKey<FormState>();
 
   static final _auth = FirebaseAuth.instance;
-  static final _firestore = FirebaseFirestore.instance;
+  static final store = FirebaseFirestore.instance;
   bool _passwordVisible = true;
   bool _passwordVisible2 = true;
   late BuildContext context;
@@ -32,25 +31,6 @@ class _RegisterState extends State<Register> {
     color: Colors.white,
   );
 
-  static Future<bool> signUp(name, email, password) async {
-    try {
-      UserCredential authResult = await _auth.createUserWithEmailAndPassword(
-          email: email, password: password);
-      User? signedInUser = authResult.user;
-
-      if (signedInUser != null) {
-        _firestore
-            .collection('users')
-            .doc(signedInUser.email)
-            .set({'name': name, 'email': email, 'parola': password});
-        return true;
-      }
-      return false;
-    } catch (e) {
-      print(e);
-      return false;
-    }
-  }
 
   @override
   void initState() {
@@ -106,8 +86,8 @@ class _RegisterState extends State<Register> {
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
                           colors: [
-                            Colors.red,
-                            Colors.blue,
+                            Colors.grey,
+                            Colors.black,
                           ]),
                     ),
                   ),
@@ -204,11 +184,10 @@ class _RegisterState extends State<Register> {
                           //fillColor: Colors.green
                         ),
                         validator: (val) {
-                          return RegExp(
-                                      r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-                                  .hasMatch(val!)
-                              ? null
-                              : "Lütfen geçerli bir mail adresi giriniz";
+                          if (!GetUtils.isEmail(val!))
+                            return "Geçersiz email adresi";
+                          else
+                            return null;
                         },
                         controller: t2,
                       ),
@@ -333,17 +312,16 @@ class _RegisterState extends State<Register> {
                       child: TextButton(
                         onPressed: () {
                           if (_formKey.currentState!.validate()) {
-                            signUp(t1.text, t2.text, t3.text);
 
-                            showMaterialDialog(
-                              title: "E Posta Doğrulama",
-                              content: "E postanıza gelen doğrulama kodunu giriniz",
-                              context: context,
+                            store
+                                .collection('users')
+                                .doc(t2.text)
+                                .set({'name': t1.text, 'email': t2.text, 'parola': t3.text});
+                            _auth.createUserWithEmailAndPassword(email: t2.text, password: t3.text).then((value) =>
+                                Get.to(() => VerifyScreen()),
+
                             );
 
-                            Future.delayed(Duration(seconds: 5), () {
-                              Get.to(() => VerifyScreen());
-                            });
 
                           }
                         },

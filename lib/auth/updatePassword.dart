@@ -1,6 +1,5 @@
 import 'package:adana/auth/login.dart';
 import 'package:adana/components/mainAppBar.dart';
-import 'package:adana/components/showDialog.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -129,13 +128,19 @@ class _ForgotPasswordState extends State<ForgotPassword> {
 
                           _auth.sendPasswordResetEmail(email: t1.text);
 
-                          showMaterialDialog(title: 'İşlem Başarılı', context: context,
-                              content: 'Şifrenizi yenilemeniz için email hesabınıza'
-                                  'gelen şifre yenileme işlemini tamamlayınız'
-
+                          Get.snackbar(
+                            "İşlem Başarılı",
+                            'Şifrenizi yenilemeniz için email hesabınıza'
+                                'gelen şifre yenileme işlemini tamamlayınız',
+                            backgroundColor: Colors.grey.shade200,
+                            snackPosition: SnackPosition.BOTTOM,
                           );
 
+                          Future.delayed(Duration(seconds: 5), () {
                             Get.to(() => Login());
+                          });
+
+
 
                         }
                       },

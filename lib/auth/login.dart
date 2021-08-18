@@ -1,11 +1,9 @@
 import 'dart:async';
 import 'package:adana/auth/register.dart';
 import 'package:adana/auth/updatePassword.dart';
-import 'package:adana/components/showDialog.dart';
 import 'package:adana/home.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 
 class Login extends StatefulWidget {
@@ -42,22 +40,24 @@ class _LoginState extends State<Login> {
     try {
       await _auth.signInWithEmailAndPassword(email: t1.text, password: t2.text);
 
-      Get.to(() => Home());
+      Get.offAll(Home());
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
         print('No user found for that email.');
-
-        showMaterialDialog(
-            title: "Kullanıcı Bulunamadı",
-            content: "Lütfen bilgilerinizi kontrol ediniz",
-            context: context);
+        Get.snackbar(
+          "Kullanıcı Bulunamadı",
+          "Lütfen bilgilerinizi kontrol ediniz",
+          backgroundColor: Colors.grey.shade200,
+          snackPosition: SnackPosition.BOTTOM,
+        );
       } else if (e.code == 'wrong-password') {
         print('Wrong password provided for that user.');
-
-        showMaterialDialog(
-            title: "Hatalı kullanıcı adı ya da şifre",
-            content: "Lütfen bilgilerinizi kontrol ediniz",
-            context: context);
+        Get.snackbar(
+          "Hatalı kullanıcı adı ya da şifre",
+          "Lütfen bilgilerinizi kontrol ediniz",
+          backgroundColor: Colors.grey.shade200,
+          snackPosition: SnackPosition.BOTTOM,
+        );
       }
     }
   }
@@ -71,16 +71,20 @@ class _LoginState extends State<Login> {
     return WillPopScope(
       onWillPop: () async {
         final difference = DateTime.now().difference(timeDifference);
-        final isExitWarning = difference >= Duration(seconds:2);
+        final isExitWarning = difference >= Duration(seconds: 2);
 
         timeDifference = DateTime.now();
-        if(isExitWarning)
-          {
-            final message = "Çıkış Yapmak için tekrar tıklayın" ;
-            Fluttertoast.showToast(msg: message);
-            return false;
-          }
-        else{
+        if (isExitWarning) {
+          final message = "Çıkış Yapmak için artarda 2 kez tıklayın";
+          Get.snackbar(
+            "Bilgi",
+            message,
+            backgroundColor: Colors.grey.shade200,
+            snackPosition: SnackPosition.BOTTOM,
+          );
+          // Fluttertoast.showToast(msg: message);
+          return false;
+        } else {
           return true;
         }
       },
@@ -111,8 +115,8 @@ class _LoginState extends State<Login> {
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
                           colors: [
-                            Colors.red,
-                          Colors.blue,
+                            Colors.grey,
+                            Colors.black,
                           ]),
                     ),
                   ),
@@ -169,13 +173,16 @@ class _LoginState extends State<Login> {
                           ), // icon is 48px widget.
                           //fillColor: Colors.green
                         ),
+                        autovalidateMode: AutovalidateMode.onUserInteraction,
                         validator: (val) {
-                          return RegExp(
-                                      r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-                                  .hasMatch(val!)
-                              ? null
-                              : "Lütfen geçerli bir mail adresi giriniz";
+
+                          if (!GetUtils.isEmail(val!))
+                            return "Geçersiz email adresi";
+                          else
+                            return null;
+
                         },
+
                         controller: t1,
                       ),
                     ),
@@ -246,7 +253,7 @@ class _LoginState extends State<Login> {
                           if (_formKey.currentState!.validate()) {
                             girisYap();
 
-                            //Get.to(() => AnaSayfa());
+
                           }
                         },
                         child: Container(
@@ -324,7 +331,6 @@ class _LoginState extends State<Login> {
                         ),
                       ),
                     ),
-
                   ],
                 ),
               ],

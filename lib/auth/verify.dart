@@ -22,7 +22,7 @@ class _VerifyScreenState extends State<VerifyScreen> {
     user = auth.currentUser!;
     user.sendEmailVerification();
 
-    timer = Timer.periodic(Duration(seconds: 4), (timer) {
+    timer = Timer.periodic(Duration(seconds: 2), (timer) {
       checkEmailVerified();
     });
     super.initState();
@@ -36,7 +36,6 @@ class _VerifyScreenState extends State<VerifyScreen> {
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
-    //final height = MediaQuery.of(context).size.height;
     return  SafeArea(
       child: Scaffold(
         body: Column(
@@ -73,7 +72,7 @@ class _VerifyScreenState extends State<VerifyScreen> {
     if (user.emailVerified) {
       timer.cancel();
 
-      Get.to(() => Home());
+      Get.offAll(Home());
     }
   }
 

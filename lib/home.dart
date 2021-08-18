@@ -8,7 +8,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:video_player/video_player.dart';
@@ -100,7 +99,7 @@ class _HomeState extends State<Home> {
 
   Future<bool> exitApp() async {
     FirebaseAuth.instance.signOut().then((_) {
-      Get.to(() => Login());
+      Get.offAll( Login());
     });
     return false;
   }
@@ -108,7 +107,6 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
-    //final height = MediaQuery.of(context).size.height;
 
     return WillPopScope(
       onWillPop: () async {
@@ -118,8 +116,13 @@ class _HomeState extends State<Home> {
         timeDifference = DateTime.now();
         if(isExitWarning)
         {
-          final message = "Çıkış Yapmak için tekrar tıklayın" ;
-          Fluttertoast.showToast(msg: message);
+          final message = "Çıkış Yapmak için artarda 2 kez tıklayın" ;
+          Get.snackbar(
+            "Bilgi",
+            message,
+            backgroundColor: Colors.grey.shade200,
+            snackPosition: SnackPosition.BOTTOM,
+          );
           return false;
         }
         else{

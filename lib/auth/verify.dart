@@ -53,7 +53,7 @@ class _VerifyScreenState extends State<VerifyScreen> {
                   child:  Center(
                     child: Text(' ${user.email} adlı hesabınıza doğrulama '
                         'linki gönderildi.Lütfen Doğrulayın.İşlem bittikten sonra otomatik olarak'
-                        'ana sayfaya yönlendirileceksiniz',style: TextStyle(
+                        ' ana sayfaya yönlendirileceksiniz',style: TextStyle(
                         color: Color(0xFFFEFD3A),fontSize: 22
                     ),),
                   ),

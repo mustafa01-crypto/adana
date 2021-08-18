@@ -124,49 +124,88 @@ class _DogalParkState extends State<DogalPark>
               SizedBox(
                 height: 15,
               ),
-              TextButton(
-                onPressed: () {
-                  Get.to(() => Maps(
-                    x: x,
-                    y: y,
-                    title: title,
-                  ));
-                },
-                child: buttonTextContainer(context,"HARİTADA GÖSTER")
-              ),
-              SizedBox(
-                height: 15,
-              ),
-              TextButton(
-                onPressed: () {
-                  Get.to(() => ParkYorum());
-                },
-                child: buttonTextContainer(context,"YORUMLARI GÖSTER")
-              ),
 
-              //xd
-              SizedBox(
-                height: 15,
-              ),
-              TextButton(
-                onPressed: () {
-                  MapUtils.openMap(x, y);
-                },
-                child: buttonTextContainer(context,"YOL TARİFİ")
-              ),
-              SizedBox(
-                height: 15,
-              ),
-              TextButton(
-                onPressed: () {
-                  _showRatingAppDialog();
-                },
-                child: buttonTextContainer(context,"YORUM YAP")
-              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  IconButton(
+                    icon: Icon(Icons.arrow_drop_up,color: Colors.grey,size: 40,),
+                    onPressed: ()
+                    {
+                      Get.bottomSheet(
+                          buildSheet(),
+                          barrierColor: Colors.white.withOpacity(0.6),
+                          isScrollControlled: false
+
+                      );
+                    },
+
+                  )
+                ],
+              )
+
             ],
           ),
         ),
       ),
     );
   }
+  Widget buildSheet()
+  {
+    return Container(
+      color: kutu,
+      child: ListView(
+        children: [
+          SizedBox(
+            height: 5,
+          ),
+          TextButton(
+              onPressed: () {
+                Get.to(() => Maps(
+                  x: x,
+                  y: y,
+                  title: title,
+                ));
+              },
+              child: buttonTextContainer(context, "HARİTADA GÖSTER")),
+          SizedBox(
+            height: 5,
+          ),
+          TextButton(
+              onPressed: () {
+                Get.to(() => ParkYorum());
+              },
+              child: buttonTextContainer(context, "YORUMLARI GÖSTER")),
+
+          //xd
+          SizedBox(
+            height: 5,
+          ),
+          TextButton(
+              onPressed: () {
+                MapUtils.openMap(x, y);
+              },
+              child: buttonTextContainer(context, "YOL TARİFİ")),
+          SizedBox(
+            height: 5,
+          ),
+          TextButton(
+            onPressed: () {
+              _showRatingAppDialog();
+            },
+            child: buttonTextContainer(context, "YORUM YAP"),
+          ),
+          IconButton(
+            icon: Icon(Icons.cancel_sharp,size: 25,color: Colors.grey,),
+            onPressed: ()
+            {
+              Get.back();
+            },
+
+          )
+        ],
+      ),
+    );
+  }
+
 }

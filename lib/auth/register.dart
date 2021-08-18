@@ -2,7 +2,6 @@ import 'package:adana/auth/verify.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'login.dart';
 
@@ -20,17 +19,10 @@ class _RegisterState extends State<Register> {
   TextEditingController t4 = TextEditingController();
 
   final _formKey = GlobalKey<FormState>();
-
   static final _auth = FirebaseAuth.instance;
   static final store = FirebaseFirestore.instance;
   bool _passwordVisible = true;
   bool _passwordVisible2 = true;
-  late BuildContext context;
-
-  TextStyle hint = TextStyle(
-    color: Colors.white,
-  );
-
 
   @override
   void initState() {
@@ -51,8 +43,13 @@ class _RegisterState extends State<Register> {
         timeDifference = DateTime.now();
         if(isExitWarning)
         {
-          final message = "Çıkış Yapmak için tekrar tıklayın" ;
-          Fluttertoast.showToast(msg: message);
+          final message = "Çıkış Yapmak için artarda 2 kez tıklayın";
+          Get.snackbar(
+            "Bilgi",
+            message,
+            backgroundColor: Colors.grey.shade200,
+            snackPosition: SnackPosition.BOTTOM,
+          );
           return false;
         }
         else{
@@ -319,10 +316,7 @@ class _RegisterState extends State<Register> {
                                 .set({'name': t1.text, 'email': t2.text, 'parola': t3.text});
                             _auth.createUserWithEmailAndPassword(email: t2.text, password: t3.text).then((value) =>
                                 Get.to(() => VerifyScreen()),
-
                             );
-
-
                           }
                         },
                         child: Container(
@@ -393,4 +387,5 @@ class _RegisterState extends State<Register> {
       ),
     );
   }
+
 }

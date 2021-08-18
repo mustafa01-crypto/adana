@@ -3,7 +3,6 @@ import 'package:adana/components/infoText.dart';
 import 'package:adana/components/mainAppBar.dart';
 import 'package:adana/components/sliderImage.dart';
 import 'package:adana/constants/constants.dart';
-import 'package:adana/ilceler/cukurova/yorumlar/plaj.dart';
 import 'package:adana/map/map.dart';
 import 'package:adana/map/mapUtils.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -118,48 +117,88 @@ class _KaratasPlajiState extends State<KaratasPlaji>
               SizedBox(
                 height: 15,
               ),
-              TextButton(
-                onPressed: () {
-                  Get.to(() => Maps(
-                    x: x,
-                    y: y,
-                    title: title,
-                  ));
-                },
-                child: buttonTextContainer(context,"HARİTADA GÖSTER")
-              ),
-              SizedBox(
-                height: 15,
-              ),
-              TextButton(
-                onPressed: () {
-                  Get.to(() => PlajYorum());
-                },
-                child: buttonTextContainer(context,"YORUMLARI GÖSTER")
-              ),
 
-              SizedBox(
-                height: 15,
-              ),
-              TextButton(
-                onPressed: () {
-                  MapUtils.openMap(x, y);
-                },
-                child: buttonTextContainer(context,"YOL TARİFİ")
-              ),
-              SizedBox(
-                height: 15,
-              ),
-              TextButton(
-                onPressed: () {
-                  _showRatingAppDialog();
-                },
-                child: buttonTextContainer(context,"YORUM YAP")
-              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  IconButton(
+                    icon: Icon(Icons.arrow_drop_up,color: Colors.grey,size: 40,),
+                    onPressed: ()
+                    {
+                      Get.bottomSheet(
+                          buildSheet(),
+                          barrierColor: Colors.white.withOpacity(0.6),
+                          isScrollControlled: false
+
+                      );
+                    },
+
+                  )
+                ],
+              )
+
             ],
           ),
         ),
       ),
     );
   }
+  Widget buildSheet()
+  {
+    return Container(
+      color: kutu,
+      child: ListView(
+        children: [
+          SizedBox(
+            height: 5,
+          ),
+          TextButton(
+              onPressed: () {
+                Get.to(() => Maps(
+                  x: x,
+                  y: y,
+                  title: title,
+                ));
+              },
+              child: buttonTextContainer(context, "HARİTADA GÖSTER")),
+          SizedBox(
+            height: 5,
+          ),
+          TextButton(
+              onPressed: () {
+                Get.to(() => KaratasPlaji());
+              },
+              child: buttonTextContainer(context, "YORUMLARI GÖSTER")),
+
+          //xd
+          SizedBox(
+            height: 5,
+          ),
+          TextButton(
+              onPressed: () {
+                MapUtils.openMap(x, y);
+              },
+              child: buttonTextContainer(context, "YOL TARİFİ")),
+          SizedBox(
+            height: 5,
+          ),
+          TextButton(
+            onPressed: () {
+              _showRatingAppDialog();
+            },
+            child: buttonTextContainer(context, "YORUM YAP"),
+          ),
+          IconButton(
+            icon: Icon(Icons.cancel_sharp,size: 25,color: Colors.grey,),
+            onPressed: ()
+            {
+              Get.back();
+            },
+
+          )
+        ],
+      ),
+    );
+  }
+
 }

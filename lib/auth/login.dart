@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:adana/auth/register.dart';
-import 'package:adana/auth/updatePassword.dart';
+import 'package:adana/auth/forgotPassword.dart';
 import 'package:adana/home.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';

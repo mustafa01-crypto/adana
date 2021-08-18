@@ -1,10 +1,11 @@
 import 'dart:async';
+import 'package:adana/components/infoText.dart';
+import 'package:adana/constants/constants.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../home.dart';
-
 
 class VerifyScreen extends StatefulWidget {
   @override
@@ -15,7 +16,6 @@ class _VerifyScreenState extends State<VerifyScreen> {
   final auth = FirebaseAuth.instance;
   late User user;
   late Timer timer;
-
 
   @override
   void initState() {
@@ -33,37 +33,19 @@ class _VerifyScreenState extends State<VerifyScreen> {
     timer.cancel();
     super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
-    return  SafeArea(
-      child: Scaffold(
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-                height: 200,
-                decoration: const BoxDecoration(
-                  color:  Color(0xff343E86),
+    return SafeArea(
 
-                ),
-
-                child:Padding(
-                  padding:  EdgeInsets.only(left: width*1/25 ),
-                  child:  Center(
-                    child: Text(' ${user.email} adlı hesabınıza doğrulama '
-                        'linki gönderildi.Lütfen Doğrulayın.İşlem bittikten sonra otomatik olarak'
-                        ' ana sayfaya yönlendirileceksiniz',style: TextStyle(
-                        color: Color(0xFFFEFD3A),fontSize: 22
-                    ),),
-                  ),
-                )
-            ),
-
-          ],
-        ),
-      ),
-    );
+        child: Scaffold(
+          backgroundColor: kutu,
+      body: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+        infoText(' ${user.email} adlı hesabınıza doğrulama '
+            'linki gönderildi.Lütfen Doğrulayın.İşlem bittikten sonra otomatik olarak'
+            ' ana sayfaya yönlendirileceksiniz'),
+      ]),
+    ));
   }
 
   Future<void> checkEmailVerified() async {
@@ -75,5 +57,4 @@ class _VerifyScreenState extends State<VerifyScreen> {
       Get.offAll(Home());
     }
   }
-
 }

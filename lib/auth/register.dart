@@ -69,8 +69,8 @@ class _RegisterState extends State<Register> {
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       fit: BoxFit.cover,
-                      image: AssetImage(
-                        'assets/back_photo.jpeg',
+                      image: NetworkImage(
+                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8oVAQa4WUS0NKXAM01h-Yxr7O9Pdnm605WQ1FwmRcAEpR7c5mY0VFiQwJPYYuTFe9lHs&usqp=CAU',
                       ),
                     ),
                   ),
@@ -83,7 +83,8 @@ class _RegisterState extends State<Register> {
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
                           colors: [
-                            Colors.grey,
+                            Colors.black26,
+                            Colors.black54,
                             Colors.black,
                           ]),
                     ),

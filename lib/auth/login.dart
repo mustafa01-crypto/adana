@@ -101,8 +101,8 @@ class _LoginState extends State<Login> {
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       fit: BoxFit.cover,
-                      image: AssetImage(
-                        'assets/back_photo.jpeg',
+                      image: NetworkImage(
+                        'https://wallpaperaccess.com/full/459222.jpg',
                       ),
                     ),
                   ),
@@ -115,7 +115,9 @@ class _LoginState extends State<Login> {
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
                           colors: [
-                            Colors.grey,
+
+                            Colors.black26,
+                            Colors.black54,
                             Colors.black,
                           ]),
                     ),

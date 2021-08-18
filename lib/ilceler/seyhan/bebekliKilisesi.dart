@@ -45,7 +45,7 @@ class _BebekliKilisesiState extends State<BebekliKilisesi>
     "https://www.kulturportali.gov.tr/repoKulturPortali/Dokumanlar/ADANABEBEKLIKILISEATILLAANDIRIN_20160411152215803.jpg?format=jpg&quality=50",
     "https://gezimanya.com/sites/default/files/inline-images/bebekli-kilise.jpg",
     "https://media-cdn.tripadvisor.com/media/photo-s/0e/97/97/2b/bebekli-kilise.jpg",
-    "https://n8b8m5z7.stackpathcdn.com/wp-content/uploads/2019/07/bebekli-kilise.jpg",
+    "https://www.gelgez.net/wp-content/uploads/2017/03/adanadaki-bebekli-kilise-nerededir-tarihi-ozellikleri-ve-fotograflari-8-gelgez-700x420.jpg",
     "https://mekan360.com/placephotos/1932/bebekli-kilisesi-adana_5.jpg",
   ];
 

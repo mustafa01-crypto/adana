@@ -163,11 +163,7 @@ class _AnavarzaState extends State<Anavarza>
           ),
           TextButton(
               onPressed: () {
-                Get.to(() => Maps(
-                  x: x,
-                  y: y,
-                  title: title,
-                ));
+                Get.to(() => Maps(), arguments:[ x,y,title]);
               },
               child: buttonTextContainer(context, "HARİTADA GÖSTER")),
           SizedBox(

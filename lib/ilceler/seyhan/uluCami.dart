@@ -162,11 +162,7 @@ class _UluCamiiState extends State<UluCamii>
           ),
           TextButton(
               onPressed: () {
-                Get.to(() => Maps(
-                  x: x,
-                  y: y,
-                  title: title,
-                ));
+                Get.to(() => Maps(),);
               },
               child: buttonTextContainer(context, "HARİTADA GÖSTER")),
           SizedBox(

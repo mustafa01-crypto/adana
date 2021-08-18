@@ -1,13 +1,10 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class Maps extends StatefulWidget {
-  double x;
-  double y;
-  String title;
 
-  Maps({required this.x, required this.y,required this.title});
 
   @override
   _MapsState createState() => _MapsState();
@@ -21,6 +18,9 @@ class _MapsState extends State<Maps> {
     _controller.complete(controller);
   }
 
+  var data = Get.arguments;
+
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -32,7 +32,7 @@ class _MapsState extends State<Maps> {
             markers: _createMarker(),
             onMapCreated: _onMapCreated,
             initialCameraPosition: CameraPosition(
-              target: LatLng(widget.x,widget.y),
+              target: LatLng(data[0],data[1]),
               zoom: 18.0,
             ),
           ),
@@ -44,8 +44,8 @@ class _MapsState extends State<Maps> {
     return {
       Marker(
           markerId: MarkerId("marker_1"),
-          position: LatLng(widget.x,widget.y),
-          infoWindow: InfoWindow(title: widget.title),
+          position: LatLng(data[0],data[1]),
+          infoWindow: InfoWindow(title: data[2]),
           rotation: 25),
 
     };

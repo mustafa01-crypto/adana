@@ -39,7 +39,6 @@ class _AlmanKoprusuState extends State<AlmanKoprusu>
   }
 
   void getCurrentUser() {
-
     final user = auth.currentUser;
     if (user != null) {
       loggedInuser = user;
@@ -98,16 +97,19 @@ class _AlmanKoprusuState extends State<AlmanKoprusu>
         child: SafeArea(
           child: Column(
             children: [
-              sliderImage(tabController!, context, links.map((String link) {
-                return new ClipRRect(
-                    child: Image.network(
-                      link,
-                      width: MediaQuery.of(context).size.width,
-                      height: 220,
-                      fit: BoxFit.fill,
-                    ));
-              }).toList(),),
-
+              sliderImage(
+                tabController!,
+                context,
+                links.map((String link) {
+                  return new ClipRRect(
+                      child: Image.network(
+                    link,
+                    width: MediaQuery.of(context).size.width,
+                    height: 220,
+                    fit: BoxFit.fill,
+                  ));
+                }).toList(),
+              ),
               SizedBox(
                 height: 10,
               ),
@@ -122,38 +124,34 @@ class _AlmanKoprusuState extends State<AlmanKoprusu>
                   "tekniği ile yapılmıştır. 6. Bölge sınırları içinde "
                   "bulunmaktadır. 1912 yılında hizmete açılmıştır. Köprünün"
                   " yapılış amacı İstanbul-Bağdat-Hicaz Demiryolu hattını tamamlamaktır."),
-
               SizedBox(
                 height: 15,
               ),
-
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   IconButton(
-                    icon: Icon(Icons.arrow_drop_up,color: Colors.grey,size: 40,),
-                    onPressed: ()
-                    {
-                      Get.bottomSheet(
-                          buildSheet(),
+                    icon: Icon(
+                      Icons.arrow_circle_up,
+                      color: Colors.grey,
+                      size: 40,
+                    ),
+                    onPressed: () {
+                      Get.bottomSheet(buildSheet(),
                           barrierColor: Colors.white.withOpacity(0.6),
-                          isScrollControlled: false
-
-                      );
+                          isScrollControlled: false);
                     },
-
                   )
                 ],
               )
-
             ],
           ),
         ),
       ),
     );
   }
-  Widget buildSheet()
-  {
+
+  Widget buildSheet() {
     return Container(
       color: kutu,
       child: ListView(
@@ -163,7 +161,7 @@ class _AlmanKoprusuState extends State<AlmanKoprusu>
           ),
           TextButton(
               onPressed: () {
-                Get.to(() => Maps(), arguments:[ x,y,title]);
+                Get.to(() => Maps(), arguments: [x, y, title]);
               },
               child: buttonTextContainer(context, "HARİTADA GÖSTER")),
           SizedBox(
@@ -194,16 +192,17 @@ class _AlmanKoprusuState extends State<AlmanKoprusu>
             child: buttonTextContainer(context, "YORUM YAP"),
           ),
           IconButton(
-            icon: Icon(Icons.cancel_sharp,size: 25,color: Colors.grey,),
-            onPressed: ()
-            {
+            icon: Icon(
+              Icons.cancel_sharp,
+              size: 25,
+              color: Colors.grey,
+            ),
+            onPressed: () {
               Get.back();
             },
-
           )
         ],
       ),
     );
   }
-
 }

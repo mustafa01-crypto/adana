@@ -170,12 +170,11 @@ class _LoginState extends State<Login> {
                             ),
                           ),
                           prefixIcon: Icon(
-                            Icons.email_outlined,
+                            Icons.email,
                             color: Colors.grey.shade300,
                           ), // icon is 48px widget.
                           //fillColor: Colors.green
                         ),
-                        autovalidateMode: AutovalidateMode.onUserInteraction,
                         validator: (val) {
                           if (!GetUtils.isEmail(val!))
                             return "Geçersiz email adresi";
@@ -217,7 +216,7 @@ class _LoginState extends State<Login> {
                               ),
                             ),
                             prefixIcon: Icon(
-                              Icons.lock_outline,
+                              Icons.vpn_key,
                               color: Colors.grey.shade300,
                             ),
                             suffixIcon: IconButton(

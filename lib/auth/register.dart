@@ -135,10 +135,9 @@ class _RegisterState extends State<Register> {
                             ),
                           ),
                           prefixIcon: Icon(
-                            Icons.email_outlined,
+                            Icons.person,
                             color: Colors.grey.shade300,
-                          ), // icon is 48px widget.
-                          //fillColor: Colors.green
+                          ),
                         ),
                         controller: t1,
                       ),
@@ -175,7 +174,7 @@ class _RegisterState extends State<Register> {
                             ),
                           ),
                           prefixIcon: Icon(
-                            Icons.email_outlined,
+                            Icons.email,
                             color: Colors.grey.shade300,
                           ), // icon is 48px widget.
                           //fillColor: Colors.green
@@ -221,7 +220,7 @@ class _RegisterState extends State<Register> {
                             ),
                           ),
                           prefixIcon: Icon(
-                            Icons.lock_outline,
+                            Icons.vpn_key,
                             color: Colors.grey.shade300,
                           ),
                           suffixIcon: IconButton(
@@ -277,7 +276,7 @@ class _RegisterState extends State<Register> {
                             ),
                           ),
                           prefixIcon: Icon(
-                            Icons.lock_outline,
+                            Icons.vpn_key,
                             color: Colors.grey.shade300,
                           ),
                           suffixIcon: IconButton(

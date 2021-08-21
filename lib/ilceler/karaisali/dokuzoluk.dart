@@ -38,6 +38,11 @@ class _DokuzolukState extends State<Dokuzoluk>
     tabController = TabController(length: 6, vsync: this);
   }
 
+  void dispose() {
+    tabController.dispose();
+    super.dispose();
+  }
+
   void getCurrentUser() {
     final user = auth.currentUser;
     if (user != null) {

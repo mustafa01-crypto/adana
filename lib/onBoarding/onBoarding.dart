@@ -2,6 +2,7 @@ import 'package:adana/auth/login.dart';
 import 'package:adana/constants/constants.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
 class OnBoardingPage extends StatefulWidget {
@@ -13,9 +14,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
   final introKey = GlobalKey<IntroductionScreenState>();
 
   void _onIntroEnd(context) {
-    Navigator.of(context).push(
-      MaterialPageRoute(builder: (_) => Login()),
-    );
+    Get.to(()=> Login());
   }
 
 
@@ -47,6 +46,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
           ),
         ),
       ),
+      /*
       globalFooter: SizedBox(
         width: double.infinity,
         height: 60,
@@ -60,6 +60,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
           onPressed: () => _onIntroEnd(context),
         ),
       ),
+       */
       pages: [
         PageViewModel(
           title: "Gez Gör Keşfet",

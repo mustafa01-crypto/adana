@@ -87,66 +87,62 @@ class _DurhasanState extends State<Durhasan>
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: kutu,
       appBar: mainAppBar(title),
-      body: SingleChildScrollView(
-        child: SafeArea(
-          child: Column(
-            children: [
-              sliderImage(
-                tabController!,
-                context,
-                links.map((String link) {
-                  return new ClipRRect(
-                      child: Image.network(
-                    link,
-                    width: MediaQuery.of(context).size.width,
-                    height: 220,
-                    fit: BoxFit.fill,
-                  ));
-                }).toList(),
+      body: SafeArea(
+        child: Column(
+          children: [
+            sliderImage(
+              tabController!,
+              context,
+              links.map((String link) {
+                return new ClipRRect(
+                    child: Image.network(
+                  link,
+                  width: MediaQuery.of(context).size.width,
+                  height: size.height /3,
+                  fit: BoxFit.fill,
+                ));
+              }).toList(),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            infoText(
+                "Ceyhan ilçesinin Durhasan köyü girişinde sağ tarafta bir tepenin"
+                " üzerinde bulunan asırlık bir meşe ağacının altında, Selçuklu "
+                "mimari tarzının görüldüğü bir türbede medfundur. Türbenin "
+                "bakımı köylüler tarafından yapılmaktadır."
+                "Durhasan dede; Çukurova velilerinde Misis kütüklü köyünde kabri"
+                " bulunan Cabbar Dede’nin kardeşidir. Bu zatı vesile ederek"
+                " yapılan duaların kabul olduğu yöre halkı tarafından söylenmektedir."
+                "Yaşadığı ve vefat ettiği tarihler kesin olarak bilinmektedir."
+                " Türbenin üzerindeki kitabeden 1287 tarihinde restore"
+                " edildiği anlaşılmaktadır."),
+
+            SizedBox(
+              height: 15,
+            ),
+
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: IconButton(
+                icon: Icon(
+                  Icons.arrow_drop_up,
+                  color: Colors.grey,
+                  size: 40,
+                ),
+                onPressed: () {
+                  Get.bottomSheet(buildSheet(),
+                      barrierColor: Colors.white.withOpacity(0.6),
+                      isScrollControlled: false);
+                },
               ),
-              SizedBox(
-                height: 10,
-              ),
-              infoText(
-                  "Ceyhan ilçesinin Durhasan köyü girişinde sağ tarafta bir tepenin"
-                  " üzerinde bulunan asırlık bir meşe ağacının altında, Selçuklu "
-                  "mimari tarzının görüldüğü bir türbede medfundur. Türbenin "
-                  "bakımı köylüler tarafından yapılmaktadır."
-                  "Durhasan dede; Çukurova velilerinde Misis kütüklü köyünde kabri"
-                  " bulunan Cabbar Dede’nin kardeşidir. Bu zatı vesile ederek"
-                  " yapılan duaların kabul olduğu yöre halkı tarafından söylenmektedir."
-                  "Yaşadığı ve vefat ettiği tarihler kesin olarak bilinmektedir."
-                  " Türbenin üzerindeki kitabeden 1287 tarihinde restore"
-                  " edildiği anlaşılmaktadır."),
+            )
 
-              SizedBox(
-                height: 15,
-              ),
-
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  IconButton(
-                    icon: Icon(Icons.arrow_drop_up,color: Colors.grey,size: 40,),
-                    onPressed: ()
-                    {
-                      Get.bottomSheet(
-                          buildSheet(),
-                          barrierColor: Colors.white.withOpacity(0.6),
-                          isScrollControlled: false
-
-                      );
-                    },
-
-                  )
-                ],
-              )
-
-            ],
-          ),
+          ],
         ),
       ),
     );

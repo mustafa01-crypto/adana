@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "338235382483-cfrou0damudsl1kj28srka8efi3s1qcf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.adana.rum.adana",
+            "certificate_hash": "2f124974d362640e6b4d37e3ffda7dafe534d709"
+          }
+        },
+        {
           "client_id": "338235382483-vo7h0g8j949mgdp1c2uqgnihcu2icghv.apps.googleusercontent.com",
           "client_type": 3
         }

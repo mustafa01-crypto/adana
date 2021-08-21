@@ -5,7 +5,6 @@ import 'package:adana/home.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
 
@@ -23,6 +22,7 @@ class _LoginState extends State<Login> {
 
   static final _auth = FirebaseAuth.instance;
   final _formKey = GlobalKey<FormState>();
+
 
   void initState() {
     super.initState();
@@ -61,6 +61,8 @@ class _LoginState extends State<Login> {
       }
     }
   }
+
+
 
   DateTime timeDifference = DateTime.now();
 

@@ -80,3 +80,6 @@ TextStyle xdBeyaz = GoogleFonts.roboto(
     color: Colors.white, fontWeight: FontWeight.w500, fontSize: 18);
 TextStyle xdBeyazBaslik = GoogleFonts.roboto(
     color: Colors.white, fontWeight: FontWeight.w500, fontSize: 24);
+
+TextStyle front = GoogleFonts.sourceSansPro(
+    color: Colors.black, fontWeight: FontWeight.w900, fontSize: 22);

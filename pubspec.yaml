@@ -40,6 +40,7 @@ dependencies:
   flutter_slider_drawer: ^2.0.0
   url_launcher: ^6.0.9
   get: ^4.1.4
+  provider: ^5.0.0
   google_maps_flutter: ^2.0.6
   image_slider: ^1.0.2
   flutter:
@@ -83,7 +84,6 @@ flutter:
     - assets/karaisali/kesire/
     - assets/karaisali/kizildag/
     - assets/karaisali/yanik/
-    - assets/video/
     - assets/rive/
 
   #   - images/a_dot_ham.jpeg

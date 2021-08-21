@@ -10,10 +10,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:video_player/video_player.dart';
-
+import 'TileScreen.dart';
 import 'mesire/cukurovaList.dart';
-
 
 late User loggedInuser;
 
@@ -25,37 +23,82 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  VideoPlayerController? _controller;
   File? yuklenecekDosya;
   FirebaseAuth auth = FirebaseAuth.instance;
   String? indirmeBaglantisi;
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
 
   bool getImage = false;
 
+  List types = [
+    {
+      'ad': "KAPIKAYA KANYONU",
+      'image': "assets/karaisali/kanyon/k5.jpg",
+      'bilgi': "Kapıkaya Kanyonu, Adana ili Karaisalı ilçesinde "
+          "Kapıkaya köyünde bulunan kanyon."
+          "Kanyonu Seyhan Nehri'nin kollarından Çakıt'"
+          " Deresi açmıştır. Çakıt Deresi, Seyhan Nehri'"
+          "nin Batı koludur. Pozantı Boğazından dağlık "
+          "alanlara doğru uzanır. Kanyon Varda Köprüsü'ne '"
+          "'2 km uzaklığındadır."
+          "Kanyon çevresinde bitki örtüsü; zakkum, "
+          " zeytin, keçiboynuzu ve çınar ağaçlarından oluşur.",
+      'puan': "4",
+    },
+    {
+      'puan': "4",
+      'ad': "SABANCI MERKEZ CAMİ", 'image': "assets/merkezcami.jpg",
+      'bilgi': "Adana'nın Reşatbey Semti'nde, Merkez Park'ın güneyinde ve Seyhan "
+          "Nehri'nin batı kıyısında yer alan cami, 1998 yılında hizmete "
+          "açılmıştır. 32 metre çaplı ana kubbesi vardır.",
+    },
+    {
+      'puan': "5",
+      'ad': "VARDA KÖPRÜSÜ", 'image': "assets/karaisali/varda/v4.jpg",
+      'bilgi': "Varda Köprüsü, Adana ili Karaisalı ilçesi Hacıkırı "
+          "(Kıralan) mahallesi'nde bulunan, yöre halkı tarafından Koca "
+          "Köprü diye anılan köprü. Hacıkırı Demiryolu"
+          " Köprüsü olarak ya da 1912 yılında Almanlar"
+          " tarafından inşa edildiği için Alman köprüsü olarak bilinmektedir.",
+    },
+    {
+      'puan': "5",
+      'ad': "DOKUZOLUK",
+      'image': "assets/karaisali/dokuzoluk/d2.jpg",
+      'bilgi': "Dokuzoluk piknik alanı bir kanyonun hemen kenarında çeşitli "
+          "noktalardan fışkıran pınarlar, yemyeşil bitki örtüsü ve"
+          " ziyaretçilerin buz gibi suyunda serinledikleri göletlerden"
+          " oluşmaktadır. Piknik yapmak, yüzmek, balık tutmak,"
+          " yürüyüş yapmak, fotoğraf çekmek burada gerçekleştirilebilecek"
+          " aktiviteler arasındadır. Köprünün üzerinden kanyon manzarasının "
+          "fotoğrafının çekilmesi tavsiye edilir.",
+    },
+    {
+      'puan': "4",
+      'ad': "KARAPINAR PARKI", 'image': "assets/karaisali/park/k11.jpg",
+      'bilgi': " Karaisalı, Roma Döneminden önemli izler taşıyan"
+          " ilçe konumuna sahip olan bir bölgedir. Bu ilçe,"
+          " soyunun Ramazanoğulları ve Menemencioğullarından geldiği"
+          " günümüzdeki adını"
+          " da Ramazanoğullarından Kara İsa Bey’den aldığı bilinen bir husustur.",
+    },
+  ];
+
   void getCurrentUser() {
-      final user = auth.currentUser;
-      if (user != null) {
-        setState(() {
-          loggedInuser = user;
-        });
-      }
+    final user = auth.currentUser;
+    if (user != null) {
+      setState(() {
+        loggedInuser = user;
+      });
+    }
   }
+
   void initState() {
     super.initState();
     getCurrentUser();
     baglantiAl();
-    // Pointing the video controller to our local asset.
-    _controller = VideoPlayerController.asset(
-        "assets/video/tanitim.mp4")
-      ..initialize().then((_) {
-        // Once the video has been loaded we play the video and set looping to true.
-        _controller!.play();
-        _controller!.setLooping(true);
-        // Ensure the first frame is shown after the video is initialized.
-        setState(() {});
-      });
-
   }
+
   baglantiAl() async {
     String baglanti = await FirebaseStorage.instance
         .ref()
@@ -69,8 +112,10 @@ class _HomeState extends State<Home> {
       getImage = true;
     });
   }
+
   kameradanYukle() async {
-    var alinanDosya = await ImagePicker().pickImage(source: ImageSource.gallery);
+    var alinanDosya =
+        await ImagePicker().pickImage(source: ImageSource.gallery);
     setState(() {
       yuklenecekDosya = File(alinanDosya!.path);
     });
@@ -89,34 +134,28 @@ class _HomeState extends State<Home> {
       indirmeBaglantisi = url;
     });
   }
-  DateTime timeDifference = DateTime.now();
 
-  @override
-  void dispose() {
-    super.dispose();
-    _controller!.dispose();
-  }
+  DateTime timeDifference = DateTime.now();
 
   Future<bool> exitApp() async {
     FirebaseAuth.instance.signOut().then((_) {
-      Get.offAll( Login());
+      Get.offAll(Login());
     });
     return false;
   }
 
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
+    Size size = MediaQuery.of(context).size;
 
     return WillPopScope(
       onWillPop: () async {
         final difference = DateTime.now().difference(timeDifference);
-        final isExitWarning = difference >= Duration(seconds:2);
+        final isExitWarning = difference >= Duration(seconds: 2);
 
         timeDifference = DateTime.now();
-        if(isExitWarning)
-        {
-          final message = "Çıkış Yapmak için artarda 2 kez tıklayın" ;
+        if (isExitWarning) {
+          final message = "Çıkış Yapmak için artarda 2 kez tıklayın";
           Get.snackbar(
             "Bilgi",
             message,
@@ -124,137 +163,210 @@ class _HomeState extends State<Home> {
             snackPosition: SnackPosition.BOTTOM,
           );
           return false;
-        }
-        else{
+        } else {
           exitApp();
           return true;
         }
       },
-
       child: SafeArea(
         child: Scaffold(
-            appBar: AppBar(
-              centerTitle: true,
-              title: Text(
-                "DİYAR DİYAR ADANA",style: xdAppBarBaslik,
+          key: _scaffoldKey,
+          backgroundColor: kutu,
+          drawer: Drawer(
+            child: Container(
+              decoration: BoxDecoration(
+                gradient: deneme,
               ),
-              flexibleSpace: Container(
-                decoration: BoxDecoration(
-                  gradient: xdGradient,
-                ),
-              ),
-
-            ),
-            drawer: Drawer(
-              child: Container(
-                decoration: BoxDecoration(
-                  gradient: deneme,
-                ),
-                child: ListView(
-                  // Important: Remove any padding from the ListView.
-                  padding: EdgeInsets.zero,
-                  children: <Widget>[
-                    DrawerHeader(
+              child: ListView(
+                // Important: Remove any padding from the ListView.
+                padding: EdgeInsets.zero,
+                children: <Widget>[
+                  DrawerHeader(
                       child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          InkWell(
-                            onTap: () {
-                              kameradanYukle();
-                            },
-                            child: Center(
-                              child: ClipOval(
-                                  child: indirmeBaglantisi == null
-                                      ? Image.asset(
-                                    "assets/profile.png",
-                                    width: width * 3 / 10,
-                                    height: width * 2 / 7,
-                                    fit: BoxFit.cover,
-                                  )
-                                      : Image.network(
-                                    indirmeBaglantisi!,
-                                    width: width * 3 / 10,
-                                    height: width * 2 / 7,
-                                    fit: BoxFit.cover,
-                                  )),
-                            ),
-                          ),
-
-                        ],
-                      )
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(loggedInuser.email.toString(),style: cityName,),
-                      ],
-                    ),
-                    Divider(color: Colors.white,thickness: 2,),
-
-                    ListTile(
-                      title: Text('KARAİSALI', style: xdAppBarBaslik),
-                      onTap: () {
-                        Get.to(() => KaraisaliMesireList());
-                      },
-                    ),
-                    ListTile(
-                      title: Text('SEYHAN', style: xdAppBarBaslik),
-                      onTap: () {
-
-                        Get.to(() => SeyhanList());
-                      },
-                    ),
-                   ListTile(
-                      title: Text('ÇUKUROVA', style: xdAppBarBaslik),
-                      onTap: () {
-                        Get.to(() => CukurovaList());
-                      },
-                    ),
-
-                    ListTile(
-                      title: Text(
-                        'CEYHAN',
-                        style: xdAppBarBaslik,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      InkWell(
+                        onTap: () {
+                          kameradanYukle();
+                        },
+                        child: Center(
+                          child: ClipOval(
+                              child: indirmeBaglantisi == null
+                                  ? Image.asset(
+                                      "assets/profile.png",
+                                      width: size.width * 3 / 10,
+                                      height: size.width * 2 / 7,
+                                      fit: BoxFit.cover,
+                                    )
+                                  : Image.network(
+                                      indirmeBaglantisi!,
+                                      width: size.width * 3 / 10,
+                                      height: size.width * 2 / 7,
+                                      fit: BoxFit.cover,
+                                    )),
+                        ),
                       ),
-                      onTap: () {
-                        Get.to(() => CeyhanList());
-                      },
+                    ],
+                  )),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        loggedInuser.email.toString(),
+                        style: cityName,
+                      ),
+                    ],
+                  ),
+                  Divider(
+                    color: Colors.white,
+                    thickness: 2,
+                  ),
+                  ListTile(
+                    title: Text('KARAİSALI', style: xdAppBarBaslik),
+                    onTap: () {
+                      Get.to(() => KaraisaliMesireList());
+                    },
+                  ),
+                  ListTile(
+                    title: Text('SEYHAN', style: xdAppBarBaslik),
+                    onTap: () {
+                      Get.to(() => SeyhanList());
+                    },
+                  ),
+                  ListTile(
+                    title: Text('ÇUKUROVA', style: xdAppBarBaslik),
+                    onTap: () {
+                      Get.to(() => CukurovaList());
+                    },
+                  ),
+                  ListTile(
+                    title: Text(
+                      'CEYHAN',
+                      style: xdAppBarBaslik,
                     ),
-
-                    Divider(color: Colors.white,thickness: 2,),
-
-                    ListTile(
-                      leading: Icon(
-
-                        Icons.exit_to_app,color: sinir,size: 30,
-                      ) ,
-                      title: Text('ÇIKIŞ YAP', style: xdAppBarBaslik),
-                      onTap: () {
-                        FirebaseAuth.instance.signOut().then((deger) {
-                          Get.to(() => Login());
-                        });
+                    onTap: () {
+                      Get.to(() => CeyhanList());
+                    },
+                  ),
+                  Divider(
+                    color: Colors.white,
+                    thickness: 2,
+                  ),
+                  ListTile(
+                    leading: Icon(
+                      Icons.exit_to_app,
+                      color: sinir,
+                      size: 30,
+                    ),
+                    title: Text('ÇIKIŞ YAP', style: xdAppBarBaslik),
+                    onTap: () {
+                      FirebaseAuth.instance.signOut().then((deger) {
+                        Get.to(() => Login());
+                      });
+                    },
+                  ),
+                ],
+              ),
+            ),
+          ),
+          body: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                padding: EdgeInsets.only(top: 30, left: 20, right: 20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    IconButton(
+                      icon: Icon(Icons.menu),
+                      onPressed: () {
+                        _scaffoldKey.currentState!.openDrawer();
                       },
                     ),
                   ],
                 ),
               ),
-            ),
-            body: Stack(
-              children: [
-                SizedBox.expand(
-                  child: FittedBox(
-                    fit: BoxFit.cover,
-                    child: SizedBox(
-                      width: _controller!.value.size.width,
-                      height: _controller!.value.size.height,
-                      child: VideoPlayer(_controller!),
-                    ),
-                  ),
-                )
-              ],
-            )),
+              SizedBox(
+                height: 20,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 20),
+                child: Text(
+                  "POPÜLER MEKANLAR",
+                  style: front,
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Container(
+                height: size.height/1.5,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: types.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return GestureDetector(
+                      onTap: () {
+                        Get.to(() => TileScreen(), arguments: [
+                          index,
+                          types[index]['image'],
+                          types[index]['ad'],
+                          types[index]['bilgi'],
+                          types[index]['puan'],
+                        ]);
+                      },
+                      child: Padding(
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                        child: Stack(children: [
+                          Hero(
+                            tag: "target$index",
+                            child: Container(
+                              width: size.width / 1.4,
+                              height: size.height /1.8,
+                              decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                      image: AssetImage(
+                                        types[index]['image'],
+                                      ),
+                                      fit: BoxFit.cover),
+                                  borderRadius: BorderRadius.circular(12)),
+                            ),
+                          ),
+                          Container(
+                            width: size.width / 1.4,
+                            height: size.height / 1.8,
+                            decoration: BoxDecoration(
+                                gradient: LinearGradient(
+                                    begin: Alignment.topCenter,
+                                    end: Alignment.bottomCenter,
+                                    colors: [
+                                      Colors.transparent,
+                                      Colors.black.withOpacity(0.9)
+                                    ],
+                                    stops: const [
+                                      0.4,
+                                      0.9
+                                    ]),
+                                borderRadius: BorderRadius.circular(12)),
+                          ),
+                          Positioned(
+                              bottom: size.width/4,
+                              left: 50 ,
+                              child: Text(
+                                types[index]['ad'],
+                                style: xdBeyaz,
+                              ))
+                        ]),
+                      ),
+                    );
+                  },
+                ),
+              )
+            ],
+          ),
+        ),
       ),
     );
   }
-
 }

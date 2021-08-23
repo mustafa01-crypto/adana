@@ -1,12 +1,38 @@
-// @dart=2.9
+// @dart = 2.9
 import 'package:adana/auth/login.dart';
+import 'package:adana/ilceler/ceyhan/anavarza.dart';
+import 'package:adana/ilceler/ceyhan/durhasan.dart';
+import 'package:adana/ilceler/ceyhan/kurtkulagi.dart';
+import 'package:adana/ilceler/ceyhan/tumlu.dart';
+import 'package:adana/ilceler/ceyhan/yilanKale.dart';
+import 'package:adana/ilceler/cukurova/muzeKompleksi.dart';
+import 'package:adana/ilceler/cukurova/sevgiAdasi.dart';
+import 'package:adana/ilceler/cukurova/seyhanBaraji.dart';
+import 'package:adana/ilceler/karaisali/karapinar.dart';
+import 'package:adana/ilceler/seyhan/ataturkEvi.dart';
+import 'package:adana/ilceler/seyhan/bebekliKilisesi.dart';
+import 'package:adana/ilceler/seyhan/cobanDedeParki.dart';
+import 'package:adana/ilceler/seyhan/saatKulesi.dart';
+import 'package:adana/ilceler/seyhan/sabanciMerkezCami.dart';
+import 'package:adana/ilceler/seyhan/sinemaM%C3%BCzesi.dart';
+import 'package:adana/ilceler/seyhan/tasKopru.dart';
+import 'package:adana/ilceler/seyhan/uluCami.dart';
 import 'package:adana/onBoarding/onBoarding.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'ilceler/cukurova/dogalPark.dart';
+import 'ilceler/cukurova/yumurtalikLagunu.dart';
+import 'ilceler/karaisali/almankoprusu.dart';
+import 'ilceler/karaisali/dokuzoluk.dart';
+import 'ilceler/karaisali/kanyon.dart';
+import 'ilceler/karaisali/kesireHan.dart';
+import 'ilceler/karaisali/kizildagYaylasi.dart';
+import 'ilceler/karaisali/yerkopru.dart';
 
-void main()  async {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
 
@@ -14,28 +40,66 @@ void main()  async {
 }
 
 class MyApp extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-     home: Splash(),
+      initialRoute: '/splash',
+      getPages: [
+        //anasayfa
+        GetPage(name: '/splash', page: () => Splash()),
+
+        //karaisalı
+        GetPage(name: '/dokuzoluk', page: () => Dokuzoluk()),
+        GetPage(name: '/kanyon', page: () => Kanyon()),
+
+        GetPage(name: '/varda', page: () => AlmanKoprusu()),
+        GetPage(name: '/karapinar', page: () => Karapinar()),
+        GetPage(name: '/kesire', page: () => KesireHan()),
+        GetPage(name: '/kizildag', page: () => Kizildag()),
+        GetPage(name: '/yerkopru', page: () => YerKopru()),
+        //Ceyhan
+
+        GetPage(name: '/anavarza', page: () => Anavarza()),
+        GetPage(name: '/durhasan', page: () => Durhasan()),
+        GetPage(name: '/kurt', page: () => KurtKulagi()),
+        GetPage(name: '/tumlu', page: () => Tumlu()),
+        GetPage(name: '/yilan', page: () => YilanKale()),
+
+        //cukurova
+
+        GetPage(name: '/dogal', page: () => DogalPark()),
+        GetPage(name: '/karatas', page: () => YilanKale()),
+        GetPage(name: '/muze', page: () => MuzeKompleksi()),
+        GetPage(name: '/sevgi', page: () => SevgiAdasi()),
+        GetPage(name: '/baraj', page: () => SeyhanBaraji()),
+        GetPage(name: '/lagun', page: () => YumurtalikLagunu()),
+
+        //seyhan
+
+        GetPage(name: '/ataturk', page: () => AtaturkEvi()),
+        GetPage(name: '/kilise', page: () => BebekliKilisesi()),
+        GetPage(name: '/dede', page: () => CobanDede()),
+        GetPage(name: '/saat', page: () => SaatKulesi()),
+        GetPage(name: '/merkez', page: () => SabanciMerkezCamii()),
+        GetPage(name: '/sinema', page: () => SinemaMuzesi()),
+        GetPage(name: '/ulu', page: () => UluCamii()),
+        GetPage(name: '/taskopru', page: () => TasKopru()),
+      ],
     );
   }
 }
+
 class Splash extends StatefulWidget {
-@override
-SplashState createState() => new SplashState();
+  @override
+  SplashState createState() => new SplashState();
 }
 
 class SplashState extends State<Splash> {
-
-
   Future checkFirstSeen() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     bool _seen = (prefs.getBool('seen') ?? false);
@@ -55,7 +119,7 @@ class SplashState extends State<Splash> {
 
   @override
   void initState() {
-   checkFirstSeen();
+    checkFirstSeen();
     super.initState();
   }
 

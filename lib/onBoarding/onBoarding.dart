@@ -42,7 +42,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
         child: SafeArea(
           child: Padding(
             padding: const EdgeInsets.only(top: 16, right: 16),
-            child: _buildImage('sifir.png', 50),
+            child: _buildImage('github/sifir.png', 50),
           ),
         ),
       ),
@@ -66,30 +66,30 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
           title: "Gez Gör Keşfet",
           body:
           "Güzide ilimizde bulunan tarihi ve doğal güzellikleri keşfedin",
-          image: _buildImage('merkezcami.jpg'),
+          image: _buildImage('seyhan/merkezcami.jpg'),
           decoration: pageDecoration,
         ),
         PageViewModel(
           title: "Yorum Yap",
           body:
           "Gezdiğiniz yerler hakkında yorum yapın.",
-          image: _buildImage('yorum.png'),
+          image: _buildImage('github/yorum.png'),
           decoration: pageDecoration,
         ),
         PageViewModel(
           title: "Tek tuşla istediğiniz mekana gidin",
           body:
           "Uygulumamızdaki harita özelliği sayesinde uygulamamızda bulunan yerlere tek tıkla gidebilirsiniz.",
-          image: _buildImage('map.jpeg'),
+          image: _buildImage('github/map.jpeg'),
           decoration: pageDecoration,
         ),
       ],
       onDone: () => _onIntroEnd(context),
-      //onSkip: () => _onIntroEnd(context), // You can override onSkip callback
+
       showSkipButton: true,
       skipFlex: 0,
       nextFlex: 0,
-      //rtl: true, // Display as right-to-left
+
       skip: const Text('Geç'),
       next: const Icon(Icons.arrow_forward),
       done: const Text('Bitti', style: TextStyle(fontWeight: FontWeight.w600)),

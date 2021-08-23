@@ -11,7 +11,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:rating_dialog/rating_dialog.dart';
-
 import '../../map/map.dart';
 
 late User loggedInuser;
@@ -91,7 +90,7 @@ class _KesireHanState extends State<KesireHan>
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kutu,
-      appBar: mainAppBar("YORUMLAR"),
+      appBar: mainAppBar(title),
       body: SingleChildScrollView(
         child: SafeArea(
           child: Column(

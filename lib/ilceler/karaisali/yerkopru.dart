@@ -92,7 +92,7 @@ class _YerKopruState extends State<YerKopru>
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kutu,
-      appBar: mainAppBar("YORUMLAR"),
+      appBar: mainAppBar(title),
       body: SingleChildScrollView(
         child: SafeArea(
           child: Column(

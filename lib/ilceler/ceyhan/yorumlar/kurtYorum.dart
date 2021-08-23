@@ -59,6 +59,7 @@ class _YorumlarState extends State<Yorumlar> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+
                   Container(
                     //height: MediaQuery.of(context).size.height * 1/8,
                     margin: EdgeInsets.symmetric(horizontal: 10, vertical: 15),
@@ -137,6 +138,7 @@ class _YorumlarState extends State<Yorumlar> {
                       ],
                     ),
                   ),
+
                 ],
               ),
             );

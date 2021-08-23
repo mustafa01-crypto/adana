@@ -27,6 +27,7 @@ class _TileScreenState extends State<TileScreen> {
               height: size.height,
             ),
           ),
+
           Container(
             width: size.width,
             height: size.height,
@@ -41,6 +42,7 @@ class _TileScreenState extends State<TileScreen> {
                // borderRadius: BorderRadius.circular(12),
             ),
           ),
+
           Positioned(
             top: 32,
             right: 25,
@@ -65,7 +67,7 @@ class _TileScreenState extends State<TileScreen> {
                 )),
           ),
           Positioned(
-            bottom: 15,
+            bottom: 40,
             left: 20,
             child: Container(
                 width: size.width / 1.1,
@@ -75,7 +77,20 @@ class _TileScreenState extends State<TileScreen> {
                   textAlign: TextAlign.center,
                   style: xdBeyaz,
                 )),
-          )
+          ),
+          Positioned(
+            bottom: 0,
+            left: size.width/3.9,
+            child: TextButton(
+              onPressed: (){
+                Get.toNamed(data[5]);
+              },
+              child: Text("Daha fazla göster",style : TextStyle(
+                  decoration: TextDecoration.underline,
+                  color: Colors.white, fontWeight: FontWeight.w900, fontSize: 22
+              ),),
+            ),
+          ),
         ]),
       ),
     );

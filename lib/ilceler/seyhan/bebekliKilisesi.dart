@@ -92,7 +92,7 @@ class _BebekliKilisesiState extends State<BebekliKilisesi>
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kutu,
-      appBar: mainAppBar("YORUMLAR"),
+      appBar: mainAppBar(title),
       body: SingleChildScrollView(
         child: SafeArea(
           child: Column(

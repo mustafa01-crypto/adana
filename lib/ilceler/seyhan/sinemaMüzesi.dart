@@ -92,7 +92,7 @@ class _SinemaMuzesiState extends State<SinemaMuzesi>
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kutu,
-      appBar: mainAppBar("YORUMLAR"),
+      appBar: mainAppBar(title),
       body: SingleChildScrollView(
         child: SafeArea(
           child: Column(

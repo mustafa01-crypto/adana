@@ -83,8 +83,12 @@ flutter:
     - assets/karaisali/keci/
     - assets/karaisali/kesire/
     - assets/karaisali/kizildag/
-    - assets/karaisali/yanik/
-    - assets/rive/
+    - assets/github/
+    - assets/ceyhan/
+    - assets/seyhan/
+    - assets/ova/
+
+
 
   #   - images/a_dot_ham.jpeg
 

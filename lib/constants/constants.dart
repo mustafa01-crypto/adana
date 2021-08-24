@@ -142,7 +142,7 @@ TextStyle tileMetin = GoogleFonts.roboto(
 TextStyle loginTitle = GoogleFonts.roboto(
   color: kutu,
   fontWeight: FontWeight.bold,
-  fontSize: 45,
+  fontSize: 35,
 );
 
 TextStyle loginButton = GoogleFonts.roboto(

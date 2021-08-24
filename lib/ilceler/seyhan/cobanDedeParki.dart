@@ -98,17 +98,8 @@ class _CobanDedeState extends State<CobanDede>
           child: Column(
             children: [
               sliderImage(
-                tabController!,
                 context,
-                links.map((String link) {
-                  return new ClipRRect(
-                      child: Image.network(
-                    link,
-                    width: MediaQuery.of(context).size.width,
-                    height: 220,
-                    fit: BoxFit.fill,
-                  ));
-                }).toList(),
+                links,
               ),
 
               SizedBox(

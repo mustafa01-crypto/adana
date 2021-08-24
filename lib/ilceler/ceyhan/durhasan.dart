@@ -87,7 +87,7 @@ class _DurhasanState extends State<Durhasan>
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    //Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: kutu,
       appBar: mainAppBar(title),
@@ -95,17 +95,8 @@ class _DurhasanState extends State<Durhasan>
         child: Column(
           children: [
             sliderImage(
-              tabController!,
               context,
-              links.map((String link) {
-                return new ClipRRect(
-                    child: Image.network(
-                  link,
-                  width: MediaQuery.of(context).size.width,
-                  height: size.height /3,
-                  fit: BoxFit.fill,
-                ));
-              }).toList(),
+              links,
             ),
             SizedBox(
               height: 10,

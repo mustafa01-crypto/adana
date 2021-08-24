@@ -1,5 +1,5 @@
-import 'package:adana/auth/verify.dart';
 import 'package:adana/constants/constants.dart';
+import 'package:adana/home.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -313,7 +313,7 @@ class _RegisterState extends State<Register> {
                                 .createUserWithEmailAndPassword(
                                     email: t2.text, password: t3.text)
                                 .then(
-                                  (value) => Get.to(() => VerifyScreen()),
+                                  (value) => Get.to(() => Home()),
                                 );
                           }
                         },

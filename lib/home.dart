@@ -316,7 +316,7 @@ class _HomeState extends State<Home> {
       'puan': "5",
       'ad': "ULU CAMİİ",
       'image': "assets/seyhan/alu.jpg",
-      'bilgi':"Ulu Cami büyüklüğü ve tarihî açısından Adana'nın önemli "
+      'bilgi': "Ulu Cami büyüklüğü ve tarihî açısından Adana'nın önemli "
           "eserleri arasında gösterilmektedir. Selçuklu, Memlûklu"
           " ve Osmanlılar Dönem'lerine ait mimarî karakterleri"
           " üzerinde toplayan bu eserin üç ayrı kitabesinden,"
@@ -468,14 +468,14 @@ class _HomeState extends State<Home> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                padding: EdgeInsets.only(top: 18, left: 20, right: 20),
+                padding: EdgeInsets.only(
+                    top: size.height / 25, left: size.width / 20, right: size.width/20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     ClipOval(
                       child: Container(
                         decoration: BoxDecoration(
-                         // borderRadius: BorderRadius.circular(12),
                           gradient: boxGradient,
                         ),
                         child: IconButton(
@@ -493,7 +493,7 @@ class _HomeState extends State<Home> {
                     ClipOval(
                       child: Container(
                         decoration: BoxDecoration(
-                         // borderRadius: BorderRadius.circular(12),
+                          // borderRadius: BorderRadius.circular(12),
                           gradient: boxGradient,
                         ),
                         child: IconButton(
@@ -513,7 +513,7 @@ class _HomeState extends State<Home> {
                   ],
                 ),
               ),
-              SizedBox(height: 19),
+              SizedBox(height: size.height / 25),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
@@ -527,9 +527,8 @@ class _HomeState extends State<Home> {
                             },
                             child: Padding(
                               padding:
-                                  const EdgeInsets.only(left: 20.0, right: 5),
+                                   EdgeInsets.only(left: size.width / 20, right: size.width / 40),
                               child: Container(
-                                //  margin: const EdgeInsets.symmetric(horizontal: 18),
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(12),
                                   gradient: LinearGradient(
@@ -561,10 +560,10 @@ class _HomeState extends State<Home> {
                 ),
               ),
               SizedBox(
-                height: 3,
+                height: size.height / 100,
               ),
               Container(
-                  decoration: BoxDecoration(),
+
                   height: size.height / 1.4,
                   child: curIndex == 0
                       ? ListView.builder(
@@ -584,7 +583,7 @@ class _HomeState extends State<Home> {
                               },
                               child: Padding(
                                 padding: EdgeInsets.symmetric(
-                                    horizontal: 20, vertical: 17),
+                                    horizontal: size.width / 20, vertical: size.height / 20),
                                 child: Stack(children: [
                                   Hero(
                                     tag: "target$index",
@@ -594,10 +593,12 @@ class _HomeState extends State<Home> {
                                       decoration: BoxDecoration(
                                         boxShadow: [
                                           BoxShadow(
-                                            color: Colors.white.withOpacity(0.8),
+                                            color:
+                                                Colors.white.withOpacity(0.8),
                                             spreadRadius: 5,
                                             blurRadius: 7,
-                                            offset: Offset(0, 3), // changes position of shadow
+                                            offset: Offset(0,
+                                                3), // changes position of shadow
                                           ),
                                         ],
                                         image: DecorationImage(
@@ -613,7 +614,6 @@ class _HomeState extends State<Home> {
                                     width: size.width / 1.4,
                                     height: size.height / 1.8,
                                     decoration: BoxDecoration(
-
                                         gradient: LinearGradient(
                                             begin: Alignment.topCenter,
                                             end: Alignment.bottomCenter,
@@ -658,7 +658,7 @@ class _HomeState extends State<Home> {
                                   },
                                   child: Padding(
                                     padding: EdgeInsets.symmetric(
-                                        horizontal: 20, vertical: 20),
+                                        horizontal: size.width / 20, vertical: size.height / 20),
                                     child: Stack(children: [
                                       Hero(
                                         tag: "target$index",
@@ -724,7 +724,7 @@ class _HomeState extends State<Home> {
                                       },
                                       child: Padding(
                                         padding: EdgeInsets.symmetric(
-                                            horizontal: 20, vertical: 20),
+                                            horizontal: size.width / 20, vertical: size.height / 20),
                                         child: Stack(children: [
                                           Hero(
                                             tag: "target$index",
@@ -792,7 +792,7 @@ class _HomeState extends State<Home> {
                                       },
                                       child: Padding(
                                         padding: EdgeInsets.symmetric(
-                                            horizontal: 20, vertical: 20),
+                                            horizontal: size.width / 20, vertical: size.height / 20),
                                         child: Stack(children: [
                                           Hero(
                                             tag: "target$index",

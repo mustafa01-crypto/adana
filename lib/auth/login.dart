@@ -85,7 +85,6 @@ class _LoginState extends State<Login> {
             backgroundColor: Colors.grey.shade200,
             snackPosition: SnackPosition.BOTTOM,
           );
-          // Fluttertoast.showToast(msg: message);
           return false;
         } else {
           return true;
@@ -129,14 +128,14 @@ class _LoginState extends State<Login> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     SizedBox(
-                      height: size.height * 1 / 6,
+                      height: size.height * 1 / 5,
                     ),
                     Text(
                       'GİRİŞ EKRANI',
                       style: loginTitle
                     ),
                     SizedBox(
-                      height: size.height * 1 / 12,
+                      height: size.height * 1 / 8,
                     ),
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 20),
@@ -182,7 +181,7 @@ class _LoginState extends State<Login> {
                       ),
                     ),
                     SizedBox(
-                      height: size.height * 1 / 25,
+                      height: size.height * 1 / 20,
                     ),
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 20),
@@ -239,7 +238,7 @@ class _LoginState extends State<Login> {
                       ),
                     ),
                     SizedBox(
-                      height: size.height * 1 / 25,
+                      height: size.height * 1 / 20,
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -276,7 +275,7 @@ class _LoginState extends State<Login> {
                       ),
                     ),
                     SizedBox(
-                      height: 1,
+                      height: size.height * 1 / 50,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -302,6 +301,8 @@ class _LoginState extends State<Login> {
                     TextButton(
                       onPressed: () {
                         Get.to(() => ForgotPassword());
+                        print(size.width);
+                        print(size.height);
                       },
                       child: Padding(
                         padding: const EdgeInsets.only(right: 5),

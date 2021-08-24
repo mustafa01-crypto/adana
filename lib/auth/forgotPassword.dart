@@ -1,5 +1,4 @@
 import 'package:adana/auth/login.dart';
-import 'package:adana/components/mainAppBar.dart';
 import 'package:adana/constants/constants.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -76,7 +75,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                     ),
                   ),
                   SizedBox(
-                    height: size.height /16,
+                    height: size.height /12,
                   ),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 20),
@@ -122,7 +121,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                     ),
                   ),
                   SizedBox(
-                    height: 10,
+                    height: size.height /30,
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10),

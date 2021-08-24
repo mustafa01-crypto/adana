@@ -95,14 +95,14 @@ class _RegisterState extends State<Register> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     SizedBox(
-                      height: size.height * 1 / 30,
+                      height: size.height * 1 / 7,
                     ),
                     Text(
                       'KAYIT EKRANI',
                       style: loginTitle
                     ),
                     SizedBox(
-                      height: size.height * 1 / 25,
+                      height: size.height * 1 / 16,
                     ),
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 20),
@@ -344,7 +344,7 @@ class _RegisterState extends State<Register> {
                       ),
                     ),
                     SizedBox(
-                      height:1,
+                      height: size.height * 1 / 60,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,

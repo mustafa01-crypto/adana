@@ -452,7 +452,7 @@ class _HomeState extends State<Home> {
                     children: [
                       Text(
                         loggedInuser.email.toString(),
-                        style: cityName,
+                        style: tileMetin,
                       ),
                     ],
                   ),

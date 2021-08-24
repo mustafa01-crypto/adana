@@ -1,4 +1,4 @@
-// @dart = 2.9
+
 import 'package:adana/auth/login.dart';
 import 'package:adana/ilceler/ceyhan/anavarza.dart';
 import 'package:adana/ilceler/ceyhan/durhasan.dart';

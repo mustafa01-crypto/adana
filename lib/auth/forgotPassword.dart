@@ -1,5 +1,6 @@
 import 'package:adana/auth/login.dart';
 import 'package:adana/components/mainAppBar.dart';
+import 'package:adana/constants/constants.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -18,15 +19,15 @@ class _ForgotPasswordState extends State<ForgotPassword> {
   FirebaseAuth _auth = FirebaseAuth.instance;
 
 
+
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,
         backgroundColor: Colors.white,
-        appBar: mainAppBar(
-          "Şifre Yenile"
-        ),
+
         body: Form(
           key: _formKey,
           child: Stack(
@@ -38,41 +39,44 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   image: DecorationImage(
                     fit: BoxFit.cover,
                     image: AssetImage(
-                      'assets/back_photo.jpeg',
+                      'assets/459222.jpg',
                     ),
                   ),
                 ),
               ),
               Opacity(
-                opacity: 0.59,
+                opacity: 0.44,
                 child: Container(
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
                         colors: [
-                          Colors.red,
-                          Colors.blue,
+                          topBack,
+                          centerBack,
+                          bottomBack
                         ]),
                   ),
                 ),
               ),
               Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-
-                  Text(
-                    'ŞİFREMi UNUTTUM',
-                    style: TextStyle(
-                      letterSpacing: 3,
-                      fontSize: 35.0,
-                      fontStyle: FontStyle.italic,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                  Padding(
+                    padding: const EdgeInsets.only(top: 32,left: 24),
+                    child: IconButton(
+                      icon: Icon(
+                        Icons.arrow_back,
+                        size: 40,
+                        color: Colors.white,
+                      ),
+                      onPressed: () {
+                        Get.back();
+                      },
                     ),
                   ),
                   SizedBox(
-                    height: 150,
+                    height: size.height /16,
                   ),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 20),
@@ -157,7 +161,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                           ),
                         ),
                         decoration: BoxDecoration(
-                          color: Colors.red.shade400,
+                          gradient:   buttonBoxGradient,
                           borderRadius: BorderRadius.all(Radius.circular(30)),
                           boxShadow: [
                             BoxShadow(
@@ -172,6 +176,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                       ),
                     ),
                   ),
+
                 ],
               )
             ],

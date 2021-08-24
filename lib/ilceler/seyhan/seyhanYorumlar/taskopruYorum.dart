@@ -60,13 +60,11 @@ class _YorumlarState extends State<Yorumlar> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
-
                     margin: EdgeInsets.symmetric(horizontal: 10, vertical: 15),
                     width: double.infinity,
                     padding: EdgeInsets.symmetric(
                         horizontal: MediaQuery.of(context).size.width * 1 / 50),
                     decoration: BoxDecoration(
-
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(15),
                           topRight: Radius.circular(15),
@@ -85,14 +83,14 @@ class _YorumlarState extends State<Yorumlar> {
                               data["email"],
                               style: emailText,
                             ),
-
                           ],
                         ),
                         SizedBox(
                           height: 6,
                         ),
                         Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 4,horizontal: 13),
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 4, horizontal: 13),
                           child: Text(
                             data["icerik"],
                             style: yorumText,
@@ -133,7 +131,8 @@ class _YorumlarState extends State<Yorumlar> {
                                 animationDuration: Duration(milliseconds: 1000),
                                 valueLabelPadding: const EdgeInsets.symmetric(
                                     vertical: 1, horizontal: 8),
-                                valueLabelMargin: const EdgeInsets.only(right: 8),
+                                valueLabelMargin:
+                                    const EdgeInsets.only(right: 8),
                                 starOffColor: const Color(0xffe7e8ea),
                                 starColor: Colors.amber,
                               ),
@@ -191,24 +190,21 @@ class _ProfilesState extends State<Profiles> {
     // final height = MediaQuery.of(context).size.height;
     return Container(
       width: width * 1 / 9,
-      height: width * 1 / 8,
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: ClipOval(
-            child: indirmeBaglantisi == null
-                ? Image.asset(
-                    "assets/profile.png",
-                    width: width * 1 / 10,
-                    height: width * 1 / 10,
-                    fit: BoxFit.cover,
-                  )
-                : Image.network(
-                    indirmeBaglantisi!,
-                    width: width * 1 / 10,
-                    height: width * 1 / 10,
-                    fit: BoxFit.cover,
-                  )),
-      ),
+      height: width * 1 / 9,
+      child: ClipOval(
+          child: indirmeBaglantisi == null
+              ? Image.asset(
+                  "assets/profile.png",
+                  width: width * 1 / 9,
+                  height: width * 1 / 9,
+                  fit: BoxFit.cover,
+                )
+              : Image.network(
+                  indirmeBaglantisi!,
+                  width: width * 1 / 9,
+                  height: width * 1 / 9,
+                  fit: BoxFit.cover,
+                )),
     );
   }
 }

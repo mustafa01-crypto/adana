@@ -1,4 +1,5 @@
 import 'package:adana/auth/verify.dart';
+import 'package:adana/constants/constants.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -35,7 +36,7 @@ class _RegisterState extends State<Register> {
 
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
+    Size size = MediaQuery.of(context).size;
     return WillPopScope(
       onWillPop: () async {
         final difference = DateTime.now().difference(timeDifference);
@@ -68,23 +69,23 @@ class _RegisterState extends State<Register> {
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       fit: BoxFit.cover,
-                      image: NetworkImage(
-                        'https://wallpaperaccess.com/full/459222.jpg',
+                      image: AssetImage(
+                        'assets/459222.jpg',
                       ),
                     ),
                   ),
                 ),
                 Opacity(
-                  opacity: 0.59,
+                  opacity: 0.44,
                   child: Container(
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
                           colors: [
-                            Colors.black26,
-                            Colors.black54,
-                            Colors.black,
+                            topBack,
+                            centerBack,
+                            bottomBack
                           ]),
                     ),
                   ),
@@ -93,35 +94,30 @@ class _RegisterState extends State<Register> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     SizedBox(
-                      height: width * 1 / 2 - 50,
+                      height: size.height * 1 / 10,
                     ),
                     Text(
                       'KAYIT EKRANI',
-                      style: TextStyle(
-                        fontSize: 35.0,
-                        fontStyle: FontStyle.italic,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
+                      style: loginTitle
                     ),
                     SizedBox(
-                      height: 40,
+                      height: size.height * 1 / 15,
                     ),
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 20),
                       child: TextFormField(
                         style: TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.w300),
+                            color: kutu, fontWeight: FontWeight.w300),
                         decoration: InputDecoration(
                           hintText: "Ad Soyad",
-                          hintStyle: TextStyle(color: Colors.white),
+                          hintStyle: TextStyle(color: kutu),
                           labelText: "Ad-Soyad",
-                          labelStyle: TextStyle(color: Colors.white),
-                          fillColor: Colors.white,
+                          labelStyle: TextStyle(color: kutu),
+                          fillColor: kutu,
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(25.0),
                             borderSide: BorderSide(
-                              color: Colors.white,
+                              color: kutu,
                               style: BorderStyle.solid,
                               width: 1.5,
                             ),
@@ -129,38 +125,38 @@ class _RegisterState extends State<Register> {
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(25.0),
                             borderSide: BorderSide(
-                              color: Colors.white,
+                              color: kutu,
                               style: BorderStyle.solid,
                               width: 1.5,
                             ),
                           ),
                           prefixIcon: Icon(
                             Icons.person,
-                            color: Colors.grey.shade300,
+                            color: kutu,
                           ),
                         ),
                         controller: t1,
                       ),
                     ),
                     SizedBox(
-                      height: 20,
+                      height: size.height * 1 / 25,
                     ),
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 20),
                       child: TextFormField(
                         keyboardType: TextInputType.emailAddress,
                         style: TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.w300),
+                            color: kutu, fontWeight: FontWeight.w300),
                         decoration: InputDecoration(
                           hintText: "Email Adresi",
-                          hintStyle: TextStyle(color: Colors.white),
+                          hintStyle: TextStyle(color: kutu),
                           labelText: "Email",
-                          labelStyle: TextStyle(color: Colors.white),
-                          fillColor: Colors.white,
+                          labelStyle: TextStyle(color: kutu),
+                          fillColor: kutu,
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(25.0),
                             borderSide: BorderSide(
-                              color: Colors.white,
+                              color: kutu,
                               style: BorderStyle.solid,
                               width: 1.5,
                             ),
@@ -168,14 +164,14 @@ class _RegisterState extends State<Register> {
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(25.0),
                             borderSide: BorderSide(
-                              color: Colors.white,
+                              color: kutu,
                               style: BorderStyle.solid,
                               width: 1.5,
                             ),
                           ),
                           prefixIcon: Icon(
                             Icons.email,
-                            color: Colors.grey.shade300,
+                            color: kutu,
                           ), // icon is 48px widget.
                           //fillColor: Colors.green
                         ),
@@ -189,24 +185,24 @@ class _RegisterState extends State<Register> {
                       ),
                     ),
                     SizedBox(
-                      height: 20,
+                      height: size.height * 1 / 25,
                     ),
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 20),
                       child: TextFormField(
                         style: TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.w300),
+                            color: kutu, fontWeight: FontWeight.w300),
                         obscureText: !_passwordVisible,
                         decoration: InputDecoration(
                           hintText: "Parola",
-                          hintStyle: TextStyle(color: Colors.white),
+                          hintStyle: TextStyle(color: kutu),
                           labelText: "Parola",
-                          labelStyle: TextStyle(color: Colors.white),
-                          fillColor: Colors.white,
+                          labelStyle: TextStyle(color:kutu),
+                          fillColor: kutu,
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(25.0),
                             borderSide: BorderSide(
-                              color: Colors.white,
+                              color: kutu,
                               style: BorderStyle.solid,
                               width: 1.5,
                             ),
@@ -214,20 +210,20 @@ class _RegisterState extends State<Register> {
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(25.0),
                             borderSide: BorderSide(
-                              color: Colors.white,
+                              color: kutu,
                               style: BorderStyle.solid,
                               width: 1.5,
                             ),
                           ),
                           prefixIcon: Icon(
                             Icons.vpn_key,
-                            color: Colors.grey.shade300,
+                            color: kutu,
                           ),
                           suffixIcon: IconButton(
                             icon: Icon(_passwordVisible
                                 ? Icons.visibility
                                 : Icons.visibility_off),
-                            color: Colors.grey.shade300,
+                            color: kutu,
                             onPressed: () {
                               setState(() {
                                 _passwordVisible = !_passwordVisible;
@@ -245,24 +241,24 @@ class _RegisterState extends State<Register> {
                       ),
                     ),
                     SizedBox(
-                      height: 20,
+                      height: size.height * 1 / 25,
                     ),
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 20),
                       child: TextFormField(
                         style: TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.w300),
+                            color: kutu, fontWeight: FontWeight.w300),
                         obscureText: !_passwordVisible2,
                         decoration: InputDecoration(
                           hintText: "Parola Yeniden",
-                          hintStyle: TextStyle(color: Colors.white),
+                          hintStyle: TextStyle(color:kutu),
                           labelText: "Parola",
-                          labelStyle: TextStyle(color: Colors.white),
-                          fillColor: Colors.white,
+                          labelStyle: TextStyle(color: kutu),
+                          fillColor: kutu,
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(25.0),
                             borderSide: BorderSide(
-                              color: Colors.white,
+                              color: kutu,
                               style: BorderStyle.solid,
                               width: 1.5,
                             ),
@@ -270,20 +266,20 @@ class _RegisterState extends State<Register> {
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(25.0),
                             borderSide: BorderSide(
-                              color: Colors.white,
+                              color: kutu,
                               style: BorderStyle.solid,
                               width: 1.5,
                             ),
                           ),
                           prefixIcon: Icon(
                             Icons.vpn_key,
-                            color: Colors.grey.shade300,
+                            color: kutu,
                           ),
                           suffixIcon: IconButton(
                             icon: Icon(_passwordVisible2
                                 ? Icons.visibility
                                 : Icons.visibility_off),
-                            color: Colors.grey.shade300,
+                            color: kutu,
                             onPressed: () {
                               setState(() {
                                 _passwordVisible2 = !_passwordVisible2;
@@ -301,7 +297,7 @@ class _RegisterState extends State<Register> {
                       ),
                     ),
                     SizedBox(
-                      height: 20,
+                      height: size.height * 1 / 25,
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -327,14 +323,11 @@ class _RegisterState extends State<Register> {
                           child: Center(
                             child: Text(
                               "KAYIT OL",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 25),
+                              style: loginButton
                             ),
                           ),
                           decoration: BoxDecoration(
-                            color: Colors.red.shade400,
+                            gradient: buttonBoxGradient,
                             borderRadius: BorderRadius.all(Radius.circular(30)),
                             boxShadow: [
                               BoxShadow(
@@ -357,10 +350,7 @@ class _RegisterState extends State<Register> {
                       children: [
                         Text(
                           "Hesabım var",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w500,
-                              fontSize: 18),
+                          style: loginText
                         ),
                         TextButton(
                           onPressed: () {
@@ -370,11 +360,7 @@ class _RegisterState extends State<Register> {
                             padding: const EdgeInsets.only(right: 5),
                             child: Text(
                               "Giriş Yap",
-                              style: TextStyle(
-                                  decoration: TextDecoration.underline,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 18),
+                              style: loginTextUnderlined
                             ),
                           ),
                         ),

@@ -83,6 +83,23 @@ Color metinColor = Color(0xFF070707);
 Color yorumColor = Color(0xFF3A3333);
 Color mailColor = Color(0xFF000000);
 
+
+Color topBack = Color(0xFF261A80);
+Color centerBack = Color(0xFF7700FF);
+Color bottomBack = Color(0xFF1C00D5);
+
+Color buttonTopGradient = Color(0xFFE1DEF6);
+Color buttonBottomGradient = Color(0xFF7700FF);
+
+Gradient buttonBoxGradient = LinearGradient(
+  begin: Alignment.topCenter,
+  end: Alignment.bottomCenter,
+  colors: [
+    buttonTopGradient,
+    buttonBottomGradient,
+  ],
+);
+
 Gradient boxGradient = LinearGradient(
   begin: Alignment.topCenter,
   end: Alignment.bottomCenter,
@@ -120,4 +137,29 @@ TextStyle tileMetin = GoogleFonts.roboto(
   color: Colors.white,
   fontWeight: FontWeight.normal,
   fontSize: 19,
+);
+
+TextStyle loginTitle = GoogleFonts.roboto(
+  color: kutu,
+  fontWeight: FontWeight.bold,
+  fontSize: 45,
+);
+
+TextStyle loginButton = GoogleFonts.roboto(
+  color: kutu,
+  fontWeight: FontWeight.bold,
+  fontSize: 31,
+);
+
+TextStyle loginText = GoogleFonts.roboto(
+  color: kutu,
+  fontWeight: FontWeight.normal,
+  fontSize: 22,
+);
+
+TextStyle loginTextUnderlined = GoogleFonts.roboto(
+  decoration: TextDecoration.underline,
+  color: kutu,
+  fontWeight: FontWeight.normal,
+  fontSize: 22,
 );

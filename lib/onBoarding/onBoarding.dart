@@ -24,6 +24,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     const bodyStyle = TextStyle(fontSize: 19.0);
 
     const pageDecoration = const PageDecoration(
@@ -46,21 +47,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
           ),
         ),
       ),
-      /*
-      globalFooter: SizedBox(
-        width: double.infinity,
-        height: 60,
 
-        child: ElevatedButton(
-
-          child: const Text(
-            'Hadi Başlayalım',
-            style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
-          ),
-          onPressed: () => _onIntroEnd(context),
-        ),
-      ),
-       */
       pages: [
         PageViewModel(
           title: "Gez Gör Keşfet",
@@ -90,9 +77,9 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
       skipFlex: 0,
       nextFlex: 0,
 
-      skip: const Text('Geç'),
-      next: const Icon(Icons.arrow_forward),
-      done: const Text('Bitti', style: TextStyle(fontWeight: FontWeight.w600)),
+      skip:  Text('Geç',style: tileMetin,),
+      next:  Icon(Icons.arrow_forward,color: Colors.white,),
+      done:  Text('Bitti', style: tileMetin),
       curve: Curves.fastLinearToSlowEaseIn,
       controlsMargin: const EdgeInsets.all(16),
       controlsPadding: kIsWeb

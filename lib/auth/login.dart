@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:adana/auth/register.dart';
 import 'package:adana/auth/forgotPassword.dart';
+import 'package:adana/constants/constants.dart';
 import 'package:adana/home.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -68,7 +69,7 @@ class _LoginState extends State<Login> {
 
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
+    Size size = MediaQuery.of(context).size;
 
     return WillPopScope(
       onWillPop: () async {
@@ -103,23 +104,23 @@ class _LoginState extends State<Login> {
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       fit: BoxFit.cover,
-                      image: NetworkImage(
-                        'https://wallpaperaccess.com/full/459222.jpg',
+                      image: AssetImage(
+                        'assets/459222.jpg',
                       ),
                     ),
                   ),
                 ),
                 Opacity(
-                  opacity: 0.59,
+                  opacity: 0.44,
                   child: Container(
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
                           colors: [
-                            Colors.black26,
-                            Colors.black54,
-                            Colors.black,
+                           topBack,
+                            centerBack,
+                            bottomBack
                           ]),
                     ),
                   ),
@@ -128,37 +129,31 @@ class _LoginState extends State<Login> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     SizedBox(
-                      height: width * 1 / 2,
+                      height: size.height * 1 / 6,
                     ),
                     Text(
                       'GİRİŞ EKRANI',
-                      style: TextStyle(
-                        letterSpacing: 3,
-                        fontSize: 35.0,
-                        fontStyle: FontStyle.italic,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
+                      style: loginTitle
                     ),
                     SizedBox(
-                      height: width * 1 / 5,
+                      height: size.height * 1 / 12,
                     ),
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 20),
                       child: TextFormField(
                         keyboardType: TextInputType.emailAddress,
                         style: TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.w300),
+                            color: kutu, fontWeight: FontWeight.w300),
                         decoration: InputDecoration(
                           hintText: "Email Adresi",
                           hintStyle: TextStyle(color: Colors.white),
                           labelText: "Email",
                           labelStyle: TextStyle(color: Colors.white),
-                          fillColor: Colors.white,
+                          fillColor: kutu,
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(25.0),
                             borderSide: BorderSide(
-                              color: Colors.white,
+                              color: kutu,
                               style: BorderStyle.solid,
                               width: 1.5,
                             ),
@@ -166,14 +161,14 @@ class _LoginState extends State<Login> {
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(25.0),
                             borderSide: BorderSide(
-                              color: Colors.white,
+                              color: kutu,
                               style: BorderStyle.solid,
                               width: 1.5,
                             ),
                           ),
                           prefixIcon: Icon(
                             Icons.email,
-                            color: Colors.grey.shade300,
+                            color: kutu,
                           ), // icon is 48px widget.
                           //fillColor: Colors.green
                         ),
@@ -187,24 +182,24 @@ class _LoginState extends State<Login> {
                       ),
                     ),
                     SizedBox(
-                      height: 20,
+                      height: size.height * 1 / 25,
                     ),
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 20),
                       child: TextFormField(
                         style: TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.w300),
+                            color: kutu, fontWeight: FontWeight.w300),
                         obscureText: !_passwordVisible,
                         decoration: InputDecoration(
                             hintText: "Parola",
-                            hintStyle: TextStyle(color: Colors.white),
+                            hintStyle: TextStyle(color: kutu),
                             labelText: "Parola",
-                            labelStyle: TextStyle(color: Colors.white),
+                            labelStyle: TextStyle(color: kutu),
                             fillColor: Colors.white,
                             focusedBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(25.0),
                               borderSide: BorderSide(
-                                color: Colors.white,
+                                color: kutu,
                                 style: BorderStyle.solid,
                                 width: 1.5,
                               ),
@@ -212,20 +207,20 @@ class _LoginState extends State<Login> {
                             enabledBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(25.0),
                               borderSide: BorderSide(
-                                color: Colors.white,
+                                color: kutu,
                                 style: BorderStyle.solid,
                                 width: 1.5,
                               ),
                             ),
                             prefixIcon: Icon(
                               Icons.vpn_key,
-                              color: Colors.grey.shade300,
+                              color: kutu,
                             ),
                             suffixIcon: IconButton(
                               icon: Icon(_passwordVisible
                                   ? Icons.visibility
                                   : Icons.visibility_off),
-                              color: Colors.grey.shade300,
+                              color: kutu,
                               onPressed: () {
                                 setState(() {
                                   _passwordVisible = !_passwordVisible;
@@ -244,7 +239,7 @@ class _LoginState extends State<Login> {
                       ),
                     ),
                     SizedBox(
-                      height: 20,
+                      height: size.height * 1 / 25,
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -260,14 +255,12 @@ class _LoginState extends State<Login> {
                           child: Center(
                             child: Text(
                               "GİRİŞ YAP",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 25),
+                              style: loginButton
                             ),
                           ),
                           decoration: BoxDecoration(
-                            color: Colors.red.shade400,
+
+                            gradient: buttonBoxGradient,
                             borderRadius: BorderRadius.all(Radius.circular(30)),
                             boxShadow: [
                               BoxShadow(
@@ -283,17 +276,14 @@ class _LoginState extends State<Login> {
                       ),
                     ),
                     SizedBox(
-                      height: 10,
+                      height: size.height * 1 / 25,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          "Hesabım yok",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w500,
-                              fontSize: 18),
+                          "Hesabım yok?",
+                          style: loginText,
                         ),
                         TextButton(
                           onPressed: () {
@@ -303,11 +293,7 @@ class _LoginState extends State<Login> {
                             padding: const EdgeInsets.only(right: 5),
                             child: Text(
                               "Kayıt Ol",
-                              style: TextStyle(
-                                  decoration: TextDecoration.underline,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 18),
+                              style: loginTextUnderlined,
                             ),
                           ),
                         ),
@@ -321,11 +307,7 @@ class _LoginState extends State<Login> {
                         padding: const EdgeInsets.only(right: 5),
                         child: Text(
                           "Şifremi Unuttum",
-                          style: TextStyle(
-                              decoration: TextDecoration.underline,
-                              color: Colors.white,
-                              fontWeight: FontWeight.w600,
-                              fontSize: 18),
+                          style: loginText
                         ),
                       ),
                     ),

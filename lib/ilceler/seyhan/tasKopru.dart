@@ -64,7 +64,7 @@ class _TasKopruState extends State<TasKopru>
       commentHint: "...",
       message: 'Yerköprü hakkında ne düşünüyorsunuz',
       image: Image.asset(
-        "assets/taskopru.jpg",
+        "assets/seyhan/taskopru.jpg",
         height: 100,
       ),
       submitButton: 'Gönder',

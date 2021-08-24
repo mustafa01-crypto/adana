@@ -63,7 +63,7 @@ class _SaatKulesiState extends State<SaatKulesi>
       commentHint: "...",
       message: 'Büyük Saat Kulesi hakkında ne düşünüyorsunuz',
       image: Image.asset(
-        "assets/saat.jpg",
+        "assets/seyhan/saat.jpg",
         height: 100,
       ),
       submitButton: 'Gönder',

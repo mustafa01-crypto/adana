@@ -29,7 +29,7 @@ class _KurtKulagiState extends State<KurtKulagi>
     with SingleTickerProviderStateMixin {
   double x = 36.9235693;
   double y = 35.8837971;
-  String title = "Kurtkulağı Kervansarayı";
+  String title = "Kurtkulağı";
   FirebaseAuth auth = FirebaseAuth.instance;
 
   void initState() {

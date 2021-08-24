@@ -5,6 +5,7 @@ import 'package:adana/ilceler/ceyhan/durhasan.dart';
 import 'package:adana/ilceler/ceyhan/kurtkulagi.dart';
 import 'package:adana/ilceler/ceyhan/tumlu.dart';
 import 'package:adana/ilceler/ceyhan/yilanKale.dart';
+import 'package:adana/ilceler/cukurova/karatasPlaji.dart';
 import 'package:adana/ilceler/cukurova/muzeKompleksi.dart';
 import 'package:adana/ilceler/cukurova/sevgiAdasi.dart';
 import 'package:adana/ilceler/cukurova/seyhanBaraji.dart';
@@ -73,7 +74,7 @@ class MyApp extends StatelessWidget {
         //cukurova
 
         GetPage(name: '/dogal', page: () => DogalPark()),
-        GetPage(name: '/karatas', page: () => YilanKale()),
+        GetPage(name: '/karatas', page: () => KaratasPlaji()),
         GetPage(name: '/muze', page: () => MuzeKompleksi()),
         GetPage(name: '/sevgi', page: () => SevgiAdasi()),
         GetPage(name: '/baraj', page: () => SeyhanBaraji()),

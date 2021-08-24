@@ -145,11 +145,10 @@ class _HomeState extends State<Home> {
       'puan': "5",
       'ad': "KURTKULAĞI",
       'image': "assets/ceyhan/kurt.jpg",
-      'bilgi': "Varda Köprüsü, Adana ili Karaisalı ilçesi Hacıkırı "
-          "(Kıralan) mahallesi'nde bulunan, yöre halkı tarafından Koca "
-          "Köprü diye anılan köprü. Hacıkırı Demiryolu"
-          " Köprüsü olarak ya da 1912 yılında Almanlar"
-          " tarafından inşa edildiği için Alman köprüsü olarak bilinmektedir.",
+      'bilgi': "Ceyhan'ın 12 km güneydoğusunda Kurtkulağı mahallesi'ndedir. "
+          "Adana Müzesinde bulunan kervansaray kitabesine göre eser "
+          "1659'da Hüseyin Paşa tarafından yaptırılmış olup, mimarı Mehmed "
+          "Ağa'dır.",
     },
     {
       "route": "/tumlu",
@@ -317,9 +316,14 @@ class _HomeState extends State<Home> {
       'puan': "5",
       'ad': "ULU CAMİİ",
       'image': "assets/seyhan/alu.jpg",
-      'bilgi': "Yumurtalık Lagünü Milli Parkı Çukurova’ya yaklaşık 40 km"
-          " uzaklıktadır. Birçok kuş türüne ev sahipliği yapan ve"
-          " onların göç yolu üzerinde bulunan özel bir yerdir."
+      'bilgi':"Ulu Cami büyüklüğü ve tarihî açısından Adana'nın önemli "
+          "eserleri arasında gösterilmektedir. Selçuklu, Memlûklu"
+          " ve Osmanlılar Dönem'lerine ait mimarî karakterleri"
+          " üzerinde toplayan bu eserin üç ayrı kitabesinden,"
+          " ilk defa 1513 yıllarında Ramazan oğlu Halil Bey"
+          " tarafından inşasına başlandığı, 1541 yılında Halil"
+          " Beyin oğlu Piri Mehmet Paşa tarafından bitirilerek "
+          "ibadete açıldığı anlaşılmaktadır."
     },
   ];
 
@@ -452,7 +456,7 @@ class _HomeState extends State<Home> {
                     children: [
                       Text(
                         loggedInuser.email.toString(),
-                        style: tileMetin,
+                        style: metin,
                       ),
                     ],
                   ),
@@ -464,7 +468,7 @@ class _HomeState extends State<Home> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                padding: EdgeInsets.only(top: 20, left: 20, right: 20),
+                padding: EdgeInsets.only(top: 18, left: 20, right: 20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -509,7 +513,7 @@ class _HomeState extends State<Home> {
                   ],
                 ),
               ),
-              SizedBox(height: 30),
+              SizedBox(height: 19),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
@@ -557,7 +561,7 @@ class _HomeState extends State<Home> {
                 ),
               ),
               SizedBox(
-                height: 5,
+                height: 3,
               ),
               Container(
                   decoration: BoxDecoration(),
@@ -580,7 +584,7 @@ class _HomeState extends State<Home> {
                               },
                               child: Padding(
                                 padding: EdgeInsets.symmetric(
-                                    horizontal: 20, vertical: 20),
+                                    horizontal: 20, vertical: 17),
                                 child: Stack(children: [
                                   Hero(
                                     tag: "target$index",

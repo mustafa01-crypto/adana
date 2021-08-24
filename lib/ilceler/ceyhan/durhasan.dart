@@ -91,45 +91,47 @@ class _DurhasanState extends State<Durhasan>
     return Scaffold(
       backgroundColor: kutu,
       appBar: mainAppBar(title),
-      body: SafeArea(
-        child: Column(
-          children: [
-            sliderImage(
-              context,
-              links,
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            infoText(
-                "Ceyhan ilçesinin Durhasan köyü girişinde sağ tarafta bir tepenin"
-                " üzerinde bulunan asırlık bir meşe ağacının altında, Selçuklu "
-                "mimari tarzının görüldüğü bir türbede medfundur. Türbenin "
-                "bakımı köylüler tarafından yapılmaktadır."
-                "Durhasan dede; Çukurova velilerinde Misis kütüklü köyünde kabri"
-                " bulunan Cabbar Dede’nin kardeşidir. Bu zatı vesile ederek"
-                " yapılan duaların kabul olduğu yöre halkı tarafından söylenmektedir."
-                "Yaşadığı ve vefat ettiği tarihler kesin olarak bilinmektedir."
-                " Türbenin üzerindeki kitabeden 1287 tarihinde restore"
-                " edildiği anlaşılmaktadır."),
-
-            SizedBox(
-              height: 15,
-            ),
-
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: IconButton(
-                icon: Icon(Icons.arrow_circle_up,color: Colors.black,size: 40,),
-                onPressed: () {
-                  Get.bottomSheet(buildSheet(),
-                      barrierColor: Colors.white.withOpacity(0.6),
-                      isScrollControlled: false);
-                },
+      body: SingleChildScrollView(
+        child: SafeArea(
+          child: Column(
+            children: [
+              sliderImage(
+                context,
+                links,
               ),
-            )
+              SizedBox(
+                height: 10,
+              ),
+              infoText(
+                  "Ceyhan ilçesinin Durhasan köyü girişinde sağ tarafta bir tepenin"
+                  " üzerinde bulunan asırlık bir meşe ağacının altında, Selçuklu "
+                  "mimari tarzının görüldüğü bir türbede medfundur. Türbenin "
+                  "bakımı köylüler tarafından yapılmaktadır."
+                  "Durhasan dede; Çukurova velilerinde Misis kütüklü köyünde kabri"
+                  " bulunan Cabbar Dede’nin kardeşidir. Bu zatı vesile ederek"
+                  " yapılan duaların kabul olduğu yöre halkı tarafından söylenmektedir."
+                  "Yaşadığı ve vefat ettiği tarihler kesin olarak bilinmektedir."
+                  " Türbenin üzerindeki kitabeden 1287 tarihinde restore"
+                  " edildiği anlaşılmaktadır."),
 
-          ],
+              SizedBox(
+                height: 15,
+              ),
+
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: IconButton(
+                  icon: Icon(Icons.arrow_circle_up,color: Colors.black,size: 40,),
+                  onPressed: () {
+                    Get.bottomSheet(buildSheet(),
+                        barrierColor: Colors.white.withOpacity(0.6),
+                        isScrollControlled: false);
+                  },
+                ),
+              )
+
+            ],
+          ),
         ),
       ),
     );

@@ -29,7 +29,7 @@ class _MuzeKompleksiState extends State<MuzeKompleksi>
     with SingleTickerProviderStateMixin {
   double x = 36.9951108;
   double y = 35.3114389;
-  String title = "Adana Müze Kompleksi";
+  String title = "Müze Kompleksi";
   FirebaseAuth auth = FirebaseAuth.instance;
 
   void initState() {

@@ -276,7 +276,7 @@ class _LoginState extends State<Login> {
                       ),
                     ),
                     SizedBox(
-                      height: size.height * 1 / 25,
+                      height: 1,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,

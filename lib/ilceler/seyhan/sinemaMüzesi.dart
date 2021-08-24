@@ -29,7 +29,7 @@ class _SinemaMuzesiState extends State<SinemaMuzesi>
     with SingleTickerProviderStateMixin {
   double x = 36.988459;
   double y = 35.331943;
-  String title = "ADANA SİNEMA MÜZESİ";
+  String title = "SİNEMA MÜZESİ";
   FirebaseAuth auth = FirebaseAuth.instance;
 
   void initState() {
@@ -63,7 +63,7 @@ class _SinemaMuzesiState extends State<SinemaMuzesi>
       commentHint: "...",
       message: 'Adana Sinema Müzesi hakkında ne düşünüyorsunuz',
       image: Image.asset(
-        "assets/sinema.jpg",
+        "assets/seyhan/sinema.jpg",
         height: 100,
       ),
       submitButton: 'Gönder',

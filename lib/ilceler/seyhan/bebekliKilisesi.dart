@@ -63,7 +63,7 @@ class _BebekliKilisesiState extends State<BebekliKilisesi>
       commentHint: "...",
       message: 'Bebekli Kilisesi hakkında ne düşünüyorsunuz',
       image: Image.asset(
-        "assets/kilise.jpg",
+        "assets/seyhan/kilise.jpg",
         height: 100,
       ),
       submitButton: 'Gönder',

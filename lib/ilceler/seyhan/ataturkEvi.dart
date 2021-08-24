@@ -63,7 +63,7 @@ class _AtaturkEviState extends State<AtaturkEvi>
       commentHint: "...",
       message: 'Atatürk Evi hakkında ne düşünüyorsunuz',
       image: Image.asset(
-        "assets/ata.jpg",
+        "assets/seyhan/ata.jpg",
         height: 100,
       ),
       submitButton: 'Gönder',

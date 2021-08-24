@@ -29,7 +29,7 @@ class _AlmanKoprusuState extends State<AlmanKoprusu>
     with SingleTickerProviderStateMixin {
   double x = 37.242919;
   double y = 34.976780;
-  String title = "Alman (Varda) Köprüsü";
+  String title = "Varda Köprüsü";
   FirebaseAuth auth = FirebaseAuth.instance;
 
   void initState() {

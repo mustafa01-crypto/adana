@@ -63,7 +63,7 @@ class _SabanciMerkezCamiiState extends State<SabanciMerkezCamii>
       commentHint: "...",
       message: 'Sabancı Merkez Camii hakkında ne düşünüyorsunuz',
       image: Image.asset(
-        "assets/merkezcami.jpg",
+        "assets/seyhan/merkezcami.jpg",
         height: 100,
       ),
       submitButton: 'Gönder',

@@ -93,48 +93,50 @@ class _YilanKaleState extends State<YilanKale>
       backgroundColor: kutu,
       appBar: mainAppBar(title),
 
-      body: SafeArea(
-        child: Column(
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            sliderImage(
-              context,
-              links,
-            ),
-
-            SizedBox(
-              height: 10,
-            ),
-            infoText(
-                "Toros Dağları’nı aşarak Antakya’ya giden tarihi İpek Yolu "
-                "üzerinde yer alan Yılan Kalesi, Orta Çağ’da Çukurova'nın"
-                " Haçlı işgali döneminde Bizanslılar tarafından yapılmıştır."
-                " Anavarza, Tumlu ve Kozan Kaleleri gibi ovadaki"
-                " diğer kaleleri de görüş alanının içine alan"
-                " kalenin sekiz yuvarlak burcu vardır. Kalenin "
-                "güneyinde yer alan nizamiye kapısından itibaren "
-                "taş basamaklı merdivenlerle teraslara çıkılmaktadır. "
-                "Kilise ve sarnıcı bulunan kalenin garnizonu en üst "
-                "bölümde yer almıştır. Sarp kayalar üzerine yapılmış"
-                " olan kalenin önemli bir sanat değeri vardır."),
-
-            SizedBox(
-              height: 15,
-            ),
-
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: IconButton(
-                icon: Icon(Icons.arrow_circle_up,color: Colors.black,size: 40,),
-                onPressed: () {
-                  Get.bottomSheet(buildSheet(),
-                      barrierColor: Colors.white.withOpacity(0.6),
-                      isScrollControlled: false);
-                },
+      body: SingleChildScrollView(
+        child: SafeArea(
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              sliderImage(
+                context,
+                links,
               ),
-            )
 
-          ],
+              SizedBox(
+                height: 10,
+              ),
+              infoText(
+                  "Toros Dağları’nı aşarak Antakya’ya giden tarihi İpek Yolu "
+                  "üzerinde yer alan Yılan Kalesi, Orta Çağ’da Çukurova'nın"
+                  " Haçlı işgali döneminde Bizanslılar tarafından yapılmıştır."
+                  " Anavarza, Tumlu ve Kozan Kaleleri gibi ovadaki"
+                  " diğer kaleleri de görüş alanının içine alan"
+                  " kalenin sekiz yuvarlak burcu vardır. Kalenin "
+                  "güneyinde yer alan nizamiye kapısından itibaren "
+                  "taş basamaklı merdivenlerle teraslara çıkılmaktadır. "
+                  "Kilise ve sarnıcı bulunan kalenin garnizonu en üst "
+                  "bölümde yer almıştır. Sarp kayalar üzerine yapılmış"
+                  " olan kalenin önemli bir sanat değeri vardır."),
+
+              SizedBox(
+                height: 15,
+              ),
+
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: IconButton(
+                  icon: Icon(Icons.arrow_circle_up,color: Colors.black,size: 40,),
+                  onPressed: () {
+                    Get.bottomSheet(buildSheet(),
+                        barrierColor: Colors.white.withOpacity(0.6),
+                        isScrollControlled: false);
+                  },
+                ),
+              )
+
+            ],
+          ),
         ),
       ),
     );

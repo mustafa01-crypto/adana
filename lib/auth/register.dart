@@ -91,17 +91,18 @@ class _RegisterState extends State<Register> {
                   ),
                 ),
                 Column(
+
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     SizedBox(
-                      height: size.height * 1 / 10,
+                      height: size.height * 1 / 30,
                     ),
                     Text(
                       'KAYIT EKRANI',
                       style: loginTitle
                     ),
                     SizedBox(
-                      height: size.height * 1 / 15,
+                      height: size.height * 1 / 25,
                     ),
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 20),
@@ -139,7 +140,7 @@ class _RegisterState extends State<Register> {
                       ),
                     ),
                     SizedBox(
-                      height: size.height * 1 / 25,
+                      height: size.height * 1 / 30,
                     ),
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 20),
@@ -185,7 +186,7 @@ class _RegisterState extends State<Register> {
                       ),
                     ),
                     SizedBox(
-                      height: size.height * 1 / 25,
+                      height: size.height * 1 / 30,
                     ),
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 20),
@@ -241,7 +242,7 @@ class _RegisterState extends State<Register> {
                       ),
                     ),
                     SizedBox(
-                      height: size.height * 1 / 25,
+                      height: size.height * 1 / 30,
                     ),
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 20),
@@ -297,7 +298,7 @@ class _RegisterState extends State<Register> {
                       ),
                     ),
                     SizedBox(
-                      height: size.height * 1 / 25,
+                      height: size.height * 1 / 30,
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -319,7 +320,7 @@ class _RegisterState extends State<Register> {
                         },
                         child: Container(
                           width: MediaQuery.of(context).size.width,
-                          height: 60,
+                          height: size.height /10,
                           child: Center(
                             child: Text(
                               "KAYIT OL",
@@ -343,7 +344,7 @@ class _RegisterState extends State<Register> {
                       ),
                     ),
                     SizedBox(
-                      height: 20,
+                      height:1,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,

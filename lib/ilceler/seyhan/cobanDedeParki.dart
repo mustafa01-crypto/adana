@@ -63,7 +63,7 @@ class _CobanDedeState extends State<CobanDede>
       commentHint: "...",
       message: 'Çoban Dede hakkında ne düşünüyorsunuz',
       image: Image.asset(
-        "assets/dede.jpg",
+        "assets/seyhan/dede.jpg",
         height: 100,
       ),
       submitButton: 'Gönder',

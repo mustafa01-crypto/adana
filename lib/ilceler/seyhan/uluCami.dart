@@ -63,7 +63,7 @@ class _UluCamiiState extends State<UluCamii>
       commentHint: "...",
       message: 'Yerköprü hakkında ne düşünüyorsunuz',
       image: Image.asset(
-        "assets/alu.jpg",
+        "assets/seyhan/alu.jpg",
         height: 100,
       ),
       submitButton: 'Gönder',

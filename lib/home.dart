@@ -456,56 +456,6 @@ class _HomeState extends State<Home> {
                       ),
                     ],
                   ),
-                  /*
-                  Divider(
-                    color: Colors.white,
-                    thickness: 2,
-                  ),
-                  ListTile(
-                    title: Text('KARAİSALI', style: xdAppBarBaslik),
-                    onTap: () {
-                      Get.to(() => KaraisaliMesireList());
-                    },
-                  ),
-                  ListTile(
-                    title: Text('SEYHAN', style: xdAppBarBaslik),
-                    onTap: () {
-                      Get.to(() => SeyhanList());
-                    },
-                  ),
-                  ListTile(
-                    title: Text('ÇUKUROVA', style: xdAppBarBaslik),
-                    onTap: () {
-                      Get.to(() => CukurovaList());
-                    },
-                  ),
-                  ListTile(
-                    title: Text(
-                      'CEYHAN',
-                      style: xdAppBarBaslik,
-                    ),
-                    onTap: () {
-                      Get.to(() => CeyhanList());
-                    },
-                  ),
-                  Divider(
-                    color: Colors.white,
-                    thickness: 2,
-                  ),
-                  ListTile(
-                    leading: Icon(
-                      Icons.exit_to_app,
-                      color: sinir,
-                      size: 30,
-                    ),
-                    title: Text('ÇIKIŞ YAP', style: xdAppBarBaslik),
-                    onTap: () {
-                      FirebaseAuth.instance.signOut().then((deger) {
-                        Get.to(() => Login());
-                      });
-                    },
-                  ),
-                   */
                 ],
               ),
             ),
@@ -514,39 +464,52 @@ class _HomeState extends State<Home> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                padding: EdgeInsets.only(top: 30, left: 20, right: 20),
+                padding: EdgeInsets.only(top: 20, left: 20, right: 20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    IconButton(
-                      icon: Icon(Icons.menu),
-                      onPressed: () {
-                        _scaffoldKey.currentState!.openDrawer();
-                      },
+                    ClipOval(
+                      child: Container(
+                        decoration: BoxDecoration(
+                         // borderRadius: BorderRadius.circular(12),
+                          gradient: boxGradient,
+                        ),
+                        child: IconButton(
+                          icon: Icon(
+                            Icons.menu,
+                            size: 30,
+                            color: Colors.black,
+                          ),
+                          onPressed: () {
+                            _scaffoldKey.currentState!.openDrawer();
+                          },
+                        ),
+                      ),
                     ),
-                    IconButton(
-                      icon: Icon(Icons.exit_to_app),
-                      onPressed: () {
-                        FirebaseAuth.instance.signOut().then((deger) {
-                          Get.to(() => Login());
-                        });
-                      },
+                    ClipOval(
+                      child: Container(
+                        decoration: BoxDecoration(
+                         // borderRadius: BorderRadius.circular(12),
+                          gradient: boxGradient,
+                        ),
+                        child: IconButton(
+                          icon: Icon(
+                            Icons.exit_to_app,
+                            size: 28,
+                            color: Colors.black,
+                          ),
+                          onPressed: () {
+                            FirebaseAuth.instance.signOut().then((deger) {
+                              Get.to(() => Login());
+                            });
+                          },
+                        ),
+                      ),
                     ),
                   ],
                 ),
               ),
-              SizedBox(
-                height: 20,
-              ),
-              /*
-              Padding(
-                padding: const EdgeInsets.only(left: 20),
-                child: Text(
-                  "POPÜLER MEKANLAR",
-                  style: front,
-                ),
-              ),
-               */
+              SizedBox(height: 30),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
@@ -560,7 +523,7 @@ class _HomeState extends State<Home> {
                             },
                             child: Padding(
                               padding:
-                                  const EdgeInsets.only(left: 28.0, right: 5),
+                                  const EdgeInsets.only(left: 20.0, right: 5),
                               child: Container(
                                 //  margin: const EdgeInsets.symmetric(horizontal: 18),
                                 decoration: BoxDecoration(
@@ -576,16 +539,15 @@ class _HomeState extends State<Home> {
                                 ),
                                 child: Padding(
                                   padding: const EdgeInsets.symmetric(
-                                    vertical: 4,
-                                      horizontal: 8.0),
+                                      vertical: 8, horizontal: 8.0),
                                   child: Text(
                                     titles[index],
-                                    style: GoogleFonts.sourceSansPro(
+                                    style: GoogleFonts.roboto(
                                       color: curIndex == index
                                           ? Colors.black
                                           : Colors.grey.shade600,
                                       fontWeight: FontWeight.w900,
-                                      fontSize: 22,
+                                      fontSize: 19,
                                     ),
                                   ),
                                 ),
@@ -595,10 +557,11 @@ class _HomeState extends State<Home> {
                 ),
               ),
               SizedBox(
-                height: 20,
+                height: 5,
               ),
               Container(
-                  height: size.height / 1.5,
+                  decoration: BoxDecoration(),
+                  height: size.height / 1.4,
                   child: curIndex == 0
                       ? ListView.builder(
                           scrollDirection: Axis.horizontal,
@@ -625,19 +588,28 @@ class _HomeState extends State<Home> {
                                       width: size.width / 1.4,
                                       height: size.height / 1.8,
                                       decoration: BoxDecoration(
-                                          image: DecorationImage(
-                                              image: AssetImage(
-                                                typesKaraisali[index]['image'],
-                                              ),
-                                              fit: BoxFit.cover),
-                                          borderRadius:
-                                              BorderRadius.circular(12)),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: Colors.white.withOpacity(0.8),
+                                            spreadRadius: 5,
+                                            blurRadius: 7,
+                                            offset: Offset(0, 3), // changes position of shadow
+                                          ),
+                                        ],
+                                        image: DecorationImage(
+                                            image: AssetImage(
+                                              typesKaraisali[index]['image'],
+                                            ),
+                                            fit: BoxFit.cover),
+                                        borderRadius: BorderRadius.circular(12),
+                                      ),
                                     ),
                                   ),
                                   Container(
                                     width: size.width / 1.4,
                                     height: size.height / 1.8,
                                     decoration: BoxDecoration(
+
                                         gradient: LinearGradient(
                                             begin: Alignment.topCenter,
                                             end: Alignment.bottomCenter,
@@ -653,7 +625,7 @@ class _HomeState extends State<Home> {
                                             BorderRadius.circular(12)),
                                   ),
                                   Positioned(
-                                      bottom: size.width / 4,
+                                      bottom: size.width / 3,
                                       left: 50,
                                       child: Text(
                                         typesKaraisali[index]['ad'],

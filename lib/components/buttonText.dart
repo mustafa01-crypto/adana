@@ -8,11 +8,11 @@ Widget buttonTextContainer(BuildContext context,String buttonName,){
     child: Center(
       child: Text(
         buttonName,
-        style: cityName,
+        style: appBarMetin,
       ),
     ),
     decoration: BoxDecoration(
-      color: xdArka,
+      gradient: boxGradient,
       //border: Border.all(color: kutu, width: 4),
       borderRadius: BorderRadius.all(Radius.circular(30)),
       boxShadow: [

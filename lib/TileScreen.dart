@@ -44,8 +44,8 @@ class _TileScreenState extends State<TileScreen> {
           ),
 
           Positioned(
-            top: 32,
-            right: 25,
+            top: 40,
+            right: 20,
             child: Row(
               children: List.generate(
                 int.parse(data[4]),
@@ -55,16 +55,25 @@ class _TileScreenState extends State<TileScreen> {
           ),
           Positioned(
             top: 32,
-            left: 18,
-            child: GestureDetector(
-                onTap: () {
-                  Get.back();
-                },
-                child: Icon(
-                  Icons.arrow_back,
-                  color: Colors.white,
-                  size: 32,
-                )),
+            left: 30,
+            child: ClipOval(
+              child: Container(
+                decoration: BoxDecoration(
+                 // borderRadius: BorderRadius.circular(12),
+                  gradient: boxGradient,
+                ),
+                child: IconButton(
+                  icon: Icon(
+                    Icons.arrow_back,
+                    size: 30,
+                    color: Colors.grey.shade700,
+                  ),
+                  onPressed: () {
+                    Get.back();
+                  },
+                ),
+              ),
+            ),
           ),
           Positioned(
             bottom: 40,
@@ -75,7 +84,7 @@ class _TileScreenState extends State<TileScreen> {
                 child: Text(
                   data[3],
                   textAlign: TextAlign.center,
-                  style: xdBeyaz,
+                  style: tileMetin,
                 )),
           ),
           Positioned(

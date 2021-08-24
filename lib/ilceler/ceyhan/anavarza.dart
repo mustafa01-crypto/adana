@@ -88,62 +88,60 @@ class _AnavarzaState extends State<Anavarza>
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+   // Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: kutu,
       appBar: mainAppBar(title),
-      body: SafeArea(
-        child: Column(
-          children: [
-            sliderImage(
-              tabController!,
-              context,
-              links.map((String link) {
-                return new ClipRRect(
-                    child: Image.network(
-                  link,
-                  width: MediaQuery.of(context).size.width,
-                  height: 220,
-                  fit: BoxFit.fill,
-                ));
-              }).toList(),
-            ),
-
-
-            SizedBox(
-              height: 10,
-            ),
-
-            infoText("Tarihi 2100 yıl öncesine giden ve en parlak dönemini Roma"
-                " İmparatoru Septimius Severus’un ödüllendirmesiyle "
-                "M.S. 2'nci yüzyılda yaşamaya başlayan Anavarza, zaman içinde"
-                " önemli bir kent haline gelerek 408 yılında Kilikya Başkenti"
-                " unvanına kavuşmuştur. Bizans Dönemi’nde önemini devam ettiren, "
-                "sonraki yıllarda Ermeniler, Abbasiler, Selçuklular, Ramazanoğulları, "
-                "Osmanlılar gibi çeşitli medeniyetlere ev sahipliği yapan Anavarza’da"
-                " farklı kültürlere ait izleri bir arada görmek mümkün. Bu kültürel "
-                "zenginliği sayesinde de UNESCO Dünya Miras Geçici Listesi’nde yer"
-                " alması uygun görülen kent; kalıntıları, tarihi ve efsaneleri ile dikkat çekiyor."),
-
-            SizedBox(
-              height: 15,
-            ),
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: IconButton(
-                icon: Icon(
-                  Icons.arrow_drop_up,
-                  color: Colors.grey,
-                  size: 40,
-                ),
-                onPressed: () {
-                  Get.bottomSheet(buildSheet(),
-                      barrierColor: Colors.white.withOpacity(0.6),
-                      isScrollControlled: false);
-                },
+      body: SingleChildScrollView(
+        child: SafeArea(
+          child: Column(
+            children: [
+              sliderImage(
+                tabController!,
+                context,
+                links.map((String link) {
+                  return new ClipRRect(
+                      child: Image.network(
+                    link,
+                    width: MediaQuery.of(context).size.width,
+                    height: 220,
+                    fit: BoxFit.fill,
+                  ));
+                }).toList(),
               ),
-            )
-          ],
+
+
+              SizedBox(
+                height: 10,
+              ),
+
+              infoText("Tarihi 2100 yıl öncesine giden ve en parlak dönemini Roma"
+                  " İmparatoru Septimius Severus’un ödüllendirmesiyle "
+                  "M.S. 2'nci yüzyılda yaşamaya başlayan Anavarza, zaman içinde"
+                  " önemli bir kent haline gelerek 408 yılında Kilikya Başkenti"
+                  " unvanına kavuşmuştur. Bizans Dönemi’nde önemini devam ettiren, "
+                  "sonraki yıllarda Ermeniler, Abbasiler, Selçuklular, Ramazanoğulları, "
+                  "Osmanlılar gibi çeşitli medeniyetlere ev sahipliği yapan Anavarza’da"
+                  " farklı kültürlere ait izleri bir arada görmek mümkün. Bu kültürel "
+                  "zenginliği sayesinde de UNESCO Dünya Miras Geçici Listesi’nde yer"
+                  " alması uygun görülen kent; kalıntıları, tarihi ve efsaneleri ile dikkat çekiyor."),
+
+              SizedBox(
+                height: 15,
+              ),
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: IconButton(
+                  icon: Icon(Icons.arrow_circle_up,color: Colors.black,size: 40,),
+                  onPressed: () {
+                    Get.bottomSheet(buildSheet(),
+                        barrierColor: Colors.white.withOpacity(0.6),
+                        isScrollControlled: false);
+                  },
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

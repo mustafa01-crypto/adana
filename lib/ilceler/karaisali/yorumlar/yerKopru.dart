@@ -34,9 +34,12 @@ class Yorumlar extends StatefulWidget {
 }
 
 class _YorumlarState extends State<Yorumlar> {
+
+  double value = 1.0;
+
   @override
   Widget build(BuildContext context) {
-    double value = 1.0;
+
 
     Query karapinarYorumlar =
         FirebaseFirestore.instance.collection('yerkopruYorum');
@@ -61,30 +64,30 @@ class _YorumlarState extends State<Yorumlar> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
-                    //height: MediaQuery.of(context).size.height * 1/8,
-                    margin: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+
+                    margin: EdgeInsets.symmetric(horizontal: 10, vertical: 15),
                     width: double.infinity,
                     padding: EdgeInsets.symmetric(
                         horizontal: MediaQuery.of(context).size.width * 1 / 50),
                     decoration: BoxDecoration(
-                     // border: Border.all(color: scaffold, width: 4),
+
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(15),
                           topRight: Radius.circular(15),
                           bottomLeft: Radius.circular(15),
                           bottomRight: Radius.circular(15)),
-                      color: sol,
+                      gradient: boxGradient,
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Profiles(path: data['email']!),
                             Text(
                               data["email"],
-                              style: email,
+                              style: emailText,
                             ),
 
                           ],
@@ -92,48 +95,54 @@ class _YorumlarState extends State<Yorumlar> {
                         SizedBox(
                           height: 6,
                         ),
-                        Text(
-                          data["icerik"],
-                          style: xdBeyaz,
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 4,horizontal: 13),
+                          child: Text(
+                            data["icerik"],
+                            style: yorumText,
+                          ),
                         ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              data["zaman"],
-                              style: email,
-                            ),
-                            new RatingStars(
-                              value: data["puan"],
-                              onValueChanged: (v) {
-                                setState(() {
-                                  value = v;
-                                });
-                              },
-                              starBuilder: (index, color) => Icon(
-                                Icons.star,
-                                color: color,
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 10),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                data["zaman"],
+                                style: emailText,
                               ),
-                              starCount: 5,
-                              starSize: 24,
-                              valueLabelTextStyle: const TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w400,
-                                  fontStyle: FontStyle.normal,
-                                  fontSize: 12.0),
-                              valueLabelRadius: 10,
-                              maxValue: 5,
-                              starSpacing: 2,
-                              maxValueVisibility: true,
-                              valueLabelVisibility: true,
-                              animationDuration: Duration(milliseconds: 1000),
-                              valueLabelPadding: const EdgeInsets.symmetric(
-                                  vertical: 1, horizontal: 8),
-                              valueLabelMargin: const EdgeInsets.only(right: 8),
-                              starOffColor: const Color(0xffe7e8ea),
-                              starColor: Colors.amber,
-                            ),
-                          ],
+                              new RatingStars(
+                                value: data["puan"],
+                                onValueChanged: (v) {
+                                  setState(() {
+                                    value = v;
+                                  });
+                                },
+                                starBuilder: (index, color) => Icon(
+                                  Icons.star,
+                                  color: color,
+                                ),
+                                starCount: 5,
+                                starSize: 24,
+                                valueLabelTextStyle: const TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w400,
+                                    fontStyle: FontStyle.normal,
+                                    fontSize: 12.0),
+                                valueLabelRadius: 10,
+                                maxValue: 5,
+                                starSpacing: 2,
+                                maxValueVisibility: true,
+                                valueLabelVisibility: true,
+                                animationDuration: Duration(milliseconds: 1000),
+                                valueLabelPadding: const EdgeInsets.symmetric(
+                                    vertical: 1, horizontal: 8),
+                                valueLabelMargin: const EdgeInsets.only(right: 8),
+                                starOffColor: const Color(0xffe7e8ea),
+                                starColor: Colors.amber,
+                              ),
+                            ],
+                          ),
                         )
                       ],
                     ),
@@ -186,24 +195,21 @@ class _ProfilesState extends State<Profiles> {
     // final height = MediaQuery.of(context).size.height;
     return Container(
       width: width * 1 / 9,
-      height: width * 1 / 8,
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: ClipOval(
-            child: indirmeBaglantisi == null
-                ? Image.asset(
-              "assets/profile.png",
-              width: width * 1 / 10,
-              height: width * 1 / 10,
-              fit: BoxFit.cover,
-            )
-                : Image.network(
-              indirmeBaglantisi!,
-              width: width * 1 / 10,
-              height: width * 1 / 10,
-              fit: BoxFit.cover,
-            )),
-      ),
+      height: width * 1 / 9,
+      child: ClipOval(
+          child: indirmeBaglantisi == null
+              ? Image.asset(
+            "assets/profile.png",
+            width: width * 1 / 9,
+            height: width * 1 / 9,
+            fit: BoxFit.cover,
+          )
+              : Image.network(
+            indirmeBaglantisi!,
+            width: width * 1 / 9,
+            height: width * 1 / 9,
+            fit: BoxFit.cover,
+          )),
     );
   }
 }

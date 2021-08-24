@@ -122,8 +122,7 @@ class _KaratasPlajiState extends State<KaratasPlaji>
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   IconButton(
-                    icon: Icon(Icons.arrow_drop_up,color: Colors.grey,size: 40,),
-                    onPressed: ()
+                    icon: Icon(Icons.arrow_circle_up,color: Colors.black,size: 40,),                    onPressed: ()
                     {
                       Get.bottomSheet(
                           buildSheet(),

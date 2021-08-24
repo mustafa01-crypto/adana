@@ -11,18 +11,6 @@ Color sinir = Color(0xFFFF6701);
 Color scaffold = Color(0xFFFC7925);
 Color scaffold2 = Color(0xFFFBFAFE);
 
-Color kutu = Color(0xFFEBE9FA);
-Color kutu2 = Color(0xFFc5bdfb);
-Color kutu3 = Color(0xFF958bdd);
-
-Gradient gradient = LinearGradient(
-  begin: Alignment.topRight,
-  end: Alignment.bottomLeft,
-  colors: [
-    Colors.white,
-    scaffold,
-  ],
-);
 TextStyle email = GoogleFonts.sourceSansPro(
     color: Colors.black, fontWeight: FontWeight.w900, fontSize: 14);
 
@@ -85,6 +73,51 @@ TextStyle front = GoogleFonts.sourceSansPro(
     color: Colors.black, fontWeight: FontWeight.w900, fontSize: 22);
 
 TextStyle front2 = GoogleFonts.sourceSansPro(
-    color: Colors.white, fontWeight: FontWeight.w900, fontSize: 22
+    color: Colors.white, fontWeight: FontWeight.w900, fontSize: 22);
 
+Color kutu = Color(0xFFEBE9FA);
+Color kutu2 = Color(0xFFE1DEF6);
+Color kutu3 = Color(0xFF9C92DF);
+Color baslik = Color(0xFF080808);
+Color metinColor = Color(0xFF070707);
+Color yorumColor = Color(0xFF3A3333);
+Color mailColor = Color(0xFF000000);
+
+Gradient boxGradient = LinearGradient(
+  begin: Alignment.topCenter,
+  end: Alignment.bottomCenter,
+  colors: [
+    kutu2,
+    kutu3,
+  ],
+);
+
+TextStyle appBarMetin = GoogleFonts.roboto(
+  color: baslik,
+  fontWeight: FontWeight.bold,
+  fontSize: 29,
+);
+
+TextStyle metin = GoogleFonts.roboto(
+  fontStyle: FontStyle.normal,
+  color: metinColor,
+  fontWeight: FontWeight.normal,
+  fontSize: 22,
+);
+TextStyle yorumText = GoogleFonts.roboto(
+  fontStyle: FontStyle.normal,
+  color: yorumColor,
+  fontWeight: FontWeight.normal,
+  fontSize: 15,
+);
+TextStyle emailText = GoogleFonts.roboto(
+  color: mailColor,
+  fontWeight: FontWeight.bold,
+  fontSize: 15,
+);
+
+TextStyle tileMetin = GoogleFonts.roboto(
+  color: Colors.white,
+  fontWeight: FontWeight.normal,
+  fontSize: 19,
 );

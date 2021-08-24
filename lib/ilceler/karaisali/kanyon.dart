@@ -137,7 +137,7 @@ class _KanyonState extends State<Kanyon> with SingleTickerProviderStateMixin {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   IconButton(
-                    icon: Icon(Icons.arrow_drop_up,color: Colors.grey,size: 40,),
+                    icon: Icon(Icons.arrow_circle_up,color: Colors.black,size: 40,),
                     onPressed: ()
                     {
                       Get.bottomSheet(
@@ -171,7 +171,7 @@ class _KanyonState extends State<Kanyon> with SingleTickerProviderStateMixin {
               onPressed: () {
                 Get.to(() => Maps(), arguments:[ x,y,title]);
               },
-              child: buttonTextContainer(context, "HARİTADA GÖSTER")),
+              child: buttonTextContainer(context, "HARİTADA GÖSTER",)),
           SizedBox(
             height: 5,
           ),
@@ -179,7 +179,7 @@ class _KanyonState extends State<Kanyon> with SingleTickerProviderStateMixin {
               onPressed: () {
                 Get.to(() => KanyonYorum());
               },
-              child: buttonTextContainer(context, "YORUMLARI GÖSTER")),
+              child: buttonTextContainer(context, "YORUMLARI GÖSTER",)),
 
           //xd
           SizedBox(

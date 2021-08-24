@@ -127,12 +127,7 @@ class SplashState extends State<Splash> {
   Widget build(BuildContext context) {
     return new Scaffold(
       body: new Center(
-        child: Column(
-          children: [
-            new Text('Yükleniyor'),
-            new CircularProgressIndicator(),
-          ],
-        ),
+        child: new Text('Yükleniyor'),
       ),
     );
   }

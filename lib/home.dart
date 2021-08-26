@@ -335,6 +335,17 @@ class _HomeState extends State<Home> {
 
   List pozantiList = [
     {
+      "route": "/seker",
+      'puan': "5",
+      'ad': "ŞEKER PINARI",
+      'image': "assets/seyhan/alu.jpg",
+      'bilgi': "Şekerpınarı’nın hemen aşağısında Şapkalının "
+          "Köprüsü olarak bilinen asma köprüyü geçerken "
+          "ırmağı ve üzerindeki Akköprü’yü fotoğraflamanızı,"
+          " köprüden geçince karşıda bulunan oluktan "
+          "su içmenizi tavsiye ediyoruz."
+    },
+    {
       "route": "/armut",
       'puan': "5",
       'ad': "ARMUTOĞLU YAYLASI",

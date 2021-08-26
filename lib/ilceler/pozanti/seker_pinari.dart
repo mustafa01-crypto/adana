@@ -3,7 +3,7 @@ import 'package:adana/components/infoText.dart';
 import 'package:adana/components/mainAppBar.dart';
 import 'package:adana/components/sliderImage.dart';
 import 'package:adana/constants/constants.dart';
-import 'package:adana/ilceler/pozanti/yorumlar/tabya_yorum.dart';
+import 'package:adana/ilceler/pozanti/yorumlar/seker_pinari_yorum.dart';
 import 'package:adana/map/map.dart';
 import 'package:adana/map/mapUtils.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -18,18 +18,18 @@ var now = new DateTime.now();
 var formatter = new DateFormat('dd-MM-yyyy');
 String formattedDate = formatter.format(now);
 
-class Tabyalar extends StatefulWidget {
-  const Tabyalar({Key? key}) : super(key: key);
+class SkerPinari extends StatefulWidget {
+  const SkerPinari({Key? key}) : super(key: key);
 
   @override
-  _TabyalarState createState() => _TabyalarState();
+  _SkerPinariState createState() => _SkerPinariState();
 }
 
-class _TabyalarState extends State<Tabyalar>
+class _SkerPinariState extends State<SkerPinari>
     with SingleTickerProviderStateMixin {
-  double x = 37.328892;
-  double y = 34.780441;
-  String title = "İBRAHİM PAŞA TABYASI";
+  double x = 37.472056;
+  double y = 34.861610;
+  String title = "ŞEKER PINARI";
   FirebaseAuth auth = FirebaseAuth.instance;
 
   void initState() {
@@ -45,9 +45,9 @@ class _TabyalarState extends State<Tabyalar>
   }
 
   static List<String> links = [
-    "https://www.kulturportali.gov.tr/contents/images/05022013_73515f48-da81-4c97-8579-9e538443932d.jpg",
-    "https://upload.wikimedia.org/wikipedia/commons/a/a1/Casemate_of_%C4%B0brahim_Pasha%2C_Mersin_Province.jpg",
-    "https://www.gezi-yorum.net/wp-content/uploads/2019/12/ibrahim-pa%C5%9Fa-tabyas%C4%B1.2.jpg",
+    "https://media-cdn.tripadvisor.com/media/photo-s/16/c6/3e/8a/images-4-largejpg.jpg",
+    "https://fastly.4sqi.net/img/general/200x200/46901571_E8k0HhWW5DUqs4-cEyvZ42N7YyCQe1ILxTSXWnv4ECM.jpg",
+    "https://mapio.net/images-p/17101430.jpg",
   ];
 
   void _showRatingAppDialog() {
@@ -57,14 +57,14 @@ class _TabyalarState extends State<Tabyalar>
       commentHint: "...",
       message: '$title hakkında ne düşünüyorsunuz',
       image: Image.network(
-        "https://www.gezi-yorum.net/wp-content/uploads/2019/12/ibrahim-pa%C5%9Fa-tabyas%C4%B1.2.jpg",
+        "https://mapio.net/images-p/17101430.jpg",
         height: 100,
       ),
       submitButton: 'Gönder',
       onCancelled: () {},
       onSubmitted: (response) {
         FirebaseFirestore.instance
-            .collection("TabyaYorum")
+            .collection("SekerPinariYorum")
             .doc(loggedInuser.email)
             .set({
           "zaman": formattedDate.toString(),
@@ -84,7 +84,7 @@ class _TabyalarState extends State<Tabyalar>
 
   @override
   Widget build(BuildContext context) {
-     //Size size = MediaQuery.of(context).size;
+    // Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: kutu,
       appBar: mainAppBar(title),
@@ -99,23 +99,25 @@ class _TabyalarState extends State<Tabyalar>
               SizedBox(
                 height: 10,
               ),
-              infoText("İbrahim Paşa Tabyaları oldukça sağlam ve bölgede"
-                  " sayısı çok az olan Osmanlı Dönemi yapılarındandır."
-                  " Yaklaşık 1830’lu yıllarda, doğudan gelecek saldırılara"
-                  " karşı koymak için İbrahim Paşa tarafından "
-                  "yaptırılmıştır. Tarsus Pozantı istikametinde otobanda"
-                  " ilerlerken Adana’ya bağlı Tekir (Akçatekir) Yaylası "
-                  "mevkisine gelmeden yolun solundaki yüksek tepe üzerinde"
-                  " bir yapı görülmektedir. Bu yapı Kızıl Tabya (Büyük "
-                  "veya Fenerli Tabya) olarak adlandırılmaktadır.. "
-                  "Burada yer alan diğer tabyalar Yer Tabyaları , "
-                  "Armutlu Tabya ve Ak (Beyaz- Küçük Tabya) Tabya‘dır. "
-                  "Bunlardan Kızıl Tabya, Ak Tabya ile karşılıklı olarak "
-                  "iki yüksek tepeye yapılmışlardır ve birbirlerini görmektedirler."
-                  " Antik dönemden beri stratejik konumu olan bu yer bu anlamda "
-                  "Gülek Kalesi ve Gülek Yazıtı ile de uyum içerisindedir. "
-                  "Bu tabyalardan çıkarılan birkaç top Gülek Kasabası'na "
-                  "nakledilmiştir."),
+              infoText("Şekerpınarı, Çakıt Çayının önemli bir kısmını"
+                  " oluşturan güçlü bir su kaynağıdır."
+                  " Dağın içinden çağlayarak çıkan kocaman "
+                  "nehir; sesiyle, görüntüsüyle ve serin "
+                  "esintisiyle ziyaretçileri büyülemektedir."
+                  " Şekerpınarı’nın kaynağının hemen yakınında "
+                  "çeşitli firmalara ait hazır su dolum tesisleri"
+                  " bulunmaktadır. Su kaynağının etrafında bulunan "
+                  "ve etinin lezzetiyle ülke çapında ün kazanmış "
+                  "restoranlar yemek molasını burada vermek için "
+                  "iyi bir nedendir. Yine dinlenme tesislerinde "
+                  "bölgenin meşhur halka tatlı, taş kadayıf gibi "
+                  "tatlılarının sıcak ve taze olarak satıldığı "
+                  "işletmeler de çokça tercih edilmektedir."
+                  " Şekerpınarı’nın hemen aşağısında Şapkalının "
+                  "Köprüsü olarak bilinen asma köprüyü geçerken "
+                  "ırmağı ve üzerindeki Akköprü’yü fotoğraflamanızı,"
+                  " köprüden geçince karşıda bulunan oluktan "
+                  "su içmenizi tavsiye ediyoruz."),
               SizedBox(
                 height: 15,
               ),
@@ -159,7 +161,7 @@ class _TabyalarState extends State<Tabyalar>
           ),
           TextButton(
               onPressed: () {
-                Get.to(() => TabyaYorum());
+                Get.to(() => SekerPinariYorum());
               },
               child: buttonTextContainer(context, "YORUMLARI GÖSTER")),
 

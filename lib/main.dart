@@ -13,6 +13,7 @@ import 'package:adana/ilceler/pozanti/akca_tekir.dart';
 import 'package:adana/ilceler/pozanti/anahca.dart';
 import 'package:adana/ilceler/pozanti/anit_agac.dart';
 import 'package:adana/ilceler/pozanti/armut_yayla.dart';
+import 'package:adana/ilceler/pozanti/seker_pinari.dart';
 import 'package:adana/ilceler/pozanti/tabyalar.dart';
 import 'package:adana/ilceler/seyhan/ataturkEvi.dart';
 import 'package:adana/ilceler/seyhan/bebekliKilisesi.dart';
@@ -101,6 +102,7 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/tabya', page: () => Tabyalar()),
         GetPage(name: '/anit', page: () => AnitAgaci()),
         GetPage(name: '/anahsa', page: () => Anahsa()),
+        GetPage(name: '/seker', page: () => SkerPinari()),
       ],
     );
   }

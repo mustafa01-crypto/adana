@@ -338,7 +338,7 @@ class _HomeState extends State<Home> {
       "route": "/seker",
       'puan': "5",
       'ad': "ŞEKER PINARI",
-      'image': "assets/seyhan/alu.jpg",
+      'image': "assets/pozanti/seker.jpg",
       'bilgi': "Şekerpınarı’nın hemen aşağısında Şapkalının "
           "Köprüsü olarak bilinen asma köprüyü geçerken "
           "ırmağı ve üzerindeki Akköprü’yü fotoğraflamanızı,"
@@ -349,7 +349,7 @@ class _HomeState extends State<Home> {
       "route": "/armut",
       'puan': "5",
       'ad': "ARMUTOĞLU YAYLASI",
-      'image': "assets/seyhan/alu.jpg",
+      'image': "assets/pozanti/armut.jpg",
       'bilgi': "Tamamen bakir durumda olan"
           " yayla sedir, köknar, ardıç ağaçları ve kır çiçekleri "
           "ile iç içedir. Sarımsak Dağı’nın eteğinde bulunması "
@@ -359,7 +359,7 @@ class _HomeState extends State<Home> {
       "route": "/akca_tekir",
       'puan': "5",
       'ad': "AKÇAKTEKİR YAYLASI",
-      'image': "assets/seyhan/alu.jpg",
+      'image': "assets/pozanti/tekir.jpg",
       'bilgi': "Bürücek Yaylası, Akçaköy ve"
           " Tekir Yaylası'nın birleşmesiyle oluşan Akçatekir "
           "Beldesi'nin bir mahallesi konumundadır. Çam, ardıç ve"
@@ -371,7 +371,7 @@ class _HomeState extends State<Home> {
       "route": "/tabya",
       'puan': "5",
       'ad': "İBRAHİM PAŞA TABYASI",
-      'image': "assets/seyhan/alu.jpg",
+      'image': "assets/pozanti/tabya.jpg",
       'bilgi': "İbrahim Paşa Tabyaları oldukça sağlam ve bölgede"
           " sayısı çok az olan Osmanlı Dönemi yapılarındandır."
           " Yaklaşık 1830’lu yıllarda, doğudan gelecek saldırılara"
@@ -382,7 +382,7 @@ class _HomeState extends State<Home> {
       "route": "/anit",
       'puan': "5",
       'ad': "ANIT AĞACI",
-      'image': "assets/seyhan/alu.jpg",
+      'image': "assets/pozanti/anit.jpg",
       'bilgi': "Pozantı ilçesi sınırlarında 3 adet ağaç mevcuttur."
           " Bunlar Çetinlik Dağı orman arazisi içinde "
           "bulunan Sedir ağacı, Belemedik köyünde "
@@ -393,7 +393,7 @@ class _HomeState extends State<Home> {
       "route": "/anahsa",
       'puan': "4",
       'ad': "ANAHSA KALESİ",
-      'image': "assets/seyhan/alu.jpg",
+      'image': "assets/pozanti/anahsa.jpg",
       'bilgi': "Geniş bir tepe üzerindedir. Kuzeyde iki burun "
           "vardır. İç kısmında ise tonozlu yapılar ve"
           " su sarnıçları yer alır. Üst kısmında bilhassa"

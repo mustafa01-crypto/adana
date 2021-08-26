@@ -1,4 +1,3 @@
-
 import 'package:adana/auth/login.dart';
 import 'package:adana/ilceler/ceyhan/anavarza.dart';
 import 'package:adana/ilceler/ceyhan/durhasan.dart';
@@ -11,6 +10,7 @@ import 'package:adana/ilceler/cukurova/sevgiAdasi.dart';
 import 'package:adana/ilceler/cukurova/seyhanBaraji.dart';
 import 'package:adana/ilceler/karaisali/karapinar.dart';
 import 'package:adana/ilceler/pozanti/akca_tekir.dart';
+import 'package:adana/ilceler/pozanti/anahca.dart';
 import 'package:adana/ilceler/pozanti/anit_agac.dart';
 import 'package:adana/ilceler/pozanti/armut_yayla.dart';
 import 'package:adana/ilceler/pozanti/tabyalar.dart';
@@ -49,7 +49,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -100,6 +100,7 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/akca_tekir', page: () => AkcaTekir()),
         GetPage(name: '/tabya', page: () => Tabyalar()),
         GetPage(name: '/anit', page: () => AnitAgaci()),
+        GetPage(name: '/anahsa', page: () => Anahsa()),
       ],
     );
   }

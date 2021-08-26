@@ -378,6 +378,17 @@ class _HomeState extends State<Home> {
           "bulunan Çınar Ağacı ve Bürücek Yaylasında bulunan"
           " Ceviz Ağacıdır",
     },
+    {
+      "route": "/anahsa",
+      'puan': "4",
+      'ad': "ANAHSA KALESİ",
+      'image': "assets/seyhan/alu.jpg",
+      'bilgi': "Geniş bir tepe üzerindedir. Kuzeyde iki burun "
+          "vardır. İç kısmında ise tonozlu yapılar ve"
+          " su sarnıçları yer alır. Üst kısmında bilhassa"
+          " doğu ve batıda mazgal dedikleri kaleyi "
+          "çevrelemektedir.",
+    },
   ];
 
   void getCurrentUser() {
@@ -619,359 +630,363 @@ class _HomeState extends State<Home> {
                 height: size.height / 100,
               ),
               Container(
-                  height: size.height / 1.4,
-                  child: curIndex == 0
-                      ? ListView.builder(
-                          scrollDirection: Axis.horizontal,
-                          itemCount: typesKaraisali.length,
-                          itemBuilder: (BuildContext context, int index) {
-                            return GestureDetector(
-                              onTap: () {
-                                Get.to(() => TileScreen(), arguments: [
-                                  index,
-                                  typesKaraisali[index]['image'],
-                                  typesKaraisali[index]['ad'],
-                                  typesKaraisali[index]['bilgi'],
-                                  typesKaraisali[index]['puan'],
-                                  typesKaraisali[index]['route'],
-                                ]);
-                              },
-                              child: Padding(
-                                padding: EdgeInsets.symmetric(
-                                    horizontal: size.width / 20,
-                                    vertical: size.height / 20),
-                                child: Stack(children: [
-                                  Hero(
-                                    tag: "target$index",
-                                    child: Container(
-                                      width: size.width / 1.4,
-                                      height: size.height / 1.8,
-                                      decoration: BoxDecoration(
-                                        boxShadow: [
-                                          BoxShadow(
-                                            color:
-                                                Colors.white.withOpacity(0.8),
-                                            spreadRadius: 5,
-                                            blurRadius: 7,
-                                            offset: Offset(0,
-                                                3), // changes position of shadow
-                                          ),
-                                        ],
-                                        image: DecorationImage(
-                                            image: AssetImage(
-                                              typesKaraisali[index]['image'],
-                                            ),
-                                            fit: BoxFit.cover),
-                                        borderRadius: BorderRadius.circular(12),
-                                      ),
-                                    ),
-                                  ),
-                                  Container(
+                height: size.height / 1.4,
+                child: curIndex == 0
+                    ? ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: typesKaraisali.length,
+                        itemBuilder: (BuildContext context, int index) {
+                          return GestureDetector(
+                            onTap: () {
+                              Get.to(() => TileScreen(), arguments: [
+                                index,
+                                typesKaraisali[index]['image'],
+                                typesKaraisali[index]['ad'],
+                                typesKaraisali[index]['bilgi'],
+                                typesKaraisali[index]['puan'],
+                                typesKaraisali[index]['route'],
+                              ]);
+                            },
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: size.width / 20,
+                                  vertical: size.height / 20),
+                              child: Stack(children: [
+                                Hero(
+                                  tag: "target$index",
+                                  child: Container(
                                     width: size.width / 1.4,
                                     height: size.height / 1.8,
                                     decoration: BoxDecoration(
-                                        gradient: LinearGradient(
-                                            begin: Alignment.topCenter,
-                                            end: Alignment.bottomCenter,
-                                            colors: [
-                                              Colors.transparent,
-                                              Colors.black.withOpacity(0.9)
-                                            ],
-                                            stops: const [
-                                              0.4,
-                                              0.9
-                                            ]),
-                                        borderRadius:
-                                            BorderRadius.circular(12)),
-                                  ),
-                                  Positioned(
-                                      bottom: size.width / 3,
-                                      left: 50,
-                                      child: Text(
-                                        typesKaraisali[index]['ad'],
-                                        style: xdBeyaz,
-                                      ))
-                                ]),
-                              ),
-                            );
-                          },
-                        )
-                      : curIndex == 1
-                          ? ListView.builder(
-                              scrollDirection: Axis.horizontal,
-                              itemCount: typesCeyhan.length,
-                              itemBuilder: (BuildContext context, int index) {
-                                return GestureDetector(
-                                  onTap: () {
-                                    Get.to(() => TileScreen(), arguments: [
-                                      index,
-                                      typesCeyhan[index]['image'],
-                                      typesCeyhan[index]['ad'],
-                                      typesCeyhan[index]['bilgi'],
-                                      typesCeyhan[index]['puan'],
-                                      typesCeyhan[index]['route'],
-                                    ]);
-                                  },
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: size.width / 20,
-                                        vertical: size.height / 20),
-                                    child: Stack(children: [
-                                      Hero(
-                                        tag: "target$index",
-                                        child: Container(
-                                          width: size.width / 1.4,
-                                          height: size.height / 1.8,
-                                          decoration: BoxDecoration(
-                                              image: DecorationImage(
-                                                  image: AssetImage(
-                                                    typesCeyhan[index]['image'],
-                                                  ),
-                                                  fit: BoxFit.cover),
-                                              borderRadius:
-                                                  BorderRadius.circular(12)),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.white.withOpacity(0.8),
+                                          spreadRadius: 5,
+                                          blurRadius: 7,
+                                          offset: Offset(0,
+                                              3), // changes position of shadow
                                         ),
-                                      ),
-                                      Container(
+                                      ],
+                                      image: DecorationImage(
+                                          image: AssetImage(
+                                            typesKaraisali[index]['image'],
+                                          ),
+                                          fit: BoxFit.cover),
+                                      borderRadius: BorderRadius.circular(12),
+                                    ),
+                                  ),
+                                ),
+                                Container(
+                                  width: size.width / 1.4,
+                                  height: size.height / 1.8,
+                                  decoration: BoxDecoration(
+                                      gradient: LinearGradient(
+                                          begin: Alignment.topCenter,
+                                          end: Alignment.bottomCenter,
+                                          colors: [
+                                            Colors.transparent,
+                                            Colors.black.withOpacity(0.9)
+                                          ],
+                                          stops: const [
+                                            0.4,
+                                            0.9
+                                          ]),
+                                      borderRadius: BorderRadius.circular(12)),
+                                ),
+                                Positioned(
+                                    bottom: size.width / 3,
+                                    left: 50,
+                                    child: Text(
+                                      typesKaraisali[index]['ad'],
+                                      style: xdBeyaz,
+                                    ))
+                              ]),
+                            ),
+                          );
+                        },
+                      )
+                    : curIndex == 1
+                        ? ListView.builder(
+                            scrollDirection: Axis.horizontal,
+                            itemCount: typesCeyhan.length,
+                            itemBuilder: (BuildContext context, int index) {
+                              return GestureDetector(
+                                onTap: () {
+                                  Get.to(() => TileScreen(), arguments: [
+                                    index,
+                                    typesCeyhan[index]['image'],
+                                    typesCeyhan[index]['ad'],
+                                    typesCeyhan[index]['bilgi'],
+                                    typesCeyhan[index]['puan'],
+                                    typesCeyhan[index]['route'],
+                                  ]);
+                                },
+                                child: Padding(
+                                  padding: EdgeInsets.symmetric(
+                                      horizontal: size.width / 20,
+                                      vertical: size.height / 20),
+                                  child: Stack(children: [
+                                    Hero(
+                                      tag: "target$index",
+                                      child: Container(
                                         width: size.width / 1.4,
                                         height: size.height / 1.8,
                                         decoration: BoxDecoration(
-                                            gradient: LinearGradient(
-                                                begin: Alignment.topCenter,
-                                                end: Alignment.bottomCenter,
-                                                colors: [
-                                                  Colors.transparent,
-                                                  Colors.black.withOpacity(0.9)
-                                                ],
-                                                stops: const [
-                                                  0.4,
-                                                  0.9
-                                                ]),
+                                            image: DecorationImage(
+                                                image: AssetImage(
+                                                  typesCeyhan[index]['image'],
+                                                ),
+                                                fit: BoxFit.cover),
                                             borderRadius:
                                                 BorderRadius.circular(12)),
                                       ),
-                                      Positioned(
-                                          bottom: size.width / 4,
-                                          left: 50,
-                                          child: Text(
-                                            typesCeyhan[index]['ad'],
-                                            style: xdBeyaz,
-                                          ))
-                                    ]),
-                                  ),
-                                );
-                              },
-                            )
-                          : curIndex == 2
-                              ? ListView.builder(
-                                  scrollDirection: Axis.horizontal,
-                                  itemCount: typesCukurova.length,
-                                  itemBuilder:
-                                      (BuildContext context, int index) {
-                                    return GestureDetector(
-                                      onTap: () {
-                                        Get.to(() => TileScreen(), arguments: [
-                                          index,
-                                          typesCukurova[index]['image'],
-                                          typesCukurova[index]['ad'],
-                                          typesCukurova[index]['bilgi'],
-                                          typesCukurova[index]['puan'],
-                                          typesCukurova[index]['route'],
-                                        ]);
-                                      },
-                                      child: Padding(
-                                        padding: EdgeInsets.symmetric(
-                                            horizontal: size.width / 20,
-                                            vertical: size.height / 20),
-                                        child: Stack(children: [
-                                          Hero(
-                                            tag: "target$index",
-                                            child: Container(
-                                              width: size.width / 1.4,
-                                              height: size.height / 1.8,
-                                              decoration: BoxDecoration(
-                                                  image: DecorationImage(
-                                                      image: AssetImage(
-                                                        typesCukurova[index]
-                                                            ['image'],
-                                                      ),
-                                                      fit: BoxFit.cover),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          12)),
-                                            ),
-                                          ),
-                                          Container(
+                                    ),
+                                    Container(
+                                      width: size.width / 1.4,
+                                      height: size.height / 1.8,
+                                      decoration: BoxDecoration(
+                                          gradient: LinearGradient(
+                                              begin: Alignment.topCenter,
+                                              end: Alignment.bottomCenter,
+                                              colors: [
+                                                Colors.transparent,
+                                                Colors.black.withOpacity(0.9)
+                                              ],
+                                              stops: const [
+                                                0.4,
+                                                0.9
+                                              ]),
+                                          borderRadius:
+                                              BorderRadius.circular(12)),
+                                    ),
+                                    Positioned(
+                                        bottom: size.width / 4,
+                                        left: 50,
+                                        child: Text(
+                                          typesCeyhan[index]['ad'],
+                                          style: xdBeyaz,
+                                        ))
+                                  ]),
+                                ),
+                              );
+                            },
+                          )
+                        : curIndex == 2
+                            ? ListView.builder(
+                                scrollDirection: Axis.horizontal,
+                                itemCount: typesCukurova.length,
+                                itemBuilder: (BuildContext context, int index) {
+                                  return GestureDetector(
+                                    onTap: () {
+                                      Get.to(() => TileScreen(), arguments: [
+                                        index,
+                                        typesCukurova[index]['image'],
+                                        typesCukurova[index]['ad'],
+                                        typesCukurova[index]['bilgi'],
+                                        typesCukurova[index]['puan'],
+                                        typesCukurova[index]['route'],
+                                      ]);
+                                    },
+                                    child: Padding(
+                                      padding: EdgeInsets.symmetric(
+                                          horizontal: size.width / 20,
+                                          vertical: size.height / 20),
+                                      child: Stack(children: [
+                                        Hero(
+                                          tag: "target$index",
+                                          child: Container(
                                             width: size.width / 1.4,
                                             height: size.height / 1.8,
                                             decoration: BoxDecoration(
-                                                gradient: LinearGradient(
-                                                    begin: Alignment.topCenter,
-                                                    end: Alignment.bottomCenter,
-                                                    colors: [
-                                                      Colors.transparent,
-                                                      Colors.black
-                                                          .withOpacity(0.9)
-                                                    ],
-                                                    stops: const [
-                                                      0.4,
-                                                      0.9
-                                                    ]),
+                                                image: DecorationImage(
+                                                    image: AssetImage(
+                                                      typesCukurova[index]
+                                                          ['image'],
+                                                    ),
+                                                    fit: BoxFit.cover),
                                                 borderRadius:
                                                     BorderRadius.circular(12)),
                                           ),
-                                          Positioned(
-                                              bottom: size.width / 4,
-                                              left: 50,
-                                              child: Text(
-                                                typesCukurova[index]['ad'],
-                                                style: xdBeyaz,
-                                              ))
-                                        ]),
-                                      ),
-                                    );
-                                  },
-                                )
-                              : curIndex == 3 ? ListView.builder(
-                                  scrollDirection: Axis.horizontal,
-                                  itemCount: typesSeyhan.length,
-                                  itemBuilder:
-                                      (BuildContext context, int index) {
-                                    return GestureDetector(
-                                      onTap: () {
-                                        Get.to(() => TileScreen(), arguments: [
-                                          index,
-                                          typesSeyhan[index]['image'],
-                                          typesSeyhan[index]['ad'],
-                                          typesSeyhan[index]['bilgi'],
-                                          typesSeyhan[index]['puan'],
-                                          typesSeyhan[index]['route'],
-                                        ]);
-                                      },
-                                      child: Padding(
-                                        padding: EdgeInsets.symmetric(
-                                            horizontal: size.width / 20,
-                                            vertical: size.height / 20),
-                                        child: Stack(children: [
-                                          Hero(
-                                            tag: "target$index",
-                                            child: Container(
-                                              width: size.width / 1.4,
-                                              height: size.height / 1.8,
-                                              decoration: BoxDecoration(
-                                                  image: DecorationImage(
-                                                      image: AssetImage(
-                                                        typesSeyhan[index]
-                                                            ['image'],
-                                                      ),
-                                                      fit: BoxFit.cover),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          12)),
-                                            ),
-                                          ),
-                                          Container(
-                                            width: size.width / 1.4,
-                                            height: size.height / 1.8,
-                                            decoration: BoxDecoration(
-                                                gradient: LinearGradient(
-                                                    begin: Alignment.topCenter,
-                                                    end: Alignment.bottomCenter,
-                                                    colors: [
-                                                      Colors.transparent,
-                                                      Colors.black
-                                                          .withOpacity(0.9)
-                                                    ],
-                                                    stops: const [
-                                                      0.4,
-                                                      0.9
-                                                    ]),
-                                                borderRadius:
-                                                    BorderRadius.circular(12)),
-                                          ),
-                                          Positioned(
-                                              bottom: size.width / 4,
-                                              left: 50,
-                                              child: Text(
-                                                typesSeyhan[index]['ad'],
-                                                style: xdBeyaz,
-                                              ))
-                                        ]),
-                                      ),
-                                    );
-                                  },
-                                )
-                      : ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: pozantiList.length,
-                    itemBuilder:
-                        (BuildContext context, int index) {
-                      return GestureDetector(
-                        onTap: () {
-                          Get.to(() => TileScreen(), arguments: [
-                            index,
-                            pozantiList[index]['image'],
-                            pozantiList[index]['ad'],
-                            pozantiList[index]['bilgi'],
-                            pozantiList[index]['puan'],
-                            pozantiList[index]['route'],
-                          ]);
-                        },
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: size.width / 20,
-                              vertical: size.height / 20),
-                          child: Stack(children: [
-                            Hero(
-                              tag: "target$index",
-                              child: Container(
-                                width: size.width / 1.4,
-                                height: size.height / 1.8,
-                                decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                        image: AssetImage(
-                                          pozantiList[index]
-                                          ['image'],
                                         ),
-                                        fit: BoxFit.cover),
-                                    borderRadius:
-                                    BorderRadius.circular(
-                                        12)),
-                              ),
-                            ),
-                            Container(
-                              width: size.width / 1.4,
-                              height: size.height / 1.8,
-                              decoration: BoxDecoration(
-                                  gradient: LinearGradient(
-                                      begin: Alignment.topCenter,
-                                      end: Alignment.bottomCenter,
-                                      colors: [
-                                        Colors.transparent,
-                                        Colors.black
-                                            .withOpacity(0.9)
-                                      ],
-                                      stops: const [
-                                        0.4,
-                                        0.9
+                                        Container(
+                                          width: size.width / 1.4,
+                                          height: size.height / 1.8,
+                                          decoration: BoxDecoration(
+                                              gradient: LinearGradient(
+                                                  begin: Alignment.topCenter,
+                                                  end: Alignment.bottomCenter,
+                                                  colors: [
+                                                    Colors.transparent,
+                                                    Colors.black
+                                                        .withOpacity(0.9)
+                                                  ],
+                                                  stops: const [
+                                                    0.4,
+                                                    0.9
+                                                  ]),
+                                              borderRadius:
+                                                  BorderRadius.circular(12)),
+                                        ),
+                                        Positioned(
+                                            bottom: size.width / 4,
+                                            left: 50,
+                                            child: Text(
+                                              typesCukurova[index]['ad'],
+                                              style: xdBeyaz,
+                                            ))
                                       ]),
-                                  borderRadius:
-                                  BorderRadius.circular(12)),
-                            ),
-                            Positioned(
-                                bottom: size.width / 4,
-                                left: 50,
-                                child: Text(
-                                  pozantiList[index]['ad'],
-                                  style: xdBeyaz,
-                                ))
-                          ]),
-                        ),
-                      );
-                    },
-                  ),
+                                    ),
+                                  );
+                                },
+                              )
+                            : curIndex == 3
+                                ? ListView.builder(
+                                    scrollDirection: Axis.horizontal,
+                                    itemCount: typesSeyhan.length,
+                                    itemBuilder:
+                                        (BuildContext context, int index) {
+                                      return GestureDetector(
+                                        onTap: () {
+                                          Get.to(() => TileScreen(),
+                                              arguments: [
+                                                index,
+                                                typesSeyhan[index]['image'],
+                                                typesSeyhan[index]['ad'],
+                                                typesSeyhan[index]['bilgi'],
+                                                typesSeyhan[index]['puan'],
+                                                typesSeyhan[index]['route'],
+                                              ]);
+                                        },
+                                        child: Padding(
+                                          padding: EdgeInsets.symmetric(
+                                              horizontal: size.width / 20,
+                                              vertical: size.height / 20),
+                                          child: Stack(children: [
+                                            Hero(
+                                              tag: "target$index",
+                                              child: Container(
+                                                width: size.width / 1.4,
+                                                height: size.height / 1.8,
+                                                decoration: BoxDecoration(
+                                                    image: DecorationImage(
+                                                        image: AssetImage(
+                                                          typesSeyhan[index]
+                                                              ['image'],
+                                                        ),
+                                                        fit: BoxFit.cover),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            12)),
+                                              ),
+                                            ),
+                                            Container(
+                                              width: size.width / 1.4,
+                                              height: size.height / 1.8,
+                                              decoration: BoxDecoration(
+                                                  gradient: LinearGradient(
+                                                      begin:
+                                                          Alignment.topCenter,
+                                                      end: Alignment
+                                                          .bottomCenter,
+                                                      colors: [
+                                                        Colors.transparent,
+                                                        Colors.black
+                                                            .withOpacity(0.9)
+                                                      ],
+                                                      stops: const [
+                                                        0.4,
+                                                        0.9
+                                                      ]),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          12)),
+                                            ),
+                                            Positioned(
+                                                bottom: size.width / 4,
+                                                left: 50,
+                                                child: Text(
+                                                  typesSeyhan[index]['ad'],
+                                                  style: xdBeyaz,
+                                                ))
+                                          ]),
+                                        ),
+                                      );
+                                    },
+                                  )
+                                : ListView.builder(
+                                    scrollDirection: Axis.horizontal,
+                                    itemCount: pozantiList.length,
+                                    itemBuilder:
+                                        (BuildContext context, int index) {
+                                      return GestureDetector(
+                                        onTap: () {
+                                          Get.to(() => TileScreen(),
+                                              arguments: [
+                                                index,
+                                                pozantiList[index]['image'],
+                                                pozantiList[index]['ad'],
+                                                pozantiList[index]['bilgi'],
+                                                pozantiList[index]['puan'],
+                                                pozantiList[index]['route'],
+                                              ]);
+                                        },
+                                        child: Padding(
+                                          padding: EdgeInsets.symmetric(
+                                              horizontal: size.width / 20,
+                                              vertical: size.height / 20),
+                                          child: Stack(children: [
+                                            Hero(
+                                              tag: "target$index",
+                                              child: Container(
+                                                width: size.width / 1.4,
+                                                height: size.height / 1.8,
+                                                decoration: BoxDecoration(
+                                                    image: DecorationImage(
+                                                        image: AssetImage(
+                                                          pozantiList[index]
+                                                              ['image'],
+                                                        ),
+                                                        fit: BoxFit.cover),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            12)),
+                                              ),
+                                            ),
+                                            Container(
+                                              width: size.width / 1.4,
+                                              height: size.height / 1.8,
+                                              decoration: BoxDecoration(
+                                                  gradient: LinearGradient(
+                                                      begin:
+                                                          Alignment.topCenter,
+                                                      end: Alignment
+                                                          .bottomCenter,
+                                                      colors: [
+                                                        Colors.transparent,
+                                                        Colors.black
+                                                            .withOpacity(0.9)
+                                                      ],
+                                                      stops: const [
+                                                        0.4,
+                                                        0.9
+                                                      ]),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          12)),
+                                            ),
+                                            Positioned(
+                                                bottom: size.width / 4,
+                                                left: 50,
+                                                child: Text(
+                                                  pozantiList[index]['ad'],
+                                                  style: xdBeyaz,
+                                                ))
+                                          ]),
+                                        ),
+                                      );
+                                    },
+                                  ),
               )
-
             ],
           ),
         ),

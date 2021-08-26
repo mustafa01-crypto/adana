@@ -10,6 +10,10 @@ import 'package:adana/ilceler/cukurova/muzeKompleksi.dart';
 import 'package:adana/ilceler/cukurova/sevgiAdasi.dart';
 import 'package:adana/ilceler/cukurova/seyhanBaraji.dart';
 import 'package:adana/ilceler/karaisali/karapinar.dart';
+import 'package:adana/ilceler/pozanti/akca_tekir.dart';
+import 'package:adana/ilceler/pozanti/anit_agac.dart';
+import 'package:adana/ilceler/pozanti/armut_yayla.dart';
+import 'package:adana/ilceler/pozanti/tabyalar.dart';
 import 'package:adana/ilceler/seyhan/ataturkEvi.dart';
 import 'package:adana/ilceler/seyhan/bebekliKilisesi.dart';
 import 'package:adana/ilceler/seyhan/cobanDedeParki.dart';
@@ -90,6 +94,12 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/sinema', page: () => SinemaMuzesi()),
         GetPage(name: '/ulu', page: () => UluCamii()),
         GetPage(name: '/taskopru', page: () => TasKopru()),
+
+        //pozantı
+        GetPage(name: '/armut', page: () => ArmutYayla()),
+        GetPage(name: '/akca_tekir', page: () => AkcaTekir()),
+        GetPage(name: '/tabya', page: () => Tabyalar()),
+        GetPage(name: '/anit', page: () => AnitAgaci()),
       ],
     );
   }

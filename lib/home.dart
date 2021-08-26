@@ -28,7 +28,13 @@ class _HomeState extends State<Home> {
   bool getImage = false;
   int curIndex = 0;
 
-  List<String> titles = ["KARAİSALI", "CEYHAN", "ÇUKUROVA", "SEYHAN"];
+  List<String> titles = [
+    "KARAİSALI",
+    "CEYHAN",
+    "ÇUKUROVA",
+    "SEYHAN",
+    "POZANTI"
+  ];
   List typesKaraisali = [
     {
       'ad': "KAPIKAYA KANYONU",
@@ -327,6 +333,53 @@ class _HomeState extends State<Home> {
     },
   ];
 
+  List pozantiList = [
+    {
+      "route": "/armut",
+      'puan': "5",
+      'ad': "ARMUTOĞLU YAYLASI",
+      'image': "assets/seyhan/alu.jpg",
+      'bilgi': "Tamamen bakir durumda olan"
+          " yayla sedir, köknar, ardıç ağaçları ve kır çiçekleri "
+          "ile iç içedir. Sarımsak Dağı’nın eteğinde bulunması "
+          "nedeniyle yaban hayatı bakımından da çok zengindir."
+    },
+    {
+      "route": "/akca_tekir",
+      'puan': "5",
+      'ad': "AKÇAKTEKİR YAYLASI",
+      'image': "assets/seyhan/alu.jpg",
+      'bilgi': "Bürücek Yaylası, Akçaköy ve"
+          " Tekir Yaylası'nın birleşmesiyle oluşan Akçatekir "
+          "Beldesi'nin bir mahallesi konumundadır. Çam, ardıç ve"
+          " meyve bahçeleri arasında kurulmuş olan yaylada, yayla"
+          " mimarisine uygun yapıların yanında farklı mimari"
+          " tarzların örneklerini de görmek mümkündür."
+    },
+    {
+      "route": "/tabya",
+      'puan': "5",
+      'ad': "İBRAHİM PAŞA TABYASI",
+      'image': "assets/seyhan/alu.jpg",
+      'bilgi': "İbrahim Paşa Tabyaları oldukça sağlam ve bölgede"
+          " sayısı çok az olan Osmanlı Dönemi yapılarındandır."
+          " Yaklaşık 1830’lu yıllarda, doğudan gelecek saldırılara"
+          " karşı koymak için İbrahim Paşa tarafından "
+          "yaptırılmıştır.",
+    },
+    {
+      "route": "/anit",
+      'puan': "5",
+      'ad': "ANIT AĞACI",
+      'image': "assets/seyhan/alu.jpg",
+      'bilgi': "Pozantı ilçesi sınırlarında 3 adet ağaç mevcuttur."
+          " Bunlar Çetinlik Dağı orman arazisi içinde "
+          "bulunan Sedir ağacı, Belemedik köyünde "
+          "bulunan Çınar Ağacı ve Bürücek Yaylasında bulunan"
+          " Ceviz Ağacıdır",
+    },
+  ];
+
   void getCurrentUser() {
     final user = auth.currentUser;
     if (user != null) {
@@ -469,7 +522,9 @@ class _HomeState extends State<Home> {
             children: [
               Container(
                 padding: EdgeInsets.only(
-                    top: size.height / 25, left: size.width / 20, right: size.width/20),
+                    top: size.height / 25,
+                    left: size.width / 20,
+                    right: size.width / 20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -526,8 +581,9 @@ class _HomeState extends State<Home> {
                               });
                             },
                             child: Padding(
-                              padding:
-                                   EdgeInsets.only(left: size.width / 20, right: size.width / 40),
+                              padding: EdgeInsets.only(
+                                  left: size.width / 20,
+                                  right: size.width / 40),
                               child: Container(
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(12),
@@ -563,7 +619,6 @@ class _HomeState extends State<Home> {
                 height: size.height / 100,
               ),
               Container(
-
                   height: size.height / 1.4,
                   child: curIndex == 0
                       ? ListView.builder(
@@ -583,7 +638,8 @@ class _HomeState extends State<Home> {
                               },
                               child: Padding(
                                 padding: EdgeInsets.symmetric(
-                                    horizontal: size.width / 20, vertical: size.height / 20),
+                                    horizontal: size.width / 20,
+                                    vertical: size.height / 20),
                                 child: Stack(children: [
                                   Hero(
                                     tag: "target$index",
@@ -658,7 +714,8 @@ class _HomeState extends State<Home> {
                                   },
                                   child: Padding(
                                     padding: EdgeInsets.symmetric(
-                                        horizontal: size.width / 20, vertical: size.height / 20),
+                                        horizontal: size.width / 20,
+                                        vertical: size.height / 20),
                                     child: Stack(children: [
                                       Hero(
                                         tag: "target$index",
@@ -724,7 +781,8 @@ class _HomeState extends State<Home> {
                                       },
                                       child: Padding(
                                         padding: EdgeInsets.symmetric(
-                                            horizontal: size.width / 20, vertical: size.height / 20),
+                                            horizontal: size.width / 20,
+                                            vertical: size.height / 20),
                                         child: Stack(children: [
                                           Hero(
                                             tag: "target$index",
@@ -774,7 +832,7 @@ class _HomeState extends State<Home> {
                                     );
                                   },
                                 )
-                              : ListView.builder(
+                              : curIndex == 3 ? ListView.builder(
                                   scrollDirection: Axis.horizontal,
                                   itemCount: typesSeyhan.length,
                                   itemBuilder:
@@ -792,7 +850,8 @@ class _HomeState extends State<Home> {
                                       },
                                       child: Padding(
                                         padding: EdgeInsets.symmetric(
-                                            horizontal: size.width / 20, vertical: size.height / 20),
+                                            horizontal: size.width / 20,
+                                            vertical: size.height / 20),
                                         child: Stack(children: [
                                           Hero(
                                             tag: "target$index",
@@ -841,7 +900,78 @@ class _HomeState extends State<Home> {
                                       ),
                                     );
                                   },
+                                )
+                      : ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: pozantiList.length,
+                    itemBuilder:
+                        (BuildContext context, int index) {
+                      return GestureDetector(
+                        onTap: () {
+                          Get.to(() => TileScreen(), arguments: [
+                            index,
+                            pozantiList[index]['image'],
+                            pozantiList[index]['ad'],
+                            pozantiList[index]['bilgi'],
+                            pozantiList[index]['puan'],
+                            pozantiList[index]['route'],
+                          ]);
+                        },
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: size.width / 20,
+                              vertical: size.height / 20),
+                          child: Stack(children: [
+                            Hero(
+                              tag: "target$index",
+                              child: Container(
+                                width: size.width / 1.4,
+                                height: size.height / 1.8,
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: AssetImage(
+                                          pozantiList[index]
+                                          ['image'],
+                                        ),
+                                        fit: BoxFit.cover),
+                                    borderRadius:
+                                    BorderRadius.circular(
+                                        12)),
+                              ),
+                            ),
+                            Container(
+                              width: size.width / 1.4,
+                              height: size.height / 1.8,
+                              decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                      begin: Alignment.topCenter,
+                                      end: Alignment.bottomCenter,
+                                      colors: [
+                                        Colors.transparent,
+                                        Colors.black
+                                            .withOpacity(0.9)
+                                      ],
+                                      stops: const [
+                                        0.4,
+                                        0.9
+                                      ]),
+                                  borderRadius:
+                                  BorderRadius.circular(12)),
+                            ),
+                            Positioned(
+                                bottom: size.width / 4,
+                                left: 50,
+                                child: Text(
+                                  pozantiList[index]['ad'],
+                                  style: xdBeyaz,
                                 ))
+                          ]),
+                        ),
+                      );
+                    },
+                  ),
+              )
+
             ],
           ),
         ),

@@ -5,14 +5,14 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_stars/flutter_rating_stars.dart';
 
-class TabyaYorum extends StatefulWidget {
-  const TabyaYorum({Key? key}) : super(key: key);
+class AnahsaYorum extends StatefulWidget {
+  const AnahsaYorum({Key? key}) : super(key: key);
 
   @override
-  _TabyaYorumState createState() => _TabyaYorumState();
+  _AnahsaYorumState createState() => _AnahsaYorumState();
 }
 
-class _TabyaYorumState extends State<TabyaYorum> {
+class _AnahsaYorumState extends State<AnahsaYorum> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -38,7 +38,7 @@ class _YorumlarState extends State<Yorumlar> {
   Widget build(BuildContext context) {
 
     Query karapinarYorumlar =
-    FirebaseFirestore.instance.collection('TabyaYorum');
+    FirebaseFirestore.instance.collection('AnahsaYorum');
 
     return StreamBuilder<QuerySnapshot>(
       stream: karapinarYorumlar.snapshots(),

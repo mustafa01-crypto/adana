@@ -23,6 +23,9 @@ import 'package:adana/ilceler/seyhan/sabanciMerkezCami.dart';
 import 'package:adana/ilceler/seyhan/sinemaM%C3%BCzesi.dart';
 import 'package:adana/ilceler/seyhan/tasKopru.dart';
 import 'package:adana/ilceler/seyhan/uluCami.dart';
+import 'package:adana/ilceler/yumurta/ayas_antik.dart';
+import 'package:adana/ilceler/yumurta/kiz_kalesi.dart';
+import 'package:adana/ilceler/yumurta/suleyman_kulesi.dart';
 import 'package:adana/onBoarding/onBoarding.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -97,12 +100,18 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/taskopru', page: () => TasKopru()),
 
         //pozantı
+
         GetPage(name: '/armut', page: () => ArmutYayla()),
         GetPage(name: '/akca_tekir', page: () => AkcaTekir()),
         GetPage(name: '/tabya', page: () => Tabyalar()),
         GetPage(name: '/anit', page: () => AnitAgaci()),
         GetPage(name: '/anahsa', page: () => Anahsa()),
         GetPage(name: '/seker', page: () => SkerPinari()),
+
+        //YUMURTALIK
+        GetPage(name: '/ayas', page: () => AyasAntik()),
+        GetPage(name: '/kizkalesi', page: () => KizKalesi()),
+        GetPage(name: '/suleyman', page: () => SuleymanKulesi()),
       ],
     );
   }

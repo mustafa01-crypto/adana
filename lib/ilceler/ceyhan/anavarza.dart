@@ -35,7 +35,6 @@ class _AnavarzaState extends State<Anavarza>
   void initState() {
     super.initState();
     getCurrentUser();
-    tabController = TabController(length: 4, vsync: this);
   }
 
   void getCurrentUser() {
@@ -45,7 +44,6 @@ class _AnavarzaState extends State<Anavarza>
     }
   }
 
-  TabController? tabController;
 
   static List<String> links = [
     "https://cdnuploads.aa.com.tr/uploads/Contents/2018/08/06/thumbs_b_c_9e6375297d46cc38d01fa70e293d49a3.jpg",
@@ -120,11 +118,7 @@ class _AnavarzaState extends State<Anavarza>
               Align(
                 alignment: Alignment.bottomCenter,
                 child: IconButton(
-                  icon: Icon(
-                    Icons.arrow_circle_up,
-                    color: Colors.black,
-                    size: 40,
-                  ),
+                  icon: Icon(Icons.arrow_circle_up,color: Colors.black,size: 40,),
                   onPressed: () {
                     Get.bottomSheet(buildSheet(),
                         barrierColor: Colors.white.withOpacity(0.6),

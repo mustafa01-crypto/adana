@@ -43,6 +43,7 @@ dependencies:
   url_launcher: ^6.0.9
   get: ^4.1.4
   provider: ^5.0.0
+  flutter_svg: ^0.22.0
   google_maps_flutter: ^2.0.6
 
   flutter:
@@ -90,6 +91,7 @@ flutter:
     - assets/seyhan/
     - assets/ova/
     - assets/pozanti/
+    - assets/yumurta/
 
 
 

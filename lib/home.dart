@@ -33,7 +33,8 @@ class _HomeState extends State<Home> {
     "CEYHAN",
     "ÇUKUROVA",
     "SEYHAN",
-    "POZANTI"
+    "POZANTI",
+    "YUMURTALIK"
   ];
   List typesKaraisali = [
     {
@@ -400,6 +401,39 @@ class _HomeState extends State<Home> {
           " doğu ve batıda mazgal dedikleri kaleyi "
           "çevrelemektedir.",
     },
+  ];
+  List yumurtaList = [
+    {
+      "route": "/ayas",
+      'puan': "5",
+      'ad': "AYAS ANTİK KENTİ",
+      'image': "assets/yumurta/ayas.jpg",
+      'bilgi': "Antik Kilikya’nın önemli liman kenti olan Aegeae M.Ö. 1'inci"
+          " yüzyılda en parlak dönemini yaşamıştır.",
+    },
+    {
+      "route": "/kizkalesi",
+      'puan': "5",
+      'ad': "KIZ KALESİ",
+      'image': "assets/yumurta/kizkalesi.jpg",
+      'bilgi': "Yumurtalık ilçesinin kuruluşu ilçe merkezi İskenderun "
+          "Körfezinin kuzeyinde M.Ö. 4. Yüzyılın son çeyreğinde "
+          "Büyük İskender’in Pers İmparatoru Dara’yı bugünkü İskenderun"
+          " ile Dörtyol arasında kalan ovada mağlup etmesinden sonra "
+          "İskenderin halefleri olan Makedonyalı komutanlar tarafından "
+          "bir liman şehri olarak kurulmuştur."
+    },
+    {
+      "route": "/suleyman",
+      'puan': "5",
+      'ad': "SÜLEYMAN KALESİ",
+      'image': "assets/yumurta/suluman.jpg",
+      'bilgi': "Osmanlı Hükümdarı Kanuni Sultan Süleyman zamanında yaptırıldığı"
+          " için padişahın adını almıştır."
+          "Ana gövdesinden kat kat yükselen kule denizden gelebilecek saldırıyı "
+          "erken haber alabilmek için yapılmıştır."
+    },
+
   ];
 
   void getCurrentUser() {
@@ -924,7 +958,7 @@ class _HomeState extends State<Home> {
                                       );
                                     },
                                   )
-                                : ListView.builder(
+                                :  curIndex == 4 ? ListView.builder(
                                     scrollDirection: Axis.horizontal,
                                     itemCount: pozantiList.length,
                                     itemBuilder:
@@ -996,7 +1030,80 @@ class _HomeState extends State<Home> {
                                         ),
                                       );
                                     },
-                                  ),
+                                  )
+                    :  ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: yumurtaList.length,
+                  itemBuilder:
+                      (BuildContext context, int index) {
+                    return GestureDetector(
+                      onTap: () {
+                        Get.to(() => TileScreen(),
+                            arguments: [
+                              index,
+                              yumurtaList[index]['image'],
+                              yumurtaList[index]['ad'],
+                              yumurtaList[index]['bilgi'],
+                              yumurtaList[index]['puan'],
+                              yumurtaList[index]['route'],
+                            ]);
+                      },
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: size.width / 20,
+                            vertical: size.height / 20),
+                        child: Stack(children: [
+                          Hero(
+                            tag: "target$index",
+                            child: Container(
+                              width: size.width / 1.4,
+                              height: size.height / 1.8,
+                              decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                      image: AssetImage(
+                                        yumurtaList[index]
+                                        ['image'],
+                                      ),
+                                      fit: BoxFit.cover),
+                                  borderRadius:
+                                  BorderRadius.circular(
+                                      12)),
+                            ),
+                          ),
+                          Container(
+                            width: size.width / 1.4,
+                            height: size.height / 1.8,
+                            decoration: BoxDecoration(
+                                gradient: LinearGradient(
+                                    begin:
+                                    Alignment.topCenter,
+                                    end: Alignment
+                                        .bottomCenter,
+                                    colors: [
+                                      Colors.transparent,
+                                      Colors.black
+                                          .withOpacity(0.9)
+                                    ],
+                                    stops: const [
+                                      0.4,
+                                      0.9
+                                    ]),
+                                borderRadius:
+                                BorderRadius.circular(
+                                    12)),
+                          ),
+                          Positioned(
+                              bottom: size.width / 4,
+                              left: 50,
+                              child: Text(
+                                yumurtaList[index]['ad'],
+                                style: xdBeyaz,
+                              ))
+                        ]),
+                      ),
+                    );
+                  },
+                )
               )
             ],
           ),

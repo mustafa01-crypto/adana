@@ -3,7 +3,7 @@ import 'package:adana/components/infoText.dart';
 import 'package:adana/components/mainAppBar.dart';
 import 'package:adana/components/sliderImage.dart';
 import 'package:adana/constants/constants.dart';
-import 'package:adana/ilceler/seyhan/seyhanYorumlar/ataturkYorum.dart';
+import 'package:adana/ilceler/yumurta/yorumlar/kiz_kalesi_yorum.dart';
 import 'package:adana/map/map.dart';
 import 'package:adana/map/mapUtils.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -18,33 +18,29 @@ var now = new DateTime.now();
 var formatter = new DateFormat('dd-MM-yyyy');
 String formattedDate = formatter.format(now);
 
-class AtaturkEvi extends StatefulWidget {
-  const AtaturkEvi({Key? key}) : super(key: key);
+class KizKalesi extends StatefulWidget {
+  const KizKalesi({Key? key}) : super(key: key);
 
   @override
-  _AtaturkEviState createState() => _AtaturkEviState();
+  _KizKalesiState createState() => _KizKalesiState();
 }
 
-class _AtaturkEviState extends State<AtaturkEvi>
+class _KizKalesiState extends State<KizKalesi>
     with SingleTickerProviderStateMixin {
-  double x = 36.988621;
-  double y = 35.331884;
-  String title = "ATATÜRK EVİ";
+  double x = 36.767102;
+  double y = 35.791939;
+  String title = "KIZ KALESİ";
   FirebaseAuth auth = FirebaseAuth.instance;
 
   void initState() {
     super.initState();
     getCurrentUser();
-
   }
 
   static List<String> links = [
-    "https://www.kulturportali.gov.tr/repoKulturPortali/large/SehirRehberi//GezilecekYer/20190726160159325_Ataturk%20Evi%20Muzesi%202.png?format=jpg&quality=50",
-    "https://www.kulturportali.gov.tr/repoKulturPortali/large/SehirRehberi//GezilecekYer/20190726160215123_Ataturk%20Evi%20Muzesi%203.png?format=jpg&quality=50",
-    "https://www.kulturportali.gov.tr/repoKulturPortali/large/SehirRehberi//GezilecekYer/20190726160046948_Ataturk%20Evi%20Muzesi.png?format=jpg&quality=50",
-    "https://gezginsitesi.com/wp-content/uploads/2019/11/Adana-Atat%C3%BCrk-Evi-odalar%C4%B1.jpg",
-    "https://gezginsitesi.com/wp-content/uploads/2019/11/Adana-Atat%C3%BCrk-Evi-silahlar.jpg",
-    "https://gezginsitesi.com/wp-content/uploads/2019/11/adana-%C3%A7ukurova-kurtulu%C5%9F-sava%C5%9F%C4%B1-kahramanlar%C4%B1.jpg",
+    "https://mapio.net/images-p/15339916.jpg",
+    "https://www.sosyalsanat.net/wp-content/uploads/2015/08/IMG_3424-Yumurtal%C4%B1k-Adana.jpg",
+    "https://www.sombahar.com/wp-content/uploads/2015/07/denix2.jpg"
   ];
 
   void getCurrentUser() {
@@ -68,7 +64,7 @@ class _AtaturkEviState extends State<AtaturkEvi>
       onCancelled: () {},
       onSubmitted: (response) {
         FirebaseFirestore.instance
-            .collection("AtaturkEviYorum")
+            .collection("KizKalesiYorum")
             .doc(loggedInuser.email)
             .set({
           "zaman": formattedDate.toString(),
@@ -103,47 +99,47 @@ class _AtaturkEviState extends State<AtaturkEvi>
                 height: 10,
               ),
               infoText(
-                  "Adana Atatürk Evi Müzesi, Adana Seyhan Caddesi üzerinde bulunan müze."
-                  " 15 Mart 1923 tarihinde Mustafa Kemal Atatürk ve eşi Adana'yı ziyaret "
-                  "ettiğinde bu binada konaklamıştır. Bina daha önceleri Ramazanoğulları"
-                  " ailesine mensup Suphi Paşa'ya aitti. Bina sonraları Atatürk Bilim "
-                  "ve Kültür Müzesi Koruma ve Yaşatma Derneği'nce kamulaştırılmış ve "
-                  "restore edilmiştir. 1981 yılında, Atatürk'ün 100. doğum yılı dolayısıyla, "
-                  "Müze Müdürlüğü'ne bağlı bir müze olarak açılmıştır. Her 15 Mart'ta "
-                  "Mustafa Kemal Atatürk'ün Adana'ya gelişi resmi töreni bu müzede "
-                  "tertiplenir.Müzede Atatürk'ün Adana seyahati ile ilgili fotoğrafları, "
-                  "bilgiler ve belgelerle birlikte, etnografik eserler de sergilenmektedir."),
+                "Yumurtalık ilçesinin kuruluşu ilçe merkezi İskenderun "
+                "Körfezinin kuzeyinde M.Ö. 4. Yüzyılın son çeyreğinde "
+                "Büyük İskender’in Pers İmparatoru Dara’yı bugünkü İskenderun"
+                " ile Dörtyol arasında kalan ovada mağlup etmesinden sonra "
+                "İskenderin halefleri olan Makedonyalı komutanlar tarafından "
+                "bir liman şehri olarak kurulmuştur. Kente eski Yunanca’da keçi "
+                "anlamına gelen Aıks sözcüğünden türetilmiş Aigeai adının verilmesinin"
+                " sebebi ise Büyük İskender’in Dara’dan bu bölgeyi aldığı savaşta Pers "
+                "ordularının üzerlerine yürürken keçilerin boynuzlarına bağladığı"
+                " meşalelerle büyük bir ordunun saldırdığı izlenimini vererek Persleri"
+                " burdan kaçırması sonucu olduğu bir efsane olarak İskender dönemindeki "
+                "tarih yazarlarınca anlatılmaktadır.",
+              ),
               SizedBox(
                 height: 15,
               ),
-
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   IconButton(
-                    icon: Icon(Icons.arrow_circle_up,color: Colors.black,size: 40,),
-                    onPressed: ()
-                    {
-                      Get.bottomSheet(
-                          buildSheet(),
+                    icon: Icon(
+                      Icons.arrow_circle_up,
+                      color: Colors.black,
+                      size: 40,
+                    ),
+                    onPressed: () {
+                      Get.bottomSheet(buildSheet(),
                           barrierColor: Colors.white.withOpacity(0.6),
-                          isScrollControlled: false
-
-                      );
+                          isScrollControlled: false);
                     },
-
                   )
                 ],
               )
-
             ],
           ),
         ),
       ),
     );
   }
-  Widget buildSheet()
-  {
+
+  Widget buildSheet() {
     return Container(
       color: kutu,
       child: ListView(
@@ -153,7 +149,7 @@ class _AtaturkEviState extends State<AtaturkEvi>
           ),
           TextButton(
               onPressed: () {
-                Get.to(() => Maps(), arguments:[ x,y,title]);
+                Get.to(() => Maps(), arguments: [x, y, title]);
               },
               child: buttonTextContainer(context, "HARİTADA GÖSTER")),
           SizedBox(
@@ -161,7 +157,7 @@ class _AtaturkEviState extends State<AtaturkEvi>
           ),
           TextButton(
               onPressed: () {
-                Get.to(() => AtaturkYorum());
+                Get.to(() => KizKalesiYorum());
               },
               child: buttonTextContainer(context, "YORUMLARI GÖSTER")),
 
@@ -184,16 +180,17 @@ class _AtaturkEviState extends State<AtaturkEvi>
             child: buttonTextContainer(context, "YORUM YAP"),
           ),
           IconButton(
-            icon: Icon(Icons.cancel_sharp,size: 25,color: Colors.grey,),
-            onPressed: ()
-            {
+            icon: Icon(
+              Icons.cancel_sharp,
+              size: 25,
+              color: Colors.grey,
+            ),
+            onPressed: () {
               Get.back();
             },
-
           )
         ],
       ),
     );
   }
-
 }

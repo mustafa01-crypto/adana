@@ -31,6 +31,7 @@ import 'package:adana/onBoarding/onBoarding.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
@@ -70,10 +71,10 @@ class MyApp extends StatelessWidget {
       initialRoute: '/splash',
       getPages: [
         //anasayfa
-        GetPage(name: '/splash', page: () => Splash()),
+        GetPage(name: '/splash', page: () => Splash(),transition: Transition.leftToRight),
         GetPage(name: '/login', page: () => Login()),
         GetPage(name: '/forgot', page: () => ForgotPassword()),
-        GetPage(name: '/register', page: () => Register()),
+        GetPage(name: '/register', page: () => Register(),transition: Transition.rightToLeft),
         GetPage(name: '/onboarding', page: () => OnBoardingPage()),
         GetPage(name: '/home', page: () => Home()),
 

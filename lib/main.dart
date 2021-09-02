@@ -1,3 +1,4 @@
+import 'package:adana/auth/forgotPassword.dart';
 import 'package:adana/auth/login.dart';
 import 'package:adana/ilceler/ceyhan/anavarza.dart';
 import 'package:adana/ilceler/ceyhan/durhasan.dart';
@@ -29,9 +30,14 @@ import 'package:adana/ilceler/yumurta/suleyman_kulesi.dart';
 import 'package:adana/onBoarding/onBoarding.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'auth/register.dart';
+import 'home.dart';
 import 'ilceler/cukurova/dogalPark.dart';
 import 'ilceler/cukurova/yumurtalikLagunu.dart';
 import 'ilceler/karaisali/almankoprusu.dart';
@@ -51,6 +57,10 @@ void main() async {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+    ]);
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
 
@@ -61,6 +71,11 @@ class MyApp extends StatelessWidget {
       getPages: [
         //anasayfa
         GetPage(name: '/splash', page: () => Splash()),
+        GetPage(name: '/login', page: () => Login()),
+        GetPage(name: '/forgot', page: () => ForgotPassword()),
+        GetPage(name: '/register', page: () => Register()),
+        GetPage(name: '/onboarding', page: () => OnBoardingPage()),
+        GetPage(name: '/home', page: () => Home()),
 
         //karaisalı
         GetPage(name: '/dokuzoluk', page: () => Dokuzoluk()),
@@ -128,12 +143,10 @@ class SplashState extends State<Splash> {
     bool _seen = (prefs.getBool('seen') ?? false);
 
     if (_seen) {
-      Navigator.of(context).pushReplacement(
-          new MaterialPageRoute(builder: (context) => new Login()));
+      Get.toNamed("/login");
     } else {
       await prefs.setBool('seen', true);
-      Navigator.of(context).pushReplacement(
-          new MaterialPageRoute(builder: (context) => new OnBoardingPage()));
+      Get.toNamed("/onboarding");
     }
   }
 

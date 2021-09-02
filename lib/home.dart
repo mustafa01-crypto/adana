@@ -615,7 +615,7 @@ class _HomeState extends State<Home> {
                           ),
                           onPressed: () {
                             FirebaseAuth.instance.signOut().then((deger) {
-                              Get.to(() => Login());
+                              Get.toNamed("/login");
                             });
                           },
                         ),

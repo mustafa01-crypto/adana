@@ -1,4 +1,3 @@
-import 'package:adana/auth/login.dart';
 import 'package:adana/constants/constants.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -140,7 +139,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                           );
 
                           Future.delayed(Duration(seconds: 5), () {
-                            Get.to(() => Login());
+                            Get.toNamed("/login");
                           });
 
 

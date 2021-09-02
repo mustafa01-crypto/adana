@@ -1,6 +1,5 @@
 import 'dart:async';
-import 'package:adana/auth/register.dart';
-import 'package:adana/auth/forgotPassword.dart';
+
 import 'package:adana/constants/constants.dart';
 import 'package:adana/home.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -286,7 +285,7 @@ class _LoginState extends State<Login> {
                         ),
                         TextButton(
                           onPressed: () {
-                            Get.to(() => Register());
+                            Get.toNamed("/register");
                           },
                           child: Padding(
                             padding: const EdgeInsets.only(right: 5),
@@ -300,7 +299,7 @@ class _LoginState extends State<Login> {
                     ),
                     TextButton(
                       onPressed: () {
-                        Get.to(() => ForgotPassword());
+                        Get.toNamed("/forgot");
                         print(size.width);
                         print(size.height);
                       },

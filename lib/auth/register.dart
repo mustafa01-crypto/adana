@@ -1,10 +1,9 @@
 import 'package:adana/constants/constants.dart';
-import 'package:adana/home.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'login.dart';
+
 
 class Register extends StatefulWidget {
   const Register({Key? key}) : super(key: key);
@@ -314,7 +313,7 @@ class _RegisterState extends State<Register> {
                                 .createUserWithEmailAndPassword(
                                     email: t2.text, password: t3.text)
                                 .then(
-                                  (value) => Get.to(() => Home()),
+                                  (value) => Get.toNamed("/home"),
                                 );
                           }
                         },
@@ -355,7 +354,7 @@ class _RegisterState extends State<Register> {
                         ),
                         TextButton(
                           onPressed: () {
-                            Get.to(() => Login());
+                            Get.toNamed("/login");
                           },
                           child: Padding(
                             padding: const EdgeInsets.only(right: 5),

@@ -300,8 +300,6 @@ class _LoginState extends State<Login> {
                     TextButton(
                       onPressed: () {
                         Get.toNamed("/forgot");
-                        print(size.width);
-                        print(size.height);
                       },
                       child: Padding(
                         padding: const EdgeInsets.only(right: 5),

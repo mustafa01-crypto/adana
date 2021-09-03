@@ -319,7 +319,7 @@ class _RegisterState extends State<Register> {
                         },
                         child: Container(
                           width: MediaQuery.of(context).size.width,
-                          height: size.height /10,
+                          height: 60,
                           child: Center(
                             child: Text(
                               "KAYIT OL",

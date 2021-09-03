@@ -1,7 +1,7 @@
+import 'package:adana/comment_profile/comment_profile.dart';
 import 'package:adana/components/mainAppBar.dart';
 import 'package:adana/constants/constants.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_stars/flutter_rating_stars.dart';
 
@@ -150,63 +150,6 @@ class _YorumlarState extends State<Yorumlar> {
           }).toList(),
         );
       },
-    );
-  }
-}
-
-class Profiles extends StatefulWidget {
-  String? path;
-
-  Profiles({required this.path});
-
-  @override
-  _ProfilesState createState() => _ProfilesState();
-}
-
-class _ProfilesState extends State<Profiles> {
-
-  String? indirmeBaglantisi;
-
-  baglantiAl() async {
-    String baglanti = await FirebaseStorage.instance
-        .ref()
-        .child("profilresimleri")
-        .child(widget.path!)
-        .child("profilResmi.png")
-        .getDownloadURL();
-
-    setState(() {
-      indirmeBaglantisi = baglanti;
-    });
-  }
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    baglantiAl();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
-    // final height = MediaQuery.of(context).size.height;
-    return Container(
-      width: width * 1 / 9,
-      height: width * 1 / 9,
-      child: ClipOval(
-          child: indirmeBaglantisi == null
-              ? Image.asset(
-            "assets/profile.png",
-            width: width * 1 / 9,
-            height: width * 1 / 9,
-            fit: BoxFit.cover,
-          )
-              : Image.network(
-            indirmeBaglantisi!,
-            width: width * 1 / 9,
-            height: width * 1 / 9,
-            fit: BoxFit.cover,
-          )),
     );
   }
 }

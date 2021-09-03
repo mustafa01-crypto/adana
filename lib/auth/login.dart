@@ -1,10 +1,13 @@
 import 'dart:async';
 
+import 'package:adana/components/button_box.dart';
+import 'package:adana/components/form_text.dart';
 import 'package:adana/constants/constants.dart';
 import 'package:adana/home.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
 
@@ -22,7 +25,6 @@ class _LoginState extends State<Login> {
 
   static final _auth = FirebaseAuth.instance;
   final _formKey = GlobalKey<FormState>();
-
 
   void initState() {
     super.initState();
@@ -61,8 +63,6 @@ class _LoginState extends State<Login> {
       }
     }
   }
-
-
 
   DateTime timeDifference = DateTime.now();
 
@@ -115,11 +115,7 @@ class _LoginState extends State<Login> {
                       gradient: LinearGradient(
                           begin: Alignment.topCenter,
                           end: Alignment.bottomCenter,
-                          colors: [
-                           topBack,
-                            centerBack,
-                            bottomBack
-                          ]),
+                          colors: [topBack, centerBack, bottomBack]),
                     ),
                   ),
                 ),
@@ -129,10 +125,7 @@ class _LoginState extends State<Login> {
                     SizedBox(
                       height: size.height * 1 / 5,
                     ),
-                    Text(
-                      'GİRİŞ EKRANI',
-                      style: loginTitle
-                    ),
+                    Text('GİRİŞ EKRANI', style: loginTitle),
                     SizedBox(
                       height: size.height * 1 / 8,
                     ),
@@ -140,36 +133,16 @@ class _LoginState extends State<Login> {
                       padding: EdgeInsets.symmetric(horizontal: 20),
                       child: TextFormField(
                         keyboardType: TextInputType.emailAddress,
-                        style: TextStyle(
-                            color: kutu, fontWeight: FontWeight.w300),
-                        decoration: InputDecoration(
-                          hintText: "Email Adresi",
-                          hintStyle: TextStyle(color: Colors.white),
-                          labelText: "Email",
-                          labelStyle: TextStyle(color: Colors.white),
-                          fillColor: kutu,
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(25.0),
-                            borderSide: BorderSide(
-                              color: kutu,
-                              style: BorderStyle.solid,
-                              width: 1.5,
-                            ),
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(25.0),
-                            borderSide: BorderSide(
-                              color: kutu,
-                              style: BorderStyle.solid,
-                              width: 1.5,
-                            ),
-                          ),
-                          prefixIcon: Icon(
-                            Icons.email,
-                            color: kutu,
-                          ), // icon is 48px widget.
-                          //fillColor: Colors.green
-                        ),
+                        style:
+                            TextStyle(color: kutu, fontWeight: FontWeight.w300),
+                          decoration: formDecoration(
+                              "E-mail Adresi",
+                              "E-mail",
+                              Icon(
+                                Icons.email,
+                                color: kutu,
+                              ),
+                              SizedBox()),
                         validator: (val) {
                           if (!GetUtils.isEmail(val!))
                             return "Geçersiz email adresi";
@@ -185,48 +158,28 @@ class _LoginState extends State<Login> {
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 20),
                       child: TextFormField(
-                        style: TextStyle(
-                            color: kutu, fontWeight: FontWeight.w300),
+                        style:
+                            TextStyle(color: kutu, fontWeight: FontWeight.w300),
                         obscureText: !_passwordVisible,
-                        decoration: InputDecoration(
-                            hintText: "Parola",
-                            hintStyle: TextStyle(color: kutu),
-                            labelText: "Parola",
-                            labelStyle: TextStyle(color: kutu),
-                            fillColor: Colors.white,
-                            focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(25.0),
-                              borderSide: BorderSide(
-                                color: kutu,
-                                style: BorderStyle.solid,
-                                width: 1.5,
-                              ),
-                            ),
-                            enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(25.0),
-                              borderSide: BorderSide(
-                                color: kutu,
-                                style: BorderStyle.solid,
-                                width: 1.5,
-                              ),
-                            ),
-                            prefixIcon: Icon(
-                              Icons.vpn_key,
-                              color: kutu,
-                            ),
-                            suffixIcon: IconButton(
-                              icon: Icon(_passwordVisible
-                                  ? Icons.visibility
-                                  : Icons.visibility_off),
-                              color: kutu,
-                              onPressed: () {
-                                setState(() {
-                                  _passwordVisible = !_passwordVisible;
-                                });
-                              },
-                            )
-                            // icon is 48px widget.
-                            ),
+                        decoration: formDecoration(
+                          "Parola",
+                          "Parola",
+                          Icon(
+                            Icons.vpn_key,
+                            color: kutu,
+                          ),
+                          IconButton(
+                            icon: Icon(_passwordVisible
+                                ? Icons.visibility
+                                : Icons.visibility_off),
+                            color: kutu,
+                            onPressed: () {
+                              setState(() {
+                                _passwordVisible = !_passwordVisible;
+                              });
+                            },
+                          ),
+                        ),
                         validator: (deger) {
                           if (deger!.isEmpty || deger.length < 6) {
                             return "Lütfen 6 karakterden uzun bir şifre giriniz";
@@ -242,36 +195,12 @@ class _LoginState extends State<Login> {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 10),
                       child: TextButton(
-                        onPressed: () {
-                          if (_formKey.currentState!.validate()) {
-                            girisYap();
-                          }
-                        },
-                        child: Container(
-                          width: MediaQuery.of(context).size.width,
-                          height: 60,
-                          child: Center(
-                            child: Text(
-                              "GİRİŞ YAP",
-                              style: loginButton
-                            ),
-                          ),
-                          decoration: BoxDecoration(
-
-                            gradient: buttonBoxGradient,
-                            borderRadius: BorderRadius.all(Radius.circular(30)),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black38.withOpacity(0.1),
-                                spreadRadius: 1,
-                                blurRadius: 1,
-                                offset:
-                                    Offset(0, -1), // changes position of shadow
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
+                          onPressed: () {
+                            if (_formKey.currentState!.validate()) {
+                              girisYap();
+                            }
+                          },
+                          child: buttonBox(context, "GİRİŞ YAP")),
                     ),
                     SizedBox(
                       height: size.height * 1 / 50,
@@ -303,10 +232,7 @@ class _LoginState extends State<Login> {
                       },
                       child: Padding(
                         padding: const EdgeInsets.only(right: 5),
-                        child: Text(
-                          "Şifremi Unuttum",
-                          style: loginText
-                        ),
+                        child: Text("Şifremi Unuttum", style: loginText),
                       ),
                     ),
                   ],

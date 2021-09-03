@@ -1,9 +1,10 @@
+import 'package:adana/components/button_box.dart';
+import 'package:adana/components/form_text.dart';
 import 'package:adana/constants/constants.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 
 class Register extends StatefulWidget {
   const Register({Key? key}) : super(key: key);
@@ -81,60 +82,33 @@ class _RegisterState extends State<Register> {
                       gradient: LinearGradient(
                           begin: Alignment.topCenter,
                           end: Alignment.bottomCenter,
-                          colors: [
-                            topBack,
-                            centerBack,
-                            bottomBack
-                          ]),
+                          colors: [topBack, centerBack, bottomBack]),
                     ),
                   ),
                 ),
                 Column(
-
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     SizedBox(
                       height: size.height * 1 / 7,
                     ),
-                    Text(
-                      'KAYIT EKRANI',
-                      style: loginTitle
-                    ),
+                    Text('KAYIT EKRANI', style: loginTitle),
                     SizedBox(
                       height: size.height * 1 / 16,
                     ),
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 20),
                       child: TextFormField(
-                        style: TextStyle(
-                            color: kutu, fontWeight: FontWeight.w300),
-                        decoration: InputDecoration(
-                          hintText: "Ad Soyad",
-                          hintStyle: TextStyle(color: kutu),
-                          labelText: "Ad-Soyad",
-                          labelStyle: TextStyle(color: kutu),
-                          fillColor: kutu,
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(25.0),
-                            borderSide: BorderSide(
+                        style:
+                            TextStyle(color: kutu, fontWeight: FontWeight.w300),
+                        decoration: formDecoration(
+                            "Ad Soyad",
+                            "Ad-Soyad",
+                            Icon(
+                              Icons.person,
                               color: kutu,
-                              style: BorderStyle.solid,
-                              width: 1.5,
                             ),
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(25.0),
-                            borderSide: BorderSide(
-                              color: kutu,
-                              style: BorderStyle.solid,
-                              width: 1.5,
-                            ),
-                          ),
-                          prefixIcon: Icon(
-                            Icons.person,
-                            color: kutu,
-                          ),
-                        ),
+                            SizedBox()),
                         controller: t1,
                       ),
                     ),
@@ -145,36 +119,16 @@ class _RegisterState extends State<Register> {
                       padding: EdgeInsets.symmetric(horizontal: 20),
                       child: TextFormField(
                         keyboardType: TextInputType.emailAddress,
-                        style: TextStyle(
-                            color: kutu, fontWeight: FontWeight.w300),
-                        decoration: InputDecoration(
-                          hintText: "Email Adresi",
-                          hintStyle: TextStyle(color: kutu),
-                          labelText: "Email",
-                          labelStyle: TextStyle(color: kutu),
-                          fillColor: kutu,
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(25.0),
-                            borderSide: BorderSide(
+                        style:
+                            TextStyle(color: kutu, fontWeight: FontWeight.w300),
+                        decoration: formDecoration(
+                            "E-mail Adresi",
+                            "E-mail",
+                            Icon(
+                              Icons.email,
                               color: kutu,
-                              style: BorderStyle.solid,
-                              width: 1.5,
                             ),
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(25.0),
-                            borderSide: BorderSide(
-                              color: kutu,
-                              style: BorderStyle.solid,
-                              width: 1.5,
-                            ),
-                          ),
-                          prefixIcon: Icon(
-                            Icons.email,
-                            color: kutu,
-                          ), // icon is 48px widget.
-                          //fillColor: Colors.green
-                        ),
+                            SizedBox()),
                         validator: (val) {
                           if (!GetUtils.isEmail(val!))
                             return "Geçersiz email adresi";
@@ -190,36 +144,17 @@ class _RegisterState extends State<Register> {
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 20),
                       child: TextFormField(
-                        style: TextStyle(
-                            color: kutu, fontWeight: FontWeight.w300),
+                        style:
+                            TextStyle(color: kutu, fontWeight: FontWeight.w300),
                         obscureText: !_passwordVisible,
-                        decoration: InputDecoration(
-                          hintText: "Parola",
-                          hintStyle: TextStyle(color: kutu),
-                          labelText: "Parola",
-                          labelStyle: TextStyle(color:kutu),
-                          fillColor: kutu,
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(25.0),
-                            borderSide: BorderSide(
-                              color: kutu,
-                              style: BorderStyle.solid,
-                              width: 1.5,
-                            ),
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(25.0),
-                            borderSide: BorderSide(
-                              color: kutu,
-                              style: BorderStyle.solid,
-                              width: 1.5,
-                            ),
-                          ),
-                          prefixIcon: Icon(
+                        decoration: formDecoration(
+                          "Parola",
+                          "Parola",
+                          Icon(
                             Icons.vpn_key,
                             color: kutu,
                           ),
-                          suffixIcon: IconButton(
+                          IconButton(
                             icon: Icon(_passwordVisible
                                 ? Icons.visibility
                                 : Icons.visibility_off),
@@ -246,43 +181,24 @@ class _RegisterState extends State<Register> {
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 20),
                       child: TextFormField(
-                        style: TextStyle(
-                            color: kutu, fontWeight: FontWeight.w300),
+                        style:
+                            TextStyle(color: kutu, fontWeight: FontWeight.w300),
                         obscureText: !_passwordVisible2,
-                        decoration: InputDecoration(
-                          hintText: "Parola Yeniden",
-                          hintStyle: TextStyle(color:kutu),
-                          labelText: "Parola",
-                          labelStyle: TextStyle(color: kutu),
-                          fillColor: kutu,
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(25.0),
-                            borderSide: BorderSide(
-                              color: kutu,
-                              style: BorderStyle.solid,
-                              width: 1.5,
-                            ),
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(25.0),
-                            borderSide: BorderSide(
-                              color: kutu,
-                              style: BorderStyle.solid,
-                              width: 1.5,
-                            ),
-                          ),
-                          prefixIcon: Icon(
+                        decoration: formDecoration(
+                          "Parola Yeniden",
+                          "Parola",
+                          Icon(
                             Icons.vpn_key,
                             color: kutu,
                           ),
-                          suffixIcon: IconButton(
-                            icon: Icon(_passwordVisible2
+                          IconButton(
+                            icon: Icon(_passwordVisible
                                 ? Icons.visibility
                                 : Icons.visibility_off),
                             color: kutu,
                             onPressed: () {
                               setState(() {
-                                _passwordVisible2 = !_passwordVisible2;
+                                _passwordVisible = !_passwordVisible;
                               });
                             },
                           ),
@@ -302,45 +218,22 @@ class _RegisterState extends State<Register> {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 10),
                       child: TextButton(
-                        onPressed: () {
-                          if (_formKey.currentState!.validate()) {
-                            store.collection('users').doc(t2.text).set({
-                              'name': t1.text,
-                              'email': t2.text,
-                              'parola': t3.text
-                            });
-                            _auth
-                                .createUserWithEmailAndPassword(
-                                    email: t2.text, password: t3.text)
-                                .then(
-                                  (value) => Get.toNamed("/home"),
-                                );
-                          }
-                        },
-                        child: Container(
-                          width: MediaQuery.of(context).size.width,
-                          height: 60,
-                          child: Center(
-                            child: Text(
-                              "KAYIT OL",
-                              style: loginButton
-                            ),
-                          ),
-                          decoration: BoxDecoration(
-                            gradient: buttonBoxGradient,
-                            borderRadius: BorderRadius.all(Radius.circular(30)),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black38.withOpacity(0.1),
-                                spreadRadius: 1,
-                                blurRadius: 1,
-                                offset:
-                                    Offset(0, -1), // changes position of shadow
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
+                          onPressed: () {
+                            if (_formKey.currentState!.validate()) {
+                              store.collection('users').doc(t2.text).set({
+                                'name': t1.text,
+                                'email': t2.text,
+                                'parola': t3.text
+                              });
+                              _auth
+                                  .createUserWithEmailAndPassword(
+                                      email: t2.text, password: t3.text)
+                                  .then(
+                                    (value) => Get.toNamed("/home"),
+                                  );
+                            }
+                          },
+                          child: buttonBox(context, "KAYIT OL")),
                     ),
                     SizedBox(
                       height: size.height * 1 / 60,
@@ -348,20 +241,15 @@ class _RegisterState extends State<Register> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(
-                          "Hesabım var",
-                          style: loginText
-                        ),
+                        Text("Hesabım var", style: loginText),
                         TextButton(
                           onPressed: () {
                             Get.toNamed("/login");
                           },
                           child: Padding(
                             padding: const EdgeInsets.only(right: 5),
-                            child: Text(
-                              "Giriş Yap",
-                              style: loginTextUnderlined
-                            ),
+                            child:
+                                Text("Giriş Yap", style: loginTextUnderlined),
                           ),
                         ),
                       ],

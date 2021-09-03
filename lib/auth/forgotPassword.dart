@@ -1,3 +1,5 @@
+import 'package:adana/components/button_box.dart';
+import 'package:adana/components/form_text.dart';
 import 'package:adana/constants/constants.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -9,14 +11,10 @@ class ForgotPassword extends StatefulWidget {
   @override
   _ForgotPasswordState createState() => _ForgotPasswordState();
 }
-
 class _ForgotPasswordState extends State<ForgotPassword> {
-
   TextEditingController t1 = TextEditingController();
   final _formKey = GlobalKey<FormState>();
   FirebaseAuth _auth = FirebaseAuth.instance;
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -25,11 +23,9 @@ class _ForgotPasswordState extends State<ForgotPassword> {
       child: Scaffold(
         resizeToAvoidBottomInset: false,
         backgroundColor: Colors.white,
-
         body: Form(
           key: _formKey,
           child: Stack(
-
             children: [
               Container(
                 constraints: BoxConstraints.expand(),
@@ -49,11 +45,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                     gradient: LinearGradient(
                         begin: Alignment.topCenter,
                         end: Alignment.bottomCenter,
-                        colors: [
-                          topBack,
-                          centerBack,
-                          bottomBack
-                        ]),
+                        colors: [topBack, centerBack, bottomBack]),
                   ),
                 ),
               ),
@@ -61,7 +53,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(top: 32,left: 24),
+                    padding: const EdgeInsets.only(top: 32, left: 24),
                     child: IconButton(
                       icon: Icon(
                         Icons.arrow_back,
@@ -74,45 +66,25 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                     ),
                   ),
                   SizedBox(
-                    height: size.height /12,
+                    height: size.height / 12,
                   ),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 20),
                     child: TextFormField(
                       style: TextStyle(
                           color: Colors.white, fontWeight: FontWeight.w300),
-                      decoration: InputDecoration(
-                        hintText: "Email Adresi",
-                        hintStyle: TextStyle(color: Colors.white),
-                        labelText: "Email",
-                        labelStyle: TextStyle(color: Colors.white),
-                        fillColor: Colors.white,
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(25.0),
-                          borderSide: BorderSide(
-                            color: Colors.white,
-                            style: BorderStyle.solid,
-                            width: 1.5,
+                      decoration: formDecoration(
+                          "E-mail Adresi",
+                          "E-mail",
+                          Icon(
+                            Icons.email,
+                            color: kutu,
                           ),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(25.0),
-                          borderSide: BorderSide(
-                            color: Colors.white,
-                            style: BorderStyle.solid,
-                            width: 1.5,
-                          ),
-                        ),
-                        prefixIcon: Icon(
-                          Icons.email_outlined,
-                          color: Colors.grey.shade300,
-                        ), // icon is 48px widget.
-                        //fillColor: Colors.green
-                      ),
+                          SizedBox()),
                       validator: (val) {
                         return RegExp(
-                            r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-                            .hasMatch(val!)
+                                    r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                                .hasMatch(val!)
                             ? null
                             : "Lütfen geçerli bir mail adresi giriniz";
                       },
@@ -120,14 +92,13 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                     ),
                   ),
                   SizedBox(
-                    height: size.height /30,
+                    height: size.height / 30,
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10),
                     child: TextButton(
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
-
                           _auth.sendPasswordResetEmail(email: t1.text);
 
                           Get.snackbar(
@@ -141,44 +112,14 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                           Future.delayed(Duration(seconds: 5), () {
                             Get.toNamed("/login");
                           });
-
-
-
                         }
                       },
-                      child: Container(
-                        width: MediaQuery.of(context).size.width,
-                        height: 60,
-                        child: Center(
-                          child: Text(
-                            "İSTEK GÖNDER",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.w600,
-                                fontSize: 25),
-                          ),
-                        ),
-                        decoration: BoxDecoration(
-                          gradient:   buttonBoxGradient,
-                          borderRadius: BorderRadius.all(Radius.circular(30)),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black38.withOpacity(0.1),
-                              spreadRadius: 1,
-                              blurRadius: 1,
-                              offset:
-                              Offset(0, -1), // changes position of shadow
-                            ),
-                          ],
-                        ),
-                      ),
+                      child: buttonBox(context, "İSTEK GÖNDER"),
                     ),
                   ),
-
                 ],
               )
             ],
-
           ),
         ),
       ),

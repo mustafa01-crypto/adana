@@ -1,9 +1,9 @@
+import 'package:adana/comment_profile/comment_profile.dart';
 import 'package:adana/components/mainAppBar.dart';
 import 'package:adana/constants/constants.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_stars/flutter_rating_stars.dart';
-import 'package:adana/comment_profile/comment_profile.dart';
 
 class AnavarzaYorum extends StatefulWidget {
   const AnavarzaYorum({Key? key}) : super(key: key);
@@ -34,6 +34,7 @@ class Yorumlar extends StatefulWidget {
 
 class _YorumlarState extends State<Yorumlar> {
   double value = 1.0;
+
   @override
   Widget build(BuildContext context) {
 

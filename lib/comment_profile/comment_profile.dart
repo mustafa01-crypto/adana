@@ -38,20 +38,20 @@ class _ProfilesState extends State<Profiles> {
     final width = MediaQuery.of(context).size.width;
     // final height = MediaQuery.of(context).size.height;
     return Container(
-      width: width * 1 / 9,
-      height: width * 1 / 9,
+      width: width * 1 / 10,
+      height: width * 1 / 10,
       child: ClipOval(
           child: indirmeBaglantisi == null
               ? Image.asset(
             "assets/profile.png",
-            width: width * 1 / 9,
-            height: width * 1 / 9,
+            width: width * 1 / 10,
+            height: width * 1 / 10,
             fit: BoxFit.cover,
           )
               : Image.network(
             indirmeBaglantisi!,
-            width: width * 1 / 9,
-            height: width * 1 / 9,
+            width: width * 1 / 10,
+            height: width * 1 / 10,
             fit: BoxFit.cover,
           )),
     );

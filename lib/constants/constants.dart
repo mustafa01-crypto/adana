@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sizer/sizer.dart';
 
 TextStyle cityName =
     TextStyle(color: sinir, fontSize: 18, fontWeight: FontWeight.w500);
@@ -142,7 +143,7 @@ TextStyle tileMetin = GoogleFonts.roboto(
 TextStyle loginTitle = GoogleFonts.roboto(
   color: kutu,
   fontWeight: FontWeight.bold,
-  fontSize: 35,
+  fontSize: 30.sp,
 );
 
 TextStyle loginButton = GoogleFonts.roboto(
@@ -154,12 +155,12 @@ TextStyle loginButton = GoogleFonts.roboto(
 TextStyle loginText = GoogleFonts.roboto(
   color: kutu,
   fontWeight: FontWeight.normal,
-  fontSize: 22,
+  fontSize: 16.sp,
 );
 
 TextStyle loginTextUnderlined = GoogleFonts.roboto(
   decoration: TextDecoration.underline,
   color: kutu,
   fontWeight: FontWeight.normal,
-  fontSize: 22,
+  fontSize: 18.sp,
 );

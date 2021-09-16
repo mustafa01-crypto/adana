@@ -4,6 +4,7 @@ import 'package:adana/constants/constants.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:sizer/sizer.dart';
 
 class ForgotPassword extends StatefulWidget {
   const ForgotPassword({Key? key}) : super(key: key);
@@ -53,7 +54,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(top: 32, left: 24),
+                    padding:  EdgeInsets.only(top: 4.h, left: 4.w),
                     child: IconButton(
                       icon: Icon(
                         Icons.arrow_back,
@@ -66,10 +67,10 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                     ),
                   ),
                   SizedBox(
-                    height: size.height / 12,
+                    height: 8.33.h,
                   ),
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20),
+                    padding: EdgeInsets.symmetric(horizontal: 5.w),
                     child: TextFormField(
                       style: TextStyle(
                           color: Colors.white, fontWeight: FontWeight.w300),
@@ -92,10 +93,10 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                     ),
                   ),
                   SizedBox(
-                    height: size.height / 30,
+                    height: 3.33.h,
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    padding:  EdgeInsets.symmetric(horizontal: 2.5.w),
                     child: TextButton(
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {

@@ -5,6 +5,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:sizer/sizer.dart';
 
 class Register extends StatefulWidget {
   const Register({Key? key}) : super(key: key);
@@ -90,14 +91,14 @@ class _RegisterState extends State<Register> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     SizedBox(
-                      height: size.height * 1 / 7,
+                      height: 14.28.h,
                     ),
                     Text('KAYIT EKRANI', style: loginTitle),
                     SizedBox(
-                      height: size.height * 1 / 16,
+                      height: 6.25.h,
                     ),
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      padding: EdgeInsets.symmetric(horizontal: 5.w),
                       child: TextFormField(
                         style:
                             TextStyle(color: kutu, fontWeight: FontWeight.w300),
@@ -113,10 +114,10 @@ class _RegisterState extends State<Register> {
                       ),
                     ),
                     SizedBox(
-                      height: size.height * 1 / 30,
+                      height: 3.33.h,
                     ),
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      padding: EdgeInsets.symmetric(horizontal: 5.w),
                       child: TextFormField(
                         keyboardType: TextInputType.emailAddress,
                         style:
@@ -139,10 +140,10 @@ class _RegisterState extends State<Register> {
                       ),
                     ),
                     SizedBox(
-                      height: size.height * 1 / 30,
+                      height: 3.33.h,
                     ),
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      padding: EdgeInsets.symmetric(horizontal: 5.w),
                       child: TextFormField(
                         style:
                             TextStyle(color: kutu, fontWeight: FontWeight.w300),
@@ -176,10 +177,10 @@ class _RegisterState extends State<Register> {
                       ),
                     ),
                     SizedBox(
-                      height: size.height * 1 / 30,
+                      height: 3.33.h,
                     ),
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      padding: EdgeInsets.symmetric(horizontal: 5.w),
                       child: TextFormField(
                         style:
                             TextStyle(color: kutu, fontWeight: FontWeight.w300),
@@ -213,10 +214,10 @@ class _RegisterState extends State<Register> {
                       ),
                     ),
                     SizedBox(
-                      height: size.height * 1 / 30,
+                      height: 3.33.h,
                     ),
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      padding:  EdgeInsets.symmetric(horizontal: 2.5.w),
                       child: TextButton(
                           onPressed: () {
                             if (_formKey.currentState!.validate()) {
@@ -236,7 +237,7 @@ class _RegisterState extends State<Register> {
                           child: buttonBox(context, "KAYIT OL")),
                     ),
                     SizedBox(
-                      height: size.height * 1 / 60,
+                      height: 1.66.h,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -247,7 +248,7 @@ class _RegisterState extends State<Register> {
                             Get.toNamed("/login");
                           },
                           child: Padding(
-                            padding: const EdgeInsets.only(right: 5),
+                            padding:  EdgeInsets.only(right: 2.5.w),
                             child:
                                 Text("Giriş Yap", style: loginTextUnderlined),
                           ),

@@ -45,6 +45,7 @@ dependencies:
   provider: ^5.0.0
   flutter_svg: ^0.22.0
   google_maps_flutter: ^2.0.6
+  sizer: ^2.0.15
 
   flutter:
     sdk: flutter

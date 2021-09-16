@@ -37,6 +37,7 @@ import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:sizer/sizer.dart';
 import 'auth/register.dart';
 import 'home.dart';
 import 'ilceler/cukurova/dogalPark.dart';
@@ -58,78 +59,85 @@ void main() async {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
     ]);
-    return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
+    return Sizer(builder:
+        (BuildContext context, Orientation orientation, DeviceType deviceType) {
+      return GetMaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        initialRoute: '/splash',
+        getPages: [
+          //anasayfa
+          GetPage(
+              name: '/splash',
+              page: () => Splash(),
+              transition: Transition.leftToRight),
+          GetPage(name: '/login', page: () => Login()),
+          GetPage(name: '/forgot', page: () => ForgotPassword()),
+          GetPage(
+              name: '/register',
+              page: () => Register(),
+              transition: Transition.rightToLeft),
+          GetPage(name: '/onboarding', page: () => OnBoardingPage()),
+          GetPage(name: '/home', page: () => Home()),
 
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      initialRoute: '/splash',
-      getPages: [
-        //anasayfa
-        GetPage(name: '/splash', page: () => Splash(),transition: Transition.leftToRight),
-        GetPage(name: '/login', page: () => Login()),
-        GetPage(name: '/forgot', page: () => ForgotPassword()),
-        GetPage(name: '/register', page: () => Register(),transition: Transition.rightToLeft),
-        GetPage(name: '/onboarding', page: () => OnBoardingPage()),
-        GetPage(name: '/home', page: () => Home()),
+          //karaisalı
+          GetPage(name: '/dokuzoluk', page: () => Dokuzoluk()),
+          GetPage(name: '/kanyon', page: () => Kanyon()),
 
-        //karaisalı
-        GetPage(name: '/dokuzoluk', page: () => Dokuzoluk()),
-        GetPage(name: '/kanyon', page: () => Kanyon()),
+          GetPage(name: '/varda', page: () => AlmanKoprusu()),
+          GetPage(name: '/karapinar', page: () => Karapinar()),
+          GetPage(name: '/kesire', page: () => KesireHan()),
+          GetPage(name: '/kizildag', page: () => Kizildag()),
+          GetPage(name: '/yerkopru', page: () => YerKopru()),
+          //Ceyhan
 
-        GetPage(name: '/varda', page: () => AlmanKoprusu()),
-        GetPage(name: '/karapinar', page: () => Karapinar()),
-        GetPage(name: '/kesire', page: () => KesireHan()),
-        GetPage(name: '/kizildag', page: () => Kizildag()),
-        GetPage(name: '/yerkopru', page: () => YerKopru()),
-        //Ceyhan
+          GetPage(name: '/anavarza', page: () => Anavarza()),
+          GetPage(name: '/durhasan', page: () => Durhasan()),
+          GetPage(name: '/kurt', page: () => KurtKulagi()),
+          GetPage(name: '/tumlu', page: () => Tumlu()),
+          GetPage(name: '/yilan', page: () => YilanKale()),
 
-        GetPage(name: '/anavarza', page: () => Anavarza()),
-        GetPage(name: '/durhasan', page: () => Durhasan()),
-        GetPage(name: '/kurt', page: () => KurtKulagi()),
-        GetPage(name: '/tumlu', page: () => Tumlu()),
-        GetPage(name: '/yilan', page: () => YilanKale()),
+          //cukurova
 
-        //cukurova
+          GetPage(name: '/dogal', page: () => DogalPark()),
+          GetPage(name: '/karatas', page: () => KaratasPlaji()),
+          GetPage(name: '/muze', page: () => MuzeKompleksi()),
+          GetPage(name: '/sevgi', page: () => SevgiAdasi()),
+          GetPage(name: '/baraj', page: () => SeyhanBaraji()),
+          GetPage(name: '/lagun', page: () => YumurtalikLagunu()),
 
-        GetPage(name: '/dogal', page: () => DogalPark()),
-        GetPage(name: '/karatas', page: () => KaratasPlaji()),
-        GetPage(name: '/muze', page: () => MuzeKompleksi()),
-        GetPage(name: '/sevgi', page: () => SevgiAdasi()),
-        GetPage(name: '/baraj', page: () => SeyhanBaraji()),
-        GetPage(name: '/lagun', page: () => YumurtalikLagunu()),
+          //seyhan
 
-        //seyhan
+          GetPage(name: '/ataturk', page: () => AtaturkEvi()),
+          GetPage(name: '/kilise', page: () => BebekliKilisesi()),
+          GetPage(name: '/dede', page: () => CobanDede()),
+          GetPage(name: '/saat', page: () => SaatKulesi()),
+          GetPage(name: '/merkez', page: () => SabanciMerkezCamii()),
+          GetPage(name: '/sinema', page: () => SinemaMuzesi()),
+          GetPage(name: '/ulu', page: () => UluCamii()),
+          GetPage(name: '/taskopru', page: () => TasKopru()),
 
-        GetPage(name: '/ataturk', page: () => AtaturkEvi()),
-        GetPage(name: '/kilise', page: () => BebekliKilisesi()),
-        GetPage(name: '/dede', page: () => CobanDede()),
-        GetPage(name: '/saat', page: () => SaatKulesi()),
-        GetPage(name: '/merkez', page: () => SabanciMerkezCamii()),
-        GetPage(name: '/sinema', page: () => SinemaMuzesi()),
-        GetPage(name: '/ulu', page: () => UluCamii()),
-        GetPage(name: '/taskopru', page: () => TasKopru()),
+          //pozantı
 
-        //pozantı
+          GetPage(name: '/armut', page: () => ArmutYayla()),
+          GetPage(name: '/akca_tekir', page: () => AkcaTekir()),
+          GetPage(name: '/tabya', page: () => Tabyalar()),
+          GetPage(name: '/anit', page: () => AnitAgaci()),
+          GetPage(name: '/anahsa', page: () => Anahsa()),
+          GetPage(name: '/seker', page: () => SkerPinari()),
 
-        GetPage(name: '/armut', page: () => ArmutYayla()),
-        GetPage(name: '/akca_tekir', page: () => AkcaTekir()),
-        GetPage(name: '/tabya', page: () => Tabyalar()),
-        GetPage(name: '/anit', page: () => AnitAgaci()),
-        GetPage(name: '/anahsa', page: () => Anahsa()),
-        GetPage(name: '/seker', page: () => SkerPinari()),
-
-        //YUMURTALIK
-        GetPage(name: '/ayas', page: () => AyasAntik()),
-        GetPage(name: '/kizkalesi', page: () => KizKalesi()),
-        GetPage(name: '/suleyman', page: () => SuleymanKulesi()),
-      ],
-    );
+          //YUMURTALIK
+          GetPage(name: '/ayas', page: () => AyasAntik()),
+          GetPage(name: '/kizkalesi', page: () => KizKalesi()),
+          GetPage(name: '/suleyman', page: () => SuleymanKulesi()),
+        ],
+      );
+    });
   }
 }
 

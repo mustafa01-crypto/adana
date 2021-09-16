@@ -7,6 +7,7 @@ import 'package:adana/home.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:sizer/sizer.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -68,8 +69,6 @@ class _LoginState extends State<Login> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-
     return WillPopScope(
       onWillPop: () async {
         final difference = DateTime.now().difference(timeDifference);
@@ -123,26 +122,26 @@ class _LoginState extends State<Login> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     SizedBox(
-                      height: size.height * 1 / 5,
+                      height: 20.h,
                     ),
                     Text('GİRİŞ EKRANI', style: loginTitle),
                     SizedBox(
-                      height: size.height * 1 / 8,
+                      height: 12.5.h,
                     ),
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      padding: EdgeInsets.symmetric(horizontal: 5.w),
                       child: TextFormField(
                         keyboardType: TextInputType.emailAddress,
                         style:
                             TextStyle(color: kutu, fontWeight: FontWeight.w300),
-                          decoration: formDecoration(
-                              "E-mail Adresi",
-                              "E-mail",
-                              Icon(
-                                Icons.email,
-                                color: kutu,
-                              ),
-                              SizedBox()),
+                        decoration: formDecoration(
+                            "E-mail Adresi",
+                            "E-mail",
+                            Icon(
+                              Icons.email,
+                              color: kutu,
+                            ),
+                            SizedBox()),
                         validator: (val) {
                           if (!GetUtils.isEmail(val!))
                             return "Geçersiz email adresi";
@@ -153,10 +152,10 @@ class _LoginState extends State<Login> {
                       ),
                     ),
                     SizedBox(
-                      height: size.height * 1 / 20,
+                      height: 5.h,
                     ),
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      padding: EdgeInsets.symmetric(horizontal: 5.w),
                       child: TextFormField(
                         style:
                             TextStyle(color: kutu, fontWeight: FontWeight.w300),
@@ -190,10 +189,10 @@ class _LoginState extends State<Login> {
                       ),
                     ),
                     SizedBox(
-                      height: size.height * 1 / 20,
+                      height: 5.h,
                     ),
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      padding: EdgeInsets.symmetric(horizontal: 2.5.w),
                       child: TextButton(
                           onPressed: () {
                             if (_formKey.currentState!.validate()) {
@@ -203,7 +202,7 @@ class _LoginState extends State<Login> {
                           child: buttonBox(context, "GİRİŞ YAP")),
                     ),
                     SizedBox(
-                      height: size.height * 1 / 50,
+                      height: 2.h,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -217,7 +216,7 @@ class _LoginState extends State<Login> {
                             Get.toNamed("/register");
                           },
                           child: Padding(
-                            padding: const EdgeInsets.only(right: 5),
+                            padding: EdgeInsets.only(right: 2.w),
                             child: Text(
                               "Kayıt Ol",
                               style: loginTextUnderlined,
@@ -231,7 +230,7 @@ class _LoginState extends State<Login> {
                         Get.toNamed("/forgot");
                       },
                       child: Padding(
-                        padding: const EdgeInsets.only(right: 5),
+                        padding: EdgeInsets.only(right: 2.w),
                         child: Text("Şifremi Unuttum", style: loginText),
                       ),
                     ),

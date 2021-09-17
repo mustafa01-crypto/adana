@@ -120,24 +120,24 @@ TextStyle metin = GoogleFonts.roboto(
   fontStyle: FontStyle.normal,
   color: metinColor,
   fontWeight: FontWeight.normal,
-  fontSize: 22,
+  fontSize: 14.sp,
 );
 TextStyle yorumText = GoogleFonts.roboto(
   fontStyle: FontStyle.normal,
   color: yorumColor,
   fontWeight: FontWeight.normal,
-  fontSize: 15,
+  fontSize: 11.sp,
 );
 TextStyle emailText = GoogleFonts.roboto(
   color: mailColor,
   fontWeight: FontWeight.bold,
-  fontSize: 15,
+  fontSize: 11.sp,
 );
 
 TextStyle tileMetin = GoogleFonts.roboto(
   color: Colors.white,
   fontWeight: FontWeight.normal,
-  fontSize: 19,
+  fontSize: 14.sp,
 );
 
 TextStyle loginTitle = GoogleFonts.roboto(
@@ -149,7 +149,7 @@ TextStyle loginTitle = GoogleFonts.roboto(
 TextStyle loginButton = GoogleFonts.roboto(
   color: kutu,
   fontWeight: FontWeight.bold,
-  fontSize: 31,
+  fontSize: 24.sp,
 );
 
 TextStyle loginText = GoogleFonts.roboto(

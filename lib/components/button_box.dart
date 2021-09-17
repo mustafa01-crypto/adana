@@ -1,9 +1,10 @@
 import 'package:adana/constants/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 Widget buttonBox(BuildContext context,String title) {
   return Container(
     width: MediaQuery.of(context).size.width,
-    height: 60,
+    height: 9.h,
     child: Center(
       child: Text(
           title,

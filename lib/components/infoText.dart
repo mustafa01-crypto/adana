@@ -1,9 +1,10 @@
 import 'package:adana/constants/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 Widget infoText(String text){
   return Padding(
-    padding: const EdgeInsets.symmetric(horizontal: 10),
+    padding:  EdgeInsets.symmetric(horizontal: 6.w),
     child: Container(
       decoration: BoxDecoration(
           gradient: boxGradient,
@@ -20,7 +21,7 @@ Widget infoText(String text){
 
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 15),
+        padding:  EdgeInsets.symmetric(horizontal: 5.w,vertical: 3.h),
         child: Text(
           text,
           style: metin,

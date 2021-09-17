@@ -192,7 +192,7 @@ class _LoginState extends State<Login> {
                       height: 5.h,
                     ),
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 2.5.w),
+                      padding: EdgeInsets.symmetric(horizontal: 3.w),
                       child: TextButton(
                           onPressed: () {
                             if (_formKey.currentState!.validate()) {

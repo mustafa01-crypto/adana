@@ -1,10 +1,11 @@
 import 'package:adana/constants/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 Widget buttonTextContainer(BuildContext context,String buttonName,){
   return Container(
     width: MediaQuery.of(context).size.width,
-    height: 70,
+    height: 9.h,
     child: Center(
       child: Text(
         buttonName,

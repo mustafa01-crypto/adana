@@ -122,11 +122,11 @@ class _LoginState extends State<Login> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     SizedBox(
-                      height: 20.h,
+                      height: 10.h,
                     ),
                     Text('GİRİŞ EKRANI', style: loginTitle),
                     SizedBox(
-                      height: 12.5.h,
+                      height: 11.5.h,
                     ),
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 5.w),

@@ -91,11 +91,11 @@ class _RegisterState extends State<Register> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     SizedBox(
-                      height: 14.28.h,
+                      height: 6.h,
                     ),
                     Text('KAYIT EKRANI', style: loginTitle),
                     SizedBox(
-                      height: 6.25.h,
+                      height: 3.5.h,
                     ),
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 5.w),
@@ -114,7 +114,7 @@ class _RegisterState extends State<Register> {
                       ),
                     ),
                     SizedBox(
-                      height: 3.33.h,
+                      height: 2.h,
                     ),
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 5.w),
@@ -140,7 +140,7 @@ class _RegisterState extends State<Register> {
                       ),
                     ),
                     SizedBox(
-                      height: 3.33.h,
+                      height: 2.h,
                     ),
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 5.w),
@@ -177,7 +177,7 @@ class _RegisterState extends State<Register> {
                       ),
                     ),
                     SizedBox(
-                      height: 3.33.h,
+                      height: 2.h,
                     ),
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 5.w),
@@ -214,7 +214,7 @@ class _RegisterState extends State<Register> {
                       ),
                     ),
                     SizedBox(
-                      height: 3.33.h,
+                      height: 2.h,
                     ),
                     Padding(
                       padding:  EdgeInsets.symmetric(horizontal: 2.5.w),

@@ -625,7 +625,7 @@ class _HomeState extends State<Home> {
                   ],
                 ),
               ),
-              SizedBox(height: 4.h),
+              SizedBox(height: 3.h),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(

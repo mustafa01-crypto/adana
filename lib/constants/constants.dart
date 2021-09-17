@@ -113,7 +113,7 @@ Gradient boxGradient = LinearGradient(
 TextStyle appBarMetin = GoogleFonts.roboto(
   color: baslik,
   fontWeight: FontWeight.bold,
-  fontSize: 29,
+  fontSize: 18.sp,
 );
 
 TextStyle metin = GoogleFonts.roboto(

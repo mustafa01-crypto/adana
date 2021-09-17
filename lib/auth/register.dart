@@ -37,7 +37,7 @@ class _RegisterState extends State<Register> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+
     return WillPopScope(
       onWillPop: () async {
         final difference = DateTime.now().difference(timeDifference);

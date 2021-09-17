@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:sizer/sizer.dart';
 import 'TileScreen.dart';
 
 late User loggedInuser;
@@ -546,14 +547,14 @@ class _HomeState extends State<Home> {
                               child: indirmeBaglantisi == null
                                   ? Image.asset(
                                       "assets/profile.png",
-                                      width: size.width * 3 / 10,
-                                      height: size.width * 2 / 6,
+                                      width: 30.w,
+                                      height: 33.w,
                                       fit: BoxFit.cover,
                                     )
                                   : Image.network(
                                       indirmeBaglantisi!,
-                                      width: size.width * 3 / 10,
-                                      height: size.width * 2 / 6,
+                                      width: 30.w,
+                                      height:33.w,
                                       fit: BoxFit.cover,
                                     )),
                         ),
@@ -578,9 +579,9 @@ class _HomeState extends State<Home> {
             children: [
               Container(
                 padding: EdgeInsets.only(
-                    top: size.height / 25,
-                    left: size.width / 20,
-                    right: size.width / 20),
+                    top: 4.h,
+                    left: 5.w,
+                    right:5.w),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -624,13 +625,13 @@ class _HomeState extends State<Home> {
                   ],
                 ),
               ),
-              SizedBox(height: size.height / 25),
+              SizedBox(height: 4.h),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: List.generate(
                       titles.length,
-                      (index) => InkWell(
+                      (index) => GestureDetector(
                             onTap: () {
                               setState(() {
                                 curIndex = index;
@@ -638,8 +639,8 @@ class _HomeState extends State<Home> {
                             },
                             child: Padding(
                               padding: EdgeInsets.only(
-                                  left: size.width / 20,
-                                  right: size.width / 40),
+                                  left: 5.w,
+                                  right: 2.5.w),
                               child: Container(
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(12),
@@ -653,8 +654,8 @@ class _HomeState extends State<Home> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      vertical: 8, horizontal: 8.0),
+                                  padding:  EdgeInsets.symmetric(
+                                      vertical: 1.6.h, horizontal: 4.w),
                                   child: Text(
                                     titles[index],
                                     style: GoogleFonts.roboto(
@@ -662,7 +663,7 @@ class _HomeState extends State<Home> {
                                           ? Colors.black
                                           : Colors.grey.shade600,
                                       fontWeight: FontWeight.w900,
-                                      fontSize: 19,
+                                      fontSize: 14.sp,
                                     ),
                                   ),
                                 ),
@@ -672,7 +673,7 @@ class _HomeState extends State<Home> {
                 ),
               ),
               SizedBox(
-                height: size.height / 100,
+                height: 1.h,
               ),
               Container(
                 height: size.height / 1.4,
@@ -694,8 +695,8 @@ class _HomeState extends State<Home> {
                             },
                             child: Padding(
                               padding: EdgeInsets.symmetric(
-                                  horizontal: size.width / 20,
-                                  vertical: size.height / 20),
+                                  horizontal: 5.w,
+                                  vertical: 5.h),
                               child: Stack(children: [
                                 Hero(
                                   tag: "target$index",
@@ -740,7 +741,7 @@ class _HomeState extends State<Home> {
                                 ),
                                 Positioned(
                                     bottom: size.width / 3,
-                                    left: 50,
+                                    left: 15.w,
                                     child: Text(
                                       typesKaraisali[index]['ad'],
                                       style: xdBeyaz,
@@ -806,7 +807,7 @@ class _HomeState extends State<Home> {
                                     ),
                                     Positioned(
                                         bottom: size.width / 4,
-                                        left: 50,
+                                        left: 15.w,
                                         child: Text(
                                           typesCeyhan[index]['ad'],
                                           style: xdBeyaz,
@@ -874,7 +875,7 @@ class _HomeState extends State<Home> {
                                         ),
                                         Positioned(
                                             bottom: size.width / 4,
-                                            left: 50,
+                                            left: 15.w,
                                             child: Text(
                                               typesCukurova[index]['ad'],
                                               style: xdBeyaz,
@@ -948,7 +949,7 @@ class _HomeState extends State<Home> {
                                             ),
                                             Positioned(
                                                 bottom: size.width / 4,
-                                                left: 50,
+                                                left: 15.w,
                                                 child: Text(
                                                   typesSeyhan[index]['ad'],
                                                   style: xdBeyaz,
@@ -1021,7 +1022,7 @@ class _HomeState extends State<Home> {
                                             ),
                                             Positioned(
                                                 bottom: size.width / 4,
-                                                left: 50,
+                                                left: 15.w,
                                                 child: Text(
                                                   pozantiList[index]['ad'],
                                                   style: xdBeyaz,
@@ -1094,7 +1095,7 @@ class _HomeState extends State<Home> {
                           ),
                           Positioned(
                               bottom: size.width / 4,
-                              left: 50,
+                              left: 15.w,
                               child: Text(
                                 yumurtaList[index]['ad'],
                                 style: xdBeyaz,
